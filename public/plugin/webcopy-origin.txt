@@ -1,0 +1,3156 @@
+Uri: https://apexcharts.com/samples/assets/github-data.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\samples\assets\github-data.js
+Content Type: application/javascript
+
+Uri: https://apexcharts.com/samples/assets/irregular-data-series.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\samples\assets\irregular-data-series.js
+Content Type: application/javascript
+
+Uri: https://apexcharts.com/samples/assets/ohlc.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\samples\assets\ohlc.js
+Content Type: application/javascript
+
+Uri: https://cdn.jsdelivr.net/npm/echarts/map/js/world.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\npm\echarts\map\js\world.js
+Content Type: application/javascript
+
+Uri: https://cdn.plyr.io/static/demo/Kishi_Bashi_-_It_All_Began_With_a_Burst.mp3
+File Name: C:\Downloaded Web Sites\webapplayers.com\static\demo\Kishi_Bashi_-_It_All_Began_With_a_Burst.mp3
+Content Type: audio/mpeg
+
+Uri: https://cdn.plyr.io/static/demo/Kishi_Bashi_-_It_All_Began_With_a_Burst.ogg
+File Name: C:\Downloaded Web Sites\webapplayers.com\static\demo\Kishi_Bashi_-_It_All_Began_With_a_Burst.ogg
+Content Type: audio/ogg
+
+Uri: https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.0/dayjs.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\ajax\libs\dayjs\1.11.0\dayjs.min.js
+Content Type: application/javascript
+
+Uri: https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.0/plugin/quarterOfYear.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\ajax\libs\dayjs\1.11.0\plugin\quarterOfYear.min.js
+Content Type: application/javascript
+
+Uri: https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.17/dayjs.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\ajax\libs\dayjs\1.8.17\dayjs.min.js
+Content Type: application/javascript
+
+Uri: https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap
+File Name: C:\Downloaded Web Sites\webapplayers.com\css2-9
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap
+File Name: C:\Downloaded Web Sites\webapplayers.com\css2-1
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap
+File Name: C:\Downloaded Web Sites\webapplayers.com\css2-4
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css2?family=Momo+Trust+Sans:wght@200..800&display=swap
+File Name: C:\Downloaded Web Sites\webapplayers.com\css2-10
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap
+File Name: C:\Downloaded Web Sites\webapplayers.com\css2-5
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap
+File Name: C:\Downloaded Web Sites\webapplayers.com\css2
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap);@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap);@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap);@import url(https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap);@import url(https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap);@import url(https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Momo+Trust+Sans:wght@200..800&display=swap);:root,[data-bs-theme=light]{--theme-blue:
+File Name: C:\Downloaded Web Sites\webapplayers.com\css2-11
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap
+File Name: C:\Downloaded Web Sites\webapplayers.com\css2-6
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap
+File Name: C:\Downloaded Web Sites\webapplayers.com\css2-2
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap
+File Name: C:\Downloaded Web Sites\webapplayers.com\css2-8
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap
+File Name: C:\Downloaded Web Sites\webapplayers.com\css2-3
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap
+File Name: C:\Downloaded Web Sites\webapplayers.com\css2-7
+Content Type: text/css
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyUbpfBJ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyUbpfBJ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyUyovBJ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyUyovBJ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyUypfBJ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyUypfBJ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyVspfBJ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyVspfBJ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyVVpfBJ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyVVpfBJ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyWAovBJ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyWAovBJ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyWyovBJ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyWyovBJ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyWyo_BJ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyWyo_BJ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyXsovBJ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVo2YZDLWuGJpnzaiwFXS9tYtpY_d6T_POl0fRJeyXsovBJ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_Nc7WZa4Q.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_Nc7WZa4Q.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_NcbWFa4Q.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_NcbWFa4Q.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_NcGmFa4Q.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_NcGmFa4Q.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_NcgWZa4Q.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_NcgWZa4Q.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_NcM2Fa4Q.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_NcM2Fa4Q.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_NcM2Za4Q.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_NcM2Za4Q.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_Ncs2da4Q.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_Ncs2da4Q.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_Ncs2Za4Q.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_Ncs2Za4Q.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_NcVGFa4Q.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\hankengrotesk\v12\ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_NcVGFa4Q.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/ibmplexsans/v23/zYXEKVElMYYaJe8bpLHnCwDKhdTEG46kmUZQCX598fQbM4jw8V78x9OWIhobQ6g9.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\ibmplexsans\v23\zYXEKVElMYYaJe8bpLHnCwDKhdTEG46kmUZQCX598fQbM4jw8V78x9OWIhobQ6g9.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/ibmplexsans/v23/zYXEKVElMYYaJe8bpLHnCwDKhdTEG46kmUZQCX598fQbM4jw8V78x9OWIhp8RKg9.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\ibmplexsans\v23\zYXEKVElMYYaJe8bpLHnCwDKhdTEG46kmUZQCX598fQbM4jw8V78x9OWIhp8RKg9.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/ibmplexsans/v23/zYXEKVElMYYaJe8bpLHnCwDKhdTEG46kmUZQCX598fQbM4jw8V78x9OWIhpFRKg9.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\ibmplexsans\v23\zYXEKVElMYYaJe8bpLHnCwDKhdTEG46kmUZQCX598fQbM4jw8V78x9OWIhpFRKg9.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/ibmplexsans/v23/zYXEKVElMYYaJe8bpLHnCwDKhdTEG46kmUZQCX598fQbM4jw8V78x9OWIhqbQ6g9.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\ibmplexsans\v23\zYXEKVElMYYaJe8bpLHnCwDKhdTEG46kmUZQCX598fQbM4jw8V78x9OWIhqbQ6g9.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/ibmplexsans/v23/zYXEKVElMYYaJe8bpLHnCwDKhdTEG46kmUZQCX598fQbM4jw8V78x9OWIhqbQqg9.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\ibmplexsans\v23\zYXEKVElMYYaJe8bpLHnCwDKhdTEG46kmUZQCX598fQbM4jw8V78x9OWIhqbQqg9.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/ibmplexsans/v23/zYXEKVElMYYaJe8bpLHnCwDKhdTEG46kmUZQCX598fQbM4jw8V78x9OWIhqpQ6g9.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\ibmplexsans\v23\zYXEKVElMYYaJe8bpLHnCwDKhdTEG46kmUZQCX598fQbM4jw8V78x9OWIhqpQ6g9.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/ibmplexsans/v23/zYXEKVElMYYaJe8bpLHnCwDKhdTEG46kmUZQCX598fQbM4jw8V78x9OWIhrFQ6g9.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\ibmplexsans\v23\zYXEKVElMYYaJe8bpLHnCwDKhdTEG46kmUZQCX598fQbM4jw8V78x9OWIhrFQ6g9.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD2FlzAA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\ibmplexsans\v23\zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD2FlzAA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD6lhzAA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\ibmplexsans\v23\zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD6lhzAA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD6llzAA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\ibmplexsans\v23\zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD6llzAA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDallzAA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\ibmplexsans\v23\zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDallzAA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDDV5zAA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\ibmplexsans\v23\zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDDV5zAA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDNF5zAA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\ibmplexsans\v23\zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDNF5zAA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDtFlzAA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\ibmplexsans\v23\zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDtFlzAA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTc2dphjQ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTc2dphjQ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTc2dthjQ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTc2dthjQ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTc69thjQ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTc69thjQ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTcB9xhjQ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTcB9xhjQ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTccNxhjQ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTccNxhjQ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTch9thjQ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTch9thjQ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTcPtxhjQ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTcPtxhjQ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTcWdthjQ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTcWdthjQ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTcWdxhjQ.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTcWdxhjQ.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuBWYMZg.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuBWYMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuDyfMZg.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuDyfMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuDyYMZg.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuDyYMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZg.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fMZg.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyeMZg.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyeMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuOKfMZg.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\inter\v20\UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuOKfMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/momotrustsans/v4/BXR8vFfHh_fFyXlQWZgO0TyUN7Pt3pVCeYWqJnZSW-ppbTo.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\momotrustsans\v4\BXR8vFfHh_fFyXlQWZgO0TyUN7Pt3pVCeYWqJnZSW-ppbTo.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/momotrustsans/v4/BXR8vFfHh_fFyXlQWZgO0TyUN7Pt3pVCeYWqJnZSW1NubTo.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\momotrustsans\v4\BXR8vFfHh_fFyXlQWZgO0TyUN7Pt3pVCeYWqJnZSW1NubTo.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/momotrustsans/v4/BXR8vFfHh_fFyXlQWZgO0TyUN7Pt3pVCeYWqJnZSW2pubTo.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\momotrustsans\v4\BXR8vFfHh_fFyXlQWZgO0TyUN7Pt3pVCeYWqJnZSW2pubTo.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/momotrustsans/v4/BXR8vFfHh_fFyXlQWZgO0TyUN7Pt3pVCeYWqJnZSW4ZpbTo.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\momotrustsans\v4\BXR8vFfHh_fFyXlQWZgO0TyUN7Pt3pVCeYWqJnZSW4ZpbTo.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/momotrustsans/v4/BXR8vFfHh_fFyXlQWZgO0TyUN7Pt3pVCeYWqJnZSW7RpbTo.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\momotrustsans\v4\BXR8vFfHh_fFyXlQWZgO0TyUN7Pt3pVCeYWqJnZSW7RpbTo.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/momotrustsans/v4/BXR8vFfHh_fFyXlQWZgO0TyUN7Pt3pVCeYWqJnZSWzRpbTo.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\momotrustsans\v4\BXR8vFfHh_fFyXlQWZgO0TyUN7Pt3pVCeYWqJnZSWzRpbTo.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/momotrustsans/v4/BXR8vFfHh_fFyXlQWZgO0TyUN7Pt3pVCeYWqJnZSWzRubTo.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\momotrustsans\v4\BXR8vFfHh_fFyXlQWZgO0TyUN7Pt3pVCeYWqJnZSWzRubTo.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDBImRTM.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\nunito\v32\XRXI3I6Li01BKofiOc5wtlZ2di8HDBImRTM.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDDshRTM.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\nunito\v32\XRXI3I6Li01BKofiOc5wtlZ2di8HDDshRTM.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDDsmRTM.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\nunito\v32\XRXI3I6Li01BKofiOc5wtlZ2di8HDDsmRTM.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDFwmRTM.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\nunito\v32\XRXI3I6Li01BKofiOc5wtlZ2di8HDFwmRTM.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDGUmRTM.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\nunito\v32\XRXI3I6Li01BKofiOc5wtlZ2di8HDGUmRTM.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDIkhRTM.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\nunito\v32\XRXI3I6Li01BKofiOc5wtlZ2di8HDIkhRTM.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTM.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\nunito\v32\XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTM.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDOUhRTM.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\nunito\v32\XRXI3I6Li01BKofiOc5wtlZ2di8HDOUhRTM.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/nunito/v32/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNi83A3ig.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\nunito\v32\XRXK3I6Li01BKofIMPyPbj8d7IEAGXNi83A3ig.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/nunito/v32/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNiBHc3ig.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\nunito\v32\XRXK3I6Li01BKofIMPyPbj8d7IEAGXNiBHc3ig.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/nunito/v32/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNic3c3ig.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\nunito\v32\XRXK3I6Li01BKofIMPyPbj8d7IEAGXNic3c3ig.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/nunito/v32/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNiLXA3ig.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\nunito\v32\XRXK3I6Li01BKofIMPyPbj8d7IEAGXNiLXA3ig.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/nunito/v32/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNiLXc3ig.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\nunito\v32\XRXK3I6Li01BKofIMPyPbj8d7IEAGXNiLXc3ig.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/nunito/v32/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNin3A3ig.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\nunito\v32\XRXK3I6Li01BKofIMPyPbj8d7IEAGXNin3A3ig.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/nunito/v32/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNirXA3ig.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\nunito\v32\XRXK3I6Li01BKofIMPyPbj8d7IEAGXNirXA3ig.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/nunito/v32/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNiSnc3ig.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\nunito\v32\XRXK3I6Li01BKofIMPyPbj8d7IEAGXNiSnc3ig.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVc.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\opensans\v44\memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVc.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVc.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\opensans\v44\memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVc.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVc.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\opensans\v44\memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVc.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVc.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\opensans\v44\memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVc.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVc.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\opensans\v44\memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVc.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk_RkaVc.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\opensans\v44\memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk_RkaVc.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4n.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\opensans\v44\memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4n.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4n.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\opensans\v44\memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4n.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4n.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\opensans\v44\memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4n.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4n.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\opensans\v44\memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4n.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0C4n.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\opensans\v44\memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0C4n.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4n.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\opensans\v44\memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4n.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/play/v21/6ae84K2oVqwItm4TOpc.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\play\v21\6ae84K2oVqwItm4TOpc.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/play/v21/6aez4K2oVqwIjtI.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\play\v21\6aez4K2oVqwIjtI.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiAyp8kv8JHgFVrJJLmE3tF.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiAyp8kv8JHgFVrJJLmE3tF.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLBT5V1s.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiByp8kv8JHgFVrLBT5V1s.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7V1s.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiByp8kv8JHgFVrLCz7V1s.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDD4V1s.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiByp8kv8JHgFVrLDD4V1s.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8V1s.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiByp8kv8JHgFVrLDz8V1s.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6V1s.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiByp8kv8JHgFVrLEj6V1s.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLFj_V1s.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiByp8kv8JHgFVrLFj_V1s.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9V1s.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiByp8kv8JHgFVrLGT9V1s.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiDyp8kv8JHgFVrJJLm111lEA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiDyp8kv8JHgFVrJJLm111lEA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiDyp8kv8JHgFVrJJLm21llEA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiDyp8kv8JHgFVrJJLm21llEA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiDyp8kv8JHgFVrJJLm81xlEA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiDyp8kv8JHgFVrJJLm81xlEA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiDyp8kv8JHgFVrJJLmg1hlEA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiDyp8kv8JHgFVrJJLmg1hlEA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiDyp8kv8JHgFVrJJLmr19lEA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiDyp8kv8JHgFVrJJLmr19lEA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiDyp8kv8JHgFVrJJLmv1plEA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiDyp8kv8JHgFVrJJLmv1plEA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiDyp8kv8JHgFVrJJLmy15lEA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiDyp8kv8JHgFVrJJLmy15lEA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrFJA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiEyp8kv8JHgFVrFJA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiGyp8kv8JHgFVrJJLedw.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiGyp8kv8JHgFVrJJLedw.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/poppins/v24/pxiGyp8kv8JHgFVrLPTedw.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\poppins\v24\pxiGyp8kv8JHgFVrLPTedw.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLgHQiA8.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLgHQiA8.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLgHXiA8.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLgHXiA8.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLijXiA8.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLijXiA8.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLl_XiA8.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLl_XiA8.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLmbXiA8.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLmbXiA8.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLoHQiA8.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLoHQiA8.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLoHRiA8.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLoHRiA8.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLrPQiA8.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLrPQiA8.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLt_QiA8.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLt_QiA8.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuaabWmT.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuaabWmT.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWub2bWmT.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWub2bWmT.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbGmT.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbGmT.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmT.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmT.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYaammT.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYaammT.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYjammT.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYjammT.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuZEammT.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuZEammT.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuZEbWmT.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuZEbWmT.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuZtammT.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\roboto\v51\KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuZtammT.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/robotomono/v31/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrk5AOW9.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\robotomono\v31\L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrk5AOW9.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/robotomono/v31/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAeW9.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\robotomono\v31\L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAeW9.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/robotomono/v31/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAOW9.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\robotomono\v31\L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAOW9.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/robotomono/v31/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlVAOW9.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\robotomono\v31\L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlVAOW9.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/robotomono/v31/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrm5B-W9.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\robotomono\v31\L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrm5B-W9.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/robotomono/v31/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrmAB-W9.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\robotomono\v31\L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrmAB-W9.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/robotomono/v31/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrnnAOW9.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\robotomono\v31\L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrnnAOW9.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vqPQw.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\robotomono\v31\L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vqPQw.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vuPQw.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\robotomono\v31\L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vuPQw.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_7PqPQw.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\robotomono\v31\L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_7PqPQw.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_AP2PQw.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\robotomono\v31\L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_AP2PQw.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_gPqPQw.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\robotomono\v31\L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_gPqPQw.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_Of2PQw.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\robotomono\v31\L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_Of2PQw.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_XvqPQw.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\robotomono\v31\L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_XvqPQw.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/tiktoksans/v7/70kbu7g-Lm8OXGnh_Ow1sUfFMmlnhbRF425wxXH-UGeud7XItbaHtxhggMrrmAvSNAHtMV6x5PpBL2J5Rgbj-Bo71ub1pA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\tiktoksans\v7\70kbu7g-Lm8OXGnh_Ow1sUfFMmlnhbRF425wxXH-UGeud7XItbaHtxhggMrrmAvSNAHtMV6x5PpBL2J5Rgbj-Bo71ub1pA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/tiktoksans/v7/70kbu7g-Lm8OXGnh_Ow1sUfFMmlnhbRF425wxXH-UGeud7XItbaHtxhggMrrmAvSNAHtMV6x5PpBL2J5Rgbj-Bo77-b1pA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\tiktoksans\v7\70kbu7g-Lm8OXGnh_Ow1sUfFMmlnhbRF425wxXH-UGeud7XItbaHtxhggMrrmAvSNAHtMV6x5PpBL2J5Rgbj-Bo77-b1pA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/tiktoksans/v7/70kbu7g-Lm8OXGnh_Ow1sUfFMmlnhbRF425wxXH-UGeud7XItbaHtxhggMrrmAvSNAHtMV6x5PpBL2J5Rgbj-Bo7COH1pA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\tiktoksans\v7\70kbu7g-Lm8OXGnh_Ow1sUfFMmlnhbRF425wxXH-UGeud7XItbaHtxhggMrrmAvSNAHtMV6x5PpBL2J5Rgbj-Bo7COH1pA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/tiktoksans/v7/70kbu7g-Lm8OXGnh_Ow1sUfFMmlnhbRF425wxXH-UGeud7XItbaHtxhggMrrmAvSNAHtMV6x5PpBL2J5Rgbj-Bo7iOb1pA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\tiktoksans\v7\70kbu7g-Lm8OXGnh_Ow1sUfFMmlnhbRF425wxXH-UGeud7XItbaHtxhggMrrmAvSNAHtMV6x5PpBL2J5Rgbj-Bo7iOb1pA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/tiktoksans/v7/70kbu7g-Lm8OXGnh_Ow1sUfFMmlnhbRF425wxXH-UGeud7XItbaHtxhggMrrmAvSNAHtMV6x5PpBL2J5Rgbj-Bo7oeb1pA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\tiktoksans\v7\70kbu7g-Lm8OXGnh_Ow1sUfFMmlnhbRF425wxXH-UGeud7XItbaHtxhggMrrmAvSNAHtMV6x5PpBL2J5Rgbj-Bo7oeb1pA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/tiktoksans/v7/70kbu7g-Lm8OXGnh_Ow1sUfFMmlnhbRF425wxXH-UGeud7XItbaHtxhggMrrmAvSNAHtMV6x5PpBL2J5Rgbj-Bo7OuH1pA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\tiktoksans\v7\70kbu7g-Lm8OXGnh_Ow1sUfFMmlnhbRF425wxXH-UGeud7XItbaHtxhggMrrmAvSNAHtMV6x5PpBL2J5Rgbj-Bo7OuH1pA.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/tiktoksans/v7/70kbu7g-Lm8OXGnh_Ow1sUfFMmlnhbRF425wxXH-UGeud7XItbaHtxhggMrrmAvSNAHtMV6x5PpBL2J5Rgbj-Bo7VuH1pA.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\s\tiktoksans\v7\70kbu7g-Lm8OXGnh_Ow1sUfFMmlnhbRF425wxXH-UGeud7XItbaHtxhggMrrmAvSNAHtMV6x5PpBL2J5Rgbj-Bo7VuH1pA.ttf
+Content Type: font/ttf
+
+Uri: https://media.w3.org/2010/05/sintel/poster.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\2010\05\sintel\poster.png
+Content Type: image/png
+
+Uri: https://media.w3.org/2010/05/sintel/trailer_hd.mp4
+File Name: C:\Downloaded Web Sites\webapplayers.com\2010\05\sintel\trailer_hd.mp4
+Content Type: video/mp4
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-api-keys.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-api-keys.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-blog-add.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-blog-add.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-blog-article.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-blog-article.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-blog-grid.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-blog-grid.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-blog-list.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-blog-list.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-calendar.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-calendar.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-chat.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-chat.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-clients.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-clients.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-companies.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-companies.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-attributes.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-attributes.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-cart.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-cart.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-categories.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-categories.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-checkout.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-checkout.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-customers.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-customers.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-marketplace.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-marketplace.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-order-add.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-order-add.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-order-details.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-order-details.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-orders.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-orders.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-product-add.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-product-add.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-product-details.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-product-details.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-product-stocks.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-product-stocks.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-product-views.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-product-views.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-products-grid.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-products-grid.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-products.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-products.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-purchased-orders.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-purchased-orders.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-refunds.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-refunds.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-reviews.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-reviews.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-sales.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-sales.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-seller-details.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-seller-details.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-sellers.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-sellers.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-settings.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-settings.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-ecommerce-warehouse.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-ecommerce-warehouse.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-email-compose.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-email-compose.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-email-details.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-email-details.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-email-inbox.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-email-inbox.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-file-manager.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-file-manager.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-forum-post.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-forum-post.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-forum-view.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-forum-view.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-invoice-create.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-invoice-create.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-invoice-details.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-invoice-details.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-invoice-list.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-invoice-list.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-issue-tracker.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-issue-tracker.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-manage.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-manage.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-outlook.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-outlook.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-pin-board.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-pin-board.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-projects-activity.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-projects-activity.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-projects-details.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-projects-details.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-projects-grid.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-projects-grid.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-projects-kanban.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-projects-kanban.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-projects-list.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-projects-list.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-projects-team-board.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-projects-team-board.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-social-feed.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-social-feed.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-users-contacts.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-users-contacts.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-users-permissions.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-users-permissions.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-users-role-details.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-users-role-details.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-users-roles.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-users-roles.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/apps-vote-list.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\apps-vote-list.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/css/app.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\css\app.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/css/fonts/tabler-icons.ttf?v3.35.0
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\css\fonts\tabler-icons.ttf
+Content Type: font/ttf
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/css/fonts/tabler-icons.woff2?v3.35.0
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\css\fonts\tabler-icons.woff2
+Content Type: font/woff2
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/css/fonts/tabler-icons.woff?
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\css\fonts\tabler-icons.woff
+Content Type: font/woff
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/css/vendors.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\css\vendors.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/auth.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\auth.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/bg-pattern.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\bg-pattern.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/blog/blog-1.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\blog\blog-1.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/blog/blog-2.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\blog\blog-2.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/blog/blog-3.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\blog\blog-3.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/blog/blog-4.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\blog\blog-4.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/blog/blog-5.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\blog\blog-5.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/blog/blog-post.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\blog\blog-post.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/cards/american-express.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\cards\american-express.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/cards/bhim.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\cards\bhim.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/cards/cod.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\cards\cod.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/cards/discover-card.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\cards\discover-card.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/cards/google-wallet.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\cards\google-wallet.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/cards/mastercard.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\cards\mastercard.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/cards/payoneer.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\cards\payoneer.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/cards/paypal.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\cards\paypal.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/cards/stripe.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\cards\stripe.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/cards/unionpay.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\cards\unionpay.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/cards/visa.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\cards\visa.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/chat.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\chat.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/checkmark.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\checkmark.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/clients/01.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\clients\01.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/clients/02.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\clients\02.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/clients/03.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\clients\03.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/clients/04.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\clients\04.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/clients/05.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\clients\05.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/clients/06.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\clients\06.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/clients/07.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\clients\07.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/dashboard-1.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\dashboard-1.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/delete.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\delete.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/favicon.ico
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\favicon.ico
+Content Type: image/vnd.microsoft.icon
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/file-manager.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\file-manager.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/ar.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\ar.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/au.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\au.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/br.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\br.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/ca.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\ca.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/cn.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\cn.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/de.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\de.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/es.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\es.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/fr.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\fr.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/gb.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\gb.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/in.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\in.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/it.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\it.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/jp.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\jp.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/mx.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\mx.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/ru.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\ru.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/sa.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\sa.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/sg.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\sg.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/flags/us.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\flags\us.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/galaxy.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\galaxy.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/gallery/1.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\gallery\1.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/gallery/10.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\gallery\10.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/gallery/11.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\gallery\11.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/gallery/12.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\gallery\12.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/gallery/13.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\gallery\13.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/gallery/14.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\gallery\14.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/gallery/2.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\gallery\2.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/gallery/3.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\gallery\3.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/gallery/4.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\gallery\4.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/gallery/5.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\gallery\5.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/gallery/6.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\gallery\6.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/gallery/7.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\gallery\7.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/gallery/8.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\gallery\8.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/gallery/9.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\gallery\9.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/kanban/img-1.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\kanban\img-1.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/kanban/img-2.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\kanban\img-2.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/kanban/img-3.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\kanban\img-3.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/kanban/img-4.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\kanban\img-4.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/landing-cta.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\landing-cta.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/dir-ltr.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\dir-ltr.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/dir-rtl.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\dir-rtl.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/sidenav-color-dark.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\sidenav-color-dark.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/sidenav-color-gradient.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\sidenav-color-gradient.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/sidenav-color-gray.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\sidenav-color-gray.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/sidenav-color-image.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\sidenav-color-image.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/sidenav-color-light.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\sidenav-color-light.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/sidenav-size-compact.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\sidenav-size-compact.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/sidenav-size-condensed.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\sidenav-size-condensed.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/sidenav-size-default.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\sidenav-size-default.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/sidenav-size-offcanvas.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\sidenav-size-offcanvas.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/sidenav-size-on-hover-active.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\sidenav-size-on-hover-active.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/sidenav-size-on-hover.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\sidenav-size-on-hover.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/skin-default.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\skin-default.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/skin-flat.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\skin-flat.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/skin-galaxy.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\skin-galaxy.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/skin-luxe.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\skin-luxe.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/skin-material.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\skin-material.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/skin-minimal.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\skin-minimal.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/skin-modern.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\skin-modern.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/skin-neon.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\skin-neon.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/skin-pixel.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\skin-pixel.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/skin-retro.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\skin-retro.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/skin-saas.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\skin-saas.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/theme-dark.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\theme-dark.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/theme-light.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\theme-light.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/theme-system.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\theme-system.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/topbar-color-dark.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\topbar-color-dark.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/topbar-color-gradient.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\topbar-color-gradient.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/topbar-color-gray.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\topbar-color-gray.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/topbar-color-light.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\topbar-color-light.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/width-boxed.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\width-boxed.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/layouts/width-fluid.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\layouts\width-fluid.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logo-black.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logo-black.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logo-sm.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logo-sm.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logo.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logo.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logos/airbnb.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logos\airbnb.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logos/amazon.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logos\amazon.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logos/apple.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logos\apple.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logos/asana.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logos\asana.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logos/dropbox.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logos\dropbox.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logos/figma.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logos\figma.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logos/google.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logos\google.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logos/meta.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logos\meta.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logos/microsoft.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logos\microsoft.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logos/openai.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logos\openai.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logos/shell.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logos\shell.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logos/slack.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logos\slack.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logos/spotify.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logos\spotify.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logos/starbucks.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logos\starbucks.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/logos/walmart.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\logos\walmart.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/maintenance.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\maintenance.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/message-mail.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\message-mail.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/1.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\1.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/10.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\10.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/2.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\2.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/3.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\3.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/4.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\4.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/5.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\5.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/6.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\6.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/7.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\7.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/8.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\8.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/9.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\9.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/hanbag.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\hanbag.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/man.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\man.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/single-1.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\single-1.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/single-2.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\single-2.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/single-3.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\single-3.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/single-4.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\single-4.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/products/women.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\products\women.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/profile-bg.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\profile-bg.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/qr.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\qr.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/ratings.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\ratings.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/seller-profile.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\seller-profile.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/sellers/1.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\sellers\1.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/sellers/10.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\sellers\10.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/sellers/2.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\sellers\2.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/sellers/3.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\sellers\3.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/sellers/4.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\sellers\4.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/sellers/5.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\sellers\5.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/sellers/6.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\sellers\6.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/sellers/7.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\sellers\7.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/sellers/8.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\sellers\8.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/sellers/9.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\sellers\9.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/settings-bg.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\settings-bg.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/sidenav-bg.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\sidenav-bg.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/sign.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\sign.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/stock/small-1.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\stock\small-1.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/stock/small-10.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\stock\small-10.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/stock/small-2.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\stock\small-2.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/stock/small-3.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\stock\small-3.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/stock/small-4.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\stock\small-4.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/stock/small-5.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\stock\small-5.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/stock/small-6.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\stock\small-6.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/stock/small-8.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\stock\small-8.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/stock/small-9.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\stock\small-9.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/svg/404.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\svg\404.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/svg/500.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\svg\500.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/team.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\team.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/user-bg-pattern.svg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\user-bg-pattern.svg
+Content Type: image/svg+xml
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/users/user-1.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\users\user-1.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/users/user-10.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\users\user-10.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/users/user-2.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\users\user-2.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/users/user-3.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\users\user-3.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/users/user-4.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\users\user-4.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/users/user-5.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\users\user-5.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/users/user-6.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\users\user-6.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/users/user-7.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\users\user-7.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/users/user-8.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\users\user-8.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/images/users/user-9.jpg
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\images\users\user-9.jpg
+Content Type: image/jpeg
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/app.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\app.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/config.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\config.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/maps/canada.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\maps\canada.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/maps/in-mill-en.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\maps\in-mill-en.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/maps/iraq.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\maps\iraq.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/maps/leaflet-data.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\maps\leaflet-data.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/maps/russia.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\maps\russia.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/maps/spain.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\maps\spain.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/maps/us-aea-en.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\maps\us-aea-en.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/maps/us-lcc-en.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\maps\us-lcc-en.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/maps/us-mill-en.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\maps\us-mill-en.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/maps/world-merc.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\maps\world-merc.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/maps/world.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\maps\world.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/apps-api-keys.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\apps-api-keys.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/apps-calendar.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\apps-calendar.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/apps-chat.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\apps-chat.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/apps-create-invoice.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\apps-create-invoice.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/apps-email-compose.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\apps-email-compose.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/apps-email.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\apps-email.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/apps-kanban.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\apps-kanban.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/auth-password.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\auth-password.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/auth-two-factor.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\auth-two-factor.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-area.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-area.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-bar.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-bar.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-boxplot.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-boxplot.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-bubble.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-bubble.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-candlestick.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-candlestick.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-column.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-column.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-funnel.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-funnel.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-heatmap.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-heatmap.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-line.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-line.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-mixed.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-mixed.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-pie.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-pie.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-polar-area.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-polar-area.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-radar.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-radar.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-radialbar.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-radialbar.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-range.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-range.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-scatter.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-scatter.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-slope.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-slope.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-sparklines.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-sparklines.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-timeline.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-timeline.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-apex-treemap.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-apex-treemap.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-echart-area.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-echart-area.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-echart-bar.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-echart-bar.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-echart-candlestick.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-echart-candlestick.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-echart-gauge.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-echart-gauge.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-echart-geo-map.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-echart-geo-map.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-echart-heatmap.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-echart-heatmap.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-echart-line.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-echart-line.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-echart-other.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-echart-other.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-echart-pie.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-echart-pie.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-echart-radar.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-echart-radar.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/chart-echart-scatter.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\chart-echart-scatter.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/coming-soon.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\coming-soon.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/custom-table.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\custom-table.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/dashboard-analytics.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\dashboard-analytics.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/dashboard-ecommerce.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\dashboard-ecommerce.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/dashboard-projects.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\dashboard-projects.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/datatables-ajax.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\datatables-ajax.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/datatables-basic.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\datatables-basic.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/datatables-checkbox-select.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\datatables-checkbox-select.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/datatables-child-rows.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\datatables-child-rows.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/datatables-column-search.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\datatables-column-search.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/datatables-export-data.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\datatables-export-data.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/datatables-fixed-columns.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\datatables-fixed-columns.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/datatables-fixed-header.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\datatables-fixed-header.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/datatables-javascript-source.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\datatables-javascript-source.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/datatables-range-search.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\datatables-range-search.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/datatables-rendering.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\datatables-rendering.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/datatables-rows-add.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\datatables-rows-add.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/datatables-scroll.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\datatables-scroll.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/datatables-select.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\datatables-select.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/datatables-show-hide-columns.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\datatables-show-hide-columns.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/ecommerce-product-add.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\ecommerce-product-add.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/ecommerce-product-views.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\ecommerce-product-views.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/ecommerce-products.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\ecommerce-products.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/ecommerce-reviews.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\ecommerce-reviews.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/ecommerce-sales.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\ecommerce-sales.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/ecommerce-seller-details.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\ecommerce-seller-details.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/flags-listing.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\flags-listing.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/form-choice.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\form-choice.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/form-colorpickr.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\form-colorpickr.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/form-date-range-picker.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\form-date-range-picker.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/form-elements.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\form-elements.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/form-fileupload.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\form-fileupload.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/form-inputmask.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\form-inputmask.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/form-quilljs.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\form-quilljs.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/form-range-slider.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\form-range-slider.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/form-select2.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\form-select2.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/form-summernote.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\form-summernote.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/form-typehead.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\form-typehead.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/form-wizard.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\form-wizard.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/landing.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\landing.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/maps-leaflet.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\maps-leaflet.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/maps-vector.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\maps-vector.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/metrics.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\metrics.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/pages-gallery.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\pages-gallery.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/plugins-animation.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\plugins-animation.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/plugins-clipboard.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\plugins-clipboard.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/plugins-idle-timer.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\plugins-idle-timer.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/plugins-loading-button.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\plugins-loading-button.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/plugins-nestable.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\plugins-nestable.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/plugins-pass-meter.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\plugins-pass-meter.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/plugins-pdf-viewer.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\plugins-pdf-viewer.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/plugins-plyr.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\plugins-plyr.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/plugins-sweetalerts.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\plugins-sweetalerts.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/plugins-text-diff.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\plugins-text-diff.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/plugins-tinycon.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\plugins-tinycon.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/plugins-tour.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\plugins-tour.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/plugins-treeview.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\plugins-treeview.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/ui-alerts.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\ui-alerts.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/ui-modals.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\ui-modals.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/pages/ui-notifications.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\pages\ui-notifications.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/js/vendors.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\js\vendors.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/animate/animate.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\animate\animate.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/apexcharts/apexcharts.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\apexcharts\apexcharts.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/clipboard/clipboard.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\clipboard\clipboard.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/buttons.bootstrap5.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\buttons.bootstrap5.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/buttons.bootstrap5.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\buttons.bootstrap5.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/buttons.html5.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\buttons.html5.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/buttons.print.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\buttons.print.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/dataTables.bootstrap5.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\dataTables.bootstrap5.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/dataTables.buttons.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\dataTables.buttons.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/dataTables.fixedColumns.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\dataTables.fixedColumns.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/dataTables.fixedHeader.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\dataTables.fixedHeader.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/dataTables.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\dataTables.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/dataTables.responsive.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\dataTables.responsive.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/dataTables.select.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\dataTables.select.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/fixedColumns.bootstrap5.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\fixedColumns.bootstrap5.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/fixedColumns.bootstrap5.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\fixedColumns.bootstrap5.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/fixedHeader.bootstrap5.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\fixedHeader.bootstrap5.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/fixedHeader.bootstrap5.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\fixedHeader.bootstrap5.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/jszip.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\jszip.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/pdfmake.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\pdfmake.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/responsive.bootstrap5.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\responsive.bootstrap5.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/responsive.bootstrap5.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\responsive.bootstrap5.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/select.bootstrap5.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\select.bootstrap5.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/select.bootstrap5.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\select.bootstrap5.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/datatables/vfs_fonts.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\datatables\vfs_fonts.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/daterangepicker/daterangepicker.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\daterangepicker\daterangepicker.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/daterangepicker/daterangepicker.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\daterangepicker\daterangepicker.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/diff/diff.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\diff\diff.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/dropzone/dropzone-min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\dropzone\dropzone-min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/dropzone/dropzone.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\dropzone\dropzone.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/echarts/echarts.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\echarts\echarts.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/filepond/filepond-plugin-file-encode.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\filepond\filepond-plugin-file-encode.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/filepond/filepond-plugin-file-validate-size.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\filepond\filepond-plugin-file-validate-size.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/filepond/filepond-plugin-image-exif-orientation.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\filepond\filepond-plugin-image-exif-orientation.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/filepond/filepond-plugin-image-preview.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\filepond\filepond-plugin-image-preview.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/filepond/filepond-plugin-image-preview.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\filepond\filepond-plugin-image-preview.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/filepond/filepond.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\filepond\filepond.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/filepond/filepond.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\filepond\filepond.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/fullcalendar/index.global.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\fullcalendar\index.global.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/glightbox/glightbox.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\glightbox\glightbox.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/glightbox/glightbox.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\glightbox\glightbox.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/handlebars/handlebars.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\handlebars\handlebars.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/inputmask/inputmask.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\inputmask\inputmask.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/jquery/jquery.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\jquery\jquery.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/jstree/jstree.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\jstree\jstree.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/jstree/style.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\jstree\style.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/jstree/throbber.gif
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\jstree\throbber.gif
+Content Type: image/gif
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/jsvectormap/jsvectormap.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\jsvectormap\jsvectormap.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/jsvectormap/jsvectormap.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\jsvectormap\jsvectormap.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/ladda/ladda.jquery.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\ladda\ladda.jquery.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/ladda/ladda.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\ladda\ladda.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/ladda/ladda.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\ladda\ladda.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/ladda/spin.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\ladda\spin.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/leaflet/images/layers.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\leaflet\images\layers.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/leaflet/images/marker-icon.png
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\leaflet\images\marker-icon.png
+Content Type: image/png
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/leaflet/leaflet.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\leaflet\leaflet.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/leaflet/leaflet.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\leaflet\leaflet.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/masonry/masonry.pkgd.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\masonry\masonry.pkgd.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/moment/moment.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\moment\moment.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/muuri/muuri.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\muuri\muuri.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/nouislider/nouislider.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\nouislider\nouislider.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/nouislider/nouislider.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\nouislider\nouislider.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/pdfjs/pdf.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\pdfjs\pdf.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/pickr/classic.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\pickr\classic.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/pickr/monolith.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\pickr\monolith.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/pickr/nano.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\pickr\nano.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/pickr/pickr.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\pickr\pickr.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/plyr/plyr.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\plyr\plyr.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/plyr/plyr.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\plyr\plyr.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/quill/quill.bubble.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\quill\quill.bubble.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/quill/quill.core.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\quill\quill.core.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/quill/quill.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\quill\quill.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/quill/quill.snow.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\quill\quill.snow.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/select2/select2.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\select2\select2.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/select2/select2.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\select2\select2.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/sortablejs/Sortable.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\sortablejs\Sortable.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/spinkit/spinkit.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\spinkit\spinkit.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/summernote/font/summernote.ttf
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\summernote\font\summernote.ttf
+Content Type: font/ttf
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/summernote/font/summernote.woff
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\summernote\font\summernote.woff
+Content Type: font/woff
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/summernote/font/summernote.woff2
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\summernote\font\summernote.woff2
+Content Type: font/woff2
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/summernote/summernote-bs5.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\summernote\summernote-bs5.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/summernote/summernote-bs5.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\summernote\summernote-bs5.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/sweetalert2/sweetalert2.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\sweetalert2\sweetalert2.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/sweetalert2/sweetalert2.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\sweetalert2\sweetalert2.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/tinycon/tinycon.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\tinycon\tinycon.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/tourguidejs/tour.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\tourguidejs\tour.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/tourguidejs/tour.min.css
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\tourguidejs\tour.min.css
+Content Type: text/css
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/typeahead/typeahead.bundle.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\typeahead\typeahead.bundle.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/web-animations/web-animations.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\web-animations\web-animations.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/assets/plugins/wnumb/wNumb.min.js
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\assets\plugins\wnumb\wNumb.min.js
+Content Type: application/javascript
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-card-delete-account.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-card-delete-account.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-card-lock-screen.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-card-lock-screen.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-card-login-pin.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-card-login-pin.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-card-new-pass.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-card-new-pass.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-card-reset-pass.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-card-reset-pass.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-card-sign-in.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-card-sign-in.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-card-sign-up.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-card-sign-up.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-card-success-mail.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-card-success-mail.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-card-two-factor.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-card-two-factor.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-delete-account.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-delete-account.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-lock-screen.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-lock-screen.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-login-pin.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-login-pin.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-new-pass.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-new-pass.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-reset-pass.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-reset-pass.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-sign-in.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-sign-in.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-sign-up.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-sign-up.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-split-delete-account.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-split-delete-account.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-split-lock-screen.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-split-lock-screen.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-split-login-pin.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-split-login-pin.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-split-new-pass.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-split-new-pass.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-split-reset-pass.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-split-reset-pass.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-split-sign-in.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-split-sign-in.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-split-sign-up.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-split-sign-up.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-split-success-mail.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-split-success-mail.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-split-two-factor.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-split-two-factor.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-success-mail.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-success-mail.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/auth-two-factor.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\auth-two-factor.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-area.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-area.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-bar.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-bar.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-boxplot.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-boxplot.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-bubble.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-bubble.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-candlestick.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-candlestick.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-column.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-column.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-funnel.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-funnel.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-heatmap.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-heatmap.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-line.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-line.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-mixed.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-mixed.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-pie.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-pie.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-polar-area.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-polar-area.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-radar.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-radar.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-radialbar.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-radialbar.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-range.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-range.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-scatter.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-scatter.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-slope.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-slope.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-sparklines.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-sparklines.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-timeline.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-timeline.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-apex-treemap.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-apex-treemap.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-echart-area.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-echart-area.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-echart-bar.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-echart-bar.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-echart-candlestick.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-echart-candlestick.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-echart-gauge.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-echart-gauge.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-echart-geo-map.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-echart-geo-map.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-echart-heatmap.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-echart-heatmap.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-echart-line.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-echart-line.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-echart-other.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-echart-other.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-echart-pie.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-echart-pie.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-echart-radar.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-echart-radar.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/charts-echart-scatter.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\charts-echart-scatter.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/dashboard-analytics.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\dashboard-analytics.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/dashboard-ecommerce.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\dashboard-ecommerce.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/error-400.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\error-400.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/error-401.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\error-401.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/error-403.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\error-403.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/error-404.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\error-404.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/error-408.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\error-408.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/error-500.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\error-500.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/error-maintenance.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\error-maintenance.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/form-elements.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\form-elements.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/form-fileuploads.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\form-fileuploads.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/form-layout.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\form-layout.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/form-other-plugin.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\form-other-plugin.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/form-pickers.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\form-pickers.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/form-range-slider.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\form-range-slider.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/form-select.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\form-select.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/form-text-editors.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\form-text-editors.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/form-validation.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\form-validation.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/form-wizard.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\form-wizard.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/icons-flags.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\icons-flags.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/icons-lucide.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\icons-lucide.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/icons-tabler.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\icons-tabler.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/index.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\index.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/landing.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\landing.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-boxed.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-boxed.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-compact.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-compact.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-horizontal.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-horizontal.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-preloader.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-preloader.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-scrollable.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-scrollable.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-sidebar-compact.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-sidebar-compact.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-sidebar-gradient.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-sidebar-gradient.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-sidebar-gray.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-sidebar-gray.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-sidebar-image.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-sidebar-image.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-sidebar-light.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-sidebar-light.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-sidebar-no-icons.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-sidebar-no-icons.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-sidebar-offcanvas.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-sidebar-offcanvas.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-sidebar-on-hover-active.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-sidebar-on-hover-active.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-sidebar-on-hover.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-sidebar-on-hover.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-sidebar-with-lines.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-sidebar-with-lines.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-topbar-dark.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-topbar-dark.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-topbar-gradient.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-topbar-gradient.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/layouts-topbar-gray.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\layouts-topbar-gray.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/maps-google.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\maps-google.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/maps-leaflet.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\maps-leaflet.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/maps-vector.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\maps-vector.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/metrics.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\metrics.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/pages-account-settings.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\pages-account-settings.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/pages-coming-soon.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\pages-coming-soon.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/pages-empty.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\pages-empty.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/pages-faq.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\pages-faq.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/pages-gallery.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\pages-gallery.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/pages-pricing.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\pages-pricing.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/pages-privacy-policy.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\pages-privacy-policy.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/pages-profile.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\pages-profile.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/pages-search-results.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\pages-search-results.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/pages-sitemap.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\pages-sitemap.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/pages-terms-conditions.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\pages-terms-conditions.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/pages-timeline.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\pages-timeline.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/plugins-animation.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\plugins-animation.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/plugins-clipboard.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\plugins-clipboard.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/plugins-i18.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\plugins-i18.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/plugins-idle-timer.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\plugins-idle-timer.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/plugins-live-favicon.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\plugins-live-favicon.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/plugins-loading-buttons.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\plugins-loading-buttons.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/plugins-masonry.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\plugins-masonry.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/plugins-pass-meter.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\plugins-pass-meter.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/plugins-pdf-viewer.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\plugins-pdf-viewer.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/plugins-sortable.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\plugins-sortable.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/plugins-sweet-alerts.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\plugins-sweet-alerts.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/plugins-text-diff.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\plugins-text-diff.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/plugins-tour.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\plugins-tour.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/plugins-tree-view.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\plugins-tree-view.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/plugins-video-player.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\plugins-video-player.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-custom.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-custom.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-datatables-ajax.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-datatables-ajax.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-datatables-basic.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-datatables-basic.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-datatables-checkbox-select.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-datatables-checkbox-select.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-datatables-child-rows.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-datatables-child-rows.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-datatables-column-searching.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-datatables-column-searching.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-datatables-columns.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-datatables-columns.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-datatables-export-data.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-datatables-export-data.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-datatables-fixed-columns.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-datatables-fixed-columns.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-datatables-fixed-header.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-datatables-fixed-header.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-datatables-javascript.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-datatables-javascript.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-datatables-range-search.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-datatables-range-search.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-datatables-rendering.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-datatables-rendering.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-datatables-rows-add.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-datatables-rows-add.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-datatables-scroll.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-datatables-scroll.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-datatables-select.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-datatables-select.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/tables-static.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\tables-static.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-accordions.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-accordions.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-alerts.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-alerts.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-badges.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-badges.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-breadcrumb.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-breadcrumb.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-buttons.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-buttons.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-cards.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-cards.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-carousel.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-carousel.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-collapse.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-collapse.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-colors.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-colors.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-dropdowns.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-dropdowns.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-grid.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-grid.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-images.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-images.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-links.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-links.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-list-group.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-list-group.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-modals.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-modals.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-notifications.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-notifications.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-offcanvas.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-offcanvas.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-pagination.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-pagination.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-placeholders.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-placeholders.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-popovers.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-popovers.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-progress.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-progress.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-scrollspy.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-scrollspy.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-spinners.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-spinners.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-tabs.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-tabs.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-tooltips.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-tooltips.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-typography.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-typography.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-utilities.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-utilities.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/ui-videos.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\ui-videos.html
+Content Type: text/html
+
+Uri: https://webapplayers.com/inspinia/bootstrap/widgets.html
+File Name: C:\Downloaded Web Sites\webapplayers.com\inspinia\bootstrap\widgets.html
+Content Type: text/html
+
