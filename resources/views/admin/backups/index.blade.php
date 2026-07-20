@@ -82,7 +82,7 @@
                     <button type="button" class="btn btn-primary d-inline-flex align-items-center gap-1"
                         data-swal-confirm="true"
                         data-swal-title="Buat Backup Full?"
-                        data-swal-text="Apakah Anda yakin ingin membuat backup seluruh database sekarang?"
+                        data-swal-text="Apakah Anda yakin ingin membuat backup seluruh database (dilengkapi statement DROP DATABASE) sekarang?"
                         data-swal-confirm-text="Ya, Buat Backup!"
                         data-form-id="full-backup-form">
                         <i class="ti ti-plus fs-18"></i>

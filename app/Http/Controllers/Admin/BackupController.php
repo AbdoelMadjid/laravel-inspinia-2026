@@ -228,6 +228,16 @@ class BackupController extends Controller
 
         $out .= "SET FOREIGN_KEY_CHECKS=0;\n\n";
 
+        // For Full Backup, include DROP DATABASE & CREATE DATABASE statements
+        if (!$isPartial && !empty($dbName)) {
+            $out .= "-- --------------------------------------------------------\n";
+            $out .= "-- Database structure for `{$dbName}`\n";
+            $out .= "-- --------------------------------------------------------\n";
+            $out .= "DROP DATABASE IF EXISTS `{$dbName}`;\n";
+            $out .= "CREATE DATABASE IF NOT EXISTS `{$dbName}` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\n";
+            $out .= "USE `{$dbName}`;\n\n";
+        }
+
         foreach ($tables as $table) {
             $out .= "-- --------------------------------------------------------\n";
             $out .= "-- Table structure for table `{$table}`\n";
