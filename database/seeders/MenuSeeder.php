@@ -110,7 +110,7 @@ class MenuSeeder extends Seeder
                 'sort_order' => 6,
                 'children' => [
                     [
-                        'name' => 'Menu Management',
+                        'name' => 'Menu',
                         'type' => 'item',
                         'icon' => 'ti ti-list-check',
                         'route_name' => 'admin.menus.index',
