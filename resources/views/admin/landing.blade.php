@@ -1,33 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.auth')
+
+@section('body_class', 'bg-body-secondary')
+
+@section('body_attributes')
+data-bs-spy="scroll" data-bs-target="#navbar-example"
+@endsection
 
 @section('title', 'One Page Landing | INSPINIA - Responsive Bootstrap 5 Admin Dashboard Template')
 
 @section('content')
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>One Page Landing | INSPINIA - Responsive Bootstrap 5 Admin Dashboard Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Inspinia is the #1 best-selling admin dashboard template on Wrapmarket. Perfect for building CRM, CMS, project management tools, and custom web apps with clean UI, responsive design, and powerful features." />
-        <meta name="keywords" content="Inspinia, admin dashboard, Wrapmarket, Wrapbootstrap, HTML template, Bootstrap admin, CRM template, CMS template, responsive admin, web app UI, admin theme, best admin template" />
-        <meta name="author" content="WebAppLayers" />
-
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" />
- <!-- Theme Config Js -->
-<script src="{{ asset('assets/js/config.js') }}"></script>
-
-<!-- Vendor css -->
-<link href="{{ asset('assets/css/vendors.min.css') }}" rel="stylesheet" type="text/css" />
-
-<!-- App css -->
-<link id="app-style" href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
-
-    </head>
-
-    <body class="bg-body-secondary" data-bs-spy="scroll" data-bs-target="#navbar-example">
-        <!-- Top Alert -->
+<!-- Top Alert -->
         <div class="alert alert-primary top-alert text-center mb-0 rounded-0 alert-dismissible" role="alert">
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
             <div class="fst-italic fw-medium">
@@ -1749,17 +1731,6 @@
             </div>
         </div>
         <!-- end offcanvas-->
- <!-- Vendor js -->
-<script src="{{ asset('assets/js/vendors.min.js') }}"></script>
-
-<!-- App js -->
-<script src="{{ asset('assets/js/app.js') }}"></script>
-
-
-        <!-- Landing Page js -->
-        <script src="{{ asset('assets/js/pages/landing.js') }}"></script>
-    </body>
-</html>
 @endsection
 
 @push('scripts')

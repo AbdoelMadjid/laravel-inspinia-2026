@@ -65,7 +65,8 @@ class ConvertHtmlViews extends Command
             // Determine if it is a plain page (auth, error, coming-soon)
             $isPlain = str_starts_with($nameWithoutExt, 'auth-') || 
                        str_starts_with($nameWithoutExt, 'error-') || 
-                       $nameWithoutExt === 'pages-coming-soon';
+                       $nameWithoutExt === 'pages-coming-soon' ||
+                       $nameWithoutExt === 'landing';
 
             if ($isPlain) {
                 $converted = $this->convertPlainPage($html, $nameWithoutExt);
@@ -298,13 +299,17 @@ class ConvertHtmlViews extends Command
     }
 
     /**
-     * Convert plain pages (auth, error, coming soon) that extend layouts.auth.
+     * Convert plain pages (auth, error, coming soon, landing) that extend layouts.auth.
      */
     private function convertPlainPage(string $html, string $pageName): string
     {
         // 0. Extract HTML attributes
         $htmlClass = '';
         $htmlAttrs = $this->extractHtmlAttributes($html, $htmlClass);
+
+        // Extract body attributes
+        $bodyClass = '';
+        $bodyAttrs = $this->extractBodyAttributes($html, $bodyClass);
 
         // 1. Extract title
         $title = 'INSPINIA';
@@ -314,11 +319,14 @@ class ConvertHtmlViews extends Command
 
         // 2. Extract content between <body> and </body>, excluding layout scripts
         $pageContent = '';
-        $bodyStart = strpos($html, '<body>');
+        $bodyStart = false;
         $bodyEnd = strpos($html, '</body>');
+
+        if (preg_match('/<body([^>]*)>/i', $html, $bodyMatches, PREG_OFFSET_CAPTURE)) {
+            $bodyStart = $bodyMatches[0][1] + strlen($bodyMatches[0][0]);
+        }
+
         if ($bodyStart !== false && $bodyEnd !== false) {
-            $bodyStart += 6;
-            
             $scriptStart = strpos($html, '<!-- Vendor js -->', $bodyStart);
             if ($scriptStart === false) {
                 $scriptStart = strpos($html, '<script src="assets/js/vendors.min.js">', $bodyStart);
@@ -352,8 +360,11 @@ class ConvertHtmlViews extends Command
         }
 
         $pageScripts = [];
-        if ($bodyEnd !== false && isset($bodyStart)) {
+        if ($bodyEnd !== false && $bodyStart !== false) {
             $scriptStart = strpos($html, '<!-- Vendor js -->', $bodyStart);
+            if ($scriptStart === false) {
+                $scriptStart = strpos($html, '<script src="assets/js/vendors.min.js">', $bodyStart);
+            }
             if ($scriptStart !== false && $scriptStart < $bodyEnd) {
                 $scriptsBlock = substr($html, $scriptStart, $bodyEnd - $scriptStart);
                 preg_match_all('/<script[^>]*>.*?<\/script>/is', $scriptsBlock, $scriptMatches);
@@ -372,6 +383,12 @@ class ConvertHtmlViews extends Command
         }
         if (!empty($htmlAttrs)) {
             $blade .= "@section('html_attributes')\n" . $htmlAttrs . "\n@endsection\n\n";
+        }
+        if (!empty($bodyClass)) {
+            $blade .= "@section('body_class', '" . addslashes($bodyClass) . "')\n\n";
+        }
+        if (!empty($bodyAttrs)) {
+            $blade .= "@section('body_attributes')\n" . $bodyAttrs . "\n@endsection\n\n";
         }
         $blade .= "@section('title', '" . addslashes($title) . "')\n\n";
 
@@ -414,7 +431,7 @@ class ConvertHtmlViews extends Command
             // Extract class attribute if it exists
             if (preg_match('/class="([^"]*)"/i', $attrs, $classMatches)) {
                 $class = trim($classMatches[1]);
-                $attrs = preg_replace('/class="[^"]*"/i', '', $attrs);
+                $attrs = preg_replace('/class="([^"]*)"/i', '', $attrs);
             }
 
             // Replace multiple spaces with a single space
@@ -424,5 +441,25 @@ class ConvertHtmlViews extends Command
         return '';
     }
 
+    /**
+     * Extract attributes of the <body> tag.
+     */
+    private function extractBodyAttributes(string $html, &$class): string
+    {
+        $class = '';
+        if (preg_match('/<body([^>]*)>/i', $html, $matches)) {
+            $attrs = trim($matches[1]);
+            
+            // Extract class attribute if it exists
+            if (preg_match('/class="([^"]*)"/i', $attrs, $classMatches)) {
+                $class = trim($classMatches[1]);
+                $attrs = preg_replace('/class="([^"]*)"/i', '', $attrs);
+            }
 
+            // Replace multiple spaces with a single space
+            $attrs = preg_replace('/\s+/', ' ', $attrs);
+            return trim($attrs);
+        }
+        return '';
+    }
 }

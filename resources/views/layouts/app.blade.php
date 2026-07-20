@@ -23,7 +23,7 @@
         @stack('styles')
     </head>
 
-    <body>
+    <body class="@yield('body_class')" @yield('body_attributes')>
         <!-- Begin page -->
         <div class="wrapper">
             @include('layouts.partials.topbar')
