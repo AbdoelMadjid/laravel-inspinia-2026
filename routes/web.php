@@ -22,6 +22,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::patch('menus/{menu}/toggle-status', [\App\Http\Controllers\Admin\MenuController::class, 'toggleStatus'])->name('menus.toggle-status');
+        Route::resource('menus', \App\Http\Controllers\Admin\MenuController::class);
+    });
+
     Route::get('/{page}', function ($page) {
         if ($page === 'landing') {
             return redirect()->route('home');
