@@ -101,13 +101,24 @@ class MenuSeeder extends Seeder
                 'type' => 'header',
                 'data_lang' => 'system-management',
                 'sort_order' => 5,
+                'roles' => [$adminRole, $userRole],
+            ],
+            [
+                'name' => 'Profile',
+                'type' => 'item',
+                'icon' => 'ti ti-user-circle',
+                'route_name' => 'page',
+                'route_params' => ['page' => 'profile-page'],
+                'data_lang' => 'profile',
+                'sort_order' => 6,
+                'roles' => [$adminRole, $userRole],
             ],
             [
                 'name' => 'Apps Management',
                 'type' => 'item',
                 'icon' => 'ti ti-apps',
                 'data_lang' => 'apps-management',
-                'sort_order' => 6,
+                'sort_order' => 7,
                 'children' => [
                     [
                         'name' => 'Menu',
@@ -135,7 +146,7 @@ class MenuSeeder extends Seeder
                 'icon' => 'ti ti-users-group',
                 'permission_name' => 'manage-users',
                 'data_lang' => 'users-management',
-                'sort_order' => 7,
+                'sort_order' => 8,
                 'children' => [
                     ['name' => 'Contacts / Users', 'type' => 'item', 'route_name' => 'admin.users.index', 'data_lang' => 'users-contacts', 'sort_order' => 1],
                     ['name' => 'Roles', 'type' => 'item', 'route_name' => 'admin.roles.index', 'data_lang' => 'users-roles', 'sort_order' => 2],

@@ -865,7 +865,7 @@
                         </div>
 
                         <!-- My Profile -->
-                        <a href="{{ route('page', 'pages-profile') }}" class="dropdown-item">
+                        <a href="{{ route('page', 'profile-page') }}" class="dropdown-item">
                             <i class="ti ti-user-circle me-1 fs-lg align-middle"></i>
                             <span class="align-middle" data-lang="profile">Profile</span>
                         </a>
