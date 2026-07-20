@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Users Management | INSPINIA')
+@section('title_lang', 'title-users-management')
 
 @section('content')
 <div class="container-fluid">

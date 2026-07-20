@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'User Permissions | INSPINIA - Responsive Bootstrap 5 Admin Dashboard Template')
+@section('title_lang', 'title-users-permissions')
 
 @section('content')
 <div class="container-fluid">

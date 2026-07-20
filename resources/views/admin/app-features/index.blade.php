@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Fitur Apps | INSPINIA')
+@section('title_lang', 'title-apps-features')
 
 @push('styles')
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap5.min.css') }}" rel="stylesheet" type="text/css" />

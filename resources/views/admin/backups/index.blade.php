@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Backup Database | INSPINIA')
+@section('title_lang', 'title-apps-backup-database')
 
 @section('content')
 <div class="container-fluid">

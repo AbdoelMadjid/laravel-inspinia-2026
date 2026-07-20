@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Menu Management | INSPINIA')
+@section('title_lang', 'title-menu-management')
 
 @push('styles')
     <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap5.min.css') }}" rel="stylesheet" type="text/css" />

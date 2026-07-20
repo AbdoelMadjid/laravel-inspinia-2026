@@ -378,6 +378,14 @@
   "users-contacts": "Kontak / Pengguna",
   "users-roles": "Peran Pengguna",
   "users-permissions": "Izin Akses",
+  "title-apps-management": "Manajemen Aplikasi | INSPINIA",
+  "title-menu-management": "Manajemen Menu | INSPINIA",
+  "title-apps-features": "Fitur Aplikasi | INSPINIA",
+  "title-apps-backup-database": "Cadangan Database | INSPINIA",
+  "title-users-management": "Manajemen Pengguna | INSPINIA",
+  "title-users-contacts": "Daftar Pengguna | INSPINIA",
+  "title-users-roles": "Peran Pengguna | INSPINIA",
+  "title-users-permissions": "Izin Akses | INSPINIA",
   "profile": "Profil Saya",
   "customizer-reset": "Atur Ulang"
 }

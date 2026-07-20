@@ -378,6 +378,14 @@
   "users-contacts": "Contacts / Users",
   "users-roles": "Roles",
   "users-permissions": "Permissions",
+  "title-apps-management": "Apps Management | INSPINIA",
+  "title-menu-management": "Menu Management | INSPINIA",
+  "title-apps-features": "App Features | INSPINIA",
+  "title-apps-backup-database": "Database Backup | INSPINIA",
+  "title-users-management": "Users Management | INSPINIA",
+  "title-users-contacts": "Users Management | INSPINIA",
+  "title-users-roles": "User Roles | INSPINIA",
+  "title-users-permissions": "User Permissions | INSPINIA",
   "profile": "Profile",
   "customizer-reset": "Reset"
 }
