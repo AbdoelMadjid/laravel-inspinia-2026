@@ -40,8 +40,8 @@ Route::middleware('auth')->group(function () {
         if ($page === 'landing') {
             return redirect()->route('home');
         }
-        if ($page === 'index') {
-            return redirect()->route('dashboard');
+        if ($page === 'index' || $page === 'dashboard-projects') {
+            return view('admin.index');
         }
         if (view()->exists('admin.' . $page)) {
             return view('admin.' . $page);

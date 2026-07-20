@@ -43,55 +43,14 @@ class MenuSeeder extends Seeder
 
         // Structure of menu items to seed
         $menuTree = [
-            // --- MAIN HEADER ---
+            // --- SINGLE DASHBOARD MENU (Top level, no header) ---
             [
-                'name' => 'Main',
-                'type' => 'header',
-                'data_lang' => 'main',
-                'sort_order' => 1,
-                'roles' => [$adminRole, $userRole],
-            ],
-            [
-                'name' => 'Dashboards',
+                'name' => 'Dashboard',
                 'type' => 'item',
                 'icon' => 'ti ti-dashboard',
-                'data_lang' => 'dashboards',
-                'sort_order' => 2,
-                'roles' => [$adminRole, $userRole],
-                'children' => [
-                    [
-                        'name' => 'Ecommerce',
-                        'type' => 'item',
-                        'route_name' => 'page',
-                        'route_params' => ['page' => 'dashboard-ecommerce'],
-                        'data_lang' => 'dashboard-ecommerce',
-                        'sort_order' => 1,
-                    ],
-                    [
-                        'name' => 'Analytics',
-                        'type' => 'item',
-                        'route_name' => 'page',
-                        'route_params' => ['page' => 'dashboard-analytics'],
-                        'data_lang' => 'dashboard-analytics',
-                        'sort_order' => 2,
-                    ],
-                    [
-                        'name' => 'Projects',
-                        'type' => 'item',
-                        'route_name' => 'dashboard',
-                        'data_lang' => 'dashboard-projects',
-                        'sort_order' => 3,
-                    ],
-                ],
-            ],
-            [
-                'name' => 'Landing',
-                'type' => 'item',
-                'icon' => 'ti ti-rocket',
-                'route_name' => 'page',
-                'route_params' => ['page' => 'landing'],
-                'data_lang' => 'landing',
-                'sort_order' => 3,
+                'route_name' => 'dashboard',
+                'data_lang' => 'dashboard',
+                'sort_order' => 1,
                 'roles' => [$adminRole, $userRole],
             ],
 
@@ -100,7 +59,7 @@ class MenuSeeder extends Seeder
                 'name' => 'System Management',
                 'type' => 'header',
                 'data_lang' => 'system-management',
-                'sort_order' => 5,
+                'sort_order' => 2,
                 'roles' => [$adminRole, $userRole],
             ],
             [
@@ -110,7 +69,7 @@ class MenuSeeder extends Seeder
                 'route_name' => 'page',
                 'route_params' => ['page' => 'profile-page'],
                 'data_lang' => 'profile',
-                'sort_order' => 6,
+                'sort_order' => 3,
                 'roles' => [$adminRole, $userRole],
             ],
             [
@@ -118,7 +77,7 @@ class MenuSeeder extends Seeder
                 'type' => 'item',
                 'icon' => 'ti ti-apps',
                 'data_lang' => 'apps-management',
-                'sort_order' => 7,
+                'sort_order' => 4,
                 'children' => [
                     [
                         'name' => 'Menu',
@@ -146,7 +105,7 @@ class MenuSeeder extends Seeder
                 'icon' => 'ti ti-users-group',
                 'permission_name' => 'manage-users',
                 'data_lang' => 'users-management',
-                'sort_order' => 8,
+                'sort_order' => 5,
                 'children' => [
                     ['name' => 'Contacts / Users', 'type' => 'item', 'route_name' => 'admin.users.index', 'data_lang' => 'users-contacts', 'sort_order' => 1],
                     ['name' => 'Roles', 'type' => 'item', 'route_name' => 'admin.roles.index', 'data_lang' => 'users-roles', 'sort_order' => 2],
@@ -154,19 +113,72 @@ class MenuSeeder extends Seeder
                 ],
             ],
 
+            // --- MAIN MENU HEADER ---
+            [
+                'name' => 'Main Menu',
+                'type' => 'header',
+                'data_lang' => 'main-menu',
+                'sort_order' => 10,
+                'roles' => [$adminRole],
+            ],
+            [
+                'name' => 'Dashboards',
+                'type' => 'item',
+                'icon' => 'ti ti-layout-grid',
+                'data_lang' => 'dashboards',
+                'sort_order' => 11,
+                'roles' => [$adminRole],
+                'children' => [
+                    [
+                        'name' => 'Ecommerce',
+                        'type' => 'item',
+                        'route_name' => 'page',
+                        'route_params' => ['page' => 'dashboard-ecommerce'],
+                        'data_lang' => 'dashboard-ecommerce',
+                        'sort_order' => 1,
+                    ],
+                    [
+                        'name' => 'Analytics',
+                        'type' => 'item',
+                        'route_name' => 'page',
+                        'route_params' => ['page' => 'dashboard-analytics'],
+                        'data_lang' => 'dashboard-analytics',
+                        'sort_order' => 2,
+                    ],
+                    [
+                        'name' => 'Projects',
+                        'type' => 'item',
+                        'route_name' => 'page',
+                        'route_params' => ['page' => 'dashboard-projects'],
+                        'data_lang' => 'dashboard-projects',
+                        'sort_order' => 3,
+                    ],
+                ],
+            ],
+            [
+                'name' => 'Landing',
+                'type' => 'item',
+                'icon' => 'ti ti-rocket',
+                'route_name' => 'page',
+                'route_params' => ['page' => 'landing'],
+                'data_lang' => 'landing',
+                'sort_order' => 12,
+                'roles' => [$adminRole],
+            ],
+
             // --- APPS HEADER ---
             [
                 'name' => 'Apps',
                 'type' => 'header',
                 'data_lang' => 'apps',
-                'sort_order' => 10,
+                'sort_order' => 20,
             ],
             [
                 'name' => 'Ecommerce',
                 'type' => 'item',
                 'icon' => 'ti ti-basket',
                 'data_lang' => 'ecommerce',
-                'sort_order' => 11,
+                'sort_order' => 21,
                 'children' => [
                     ['name' => 'Marketplace', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'apps-ecommerce-marketplace'], 'data_lang' => 'apps-ecommerce-marketplace', 'sort_order' => 1],
                     [
@@ -240,7 +252,7 @@ class MenuSeeder extends Seeder
                 'badge_text' => 'New',
                 'badge_class' => 'badge bg-danger text-white float-end',
                 'data_lang' => 'email',
-                'sort_order' => 12,
+                'sort_order' => 22,
                 'children' => [
                     ['name' => 'Inbox', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'apps-email-inbox'], 'data_lang' => 'apps-email-inbox', 'sort_order' => 1],
                     ['name' => 'Details', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'apps-email-details'], 'data_lang' => 'apps-email-details', 'sort_order' => 2],
@@ -252,7 +264,7 @@ class MenuSeeder extends Seeder
                 'type' => 'item',
                 'icon' => 'ti ti-users',
                 'data_lang' => 'users',
-                'sort_order' => 13,
+                'sort_order' => 23,
                 'children' => [
                     ['name' => 'Contacts', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'apps-users-contacts'], 'data_lang' => 'apps-users-contacts', 'sort_order' => 1],
                     ['name' => 'Roles', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'apps-users-roles'], 'data_lang' => 'apps-users-roles', 'sort_order' => 2],
@@ -265,7 +277,7 @@ class MenuSeeder extends Seeder
                 'type' => 'item',
                 'icon' => 'ti ti-briefcase',
                 'data_lang' => 'projects',
-                'sort_order' => 14,
+                'sort_order' => 24,
                 'children' => [
                     ['name' => 'My Projects', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'apps-projects-grid'], 'data_lang' => 'apps-projects-grid', 'sort_order' => 1],
                     ['name' => 'Projects List', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'apps-projects-list'], 'data_lang' => 'apps-projects-list', 'sort_order' => 2],
@@ -275,37 +287,37 @@ class MenuSeeder extends Seeder
                     ['name' => 'Activity Steam', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'apps-projects-activity'], 'data_lang' => 'apps-projects-activity', 'sort_order' => 6],
                 ],
             ],
-            ['name' => 'File Manager', 'type' => 'item', 'icon' => 'ti ti-folder-open', 'route_name' => 'page', 'route_params' => ['page' => 'apps-file-manager'], 'data_lang' => 'apps-file-manager', 'sort_order' => 15],
-            ['name' => 'Chat', 'type' => 'item', 'icon' => 'ti ti-message', 'route_name' => 'page', 'route_params' => ['page' => 'apps-chat'], 'data_lang' => 'apps-chat', 'sort_order' => 16],
-            ['name' => 'Calendar', 'type' => 'item', 'icon' => 'ti ti-calendar', 'route_name' => 'page', 'route_params' => ['page' => 'apps-calendar'], 'data_lang' => 'apps-calendar', 'sort_order' => 17],
-            ['name' => 'Social Feed', 'type' => 'item', 'icon' => 'ti ti-rss', 'route_name' => 'page', 'route_params' => ['page' => 'apps-social-feed'], 'data_lang' => 'apps-social-feed', 'sort_order' => 18],
+            ['name' => 'File Manager', 'type' => 'item', 'icon' => 'ti ti-folder-open', 'route_name' => 'page', 'route_params' => ['page' => 'apps-file-manager'], 'data_lang' => 'apps-file-manager', 'sort_order' => 25],
+            ['name' => 'Chat', 'type' => 'item', 'icon' => 'ti ti-message', 'route_name' => 'page', 'route_params' => ['page' => 'apps-chat'], 'data_lang' => 'apps-chat', 'sort_order' => 26],
+            ['name' => 'Calendar', 'type' => 'item', 'icon' => 'ti ti-calendar', 'route_name' => 'page', 'route_params' => ['page' => 'apps-calendar'], 'data_lang' => 'apps-calendar', 'sort_order' => 27],
+            ['name' => 'Social Feed', 'type' => 'item', 'icon' => 'ti ti-rss', 'route_name' => 'page', 'route_params' => ['page' => 'apps-social-feed'], 'data_lang' => 'apps-social-feed', 'sort_order' => 28],
             [
                 'name' => 'Invoice',
                 'type' => 'item',
                 'icon' => 'ti ti-invoice',
                 'data_lang' => 'invoice',
-                'sort_order' => 19,
+                'sort_order' => 29,
                 'children' => [
                     ['name' => 'Invoices', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'apps-invoice-list'], 'data_lang' => 'apps-invoice-list', 'sort_order' => 1],
                     ['name' => 'Single Invoice', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'apps-invoice-details'], 'data_lang' => 'apps-invoice-details', 'sort_order' => 2],
                     ['name' => 'New Invoice', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'apps-invoice-create'], 'data_lang' => 'apps-invoice-create', 'sort_order' => 3],
                 ],
             ],
-            ['name' => 'Companies', 'type' => 'item', 'icon' => 'ti ti-building', 'route_name' => 'page', 'route_params' => ['page' => 'apps-companies'], 'data_lang' => 'apps-companies', 'sort_order' => 20],
+            ['name' => 'Companies', 'type' => 'item', 'icon' => 'ti ti-building', 'route_name' => 'page', 'route_params' => ['page' => 'apps-companies'], 'data_lang' => 'apps-companies', 'sort_order' => 30],
 
             // --- CUSTOM PAGES HEADER ---
             [
                 'name' => 'Custom Pages',
                 'type' => 'header',
                 'data_lang' => 'custom-pages',
-                'sort_order' => 30,
+                'sort_order' => 40,
             ],
             [
                 'name' => 'Pages',
                 'type' => 'item',
                 'icon' => 'ti ti-files',
                 'data_lang' => 'pages',
-                'sort_order' => 31,
+                'sort_order' => 41,
                 'children' => [
                     ['name' => 'Profile', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'pages-profile'], 'data_lang' => 'pages-profile', 'sort_order' => 1],
                     ['name' => 'Account Settings', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'pages-account-settings'], 'data_lang' => 'pages-account-settings', 'sort_order' => 2],
@@ -326,7 +338,7 @@ class MenuSeeder extends Seeder
                 'type' => 'item',
                 'icon' => 'ti ti-cpu',
                 'data_lang' => 'plugins',
-                'sort_order' => 32,
+                'sort_order' => 42,
                 'children' => [
                     ['name' => 'Sortable List', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'plugins-sortable'], 'data_lang' => 'plugins-sortable', 'sort_order' => 1],
                     ['name' => 'Text Diff', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'plugins-text-diff'], 'data_lang' => 'plugins-text-diff', 'sort_order' => 2],
@@ -350,7 +362,7 @@ class MenuSeeder extends Seeder
                 'type' => 'item',
                 'icon' => 'ti ti-password-user',
                 'data_lang' => 'authentication',
-                'sort_order' => 33,
+                'sort_order' => 43,
                 'children' => [
                     [
                         'name' => 'Basic',
@@ -410,7 +422,7 @@ class MenuSeeder extends Seeder
                 'type' => 'item',
                 'icon' => 'ti ti-alert-triangle',
                 'data_lang' => 'error-pages',
-                'sort_order' => 34,
+                'sort_order' => 44,
                 'children' => [
                     ['name' => '400 Bad Request', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'error-400'], 'data_lang' => 'error-400', 'sort_order' => 1],
                     ['name' => '401 Unauthorized', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'error-401'], 'data_lang' => 'error-401', 'sort_order' => 2],
@@ -427,14 +439,14 @@ class MenuSeeder extends Seeder
                 'name' => 'Layouts',
                 'type' => 'header',
                 'data_lang' => 'layouts',
-                'sort_order' => 35,
+                'sort_order' => 50,
             ],
             [
                 'name' => 'Layout Options',
                 'type' => 'item',
                 'icon' => 'ti ti-layout',
                 'data_lang' => 'layout-options',
-                'sort_order' => 36,
+                'sort_order' => 51,
                 'children' => [
                     ['name' => 'Scrollable', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'layouts-scrollable'], 'target' => '_blank', 'data_lang' => 'layouts-scrollable', 'sort_order' => 1],
                     ['name' => 'Compact', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'layouts-compact'], 'target' => '_blank', 'data_lang' => 'layouts-compact', 'sort_order' => 2],
@@ -448,7 +460,7 @@ class MenuSeeder extends Seeder
                 'type' => 'item',
                 'icon' => 'ti ti-layout-sidebar-inactive',
                 'data_lang' => 'sidebars',
-                'sort_order' => 37,
+                'sort_order' => 52,
                 'children' => [
                     ['name' => 'Light Menu', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'layouts-sidebar-light'], 'target' => '_blank', 'data_lang' => 'layouts-sidebar-light', 'sort_order' => 1],
                     ['name' => 'Gradient Menu', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'layouts-sidebar-gradient'], 'target' => '_blank', 'data_lang' => 'layouts-sidebar-gradient', 'sort_order' => 2],
@@ -467,7 +479,7 @@ class MenuSeeder extends Seeder
                 'type' => 'item',
                 'icon' => 'ti ti-layout-bottombar',
                 'data_lang' => 'topbar',
-                'sort_order' => 38,
+                'sort_order' => 53,
                 'children' => [
                     ['name' => 'Dark Topbar', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'layouts-topbar-dark'], 'target' => '_blank', 'data_lang' => 'layouts-topbar-dark', 'sort_order' => 1],
                     ['name' => 'Gray Topbar', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'layouts-topbar-gray'], 'target' => '_blank', 'data_lang' => 'layouts-topbar-gray', 'sort_order' => 2],
@@ -480,14 +492,14 @@ class MenuSeeder extends Seeder
                 'name' => 'Components',
                 'type' => 'header',
                 'data_lang' => 'components',
-                'sort_order' => 40,
+                'sort_order' => 60,
             ],
             [
                 'name' => 'Base UI',
                 'type' => 'item',
                 'icon' => 'ti ti-components',
                 'data_lang' => 'base-ui',
-                'sort_order' => 41,
+                'sort_order' => 61,
                 'children' => [
                     ['name' => 'Accordions', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'ui-accordions'], 'data_lang' => 'ui-accordions', 'sort_order' => 1],
                     ['name' => 'Alerts', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'ui-alerts'], 'data_lang' => 'ui-alerts', 'sort_order' => 2],
@@ -519,14 +531,14 @@ class MenuSeeder extends Seeder
                     ['name' => 'Utilities', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'ui-utilities'], 'data_lang' => 'ui-utilities', 'sort_order' => 28],
                 ],
             ],
-            ['name' => 'Widgets', 'type' => 'item', 'icon' => 'ti ti-stack-2', 'route_name' => 'page', 'route_params' => ['page' => 'widgets'], 'data_lang' => 'widgets', 'sort_order' => 42],
-            ['name' => 'Metrics', 'type' => 'item', 'icon' => 'ti ti-chart-histogram', 'route_name' => 'page', 'route_params' => ['page' => 'metrics'], 'data_lang' => 'metrics', 'sort_order' => 43],
+            ['name' => 'Widgets', 'type' => 'item', 'icon' => 'ti ti-stack-2', 'route_name' => 'page', 'route_params' => ['page' => 'widgets'], 'data_lang' => 'widgets', 'sort_order' => 62],
+            ['name' => 'Metrics', 'type' => 'item', 'icon' => 'ti ti-chart-histogram', 'route_name' => 'page', 'route_params' => ['page' => 'metrics'], 'data_lang' => 'metrics', 'sort_order' => 63],
             [
                 'name' => 'Forms',
                 'type' => 'item',
                 'icon' => 'ti ti-clipboard-list',
                 'data_lang' => 'forms',
-                'sort_order' => 44,
+                'sort_order' => 64,
                 'children' => [
                     ['name' => 'Basic Elements', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'form-elements'], 'data_lang' => 'form-elements', 'sort_order' => 1],
                     ['name' => 'Pickers', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'form-pickers'], 'data_lang' => 'form-pickers', 'sort_order' => 2],
@@ -545,7 +557,7 @@ class MenuSeeder extends Seeder
                 'type' => 'item',
                 'icon' => 'ti ti-table-column',
                 'data_lang' => 'tables',
-                'sort_order' => 45,
+                'sort_order' => 65,
                 'children' => [
                     ['name' => 'Static Tables', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'tables-static'], 'data_lang' => 'tables-static', 'sort_order' => 1],
                     ['name' => 'Custom Tables', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'tables-custom'], 'data_lang' => 'tables-custom', 'sort_order' => 2],
@@ -581,7 +593,7 @@ class MenuSeeder extends Seeder
                 'type' => 'item',
                 'icon' => 'ti ti-icons',
                 'data_lang' => 'icons',
-                'sort_order' => 46,
+                'sort_order' => 66,
                 'children' => [
                     ['name' => 'Tabler', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'icons-tabler'], 'data_lang' => 'icons-tabler', 'sort_order' => 1],
                     ['name' => 'Lucide', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'icons-lucide'], 'data_lang' => 'icons-lucide', 'sort_order' => 2],
@@ -593,7 +605,7 @@ class MenuSeeder extends Seeder
                 'type' => 'item',
                 'icon' => 'ti ti-map',
                 'data_lang' => 'maps',
-                'sort_order' => 47,
+                'sort_order' => 67,
                 'children' => [
                     ['name' => 'Google Maps', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'maps-google'], 'data_lang' => 'maps-google', 'sort_order' => 1],
                     ['name' => 'Vector Maps', 'type' => 'item', 'route_name' => 'page', 'route_params' => ['page' => 'maps-vector'], 'data_lang' => 'maps-vector', 'sort_order' => 2],
@@ -606,14 +618,14 @@ class MenuSeeder extends Seeder
                 'name' => 'Menu Items',
                 'type' => 'header',
                 'data_lang' => 'menu-items',
-                'sort_order' => 50,
+                'sort_order' => 70,
             ],
             [
                 'name' => 'Menu Levels',
                 'type' => 'item',
                 'icon' => 'ti ti-sitemap',
                 'data_lang' => 'menu-levels',
-                'sort_order' => 51,
+                'sort_order' => 71,
                 'children' => [
                     [
                         'name' => 'Second Level',
@@ -653,7 +665,7 @@ class MenuSeeder extends Seeder
                 'url' => '#',
                 'link_class' => 'disabled',
                 'data_lang' => 'disabled-menu',
-                'sort_order' => 52,
+                'sort_order' => 72,
             ],
             [
                 'name' => 'Special Menu',
@@ -662,7 +674,7 @@ class MenuSeeder extends Seeder
                 'url' => '#',
                 'link_class' => 'special-menu',
                 'data_lang' => 'special-menu',
-                'sort_order' => 53,
+                'sort_order' => 73,
             ],
         ];
 
