@@ -1,0 +1,68 @@
+@extends('layouts.app')
+
+@section('title', 'Child Row Datatables | INSPINIA - Responsive Bootstrap 5 Admin Dashboard Template')
+
+@push('styles')
+    <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap5.min.css') }}" rel="stylesheet" type="text/css" />
+@endpush
+
+@section('content')
+<div class="container-fluid">
+                    <div class="page-title-head d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <h4 class="page-main-title m-0">Child Row</h4>
+                        </div>
+
+                        <div class="text-end">
+                            <ol class="breadcrumb m-0 py-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Inspinia</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">DataTables</a></li>
+                                <li class="breadcrumb-item active">Child Row</li>
+                            </ol>
+                        </div>
+                    </div>
+
+
+                    <div class="row justify-content-center">
+                        <div class="col-xxl-10">
+                            <div class="card">
+                                <div class="card-header justify-content-between">
+                                    <h4 class="card-title">Example</h4>
+                                    <a href="https://datatables.net/examples/api/row_details.html" target="_blank" class="icon-link icon-link-hover link-primary fw-semibold">
+                                        View Docs
+                                        <i class="ti ti-arrow-right bi align-middle fs-lg"></i>
+                                    </a>
+                                </div>
+
+                                <div class="card-body">
+                                    <table id="child-rows-data" class="table table-striped dt-responsive align-middle mb-0">
+                                        <thead class="thead-sm text-uppercase fs-xxs">
+                                            <tr>
+                                                <th></th>
+                                                <th>Company</th>
+                                                <th>Symbol</th>
+                                                <th>Price</th>
+                                                <th>Change</th>
+                                                <th>Volume</th>
+                                                <th>Market Cap</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <!-- end card-body-->
+                            </div>
+                            <!-- end card-->
+                        </div>
+                    </div>
+                </div>
+                <!-- container -->
+@endsection
+
+@push('scripts')
+    <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/dataTables.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/datatables-child-rows.js') }}"></script>
+@endpush
