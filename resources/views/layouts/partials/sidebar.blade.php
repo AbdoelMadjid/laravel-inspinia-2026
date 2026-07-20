@@ -23,6 +23,7 @@
     </button>
 
     <div class="scrollbar" data-simplebar="">
+        @if(\App\Models\AppFeature::isEnabled('sidebar_user_profile'))
         <div id="user-profile-settings" class="sidenav-user" style="background: url({{ asset('assets/images/user-bg-pattern.svg') }})">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
@@ -75,6 +76,7 @@
                 </div>
             </div>
         </div>
+        @endif
 
         <!--- Sidenav Menu -->
         <div id="sidenav-menu">

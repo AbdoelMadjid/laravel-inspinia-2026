@@ -22,8 +22,13 @@ class SidebarComposer
             ->orderBy('sort_order')
             ->get();
 
-        // Filter menus based on user visibility & Spatie roles/permissions
-        $filteredMenus = $rootMenus->filter(function (Menu $menu) use ($user) {
+        $showTemplateMenus = \App\Models\AppFeature::isEnabled('template_menus');
+
+        // Filter menus based on user visibility & Spatie roles/permissions & feature toggle
+        $filteredMenus = $rootMenus->filter(function (Menu $menu) use ($user, $showTemplateMenus) {
+            if (!$showTemplateMenus && $menu->sort_order >= 100) {
+                return false;
+            }
             return $menu->isVisibleForUser($user);
         });
 

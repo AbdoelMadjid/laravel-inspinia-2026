@@ -46,6 +46,9 @@ class DatabaseSeeder extends Seeder
         );
         $user->assignRole($userRole);
 
+        // Seed app features
+        $this->call(AppFeatureSeeder::class);
+
         // Seed dynamic database menus
         $this->call(MenuSeeder::class);
     }

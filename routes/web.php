@@ -31,6 +31,9 @@ Route::middleware('auth')->group(function () {
         Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
         Route::resource('permissions', \App\Http\Controllers\Admin\PermissionController::class);
 
+        Route::patch('app-features/{appFeature}/toggle-status', [\App\Http\Controllers\Admin\AppFeatureController::class, 'toggleStatus'])->name('app-features.toggle-status');
+        Route::resource('app-features', \App\Http\Controllers\Admin\AppFeatureController::class);
+
         Route::get('backups/{filename}/download', [\App\Http\Controllers\Admin\BackupController::class, 'download'])->name('backups.download');
         Route::delete('backups/{filename}', [\App\Http\Controllers\Admin\BackupController::class, 'destroy'])->name('backups.destroy');
         Route::resource('backups', \App\Http\Controllers\Admin\BackupController::class)->only(['index', 'store']);

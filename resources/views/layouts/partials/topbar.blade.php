@@ -34,11 +34,14 @@
                 <i class="ti ti-menu-4"></i>
             </button>
 
+            @if(\App\Models\AppFeature::isEnabled('topbar_search'))
             <div id="search-box" class="app-search d-none d-xl-flex">
                 <input type="search" class="form-control topbar-search" name="search" placeholder="Search for something..." />
                 <i class="ti ti-search app-search-icon text-muted"></i>
             </div>
+            @endif
 
+            @if(\App\Models\AppFeature::isEnabled('topbar_mega_menu'))
             <div id="megamenu-header" class="topbar-item d-none d-md-flex">
                 <div class="dropdown">
                     <button class="topbar-link btn fw-medium btn-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
@@ -132,7 +135,9 @@
                     </div>
                 </div>
             </div>
+            @endif
 
+            @if(\App\Models\AppFeature::isEnabled('topbar_apps_menu'))
             <div id="megamenu-apps" class="topbar-item d-none d-md-flex">
                 <div class="dropdown">
                     <button class="topbar-link btn fw-medium btn-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
@@ -321,16 +326,20 @@
                 </div>
                 <!-- .dropdown-->
             </div>
+            @endif
         </div>
 
         <div class="d-flex align-items-center gap-2">
+            @if(\App\Models\AppFeature::isEnabled('topbar_theme_toggler'))
             <div id="theme-toggler" class="topbar-item d-none d-sm-flex">
                 <button class="topbar-link" id="light-dark-mode" type="button">
                     <i class="ti ti-moon topbar-link-icon mode-light-moon"></i>
                     <i class="ti ti-sun topbar-link-icon mode-light-sun"></i>
                 </button>
             </div>
+            @endif
 
+            @if(\App\Models\AppFeature::isEnabled('topbar_apps_grid'))
             <div id="apps-dropdown-rounded" class="topbar-item">
                 <div class="dropdown">
                     <button class="topbar-link dropdown-toggle drop-arrow-none" data-bs-toggle="dropdown" type="button" data-bs-auto-close="outside" aria-haspopup="false" aria-expanded="false">
@@ -410,7 +419,9 @@
                 </div>
                 <!-- end dropdown-->
             </div>
+            @endif
 
+            @if(\App\Models\AppFeature::isEnabled('topbar_messages'))
             <div id="simple-messages-dropdown" class="topbar-item">
                 <div class="dropdown">
                     <button class="topbar-link dropdown-toggle drop-arrow-none" data-bs-toggle="dropdown" type="button" data-bs-auto-close="outside" aria-haspopup="false" aria-expanded="false">
@@ -555,7 +566,9 @@
                 </div>
                 <!-- end dropdown-->
             </div>
+            @endif
 
+            @if(\App\Models\AppFeature::isEnabled('topbar_notifications'))
             <div id="notification-dropdown-alert" class="topbar-item">
                 <div class="dropdown">
                     <button class="topbar-link dropdown-toggle drop-arrow-none" data-bs-toggle="dropdown" type="button" data-bs-auto-close="outside" aria-haspopup="false" aria-expanded="false">
@@ -810,26 +823,34 @@
                     </div>
                 </div>
             </div>
+            @endif
 
+            @if(\App\Models\AppFeature::isEnabled('topbar_fullscreen'))
             <div id="fullscreen-toggler" class="topbar-item d-none d-md-flex">
                 <button class="topbar-link" type="button" data-toggle="fullscreen">
                     <i class="ti ti-maximize topbar-link-icon"></i>
                     <i class="ti ti-minimize topbar-link-icon d-none"></i>
                 </button>
             </div>
+            @endif
 
+            @if(\App\Models\AppFeature::isEnabled('topbar_monochrome'))
             <div id="monochrome-toggler" class="topbar-item d-none d-xl-flex">
                 <button id="monochrome-mode" class="topbar-link" type="button" data-toggle="monochrome">
                     <i class="ti ti-palette topbar-link-icon"></i>
                 </button>
             </div>
+            @endif
 
+            @if(\App\Models\AppFeature::isEnabled('topbar_customizer'))
             <div class="topbar-item d-none d-sm-flex">
                 <button class="topbar-link btn-theme-setting" data-bs-toggle="offcanvas" data-bs-target="#theme-settings-offcanvas" type="button">
                     <i class="ti ti-settings topbar-link-icon"></i>
                 </button>
             </div>
+            @endif
 
+            @if(\App\Models\AppFeature::isEnabled('topbar_language'))
             <div id="language-selector" class="topbar-item">
                 <div class="dropdown">
                     <button class="topbar-link fw-bold" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
@@ -848,6 +869,7 @@
                     </div>
                 </div>
             </div>
+            @endif
 
             <div id="simple-user-dropdown" class="topbar-item nav-user">
                 <div class="dropdown">
