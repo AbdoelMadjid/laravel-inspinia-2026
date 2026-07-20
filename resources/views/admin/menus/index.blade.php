@@ -23,12 +23,6 @@
         </div>
     </div>
 
-    @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
-            <i class="ti ti-check-circle me-1"></i> {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
 
     <div class="row mt-3">
         <div class="col-12">

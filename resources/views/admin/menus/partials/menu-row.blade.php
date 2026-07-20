@@ -60,10 +60,15 @@
             <i class="ti ti-pencil"></i> Edit
         </button>
 
-        <form action="{{ route('admin.menus.destroy', $menu) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this menu?')">
+        <form action="{{ route('admin.menus.destroy', $menu) }}" method="POST" class="d-inline" id="delete-menu-form-{{ $menu->id }}">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-sm btn-soft-danger">
+            <button type="button" class="btn btn-sm btn-soft-danger" 
+                data-swal-confirm="true"
+                data-swal-title="Hapus Menu?"
+                data-swal-text="Apakah Anda yakin ingin menghapus menu '{{ $menu->name }}'?"
+                data-swal-confirm-text="Ya, Hapus!"
+                data-form-id="delete-menu-form-{{ $menu->id }}">
                 <i class="ti ti-trash"></i>
             </button>
         </form>

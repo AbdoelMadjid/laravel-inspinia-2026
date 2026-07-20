@@ -51,6 +51,8 @@
         <!-- App js -->
         <script src="{{ asset('assets/js/app.js') }}"></script>
 
+        @include('layouts.partials.sweetalert')
+
         @stack('scripts')
     </body>
 </html>

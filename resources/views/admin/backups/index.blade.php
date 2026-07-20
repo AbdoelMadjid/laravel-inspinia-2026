@@ -18,19 +18,6 @@
         </div>
     </div>
 
-    <!-- Alert Notifications -->
-    @if(session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <i class="ti ti-circle-check me-1 fs-18 align-middle"></i> {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
-    @if(session('error'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <i class="ti ti-alert-triangle me-1 fs-18 align-middle"></i> {{ session('error') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
 
     <!-- Quick Stats Widgets -->
     <div class="row mb-4">
@@ -89,10 +76,15 @@
                 </button>
 
                 <!-- Full Backup Form -->
-                <form method="POST" action="{{ route('admin.backups.store') }}" class="m-0">
+                <form method="POST" action="{{ route('admin.backups.store') }}" class="m-0" id="full-backup-form">
                     @csrf
                     <input type="hidden" name="backup_type" value="all">
-                    <button type="submit" class="btn btn-primary d-inline-flex align-items-center gap-1" onclick="return confirm('Are you sure you want to generate a full database backup?')">
+                    <button type="button" class="btn btn-primary d-inline-flex align-items-center gap-1"
+                        data-swal-confirm="true"
+                        data-swal-title="Buat Backup Full?"
+                        data-swal-text="Apakah Anda yakin ingin membuat backup seluruh database sekarang?"
+                        data-swal-confirm-text="Ya, Buat Backup!"
+                        data-form-id="full-backup-form">
                         <i class="ti ti-plus fs-18"></i>
                         <span>Create Full Backup</span>
                     </button>
@@ -135,33 +127,18 @@
                                         <a href="{{ route('admin.backups.download', $backup['name']) }}" class="btn btn-sm btn-outline-primary" title="Download Backup">
                                             <i class="ti ti-download"></i>
                                         </a>
-                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Backup" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $index }}">
-                                            <i class="ti ti-trash"></i>
-                                        </button>
-                                    </div>
-
-                                    <!-- Delete Modal -->
-                                    <div class="modal fade" id="deleteModal{{ $index }}" tabindex="-1" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">Confirm Delete</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body text-start">
-                                                    Are you sure you want to delete the backup file <strong class="text-danger">{{ $backup['name'] }}</strong>?
-                                                    This action cannot be undone.
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
-                                                    <form method="POST" action="{{ route('admin.backups.destroy', $backup['name']) }}" class="d-inline">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger">Delete Backup</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <form method="POST" action="{{ route('admin.backups.destroy', $backup['name']) }}" class="d-inline" id="delete-backup-form-{{ $index }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Backup"
+                                                data-swal-confirm="true"
+                                                data-swal-title="Hapus Backup?"
+                                                data-swal-text="Apakah Anda yakin ingin menghapus file backup '{{ $backup['name'] }}'?"
+                                                data-swal-confirm-text="Ya, Hapus!"
+                                                data-form-id="delete-backup-form-{{ $index }}">
+                                                <i class="ti ti-trash"></i>
+                                            </button>
+                                        </form>
                                     </div>
                                 </td>
                             </tr>
