@@ -165,6 +165,12 @@
         </form>
     </div>
 </div>
+
+<!-- Modals for Editing Menus -->
+@foreach ($allMenus as $menuItem)
+    @include('admin.menus.partials.edit-modal', ['menu' => $menuItem])
+@endforeach
+
 @endsection
 
 @push('scripts')
@@ -181,6 +187,9 @@
                     "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Semua"]],
                     "ordering": false,
                     "responsive": true,
+                    "columnDefs": [
+                        { "searchable": false, "orderable": false, "targets": 8 }
+                    ],
                     "language": {
                         "search": "Cari Menu:",
                         "lengthMenu": "Tampilkan _MENU_ baris",
