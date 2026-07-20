@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 // Home / Landing Page
 Route::get('/', function () {
+    if (view()->exists('template.landing')) {
+        return view('template.landing');
+    }
     return view('admin.landing');
 })->name('home');
 
@@ -13,6 +16,9 @@ require __DIR__.'/auth.php';
 
 // Dashboard Page (Admin Dashboard)
 Route::get('/dashboard', function () {
+    if (view()->exists('template.index')) {
+        return view('template.index');
+    }
     return view('admin.index');
 })->middleware(['auth'])->name('dashboard');
 
@@ -46,7 +52,10 @@ Route::middleware('auth')->group(function () {
             return redirect()->route('home');
         }
         if ($page === 'index' || $page === 'dashboard-projects') {
-            return view('admin.index');
+            return view(view()->exists('template.index') ? 'template.index' : 'admin.index');
+        }
+        if (view()->exists('template.' . $page)) {
+            return view('template.' . $page);
         }
         if (view()->exists('admin.' . $page)) {
             return view('admin.' . $page);
@@ -57,5 +66,8 @@ Route::middleware('auth')->group(function () {
 
 // Fallback route for non-existent pages/routes
 Route::fallback(function () {
+    if (view()->exists('template.error-404')) {
+        return response()->view('template.error-404', [], 404);
+    }
     return response()->view('admin.error-404', [], 404);
 });

@@ -27,7 +27,7 @@ class ConvertHtmlViews extends Command
     public function handle()
     {
         $masterPath = resource_path('views/master-html');
-        $destPath = resource_path('views/admin');
+        $destPath = resource_path('views/template');
 
         if (!File::isDirectory($masterPath)) {
             $this->error("Master HTML directory not found at {$masterPath}");
@@ -39,16 +39,6 @@ class ConvertHtmlViews extends Command
         $files = File::files($masterPath);
         $this->info("Found " . count($files) . " HTML files to convert.");
 
-        // First, extract sidebar.blade.php from index.html if it exists
-        $indexFile = $masterPath . '/index.html';
-        if (File::exists($indexFile)) {
-            $this->info("Extracting sidebar from index.html...");
-            $indexHtml = File::get($indexFile);
-            $this->extractAndSaveSidebar($indexHtml);
-        } else {
-            $this->warn("index.html not found! Sidebar extraction skipped. Make sure to generate it.");
-        }
-
         $bar = $this->output->createProgressBar(count($files));
         $bar->start();
 
@@ -56,10 +46,15 @@ class ConvertHtmlViews extends Command
             $nameWithoutExt = $file->getFilenameWithoutExtension();
             $html = File::get($file->getRealPath());
 
-            // Delete old file in root view directory if it exists
-            $oldFile = resource_path('views/' . $nameWithoutExt . '.blade.php');
-            if (File::exists($oldFile)) {
-                File::delete($oldFile);
+            // Delete old file in root view directory or admin directory if it exists
+            $oldFiles = [
+                resource_path('views/' . $nameWithoutExt . '.blade.php'),
+                resource_path('views/admin/' . $nameWithoutExt . '.blade.php'),
+            ];
+            foreach ($oldFiles as $oldFile) {
+                if (File::exists($oldFile)) {
+                    File::delete($oldFile);
+                }
             }
 
             // Determine if it is a plain page (auth, error, coming-soon)
