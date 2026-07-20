@@ -370,6 +370,14 @@
   "customizer-sidebar-user": "Sidebar User Info",
   "customizer-buy-now": "Buy Now",
   "system-management": "System Management",
+  "apps-management": "Apps Management",
+  "menu-management": "Menu Management",
+  "apps-features": "App Features",
+  "apps-backup-database": "Database Backup",
+  "users-management": "Users Management",
+  "users-contacts": "Contacts / Users",
+  "users-roles": "Roles",
+  "users-permissions": "Permissions",
   "profile": "Profile",
   "customizer-reset": "Reset"
 }

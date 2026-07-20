@@ -370,6 +370,14 @@
   "customizer-sidebar-user": "Info Pengguna Bilah Sisi",
   "customizer-buy-now": "Beli Sekarang",
   "system-management": "Manajemen Sistem",
+  "apps-management": "Manajemen Aplikasi",
+  "menu-management": "Manajemen Menu",
+  "apps-features": "Fitur Aplikasi",
+  "apps-backup-database": "Cadangan Database",
+  "users-management": "Manajemen Pengguna",
+  "users-contacts": "Kontak / Pengguna",
+  "users-roles": "Peran Pengguna",
+  "users-permissions": "Izin Akses",
   "profile": "Profil Saya",
   "customizer-reset": "Atur Ulang"
 }

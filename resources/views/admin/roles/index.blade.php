@@ -6,14 +6,14 @@
 <div class="container-fluid">
     <div class="page-title-head d-flex align-items-center">
         <div class="flex-grow-1">
-            <h4 class="page-main-title m-0">Roles</h4>
+            <h4 class="page-main-title m-0" data-lang="users-roles">Roles</h4>
         </div>
 
         <div class="text-end">
             <ol class="breadcrumb m-0 py-0">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Inspinia</a></li>
-                <li class="breadcrumb-item"><a href="javascript: void(0);">Users</a></li>
-                <li class="breadcrumb-item active">Roles</li>
+                <li class="breadcrumb-item"><a href="javascript: void(0);" data-lang="users-management">Users Management</a></li>
+                <li class="breadcrumb-item active" data-lang="users-roles">Roles</li>
             </ol>
         </div>
     </div>

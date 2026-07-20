@@ -7,13 +7,13 @@
     <!-- Page Header -->
     <div class="page-title-head d-flex align-items-center">
         <div class="flex-grow-1">
-            <h4 class="page-main-title m-0">Backup Database</h4>
+            <h4 class="page-main-title m-0" data-lang="apps-backup-database">Backup Database</h4>
         </div>
         <div class="text-end">
             <ol class="breadcrumb m-0 py-0">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Inspinia</a></li>
-                <li class="breadcrumb-item"><a href="javascript: void(0);">Apps Management</a></li>
-                <li class="breadcrumb-item active">Backup Database</li>
+                <li class="breadcrumb-item"><a href="javascript: void(0);" data-lang="apps-management">Apps Management</a></li>
+                <li class="breadcrumb-item active" data-lang="apps-backup-database">Backup Database</li>
             </ol>
         </div>
     </div>
