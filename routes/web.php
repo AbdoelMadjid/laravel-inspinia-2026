@@ -1,14 +1,38 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+// Home / Landing Page
 Route::get('/', function () {
-    return view('admin.index');
+    return view('admin.landing');
 })->name('home');
 
-Route::get('/{page}', function ($page) {
-    if (view()->exists('admin.' . $page)) {
-        return view('admin.' . $page);
-    }
-    abort(404);
-})->name('page');
+// Breeze Auth Routes (login, register, forgot-password, logout, etc.)
+require __DIR__.'/auth.php';
+
+// Dashboard Page (Admin Dashboard)
+Route::get('/dashboard', function () {
+    return view('admin.index');
+})->middleware(['auth'])->name('dashboard');
+
+// Protected Admin Pages
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/{page}', function ($page) {
+        if ($page === 'landing') {
+            return redirect()->route('home');
+        }
+        if ($page === 'index') {
+            return redirect()->route('dashboard');
+        }
+        if (view()->exists('admin.' . $page)) {
+            return view('admin.' . $page);
+        }
+        abort(404);
+    })->name('page');
+});
+

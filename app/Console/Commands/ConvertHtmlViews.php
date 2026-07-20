@@ -131,7 +131,10 @@ class ConvertHtmlViews extends Command
         return preg_replace_callback('/href="([a-zA-Z0-9\-_]+)\.html"/i', function ($matches) {
             $page = $matches[1];
             if ($page === 'index') {
-                return 'href="{{ route(\'home\') }}/"';
+                return 'href="{{ route(\'dashboard\') }}"';
+            }
+            if ($page === 'landing') {
+                return 'href="{{ route(\'home\') }}"';
             }
             return 'href="{{ route(\'page\', \'' . $page . '\') }}"';
         }, $content);

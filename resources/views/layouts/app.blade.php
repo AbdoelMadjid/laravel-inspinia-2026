@@ -34,6 +34,7 @@
 
             <div class="content-page">
                 @yield('content')
+                {{ $slot ?? '' }}
 
                 @include('layouts.partials.footer')
             </div>

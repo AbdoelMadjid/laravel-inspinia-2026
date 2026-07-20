@@ -62,8 +62,12 @@ data-bs-spy="scroll" data-bs-target="#navbar-example"
 
                         <div>
                             <button class="btn btn-link btn-icon fw-semibold text-body" type="button" id="theme-toggle"><i class="ti ti-contrast fs-22"></i></button>
-                            <a href="{{ route('page', 'auth-sign-in') }}" class="btn btn-link fw-semibold text-body ps-2">SIGN IN</a>
-                            <a href="{{ route('page', 'auth-sign-up') }}" class="btn btn-sm btn-primary">Sign Up</a>
+                            @auth
+                                <a href="{{ route('dashboard') }}" class="btn btn-sm btn-primary ms-2">Dashboard</a>
+                            @else
+                                <a href="{{ route('login') }}" class="btn btn-link fw-semibold text-body ps-2">SIGN IN</a>
+                                <a href="{{ route('register') }}" class="btn btn-sm btn-primary">Sign Up</a>
+                            @endauth
                         </div>
                     </div>
                     <!-- end .navbar-collapse-->
