@@ -9,15 +9,12 @@
             <h4 class="page-main-title m-0">Menu Management</h4>
         </div>
 
-        <div class="d-flex align-items-center gap-3">
-            <ol class="breadcrumb m-0 py-0 me-2">
+        <div class="text-end">
+            <ol class="breadcrumb m-0 py-0">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="ti ti-smart-home me-1"></i>Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="javascript: void(0);">System Management</a></li>
                 <li class="breadcrumb-item active">Menu Management</li>
             </ol>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createMenuModal">
-                <i class="ti ti-plus me-1"></i> Add New Menu
-            </button>
         </div>
     </div>
 
@@ -31,8 +28,11 @@
     <div class="row mt-3">
         <div class="col-12">
             <div class="card">
-                <div class="card-header bg-light">
+                <div class="card-header bg-light d-flex align-items-center justify-content-between py-2">
                     <h5 class="card-title mb-0"><i class="ti ti-sitemap me-2"></i>Database Menus &amp; Spatie Role Access</h5>
+                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#createMenuModal">
+                        <i class="ti ti-plus me-1"></i> Add New Menu
+                    </button>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
