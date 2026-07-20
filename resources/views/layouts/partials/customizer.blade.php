@@ -1,8 +1,8 @@
 <div class="offcanvas offcanvas-end overflow-hidden" tabindex="-1" id="theme-settings-offcanvas">
     <div class="d-flex justify-content-between text-bg-primary gap-2 p-3" style="background-image: url({{ asset('assets/images/settings-bg.png') }})">
         <div>
-            <h5 class="mb-1 fw-bold text-white text-uppercase">Admin Customizer</h5>
-            <p class="text-white text-opacity-75 fst-italic fw-medium mb-0">Easily configure layout, styles, and preferences for your admin interface.</p>
+            <h5 class="mb-1 fw-bold text-white text-uppercase" data-lang="customizer-title">Admin Customizer</h5>
+            <p class="text-white text-opacity-75 fst-italic fw-medium mb-0" data-lang="customizer-subtitle">Easily configure layout, styles, and preferences for your admin interface.</p>
         </div>
 
         <div class="flex-grow-0">
@@ -14,7 +14,7 @@
 
     <div class="offcanvas-body theme-customizer-bar p-0 h-100" data-simplebar="">
         <div id="skin" class="p-3 border-bottom border-dashed">
-            <h5 class="mb-3 fw-bold">Select Theme</h5>
+            <h5 class="mb-3 fw-bold" data-lang="customizer-select-theme">Select Theme</h5>
             <div class="row g-3">
                 <div class="col-6" id="skin-default">
                     <div class="form-check card-radio">
@@ -23,7 +23,7 @@
                             <img src="{{ asset('assets/images/layouts/skin-default.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="text-center text-muted mt-2 mb-0">Default</h5>
+                    <h5 class="text-center text-muted mt-2 mb-0" data-lang="customizer-theme-default">Default</h5>
                 </div>
 
                 <div class="col-6" id="skin-luxe">
@@ -33,7 +33,7 @@
                             <img src="{{ asset('assets/images/layouts/skin-luxe.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="text-center text-muted mt-2 mb-0">Luxe</h5>
+                    <h5 class="text-center text-muted mt-2 mb-0" data-lang="customizer-theme-luxe">Luxe</h5>
                 </div>
 
                 <div class="col-6" id="skin-neon">
@@ -43,7 +43,7 @@
                             <img src="{{ asset('assets/images/layouts/skin-neon.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="text-center text-muted mt-2 mb-0">Neon</h5>
+                    <h5 class="text-center text-muted mt-2 mb-0" data-lang="customizer-theme-neon">Neon</h5>
                 </div>
 
                 <div class="col-6" id="skin-retro">
@@ -53,7 +53,7 @@
                             <img src="{{ asset('assets/images/layouts/skin-retro.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="text-center text-muted mt-2 mb-0">Retro</h5>
+                    <h5 class="text-center text-muted mt-2 mb-0" data-lang="customizer-theme-retro">Retro</h5>
                 </div>
 
                 <div class="col-6" id="skin-pixel">
@@ -63,7 +63,7 @@
                             <img src="{{ asset('assets/images/layouts/skin-pixel.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="text-center text-muted mt-2 mb-0">Pixel</h5>
+                    <h5 class="text-center text-muted mt-2 mb-0" data-lang="customizer-theme-pixel">Pixel</h5>
                 </div>
 
                 <div class="col-6" id="skin-galaxy">
@@ -73,7 +73,7 @@
                             <img src="{{ asset('assets/images/layouts/skin-galaxy.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="text-center text-muted mt-2 mb-0">Galaxy</h5>
+                    <h5 class="text-center text-muted mt-2 mb-0" data-lang="customizer-theme-galaxy">Galaxy</h5>
                 </div>
 
                 <div class="col-6" id="skin-material">
@@ -83,7 +83,7 @@
                             <img src="{{ asset('assets/images/layouts/skin-material.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="text-center text-muted mt-2 mb-0">Material</h5>
+                    <h5 class="text-center text-muted mt-2 mb-0" data-lang="customizer-theme-material">Material</h5>
                 </div>
 
                 <div class="col-6" id="skin-minimal">
@@ -93,7 +93,7 @@
                             <img src="{{ asset('assets/images/layouts/skin-minimal.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="text-center text-muted mt-2 mb-0">Minimal</h5>
+                    <h5 class="text-center text-muted mt-2 mb-0" data-lang="customizer-theme-minimal">Minimal</h5>
                 </div>
 
                 <div class="col-6" id="skin-modern">
@@ -103,7 +103,7 @@
                             <img src="{{ asset('assets/images/layouts/skin-modern.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="text-center text-muted mt-2 mb-0">Modern</h5>
+                    <h5 class="text-center text-muted mt-2 mb-0" data-lang="customizer-theme-modern">Modern</h5>
                 </div>
 
                 <div class="col-6" id="skin-saas">
@@ -113,7 +113,7 @@
                             <img src="{{ asset('assets/images/layouts/skin-saas.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="text-center text-muted mt-2 mb-0">Saas</h5>
+                    <h5 class="text-center text-muted mt-2 mb-0" data-lang="customizer-theme-saas">Saas</h5>
                 </div>
 
                 <div class="col-6" id="skin-flat">
@@ -123,13 +123,13 @@
                             <img src="{{ asset('assets/images/layouts/skin-flat.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="text-center text-muted mt-2 mb-0">Flat</h5>
+                    <h5 class="text-center text-muted mt-2 mb-0" data-lang="customizer-theme-flat">Flat</h5>
                 </div>
             </div>
         </div>
 
         <div id="theme" class="p-3 border-bottom border-dashed">
-            <h5 class="mb-3 fw-bold">Color Scheme</h5>
+            <h5 class="mb-3 fw-bold" data-lang="customizer-color-scheme">Color Scheme</h5>
             <div class="row">
                 <div class="col-4" id="theme-light">
                     <div class="form-check card-radio">
@@ -138,7 +138,7 @@
                             <img src="{{ asset('assets/images/layouts/theme-light.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="text-center text-muted mt-2 mb-0">Light</h5>
+                    <h5 class="text-center text-muted mt-2 mb-0" data-lang="customizer-scheme-light">Light</h5>
                 </div>
 
                 <div class="col-4" id="theme-dark">
@@ -148,7 +148,7 @@
                             <img src="{{ asset('assets/images/layouts/theme-dark.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="text-center text-muted mt-2 mb-0">Dark</h5>
+                    <h5 class="text-center text-muted mt-2 mb-0" data-lang="customizer-scheme-dark">Dark</h5>
                 </div>
 
                 <div class="col-4" id="theme-system">
@@ -158,13 +158,13 @@
                             <img src="{{ asset('assets/images/layouts/theme-system.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="text-center text-muted mt-2 mb-0">System</h5>
+                    <h5 class="text-center text-muted mt-2 mb-0" data-lang="customizer-scheme-system">System</h5>
                 </div>
             </div>
         </div>
 
         <div id="topbar-color" class="p-3 border-bottom border-dashed">
-            <h5 class="mb-3 fw-bold">Topbar Color</h5>
+            <h5 class="mb-3 fw-bold" data-lang="customizer-topbar-color">Topbar Color</h5>
 
             <div class="row g-3">
                 <div class="col-4" id="topbar-color-light">
@@ -174,7 +174,7 @@
                             <img src="{{ asset('assets/images/layouts/topbar-color-light.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="text-center text-muted mt-2 mb-0">Light</h5>
+                    <h5 class="text-center text-muted mt-2 mb-0" data-lang="customizer-color-light">Light</h5>
                 </div>
 
                 <div class="col-4" id="topbar-color-dark">
@@ -184,7 +184,7 @@
                             <img src="{{ asset('assets/images/layouts/topbar-color-dark.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="fs-sm text-center text-muted mt-2 mb-0">Dark</h5>
+                    <h5 class="fs-sm text-center text-muted mt-2 mb-0" data-lang="customizer-color-dark">Dark</h5>
                 </div>
 
                 <div class="col-4" id="topbar-color-gray">
@@ -194,7 +194,7 @@
                             <img src="{{ asset('assets/images/layouts/topbar-color-gray.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="fs-sm text-center text-muted mt-2 mb-0">Gray</h5>
+                    <h5 class="fs-sm text-center text-muted mt-2 mb-0" data-lang="customizer-color-gray">Gray</h5>
                 </div>
 
                 <div class="col-4" id="topbar-color-gradient">
@@ -204,13 +204,13 @@
                             <img src="{{ asset('assets/images/layouts/topbar-color-gradient.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="fs-sm text-center text-muted mt-2 mb-0">Gradient</h5>
+                    <h5 class="fs-sm text-center text-muted mt-2 mb-0" data-lang="customizer-color-gradient">Gradient</h5>
                 </div>
             </div>
         </div>
 
         <div id="sidenav-color" class="p-3 border-bottom border-dashed">
-            <h5 class="mb-3 fw-bold">Sidenav Color</h5>
+            <h5 class="mb-3 fw-bold" data-lang="customizer-sidenav-color">Sidenav Color</h5>
 
             <div class="row g-3">
                 <div class="col-4" id="sidenav-color-light">
@@ -220,7 +220,7 @@
                             <img src="{{ asset('assets/images/layouts/sidenav-color-light.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="fs-sm text-center text-muted mt-2 mb-0">Light</h5>
+                    <h5 class="fs-sm text-center text-muted mt-2 mb-0" data-lang="customizer-color-light">Light</h5>
                 </div>
 
                 <div class="col-4" id="sidenav-color-dark">
@@ -230,7 +230,7 @@
                             <img src="{{ asset('assets/images/layouts/sidenav-color-dark.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="fs-sm text-center text-muted mt-2 mb-0">Dark</h5>
+                    <h5 class="fs-sm text-center text-muted mt-2 mb-0" data-lang="customizer-color-dark">Dark</h5>
                 </div>
 
                 <div class="col-4" id="sidenav-color-gray">
@@ -240,7 +240,7 @@
                             <img src="{{ asset('assets/images/layouts/sidenav-color-gray.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="fs-sm text-center text-muted mt-2 mb-0">Gray</h5>
+                    <h5 class="fs-sm text-center text-muted mt-2 mb-0" data-lang="customizer-color-gray">Gray</h5>
                 </div>
 
                 <div class="col-4" id="sidenav-color-gradient">
@@ -250,7 +250,7 @@
                             <img src="{{ asset('assets/images/layouts/sidenav-color-gradient.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="fs-sm text-center text-muted mt-2 mb-0">Gradient</h5>
+                    <h5 class="fs-sm text-center text-muted mt-2 mb-0" data-lang="customizer-color-gradient">Gradient</h5>
                 </div>
                 <div class="col-4" id="sidenav-color-image">
                     <div class="form-check sidebar-setting card-radio">
@@ -259,13 +259,13 @@
                             <img src="{{ asset('assets/images/layouts/sidenav-color-image.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="fs-sm text-center text-muted mt-2 mb-0">Image</h5>
+                    <h5 class="fs-sm text-center text-muted mt-2 mb-0" data-lang="customizer-color-image">Image</h5>
                 </div>
             </div>
         </div>
 
         <div id="sidenav-size" class="p-3 border-bottom border-dashed">
-            <h5 class="mb-3 fw-bold">Sidebar Size</h5>
+            <h5 class="mb-3 fw-bold" data-lang="customizer-sidebar-size">Sidebar Size</h5>
 
             <div class="row g-3">
                 <div class="col-4" id="sidenav-size-default">
@@ -275,7 +275,7 @@
                             <img src="{{ asset('assets/images/layouts/sidenav-size-default.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="mb-0 text-center text-muted mt-2">Default</h5>
+                    <h5 class="mb-0 text-center text-muted mt-2" data-lang="customizer-size-default">Default</h5>
                 </div>
 
                 <div class="col-4" id="sidenav-size-compact">
@@ -285,7 +285,7 @@
                             <img src="{{ asset('assets/images/layouts/sidenav-size-compact.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="mb-0 text-center text-muted mt-2">Compact</h5>
+                    <h5 class="mb-0 text-center text-muted mt-2" data-lang="customizer-size-compact">Compact</h5>
                 </div>
 
                 <div class="col-4" id="sidenav-size-condensed">
@@ -295,7 +295,7 @@
                             <img src="{{ asset('assets/images/layouts/sidenav-size-condensed.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="mb-0 text-center text-muted mt-2">Condensed</h5>
+                    <h5 class="mb-0 text-center text-muted mt-2" data-lang="customizer-size-condensed">Condensed</h5>
                 </div>
 
                 <div class="col-4" id="sidenav-size-on-hover">
@@ -305,7 +305,7 @@
                             <img src="{{ asset('assets/images/layouts/sidenav-size-on-hover.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="mb-0 text-center text-muted mt-2">On Hover</h5>
+                    <h5 class="mb-0 text-center text-muted mt-2" data-lang="customizer-size-hover">On Hover</h5>
                 </div>
 
                 <div class="col-4" id="sidenav-size-on-hover-active">
@@ -315,7 +315,7 @@
                             <img src="{{ asset('assets/images/layouts/sidenav-size-on-hover-active.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="mb-0 fs-base text-center text-muted mt-2">On Hover - Show</h5>
+                    <h5 class="mb-0 fs-base text-center text-muted mt-2" data-lang="customizer-size-hover-show">On Hover - Show</h5>
                 </div>
 
                 <div class="col-4" id="sidenav-size-offcanvas">
@@ -325,13 +325,13 @@
                             <img src="{{ asset('assets/images/layouts/sidenav-size-offcanvas.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="mb-0 text-center text-muted mt-2">Offcanvas</h5>
+                    <h5 class="mb-0 text-center text-muted mt-2" data-lang="customizer-size-offcanvas">Offcanvas</h5>
                 </div>
             </div>
         </div>
 
         <div id="width" class="p-3 border-bottom border-dashed">
-            <h5 class="mb-3 fw-bold">Layout Width</h5>
+            <h5 class="mb-3 fw-bold" data-lang="customizer-layout-width">Layout Width</h5>
 
             <div class="row g-3">
                 <div class="col-4" id="width-fluid">
@@ -341,7 +341,7 @@
                             <img src="{{ asset('assets/images/layouts/width-fluid.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="mb-0 text-center text-muted mt-2">Fluid</h5>
+                    <h5 class="mb-0 text-center text-muted mt-2" data-lang="customizer-width-fluid">Fluid</h5>
                 </div>
 
                 <div class="col-4" id="width-boxed">
@@ -351,13 +351,13 @@
                             <img src="{{ asset('assets/images/layouts/width-boxed.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="mb-0 text-center text-muted mt-2">Boxed</h5>
+                    <h5 class="mb-0 text-center text-muted mt-2" data-lang="customizer-width-boxed">Boxed</h5>
                 </div>
             </div>
         </div>
 
         <div id="dir" class="p-3 border-bottom border-dashed">
-            <h5 class="mb-3 fw-bold">Layout Direction</h5>
+            <h5 class="mb-3 fw-bold" data-lang="customizer-layout-direction">Layout Direction</h5>
 
             <div class="row g-3">
                 <div class="col-4" id="dir-ltr">
@@ -367,7 +367,7 @@
                             <img src="{{ asset('assets/images/layouts/dir-ltr.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="mb-0 text-center text-muted mt-2">LTR</h5>
+                    <h5 class="mb-0 text-center text-muted mt-2" data-lang="customizer-dir-ltr">LTR</h5>
                 </div>
 
                 <div class="col-4" id="dir-rtl">
@@ -377,23 +377,23 @@
                             <img src="{{ asset('assets/images/layouts/dir-rtl.png') }}" alt="layout-img" class="img-fluid" />
                         </label>
                     </div>
-                    <h5 class="mb-0 text-center text-muted mt-2">RTL</h5>
+                    <h5 class="mb-0 text-center text-muted mt-2" data-lang="customizer-dir-rtl">RTL</h5>
                 </div>
             </div>
         </div>
 
         <div id="position" class="p-3 border-bottom border-dashed">
             <div class="d-flex justify-content-between align-items-center">
-                <h5 class="fw-bold mb-0">Layout Position</h5>
+                <h5 class="fw-bold mb-0" data-lang="customizer-layout-position">Layout Position</h5>
 
                 <div class="d-flex gap-1">
                     <div id="position-fixed">
                         <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-fixed" value="fixed" />
-                        <label class="btn btn-sm btn-soft-warning w-sm" for="layout-position-fixed">Fixed</label>
+                        <label class="btn btn-sm btn-soft-warning w-sm" for="layout-position-fixed" data-lang="customizer-position-fixed">Fixed</label>
                     </div>
                     <div id="position-scrollable">
                         <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-scrollable" value="scrollable" />
-                        <label class="btn btn-sm btn-soft-warning w-sm ms-0" for="layout-position-scrollable">Scrollable</label>
+                        <label class="btn btn-sm btn-soft-warning w-sm ms-0" for="layout-position-scrollable" data-lang="customizer-position-scrollable">Scrollable</label>
                     </div>
                 </div>
             </div>
@@ -402,7 +402,7 @@
         <div id="sidenav-user" class="p-3">
             <div class="d-flex justify-content-between align-items-center">
                 <h5 class="mb-0">
-                    <label class="fw-bold m-0" for="sidebaruser-check">Sidebar User Info</label>
+                    <label class="fw-bold m-0" for="sidebaruser-check" data-lang="customizer-sidebar-user">Sidebar User Info</label>
                 </h5>
                 <div class="form-check form-switch fs-lg">
                     <input type="checkbox" class="form-check-input" name="sidebar-user" id="sidebaruser-check" />
@@ -414,10 +414,10 @@
     <div class="offcanvas-footer border-top p-3 text-center">
         <div class="row justify-content-end">
             <div class="col-6">
-                <a href="https://wrapmarket.com/item/inspinia-multipurpose-admin-dashboard-template-WB0R5L90S?via=webapp" class="btn btn-success fw-semibold py-2 w-100" target="_blank"><i class="ti ti-basket me-2 fs-md"></i> Buy Now</a>
+                <a href="https://wrapmarket.com/item/inspinia-multipurpose-admin-dashboard-template-WB0R5L90S?via=webapp" class="btn btn-success fw-semibold py-2 w-100" target="_blank"><i class="ti ti-basket me-2 fs-md"></i> <span data-lang="customizer-buy-now">Buy Now</span></a>
             </div>
             <div class="col-6">
-                <button type="button" class="btn btn-danger fw-semibold py-2 w-100" id="reset-layout"><i class="ti ti-refresh me-2 fs-md"></i> Reset</button>
+                <button type="button" class="btn btn-danger fw-semibold py-2 w-100" id="reset-layout"><i class="ti ti-refresh me-2 fs-md"></i> <span data-lang="customizer-reset">Reset</span></button>
             </div>
         </div>
     </div>

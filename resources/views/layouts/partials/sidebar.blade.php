@@ -40,25 +40,25 @@
                     <div class="dropdown-menu">
                         <!-- Header -->
                         <div class="dropdown-header noti-title">
-                            <h6 class="text-overflow m-0">Welcome back!</h6>
+                            <h6 class="text-overflow m-0" data-lang="welcome-back">Welcome back!</h6>
                         </div>
 
                         <!-- My Profile -->
                         <a href="{{ route('page', 'pages-profile') }}" class="dropdown-item">
                             <i class="ti ti-user-circle me-1 fs-lg align-middle"></i>
-                            <span class="align-middle">Profile</span>
+                            <span class="align-middle" data-lang="profile">Profile</span>
                         </a>
 
                         <!-- Settings -->
                         <a href="javascript:void(0);" class="dropdown-item">
                             <i class="ti ti-settings-2 me-1 fs-lg align-middle"></i>
-                            <span class="align-middle">Account Settings</span>
+                            <span class="align-middle" data-lang="account-settings">Account Settings</span>
                         </a>
 
                         <!-- Lock -->
                         <a href="{{ route('page', 'auth-lock-screen') }}" class="dropdown-item">
                             <i class="ti ti-lock me-1 fs-lg align-middle"></i>
-                            <span class="align-middle">Lock Screen</span>
+                            <span class="align-middle" data-lang="lock-screen">Lock Screen</span>
                         </a>
 
                         <!-- Logout -->
@@ -67,7 +67,7 @@
                         </form>
                         <a href="javascript:void(0);" onclick="event.preventDefault(); document.getElementById('sidebar-logout-form').submit();" class="dropdown-item text-danger fw-semibold">
                             <i class="ti ti-logout me-1 fs-lg align-middle"></i>
-                            <span class="align-middle">Log Out</span>
+                            <span class="align-middle" data-lang="log-out">Log Out</span>
                         </a>
                     </div>
                 </div>

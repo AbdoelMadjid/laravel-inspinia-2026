@@ -42,7 +42,7 @@
             <div id="megamenu-header" class="topbar-item d-none d-md-flex">
                 <div class="dropdown">
                     <button class="topbar-link btn fw-medium btn-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
-                        Mega Menu
+                        <span data-lang="mega-menu">Mega Menu</span>
                         <i class="ti ti-chevron-down ms-1"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-xxl p-0">
@@ -51,9 +51,9 @@
                                 <div class="col-12">
                                     <div class="px-3 py-2 text-center bg-light bg-opacity-50">
                                         <h4 class="mb-0 fs-lg fw-semibold">
-                                            Welcome to
+                                            <span data-lang="mega-welcome">Welcome to</span>
                                             <span class="text-primary">Inspinia</span>
-                                            Admin Theme.
+                                            <span data-lang="mega-admin-theme">Admin Theme.</span>
                                         </h4>
                                     </div>
                                 </div>
@@ -61,22 +61,22 @@
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <div class="p-3">
-                                        <h5 class="mb-2 fw-semibold fs-sm dropdown-header">Dashboard &amp; Analytics</h5>
+                                        <h5 class="mb-2 fw-semibold fs-sm dropdown-header" data-lang="mega-dash-analytics">Dashboard &amp; Analytics</h5>
                                         <ul class="list-unstyled megamenu-list">
                                             <li>
-                                                <a href="javascript:void(0);" class="dropdown-item">Sales Dashboard</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" data-lang="mega-sales-dash">Sales Dashboard</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0);" class="dropdown-item">Marketing Dashboard</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" data-lang="mega-mktg-dash">Marketing Dashboard</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0);" class="dropdown-item">Finance Overview</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" data-lang="mega-fin-overview">Finance Overview</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0);" class="dropdown-item">User Analytics</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" data-lang="mega-user-analytics">User Analytics</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0);" class="dropdown-item">Traffic Insights</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" data-lang="mega-traffic-insights">Traffic Insights</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -84,22 +84,22 @@
 
                                 <div class="col-md-4">
                                     <div class="p-3">
-                                        <h5 class="mb-2 fw-semibold fs-sm dropdown-header">Project Management</h5>
+                                        <h5 class="mb-2 fw-semibold fs-sm dropdown-header" data-lang="mega-proj-mgmt">Project Management</h5>
                                         <ul class="list-unstyled megamenu-list">
                                             <li>
-                                                <a href="javascript:void(0);" class="dropdown-item">Task Overview</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" data-lang="mega-task-overview">Task Overview</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0);" class="dropdown-item">Kanban Board</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" data-lang="mega-kanban-board">Kanban Board</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0);" class="dropdown-item">Gantt Chart</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" data-lang="mega-gantt-chart">Gantt Chart</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0);" class="dropdown-item">Team Collaboration</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" data-lang="mega-team-collab">Team Collaboration</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0);" class="dropdown-item">Project Milestones</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" data-lang="mega-proj-milestones">Project Milestones</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -107,22 +107,22 @@
 
                                 <div class="col-md-4">
                                     <div class="p-3">
-                                        <h5 class="mb-2 fw-semibold fs-sm dropdown-header">User Management</h5>
+                                        <h5 class="mb-2 fw-semibold fs-sm dropdown-header" data-lang="mega-user-mgmt">User Management</h5>
                                         <ul class="list-unstyled megamenu-list">
                                             <li>
-                                                <a href="javascript:void(0);" class="dropdown-item">User Profiles</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" data-lang="mega-user-profiles">User Profiles</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0);" class="dropdown-item">Access Control</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" data-lang="mega-access-control">Access Control</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0);" class="dropdown-item">Role Permissions</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" data-lang="mega-role-permissions">Role Permissions</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0);" class="dropdown-item">Activity Logs</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" data-lang="mega-activity-logs">Activity Logs</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0);" class="dropdown-item">Security Settings</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" data-lang="mega-security-settings">Security Settings</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -136,7 +136,7 @@
             <div id="megamenu-apps" class="topbar-item d-none d-md-flex">
                 <div class="dropdown">
                     <button class="topbar-link btn fw-medium btn-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
-                        Apps
+                        <span data-lang="apps-menu">Apps</span>
                         <i class="ti ti-chevron-down ms-1"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-xxl p-0">
@@ -154,8 +154,8 @@
                                                             </span>
                                                         </span>
                                                         <span>
-                                                            <h5 class="fs-base mb-0 lh-base">eCommerce</h5>
-                                                            <span class="text-muted fs-12">Products, orders &amp; etc.</span>
+                                                            <h5 class="fs-base mb-0 lh-base" data-lang="ecommerce">eCommerce</h5>
+                                                            <span class="text-muted fs-12" data-lang="app-desc-ecommerce">Products, orders &amp; etc.</span>
                                                         </span>
                                                     </span>
                                                 </a>
@@ -168,8 +168,8 @@
                                                             </span>
                                                         </span>
                                                         <span>
-                                                            <h5 class="fs-base mb-0 lh-base">Chat</h5>
-                                                            <span class="text-muted fs-12">Team conversations</span>
+                                                            <h5 class="fs-base mb-0 lh-base" data-lang="apps-chat">Chat</h5>
+                                                            <span class="text-muted fs-12" data-lang="app-desc-chat">Team conversations</span>
                                                         </span>
                                                     </span>
                                                 </a>
@@ -182,8 +182,8 @@
                                                             </span>
                                                         </span>
                                                         <span>
-                                                            <h5 class="fs-base mb-0 lh-base">Task</h5>
-                                                            <span class="text-muted fs-12">Plan and track work</span>
+                                                            <h5 class="fs-base mb-0 lh-base" data-lang="task">Task</h5>
+                                                            <span class="text-muted fs-12" data-lang="app-desc-task">Plan and track work</span>
                                                         </span>
                                                     </span>
                                                 </a>
@@ -196,8 +196,8 @@
                                                             </span>
                                                         </span>
                                                         <span>
-                                                            <h5 class="fs-base mb-0 lh-base">Email</h5>
-                                                            <span class="text-muted fs-12">Messages and inbox</span>
+                                                            <h5 class="fs-base mb-0 lh-base" data-lang="email">Email</h5>
+                                                            <span class="text-muted fs-12" data-lang="app-desc-email">Messages and inbox</span>
                                                         </span>
                                                     </span>
                                                 </a>
@@ -214,8 +214,8 @@
                                                             </span>
                                                         </span>
                                                         <span>
-                                                            <h5 class="fs-base mb-0 lh-base">Companies</h5>
-                                                            <span class="text-muted fs-12">Business profiles</span>
+                                                            <h5 class="fs-base mb-0 lh-base" data-lang="apps-companies">Companies</h5>
+                                                            <span class="text-muted fs-12" data-lang="app-desc-companies">Business profiles</span>
                                                         </span>
                                                     </span>
                                                 </a>
@@ -228,8 +228,8 @@
                                                             </span>
                                                         </span>
                                                         <span>
-                                                            <h5 class="fs-base mb-0 lh-base">Contacts Diary</h5>
-                                                            <span class="text-muted fs-12">People and connections</span>
+                                                            <h5 class="fs-base mb-0 lh-base" data-lang="apps-users-contacts">Contacts Diary</h5>
+                                                            <span class="text-muted fs-12" data-lang="app-desc-contacts">People and connections</span>
                                                         </span>
                                                     </span>
                                                 </a>
@@ -242,8 +242,8 @@
                                                             </span>
                                                         </span>
                                                         <span>
-                                                            <h5 class="fs-base mb-0 lh-base">Calendar</h5>
-                                                            <span class="text-muted fs-12">Events and reminders</span>
+                                                            <h5 class="fs-base mb-0 lh-base" data-lang="apps-calendar">Calendar</h5>
+                                                            <span class="text-muted fs-12" data-lang="app-desc-calendar">Events and reminders</span>
                                                         </span>
                                                     </span>
                                                 </a>
@@ -256,8 +256,8 @@
                                                             </span>
                                                         </span>
                                                         <span>
-                                                            <h5 class="fs-base mb-0 lh-base">Support</h5>
-                                                            <span class="text-muted fs-12">Help and assistance</span>
+                                                            <h5 class="fs-base mb-0 lh-base" data-lang="support">Support</h5>
+                                                            <span class="text-muted fs-12" data-lang="app-desc-support">Help and assistance</span>
                                                         </span>
                                                     </span>
                                                 </a>
@@ -269,14 +269,14 @@
                                     <div class="row g-0 border-top border-light border-dashed text-center">
                                         <div class="col">
                                             <div class="p-3">
-                                                <p class="fw-medium text-muted mb-2 fs-11 text-uppercase lh-1">-: &nbsp; Support &nbsp;:-</p>
+                                                <p class="fw-medium text-muted mb-2 fs-11 text-uppercase lh-1">-: &nbsp; <span data-lang="support">Support</span> &nbsp;:-</p>
                                                 <h5 class="fs-15 mb-0">help@mydomain.com</h5>
                                             </div>
                                         </div>
                                         <!-- end col-->
                                         <div class="col">
                                             <div class="p-3">
-                                                <p class="fw-medium text-muted mb-2 fs-11 text-uppercase lh-1">-: &nbsp; Help: &nbsp;:-</p>
+                                                <p class="fw-medium text-muted mb-2 fs-11 text-uppercase lh-1">-: &nbsp; <span data-lang="support">Help:</span> &nbsp;:-</p>
                                                 <h5 class="fs-15 mb-0">+(12) 3456 7890</h5>
                                             </div>
                                         </div>
@@ -292,9 +292,9 @@
                                             <div class="text-center text-white">
                                                 <i class="ti ti-atom fs-36"></i>
 
-                                                <p class="text-white text-opacity-75 mb-3 text-uppercase">Limited Offer</p>
+                                                <p class="text-white text-opacity-75 mb-3 text-uppercase" data-lang="limited-offer">Limited Offer</p>
 
-                                                <h3 class="fw-semibold text-white mb-2 fs-20">Unlock Exclusive Savings</h3>
+                                                <h3 class="fw-semibold text-white mb-2 fs-20" data-lang="unlock-savings">Unlock Exclusive Savings</h3>
 
                                                 <h4 class="fw-medium fs-16 mb-1">
                                                     <del class="text-white text-opacity-75">$49.00</del>
@@ -304,7 +304,7 @@
 
                                                 <button type="button" class="btn btn-danger btn-sm mt-3">
                                                     <i class="ti ti-shopping-cart me-1"></i>
-                                                    Grab Deal
+                                                    <span data-lang="grab-deal">Grab Deal</span>
                                                 </button>
                                             </div>
                                         </div>
@@ -841,29 +841,9 @@
                             <img src="{{ asset('assets/images/flags/us.svg') }}" alt="English" class="me-1 rounded" height="18" data-translator-image="" />
                             <span class="align-middle">English</span>
                         </a>
-                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="de" title="German">
-                            <img src="{{ asset('assets/images/flags/de.svg') }}" alt="German" class="me-1 rounded" height="18" data-translator-image="" />
-                            <span class="align-middle">Deutsch</span>
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="it" title="Italian">
-                            <img src="{{ asset('assets/images/flags/it.svg') }}" alt="Italian" class="me-1 rounded" height="18" data-translator-image="" />
-                            <span class="align-middle">Italiano</span>
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="es" title="Spanish">
-                            <img src="{{ asset('assets/images/flags/es.svg') }}" alt="Spanish" class="me-1 rounded" height="18" data-translator-image="" />
-                            <span class="align-middle">Español</span>
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="ru" title="Russian">
-                            <img src="{{ asset('assets/images/flags/ru.svg') }}" alt="Russian" class="me-1 rounded" height="18" data-translator-image="" />
-                            <span class="align-middle">Русский</span>
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="hi" title="Hindi">
-                            <img src="{{ asset('assets/images/flags/in.svg') }}" alt="Hindi" class="me-1 rounded" height="18" data-translator-image="" />
-                            <span class="align-middle">हिन्दी</span>
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="ar" title="Arabic">
-                            <img src="{{ asset('assets/images/flags/sa.svg') }}" alt="Arabic" class="me-1 rounded" height="18" data-translator-image="" />
-                            <span class="align-middle">عربي</span>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="id" title="Indonesia">
+                            <img src="{{ asset('assets/images/flags/id.svg') }}" alt="Indonesia" class="me-1 rounded" height="18" data-translator-image="" />
+                            <span class="align-middle">Indonesia</span>
                         </a>
                     </div>
                 </div>
@@ -881,26 +861,26 @@
                     <div class="dropdown-menu dropdown-menu-end">
                         <!-- Header -->
                         <div class="dropdown-header noti-title">
-                            <h6 class="text-overflow m-0">Welcome back!</h6>
+                            <h6 class="text-overflow m-0" data-lang="welcome-back">Welcome back!</h6>
                         </div>
 
                         <!-- My Profile -->
                         <a href="{{ route('page', 'pages-profile') }}" class="dropdown-item">
                             <i class="ti ti-user-circle me-1 fs-lg align-middle"></i>
-                            <span class="align-middle">Profile</span>
+                            <span class="align-middle" data-lang="profile">Profile</span>
                         </a>
 
                         <!-- Notifications -->
                         <a href="javascript:void(0);" class="dropdown-item">
                             <i class="ti ti-bell-ringing me-1 fs-lg align-middle"></i>
-                            <span class="align-middle">Notifications</span>
+                            <span class="align-middle" data-lang="notifications">Notifications</span>
                         </a>
 
                         <!-- Wallet -->
                         <a href="javascript:void(0);" class="dropdown-item">
                             <i class="ti ti-credit-card me-1 fs-lg align-middle"></i>
                             <span class="align-middle">
-                                Balance:
+                                <span data-lang="balance">Balance:</span>
                                 <span class="fw-semibold">$985.25</span>
                             </span>
                         </a>
@@ -908,13 +888,13 @@
                         <!-- Settings -->
                         <a href="javascript:void(0);" class="dropdown-item">
                             <i class="ti ti-settings-2 me-1 fs-lg align-middle"></i>
-                            <span class="align-middle">Account Settings</span>
+                            <span class="align-middle" data-lang="account-settings">Account Settings</span>
                         </a>
 
                         <!-- Support -->
                         <a href="javascript:void(0);" class="dropdown-item">
                             <i class="ti ti-headset me-1 fs-lg align-middle"></i>
-                            <span class="align-middle">Support Center</span>
+                            <span class="align-middle" data-lang="support">Support Center</span>
                         </a>
 
                         <!-- Divider -->
@@ -923,7 +903,7 @@
                         <!-- Lock -->
                         <a href="{{ route('page', 'auth-lock-screen') }}" class="dropdown-item">
                             <i class="ti ti-lock me-1 fs-lg align-middle"></i>
-                            <span class="align-middle">Lock Screen</span>
+                            <span class="align-middle" data-lang="lock-screen">Lock Screen</span>
                         </a>
 
                         <!-- Logout -->
@@ -932,7 +912,7 @@
                         </form>
                         <a href="javascript:void(0);" onclick="event.preventDefault(); document.getElementById('topbar-logout-form').submit();" class="dropdown-item text-danger fw-semibold">
                             <i class="ti ti-logout me-1 fs-lg align-middle"></i>
-                            <span class="align-middle">Log Out</span>
+                            <span class="align-middle" data-lang="log-out">Log Out</span>
                         </a>
                     </div>
                 </div>

@@ -45,6 +45,9 @@
         <!-- Vendor js -->
         <script src="{{ asset('assets/js/vendors.min.js') }}"></script>
 
+        <script>
+            window.langPath = "{{ asset('assets/data/translations') }}/";
+        </script>
         <!-- App js -->
         <script src="{{ asset('assets/js/app.js') }}"></script>
 
