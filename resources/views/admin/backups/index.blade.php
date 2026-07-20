@@ -77,17 +77,27 @@
 
     <!-- Actions & Backup List Table -->
     <div class="card shadow-sm border-0">
-        <div class="card-header bg-transparent border-bottom d-flex align-items-center justify-content-between py-3">
+        <div class="card-header bg-transparent border-bottom d-flex align-items-center justify-content-between py-3 flex-wrap gap-2">
             <h5 class="card-title mb-0">
                 <i class="ti ti-database-export me-2 text-primary"></i> Database Backup Files
             </h5>
-            <form method="POST" action="{{ route('admin.backups.store') }}" class="m-0">
-                @csrf
-                <button type="submit" class="btn btn-primary d-inline-flex align-items-center gap-1" onclick="return confirm('Are you sure you want to generate a new database backup?')">
-                    <i class="ti ti-plus fs-18"></i>
-                    <span>Create Backup Now</span>
+            <div class="d-flex align-items-center gap-2">
+                <!-- Backup Specific Tables Button -->
+                <button type="button" class="btn btn-outline-primary d-inline-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#customTableBackupModal">
+                    <i class="ti ti-list-check fs-18"></i>
+                    <span>Backup Selected Tables</span>
                 </button>
-            </form>
+
+                <!-- Full Backup Form -->
+                <form method="POST" action="{{ route('admin.backups.store') }}" class="m-0">
+                    @csrf
+                    <input type="hidden" name="backup_type" value="all">
+                    <button type="submit" class="btn btn-primary d-inline-flex align-items-center gap-1" onclick="return confirm('Are you sure you want to generate a full database backup?')">
+                        <i class="ti ti-plus fs-18"></i>
+                        <span>Create Full Backup</span>
+                    </button>
+                </form>
+            </div>
         </div>
         <div class="card-body p-0">
             <div class="table-responsive">
@@ -160,7 +170,7 @@
                                 <td colspan="5" class="text-center py-5 text-muted">
                                     <i class="ti ti-database-off fs-48 text-secondary mb-2 d-block"></i>
                                     <p class="mb-1 fw-medium">No database backups found.</p>
-                                    <small>Click "Create Backup Now" above to generate your first backup.</small>
+                                    <small>Click "Create Full Backup" or "Backup Selected Tables" above to generate your first backup.</small>
                                 </td>
                             </tr>
                         @endforelse
@@ -170,4 +180,112 @@
         </div>
     </div>
 </div>
+
+<!-- Modal Select Tables for Custom Backup -->
+<div class="modal fade" id="customTableBackupModal" tabindex="-1" aria-labelledby="customTableBackupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <form method="POST" action="{{ route('admin.backups.store') }}">
+                @csrf
+                <input type="hidden" name="backup_type" value="partial">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="customTableBackupModalLabel">
+                        <i class="ti ti-table me-2 text-primary"></i>Select Database Tables to Backup
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted fs-13 mb-3">
+                        Choose the specific tables you want to include in this backup file. The generated SQL file will include the structure and data for the selected tables only.
+                    </p>
+
+                    <div class="d-flex align-items-center justify-content-between mb-3 bg-light p-2 rounded border">
+                        <div class="form-check m-0">
+                            <input class="form-check-input" type="checkbox" id="selectAllTables">
+                            <label class="form-check-label fw-semibold text-dark user-select-none" for="selectAllTables">
+                                Select / Deselect All Tables
+                            </label>
+                        </div>
+                        <span class="badge bg-primary-subtle text-primary fs-12 fw-medium" id="selectedTableCount">0 selected</span>
+                    </div>
+
+                    <div class="table-responsive" style="max-height: 350px; overflow-y: auto;">
+                        <table class="table table-sm table-hover align-middle border mb-0">
+                            <thead class="table-light sticky-top">
+                                <tr>
+                                    <th style="width: 40px;" class="text-center">#</th>
+                                    <th>Table Name</th>
+                                    <th class="text-end">Estimated Rows</th>
+                                    <th class="text-end pe-3">Size</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($tables as $table)
+                                    <tr>
+                                        <td class="text-center">
+                                            <input class="form-check-input table-checkbox" type="checkbox" name="tables[]" value="{{ $table['name'] }}" id="table_{{ $table['name'] }}">
+                                        </td>
+                                        <td>
+                                            <label for="table_{{ $table['name'] }}" class="fw-semibold text-dark m-0 cursor-pointer user-select-none">
+                                                <i class="ti ti-table-alias me-1 text-secondary"></i> {{ $table['name'] }}
+                                            </label>
+                                        </td>
+                                        <td class="text-end text-muted fs-13">
+                                            {{ number_format($table['rows']) }}
+                                        </td>
+                                        <td class="text-end text-muted fs-13 pe-3">
+                                            {{ $table['size'] }}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary d-inline-flex align-items-center gap-1" id="submitPartialBackupBtn">
+                        <i class="ti ti-download fs-18"></i>
+                        <span>Generate Partial Backup</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const selectAllCheckbox = document.getElementById('selectAllTables');
+        const tableCheckboxes = document.querySelectorAll('.table-checkbox');
+        const selectedCountBadge = document.getElementById('selectedTableCount');
+
+        function updateCount() {
+            const checkedCount = document.querySelectorAll('.table-checkbox:checked').length;
+            if (selectedCountBadge) {
+                selectedCountBadge.textContent = checkedCount + ' selected';
+            }
+            if (selectAllCheckbox) {
+                selectAllCheckbox.checked = checkedCount > 0 && checkedCount === tableCheckboxes.length;
+                selectAllCheckbox.indeterminate = checkedCount > 0 && checkedCount < tableCheckboxes.length;
+            }
+        }
+
+        if (selectAllCheckbox) {
+            selectAllCheckbox.addEventListener('change', function () {
+                tableCheckboxes.forEach(cb => cb.checked = selectAllCheckbox.checked);
+                updateCount();
+            });
+        }
+
+        tableCheckboxes.forEach(cb => {
+            cb.addEventListener('change', updateCount);
+        });
+
+        // Initialize initial count
+        updateCount();
+    });
+</script>
+@endpush
 @endsection

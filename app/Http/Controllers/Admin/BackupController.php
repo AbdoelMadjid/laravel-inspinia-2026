@@ -61,30 +61,55 @@ class BackupController extends Controller
             'latest_backup' => $latestBackup ? \Carbon\Carbon::createFromTimestamp($latestBackup)->diffForHumans() : 'Never',
         ];
 
-        return view('admin.backups.index', compact('backups', 'stats'));
+        $tables = $this->getDatabaseTables();
+
+        return view('admin.backups.index', compact('backups', 'stats', 'tables'));
     }
 
     /**
-     * Generate a new database backup SQL dump file.
+     * Generate a new database backup SQL dump file (full or partial).
      */
     public function store(Request $request)
     {
         try {
+            $request->validate([
+                'backup_type' => 'nullable|string|in:all,partial',
+                'tables' => 'nullable|array',
+                'tables.*' => 'string',
+            ]);
+
+            $backupType = $request->input('backup_type', 'all');
+            $selectedTables = $request->input('tables', []);
+
+            if ($backupType === 'partial' && empty($selectedTables)) {
+                return redirect()->route('admin.backups.index')
+                    ->with('error', 'Please select at least one table to generate a partial backup.');
+            }
+
             if (!Storage::disk('local')->exists($this->backupDir)) {
                 Storage::disk('local')->makeDirectory($this->backupDir);
             }
 
             $dbName = config('database.connections.' . config('database.default') . '.database');
-            $filename = 'backup-' . ($dbName ? str_replace(' ', '_', $dbName) : 'db') . '-' . date('Y-m-d_H-i-s') . '.sql';
+
+            if ($backupType === 'partial' && !empty($selectedTables)) {
+                $tableCount = count($selectedTables);
+                $filename = 'backup-partial-' . ($dbName ? str_replace(' ', '_', $dbName) : 'db') . '-' . $tableCount . 'tables-' . date('Y-m-d_H-i-s') . '.sql';
+            } else {
+                $filename = 'backup-full-' . ($dbName ? str_replace(' ', '_', $dbName) : 'db') . '-' . date('Y-m-d_H-i-s') . '.sql';
+            }
+
             $filePath = $this->backupDir . '/' . $filename;
 
             // Generate SQL Dump content using PDO
-            $sqlContent = $this->generateSqlDump($dbName);
+            $sqlContent = $this->generateSqlDump($dbName, $backupType === 'partial' ? $selectedTables : []);
 
             Storage::disk('local')->put($filePath, $sqlContent);
 
+            $typeLabel = ($backupType === 'partial') ? 'Partial (' . count($selectedTables) . ' tables)' : 'Full database';
+
             return redirect()->route('admin.backups.index')
-                ->with('success', "Database backup '{$filename}' created successfully!");
+                ->with('success', "{$typeLabel} backup '{$filename}' created successfully!");
         } catch (\Throwable $e) {
             return redirect()->route('admin.backups.index')
                 ->with('error', 'Failed to create database backup: ' . $e->getMessage());
@@ -124,14 +149,46 @@ class BackupController extends Controller
     }
 
     /**
-     * Generate pure PHP SQL dump content using PDO.
+     * Get details of all database tables.
      */
-    protected function generateSqlDump(?string $dbName): string
+    protected function getDatabaseTables(): array
     {
-        $pdo = DB::getPdo();
         $tables = [];
+        try {
+            $statusResult = DB::select('SHOW TABLE STATUS');
+            foreach ($statusResult as $row) {
+                if (isset($row->Engine) && $row->Engine !== null) {
+                    $tables[] = [
+                        'name' => $row->Name,
+                        'rows' => $row->Rows ?? 0,
+                        'size' => $this->formatBytes(($row->Data_length ?? 0) + ($row->Index_length ?? 0)),
+                    ];
+                }
+            }
+        } catch (\Throwable $e) {
+            // Fallback
+        }
 
-        // Fetch all tables
+        if (empty($tables)) {
+            $allBaseNames = $this->getAllTableNames();
+            foreach ($allBaseNames as $t) {
+                $tables[] = [
+                    'name' => $t,
+                    'rows' => DB::table($t)->count(),
+                    'size' => '-',
+                ];
+            }
+        }
+
+        return $tables;
+    }
+
+    /**
+     * Fetch all base table names in database.
+     */
+    protected function getAllTableNames(): array
+    {
+        $tables = [];
         $tablesResult = DB::select('SHOW FULL TABLES');
         foreach ($tablesResult as $row) {
             $rowArray = (array) $row;
@@ -142,9 +199,29 @@ class BackupController extends Controller
                 $tables[] = $values[0];
             }
         }
+        return $tables;
+    }
+
+    /**
+     * Generate pure PHP SQL dump content using PDO.
+     */
+    protected function generateSqlDump(?string $dbName, array $selectedTables = []): string
+    {
+        $pdo = DB::getPdo();
+        $allBaseTables = $this->getAllTableNames();
+
+        if (!empty($selectedTables)) {
+            $tables = array_values(array_intersect($allBaseTables, $selectedTables));
+        } else {
+            $tables = $allBaseTables;
+        }
+
+        $isPartial = !empty($selectedTables);
+        $typeLabel = $isPartial ? "Partial Backup (" . count($tables) . " tables)" : "Full Database Backup";
 
         $out = "-- ========================================================\n";
         $out .= "-- Database Backup: " . ($dbName ?? 'Laravel DB') . "\n";
+        $out .= "-- Backup Mode: {$typeLabel}\n";
         $out .= "-- Date Generated: " . date('Y-m-d H:i:s') . "\n";
         $out .= "-- Generated by INSPINIA Apps Management\n";
         $out .= "-- ========================================================\n\n";
