@@ -18,13 +18,12 @@
         </div>
     </div>
 
-
     <!-- Search & Action Bar -->
     <div class="row mb-3">
         <div class="col-lg-12">
             <div class="bg-light-subtle rounded border p-3">
-                <form method="GET" action="{{ route('admin.users.index') }}" class="row gap-3">
-                    <div class="col-lg-4">
+                <form method="GET" action="{{ route('admin.users.index') }}" class="row g-2 align-items-center">
+                    <div class="col-lg-3">
                         <div class="app-search">
                             <input type="text" name="search" class="form-control" placeholder="Search user name or email..." value="{{ request('search') }}" />
                             <i class="ti ti-search app-search-icon text-muted"></i>
@@ -51,7 +50,12 @@
                             <a href="{{ route('admin.users.index') }}" class="btn btn-soft-secondary">Reset</a>
                         @endif
                     </div>
-                    <div class="col text-end">
+                    <div class="col text-end d-flex align-items-center justify-content-end gap-2">
+                        <!-- Bulk Assign Role Button -->
+                        <button type="button" class="btn btn-outline-primary d-none" id="bulkAssignRoleBtn" data-bs-toggle="modal" data-bs-target="#bulkAssignRoleModal">
+                            <i class="ti ti-user-shield me-1"></i> Bulk Assign Role (<span id="selectedUserCount">0</span>)
+                        </button>
+
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
                             <i class="ti ti-plus me-1"></i> Add New User
                         </button>
@@ -61,11 +65,29 @@
         </div>
     </div>
 
+    <!-- Select All Bar -->
+    @if($users->count() > 0)
+    <div class="d-flex align-items-center justify-content-between mb-3 bg-light p-2 rounded border">
+        <div class="form-check m-0 ms-2">
+            <input class="form-check-input" type="checkbox" id="selectAllUsers">
+            <label class="form-check-label fw-semibold text-dark user-select-none cursor-pointer" for="selectAllUsers">
+                Select / Deselect All Users on Page
+            </label>
+        </div>
+        <span class="badge bg-primary-subtle text-primary fs-12 fw-medium me-2" id="selectedUserBadge">0 selected</span>
+    </div>
+    @endif
+
     <!-- Users Card Grid -->
     <div class="row">
         @forelse($users as $user)
             <div class="col-md-6 col-xxl-3 mb-3">
-                <div class="card card-h-100 mb-0">
+                <div class="card card-h-100 mb-0 position-relative">
+                    <!-- Checkbox Selection -->
+                    <div class="position-absolute top-0 end-0 p-2 z-1">
+                        <input class="form-check-input user-checkbox" type="checkbox" value="{{ $user->id }}" data-user-name="{{ $user->name }}">
+                    </div>
+
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
                             <div class="me-3 position-relative">
@@ -77,7 +99,7 @@
                                     </span>
                                 @endif
                             </div>
-                            <div class="flex-grow-1 overflow-hidden">
+                            <div class="flex-grow-1 overflow-hidden pe-4">
                                 <h5 class="mb-1 text-truncate">
                                     <a href="javascript: void(0);" class="link-reset">{{ $user->name }}</a>
                                 </h5>
@@ -103,9 +125,18 @@
                                         </li>
                                         @if($user->id !== auth()->id())
                                         <li>
-                                            <a class="dropdown-item text-danger" href="#" data-bs-toggle="modal" data-bs-target="#deleteUserModal{{ $user->id }}">
-                                                <i class="ti ti-trash me-2"></i> Delete
-                                            </a>
+                                            <form method="POST" action="{{ route('admin.users.destroy', $user->id) }}" id="delete-user-form-{{ $user->id }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="button" class="dropdown-item text-danger"
+                                                    data-swal-confirm="true"
+                                                    data-swal-title="Hapus User?"
+                                                    data-swal-text="Apakah Anda yakin ingin menghapus user '{{ $user->name }}'?"
+                                                    data-swal-confirm-text="Ya, Hapus!"
+                                                    data-form-id="delete-user-form-{{ $user->id }}">
+                                                    <i class="ti ti-trash me-2"></i> Delete
+                                                </button>
+                                            </form>
                                         </li>
                                         @endif
                                     </ul>
@@ -162,15 +193,19 @@
                                     <input type="password" name="password" class="form-control" placeholder="New password..." />
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Role</label>
-                                    <select name="role" class="form-select">
-                                        <option value="">-- Select Role --</option>
+                                    <label class="form-label fw-semibold">Roles <small class="text-muted">(Dapat memilih lebih dari 1)</small></label>
+                                    <div class="row g-2 bg-light p-2 rounded border">
                                         @foreach($roles as $r)
-                                            <option value="{{ $r->name }}" {{ $user->hasRole($r->name) ? 'selected' : '' }}>
-                                                {{ ucfirst($r->name) }}
-                                            </option>
+                                            <div class="col-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="roles[]" value="{{ $r->name }}" id="edit_role_{{ $user->id }}_{{ $r->id }}" {{ $user->hasRole($r->name) ? 'checked' : '' }}>
+                                                    <label class="form-check-label cursor-pointer" for="edit_role_{{ $user->id }}_{{ $r->id }}">
+                                                        {{ ucfirst($r->name) }}
+                                                    </label>
+                                                </div>
+                                            </div>
                                         @endforeach
-                                    </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -181,29 +216,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Delete User Modal -->
-            @if($user->id !== auth()->id())
-            <div class="modal fade" id="deleteUserModal{{ $user->id }}" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <form method="POST" action="{{ route('admin.users.destroy', $user->id) }}">
-                            @csrf
-                            @method('DELETE')
-                            <div class="modal-body text-center p-4">
-                                <i class="ti ti-alert-triangle text-danger display-4 mb-2"></i>
-                                <h5>Delete User?</h5>
-                                <p class="text-muted fs-sm mb-3">Are you sure you want to delete <strong>{{ $user->name }}</strong>? This action cannot be undone.</p>
-                                <div class="d-flex justify-content-center gap-2">
-                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-danger">Yes, Delete</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            @endif
         @empty
             <div class="col-12 text-center py-5">
                 <i class="ti ti-users-minus text-muted display-4"></i>
@@ -216,6 +228,69 @@
     <!-- Pagination Links -->
     <div class="d-flex justify-content-end mt-3">
         {{ $users->links() }}
+    </div>
+</div>
+
+<!-- Bulk Assign Role Modal -->
+<div class="modal fade" id="bulkAssignRoleModal" tabindex="-1" aria-labelledby="bulkAssignRoleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form method="POST" action="{{ route('admin.users.bulk-assign-role') }}" id="bulkAssignRoleForm">
+                @csrf
+                <div id="bulkUserInputsContainer"></div>
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bulkAssignRoleModalLabel">
+                        <i class="ti ti-user-shield me-1 text-primary"></i> Mass Assign Role to Users
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-info py-2 fs-13 mb-3">
+                        <i class="ti ti-info-circle me-1"></i> You are assigning a role to <strong id="modalSelectedCount">0</strong> selected users.
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Select Target Role(s) <span class="text-danger">*</span></label>
+                        <div class="row g-2 bg-light p-2 rounded border mb-3">
+                            @foreach($roles as $r)
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="roles[]" value="{{ $r->name }}" id="bulk_role_{{ $r->id }}">
+                                        <label class="form-check-label cursor-pointer" for="bulk_role_{{ $r->id }}">
+                                            {{ ucfirst($r->name) }}
+                                        </label>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Assignment Mode</label>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="action_mode" id="actionModeSync" value="sync" checked>
+                            <label class="form-check-label cursor-pointer" for="actionModeSync">
+                                <strong>Replace Current Roles</strong> <small class="text-muted d-block">Replaces all existing roles of selected users with the target role.</small>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="action_mode" id="actionModeAdd" value="add">
+                            <label class="form-check-label cursor-pointer" for="actionModeAdd">
+                                <strong>Add Role</strong> <small class="text-muted d-block">Appends the target role without removing current roles.</small>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary d-inline-flex align-items-center gap-1">
+                        <i class="ti ti-check fs-18"></i>
+                        <span>Apply Mass Role</span>
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
@@ -248,13 +323,19 @@
                         <input type="password" name="password" class="form-control" placeholder="Enter password (min 8 chars)" required />
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Assign Role</label>
-                        <select name="role" class="form-select">
-                            <option value="">-- Select Role --</option>
+                        <label class="form-label fw-semibold">Assign Roles <small class="text-muted">(Dapat memilih lebih dari 1)</small></label>
+                        <div class="row g-2 bg-light p-2 rounded border">
                             @foreach($roles as $r)
-                                <option value="{{ $r->name }}">{{ ucfirst($r->name) }}</option>
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="roles[]" value="{{ $r->name }}" id="create_role_{{ $r->id }}">
+                                        <label class="form-check-label cursor-pointer" for="create_role_{{ $r->id }}">
+                                            {{ ucfirst($r->name) }}
+                                        </label>
+                                    </div>
+                                </div>
                             @endforeach
-                        </select>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -265,4 +346,63 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const selectAllCheckbox = document.getElementById('selectAllUsers');
+        const userCheckboxes = document.querySelectorAll('.user-checkbox');
+        const selectedUserCountSpan = document.getElementById('selectedUserCount');
+        const selectedUserBadge = document.getElementById('selectedUserBadge');
+        const modalSelectedCount = document.getElementById('modalSelectedCount');
+        const bulkAssignRoleBtn = document.getElementById('bulkAssignRoleBtn');
+        const bulkUserInputsContainer = document.getElementById('bulkUserInputsContainer');
+
+        function updateSelectionState() {
+            const checkedBoxes = document.querySelectorAll('.user-checkbox:checked');
+            const count = checkedBoxes.length;
+
+            if (selectedUserCountSpan) selectedUserCountSpan.textContent = count;
+            if (selectedUserBadge) selectedUserBadge.textContent = count + ' users selected';
+            if (modalSelectedCount) modalSelectedCount.textContent = count;
+
+            if (count > 0) {
+                if (bulkAssignRoleBtn) bulkAssignRoleBtn.classList.remove('d-none');
+            } else {
+                if (bulkAssignRoleBtn) bulkAssignRoleBtn.classList.add('d-none');
+            }
+
+            if (selectAllCheckbox && userCheckboxes.length > 0) {
+                selectAllCheckbox.checked = count > 0 && count === userCheckboxes.length;
+                selectAllCheckbox.indeterminate = count > 0 && count < userCheckboxes.length;
+            }
+
+            // Sync hidden inputs for modal form
+            if (bulkUserInputsContainer) {
+                bulkUserInputsContainer.innerHTML = '';
+                checkedBoxes.forEach(box => {
+                    const hiddenInput = document.createElement('input');
+                    hiddenInput.type = 'hidden';
+                    hiddenInput.name = 'user_ids[]';
+                    hiddenInput.value = box.value;
+                    bulkUserInputsContainer.appendChild(hiddenInput);
+                });
+            }
+        }
+
+        if (selectAllCheckbox) {
+            selectAllCheckbox.addEventListener('change', function () {
+                userCheckboxes.forEach(cb => cb.checked = selectAllCheckbox.checked);
+                updateSelectionState();
+            });
+        }
+
+        userCheckboxes.forEach(cb => {
+            cb.addEventListener('change', updateSelectionState);
+        });
+
+        updateSelectionState();
+    });
+</script>
+@endpush
 @endsection

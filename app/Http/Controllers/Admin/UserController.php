@@ -51,6 +51,8 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'string', 'min:8'],
+            'roles' => ['nullable', 'array'],
+            'roles.*' => ['string', 'exists:roles,name'],
             'role' => ['nullable', 'string', 'exists:roles,name'],
             'avatar' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,webp,svg', 'max:2048'],
         ]);
@@ -67,8 +69,13 @@ class UserController extends Controller
             'avatar' => $avatarPath,
         ]);
 
-        if (!empty($validated['role'])) {
-            $user->assignRole($validated['role']);
+        $rolesToAssign = $request->input('roles', []);
+        if (empty($rolesToAssign) && $request->filled('role')) {
+            $rolesToAssign = [$request->role];
+        }
+
+        if (!empty($rolesToAssign)) {
+            $user->syncRoles($rolesToAssign);
         }
 
         return redirect()->route('admin.users.index')->with('success', 'User successfully created.');
@@ -83,6 +90,8 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'password' => ['nullable', 'string', 'min:8'],
+            'roles' => ['nullable', 'array'],
+            'roles.*' => ['string', 'exists:roles,name'],
             'role' => ['nullable', 'string', 'exists:roles,name'],
             'avatar' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,webp,svg', 'max:2048'],
         ]);
@@ -105,8 +114,13 @@ class UserController extends Controller
 
         $user->update($userData);
 
-        if ($request->has('role')) {
-            $user->syncRoles($validated['role'] ? [$validated['role']] : []);
+        $rolesToSync = $request->input('roles', null);
+        if ($rolesToSync === null && $request->has('role')) {
+            $rolesToSync = $request->role ? [$request->role] : [];
+        }
+
+        if ($rolesToSync !== null) {
+            $user->syncRoles($rolesToSync);
         }
 
         return redirect()->route('admin.users.index')->with('success', 'User successfully updated.');
@@ -128,5 +142,49 @@ class UserController extends Controller
         $user->delete();
 
         return redirect()->route('admin.users.index')->with('success', 'User successfully deleted.');
+    }
+
+    /**
+     * Bulk assign role(s) to selected users.
+     */
+    public function bulkAssignRole(Request $request)
+    {
+        $validated = $request->validate([
+            'user_ids' => ['required', 'array', 'min:1'],
+            'user_ids.*' => ['integer', 'exists:users,id'],
+            'roles' => ['nullable', 'array'],
+            'roles.*' => ['string', 'exists:roles,name'],
+            'role' => ['nullable', 'string', 'exists:roles,name'],
+            'action_mode' => ['nullable', 'string', 'in:sync,add'],
+        ]);
+
+        $targetRoles = $request->input('roles', []);
+        if (empty($targetRoles) && $request->filled('role')) {
+            $targetRoles = [$request->role];
+        }
+
+        if (empty($targetRoles)) {
+            return redirect()->route('admin.users.index')
+                ->with('error', 'Silakan pilih minimal 1 role untuk diberikan kepada user.');
+        }
+
+        $actionMode = $request->input('action_mode', 'sync');
+        $userIds = $validated['user_ids'];
+
+        $users = User::whereIn('id', $userIds)->get();
+
+        foreach ($users as $user) {
+            if ($actionMode === 'add') {
+                $user->assignRole($targetRoles);
+            } else {
+                $user->syncRoles($targetRoles);
+            }
+        }
+
+        $count = $users->count();
+        $rolesTitle = implode(', ', array_map('ucfirst', $targetRoles));
+
+        return redirect()->route('admin.users.index')
+            ->with('success', "Role '{$rolesTitle}' massal berhasil diberikan kepada {$count} user!");
     }
 }

@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::patch('menus/{menu}/toggle-status', [\App\Http\Controllers\Admin\MenuController::class, 'toggleStatus'])->name('menus.toggle-status');
         Route::resource('menus', \App\Http\Controllers\Admin\MenuController::class);
+        Route::post('users/bulk-assign-role', [\App\Http\Controllers\Admin\UserController::class, 'bulkAssignRole'])->name('users.bulk-assign-role');
         Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
         Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
         Route::resource('permissions', \App\Http\Controllers\Admin\PermissionController::class);
