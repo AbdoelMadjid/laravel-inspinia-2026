@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
@@ -186,5 +187,51 @@ class UserController extends Controller
 
         return redirect()->route('admin.users.index')
             ->with('success', "Role '{$rolesTitle}' massal berhasil diberikan kepada {$count} user!");
+    }
+
+    /**
+     * Impersonate / switch to the specified user account.
+     */
+    public function impersonate(Request $request, User $user)
+    {
+        $currentUser = Auth::user();
+
+        if ($currentUser->id === $user->id) {
+            return redirect()->back()->with('error', 'Anda tidak dapat beralih ke akun Anda sendiri.');
+        }
+
+        // Store original user ID if not already impersonating
+        if (!session()->has('impersonator_id')) {
+            session(['impersonator_id' => $currentUser->id]);
+        }
+
+        Auth::login($user);
+
+        return redirect()->route('dashboard')
+            ->with('success', "Berhasil beralih ke akun {$user->name}.");
+    }
+
+    /**
+     * Stop impersonating and return to original admin account.
+     */
+    public function impersonateStop(Request $request)
+    {
+        if (!session()->has('impersonator_id')) {
+            return redirect()->route('dashboard')
+                ->with('error', 'Anda sedang tidak dalam mode switch akun.');
+        }
+
+        $impersonatorId = session()->pull('impersonator_id');
+        $originalUser = User::find($impersonatorId);
+
+        if (!$originalUser) {
+            return redirect()->route('dashboard')
+                ->with('error', 'Akun asli tidak ditemukan.');
+        }
+
+        Auth::login($originalUser);
+
+        return redirect()->route('admin.users.index')
+            ->with('success', "Kembali ke akun asli ({$originalUser->name}).");
     }
 }

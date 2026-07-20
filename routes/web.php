@@ -22,11 +22,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::post('/profile/avatar', [ProfileController::class, 'updateAvatar'])->name('profile.avatar');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('/impersonate/stop', [\App\Http\Controllers\Admin\UserController::class, 'impersonateStop'])->name('admin.users.impersonate-stop');
 
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::patch('menus/{menu}/toggle-status', [\App\Http\Controllers\Admin\MenuController::class, 'toggleStatus'])->name('menus.toggle-status');
         Route::resource('menus', \App\Http\Controllers\Admin\MenuController::class);
         Route::post('users/bulk-assign-role', [\App\Http\Controllers\Admin\UserController::class, 'bulkAssignRole'])->name('users.bulk-assign-role');
+        Route::post('users/{user}/impersonate', [\App\Http\Controllers\Admin\UserController::class, 'impersonate'])->name('users.impersonate');
         Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
         Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
         Route::resource('permissions', \App\Http\Controllers\Admin\PermissionController::class);

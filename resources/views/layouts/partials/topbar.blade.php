@@ -877,10 +877,29 @@
                         <img src="{{ Auth::user()?->avatar_url ?? asset('assets/images/users/user-1.jpg') }}" width="32" height="32" class="rounded-circle me-lg-2 d-flex object-fit-cover user-avatar-img" alt="user-image" />
                         <div class="d-lg-flex align-items-center gap-1 d-none">
                             <h5 class="my-0">{{ Auth::user()->name ?? 'User' }}</h5>
+                            @if(session()->has('impersonator_id'))
+                                <span class="badge bg-warning text-dark ms-1 fs-10">Switched</span>
+                            @endif
                             <i class="ti ti-chevron-down align-middle"></i>
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end">
+                        @if(session()->has('impersonator_id'))
+                        <div class="p-2 bg-warning-subtle text-dark border-bottom">
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <small class="fw-bold text-uppercase text-warning-emphasis" style="font-size: 11px;">
+                                    <i class="ti ti-arrows-exchange me-1"></i> Mode Switch Akun
+                                </small>
+                            </div>
+                            <form method="POST" action="{{ route('admin.users.impersonate-stop') }}">
+                                @csrf
+                                <button type="submit" class="btn btn-warning btn-sm w-100 fw-bold shadow-sm">
+                                    <i class="ti ti-arrow-back-up me-1"></i> Kembali ke Akun Asli
+                                </button>
+                            </form>
+                        </div>
+                        @endif
+
                         <!-- Header -->
                         <div class="dropdown-header noti-title">
                             <h6 class="text-overflow m-0" data-lang="welcome-back">Welcome back!</h6>

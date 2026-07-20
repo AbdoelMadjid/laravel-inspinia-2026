@@ -118,6 +118,17 @@
                                         <i class="ti ti-dots-vertical fs-xl"></i>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end">
+                                        @if($user->id !== auth()->id())
+                                        <li>
+                                            <form method="POST" action="{{ route('admin.users.impersonate', $user->id) }}">
+                                                @csrf
+                                                <button type="submit" class="dropdown-item text-primary fw-semibold">
+                                                    <i class="ti ti-arrows-exchange me-2"></i> Switch Akun
+                                                </button>
+                                            </form>
+                                        </li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        @endif
                                         <li>
                                             <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editUserModal{{ $user->id }}">
                                                 <i class="ti ti-edit me-2"></i> Edit
