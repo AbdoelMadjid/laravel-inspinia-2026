@@ -4,7 +4,7 @@
             <!-- Topbar Brand Logo -->
             <div class="logo-topbar">
                 <!-- Logo light -->
-                <a href="{{ route('home') }}" class="logo-light">
+                <a href="{{ route('dashboard') }}" class="logo-light">
                     <span class="logo-lg">
                         <img src="{{ asset('assets/images/logo.png') }}" alt="logo" />
                     </span>
@@ -14,7 +14,7 @@
                 </a>
 
                 <!-- Logo Dark -->
-                <a href="{{ route('home') }}" class="logo-dark">
+                <a href="{{ route('dashboard') }}" class="logo-dark">
                     <span class="logo-lg">
                         <img src="{{ asset('assets/images/logo-black.png') }}" alt="dark logo" />
                     </span>

@@ -1,6 +1,6 @@
 <div class="sidenav-menu">
     <!-- Brand Logo -->
-    <a href="{{ route('home') }}/" class="logo">
+    <a href="{{ route('dashboard') }}" class="logo">
         <span class="logo logo-light">
             <span class="logo-lg"><img src="{{ asset('assets/images/logo.png') }}" alt="logo" /></span>
             <span class="logo-sm"><img src="{{ asset('assets/images/logo-sm.png') }}" alt="small logo" /></span>
@@ -94,7 +94,7 @@
                                 </a>
                             </li>
                             <li class="side-nav-item">
-                                <a href="{{ route('home') }}/" class="side-nav-link">
+                                <a href="{{ route('dashboard') }}" class="side-nav-link">
                                     <span class="menu-text" data-lang="dashboard-projects">Projects</span>
                                 </a>
                             </li>
