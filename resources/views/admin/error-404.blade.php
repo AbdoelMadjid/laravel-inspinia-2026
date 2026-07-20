@@ -21,7 +21,7 @@
                             <h3 class="fw-bold text-uppercase">Page Not Found</h3>
                             <p class="text-muted">The page you’re looking for doesn’t exist or has been moved.</p>
 
-                            <button class="btn btn-primary mt-3 rounded-pill" onclick="window.location.href = 'index.html'">Go Home</button>
+                            <a href="{{ Auth::check() ? route('dashboard') : route('home') }}" class="btn btn-primary mt-3 rounded-pill">Go Home</a>
                         </div>
 
                         <p class="text-center text-muted mt-5 mb-0">

@@ -36,3 +36,7 @@ Route::middleware('auth')->group(function () {
     })->name('page');
 });
 
+// Fallback route for non-existent pages/routes
+Route::fallback(function () {
+    return response()->view('admin.error-404', [], 404);
+});
