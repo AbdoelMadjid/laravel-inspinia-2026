@@ -189,10 +189,10 @@
                         "infoFiltered": "(disaring dari _MAX_ total menu)",
                         "zeroRecords": "Tidak ada menu yang sesuai",
                         "paginate": {
-                            "first": "Pertama",
-                            "last": "Terakhir",
-                            "next": "Selanjutnya",
-                            "previous": "Sebelumnya"
+                            "first": '<i class="ti ti-chevrons-left"></i>',
+                            "last": '<i class="ti ti-chevrons-right"></i>',
+                            "next": '<i class="ti ti-chevron-right"></i>',
+                            "previous": '<i class="ti ti-chevron-left"></i>'
                         }
                     }
                 });
