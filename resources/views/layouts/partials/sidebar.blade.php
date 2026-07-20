@@ -26,11 +26,13 @@
         <div id="user-profile-settings" class="sidenav-user" style="background: url({{ asset('assets/images/user-bg-pattern.svg') }})">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
-                    <a href="{{ route('page', 'profile-page') }}" class="link-reset">
-                        <img src="{{ Auth::user()?->avatar_url ?? asset('assets/images/users/user-1.jpg') }}" alt="user-image" class="rounded-circle mb-2 avatar-md object-fit-cover" />
-                        <span class="sidenav-user-name fw-bold">{{ Auth::user()->name ?? 'User' }}</span>
-                        <span class="fs-12 fw-semibold">{{ Auth::user()->email ?? '' }}</span>
-                    </a>
+                    <div class="position-relative d-inline-block text-center cursor-pointer mb-2" onclick="triggerQuickAvatarUpload()" title="Klik untuk ganti foto profil">
+                        <img src="{{ Auth::user()?->avatar_url ?? asset('assets/images/users/user-1.jpg') }}" alt="user-image" class="rounded-circle avatar-md object-fit-cover user-avatar-img" />
+                    </div>
+                    <div>
+                        <span class="sidenav-user-name fw-bold d-block">{{ Auth::user()->name ?? 'User' }}</span>
+                        <span class="fs-12 fw-semibold opacity-75 d-block">{{ Auth::user()->email ?? '' }}</span>
+                    </div>
                 </div>
                 <div>
                     <a class="dropdown-toggle drop-arrow-none link-reset sidenav-user-set-icon" data-bs-toggle="dropdown" data-bs-offset="0,12" href="#!" aria-haspopup="false" aria-expanded="false">
@@ -44,7 +46,7 @@
                         </div>
 
                         <!-- My Profile -->
-                        <a href="{{ route('page', 'profile-page') }}" class="dropdown-item">
+                        <a href="{{ route('profile.edit') }}" class="dropdown-item">
                             <i class="ti ti-user-circle me-1 fs-lg align-middle"></i>
                             <span class="align-middle" data-lang="profile">Profile</span>
                         </a>

@@ -852,9 +852,9 @@
             <div id="simple-user-dropdown" class="topbar-item nav-user">
                 <div class="dropdown">
                     <a class="topbar-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" href="#!" aria-haspopup="false" aria-expanded="false">
-                        <img src="{{ Auth::user()?->avatar_url ?? asset('assets/images/users/user-1.jpg') }}" width="32" height="32" class="rounded-circle me-lg-2 d-flex object-fit-cover" alt="user-image" />
+                        <img src="{{ Auth::user()?->avatar_url ?? asset('assets/images/users/user-1.jpg') }}" width="32" height="32" class="rounded-circle me-lg-2 d-flex object-fit-cover user-avatar-img" alt="user-image" />
                         <div class="d-lg-flex align-items-center gap-1 d-none">
-                            <h5 class="my-0">{{ Auth::user()->name ?? 'Damian D.' }}</h5>
+                            <h5 class="my-0">{{ Auth::user()->name ?? 'User' }}</h5>
                             <i class="ti ti-chevron-down align-middle"></i>
                         </div>
                     </a>
@@ -865,7 +865,7 @@
                         </div>
 
                         <!-- My Profile -->
-                        <a href="{{ route('page', 'profile-page') }}" class="dropdown-item">
+                        <a href="{{ route('profile.edit') }}" class="dropdown-item">
                             <i class="ti ti-user-circle me-1 fs-lg align-middle"></i>
                             <span class="align-middle" data-lang="profile">Profile</span>
                         </a>
@@ -920,3 +920,63 @@
         </div>
     </div>
 </header>
+
+<!-- Global Quick Avatar Upload Form -->
+<form id="quick-avatar-form" class="d-none">
+    @csrf
+    <input type="file" id="quick-avatar-file-input" name="avatar" accept="image/*" onchange="uploadQuickAvatar(this)" />
+</form>
+
+<script>
+function triggerQuickAvatarUpload() {
+    document.getElementById('quick-avatar-file-input').click();
+}
+
+function uploadQuickAvatar(input) {
+    if (!input.files || !input.files[0]) return;
+
+    const formData = new FormData();
+    formData.append('avatar', input.files[0]);
+    formData.append('_token', '{{ csrf_token() }}');
+
+    const avatars = document.querySelectorAll('.user-avatar-img');
+    avatars.forEach(img => img.style.opacity = '0.4');
+
+    fetch('{{ route("profile.avatar") }}', {
+        method: 'POST',
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success && data.avatar_url) {
+            const newUrl = data.avatar_url + '?t=' + new Date().getTime();
+            avatars.forEach(img => {
+                img.src = newUrl;
+                img.style.opacity = '1';
+            });
+            if (typeof Swal !== 'undefined') {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil!',
+                    text: data.message,
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+            } else {
+                alert(data.message);
+            }
+        } else {
+            alert('Gagal mengunggah foto profil.');
+            avatars.forEach(img => img.style.opacity = '1');
+        }
+    })
+    .catch(error => {
+        console.error('Error uploading avatar:', error);
+        alert('Terjadi kesalahan saat mengunggah foto.');
+        avatars.forEach(img => img.style.opacity = '1');
+    });
+}
+</script>

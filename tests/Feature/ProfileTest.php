@@ -96,4 +96,29 @@ class ProfileTest extends TestCase
 
         $this->assertNotNull($user->fresh());
     }
+
+    public function test_user_can_quick_update_avatar(): void
+    {
+        $user = User::factory()->create();
+        \Illuminate\Support\Facades\Storage::fake('public');
+
+        $file = \Illuminate\Http\UploadedFile::fake()->image('avatar.jpg');
+
+        $response = $this
+            ->actingAs($user)
+            ->postJson('/profile/avatar', [
+                'avatar' => $file,
+            ]);
+
+        $response
+            ->assertOk()
+            ->assertJson([
+                'success' => true,
+                'message' => 'Foto profil berhasil diperbarui.',
+            ]);
+
+        $user->refresh();
+        $this->assertNotNull($user->avatar);
+        \Illuminate\Support\Facades\Storage::disk('public')->assertExists($user->avatar);
+    }
 }

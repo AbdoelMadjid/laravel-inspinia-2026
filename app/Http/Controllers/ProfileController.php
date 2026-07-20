@@ -47,6 +47,31 @@ class ProfileController extends Controller
     }
 
     /**
+     * Quick update for user avatar via AJAX.
+     */
+    public function updateAvatar(Request $request)
+    {
+        $request->validate([
+            'avatar' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,webp,svg', 'max:2048'],
+        ]);
+
+        $user = $request->user();
+
+        if ($user->avatar && Storage::disk('public')->exists($user->avatar)) {
+            Storage::disk('public')->delete($user->avatar);
+        }
+
+        $user->avatar = $request->file('avatar')->store('avatars', 'public');
+        $user->save();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Foto profil berhasil diperbarui.',
+            'avatar_url' => $user->avatar_url,
+        ]);
+    }
+
+    /**
      * Delete the user's account.
      */
     public function destroy(Request $request): RedirectResponse

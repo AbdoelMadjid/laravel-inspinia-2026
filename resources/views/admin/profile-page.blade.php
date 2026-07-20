@@ -17,8 +17,12 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="d-flex justify-content-start align-items-center gap-3">
-                                            <div class="avatar avatar-xxl" style="width: 100px; height: 100px;">
-                                                <img src="{{ Auth::user()->avatar_url }}" alt="avatar-2" class="img-fluid img-thumbnail rounded-circle object-fit-cover w-100 h-100" />
+                                            <div class="avatar avatar-xxl position-relative group cursor-pointer" style="width: 100px; height: 100px;" onclick="triggerProfileAvatarUpload()" title="Klik untuk mengganti foto profil">
+                                                <img src="{{ Auth::user()->avatar_url }}" alt="avatar-2" class="user-avatar-img img-fluid img-thumbnail rounded-circle object-fit-cover w-100 h-100" />
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 rounded-circle bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white opacity-0 group-hover-opacity-100 transition-all">
+                                                    <i class="ti ti-camera fs-20"></i>
+                                                    <span class="fs-10 fw-semibold">Ganti Foto</span>
+                                                </div>
                                             </div>
                                             <div>
                                                 <h4 class="text-nowrap fw-bold mb-1">{{ Auth::user()->name }}</h4>
@@ -972,4 +976,70 @@
                     <!-- end row-->
                 </div>
                 <!-- container -->
+
+<!-- Hidden Form for Avatar Upload -->
+<form id="profile-page-avatar-form" class="d-none">
+    @csrf
+    <input type="file" id="profile-page-avatar-input-file" name="avatar" accept="image/*" onchange="uploadProfilePageAvatar(this)" />
+</form>
+
+<style>
+.group:hover .group-hover-opacity-100 {
+    opacity: 1 !important;
+}
+</style>
+
+<script>
+function triggerProfileAvatarUpload() {
+    document.getElementById('profile-page-avatar-input-file').click();
+}
+
+function uploadProfilePageAvatar(input) {
+    if (!input.files || !input.files[0]) return;
+
+    const formData = new FormData();
+    formData.append('avatar', input.files[0]);
+    formData.append('_token', '{{ csrf_token() }}');
+
+    const avatars = document.querySelectorAll('.user-avatar-img');
+    avatars.forEach(img => img.style.opacity = '0.4');
+
+    fetch('{{ route("profile.avatar") }}', {
+        method: 'POST',
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success && data.avatar_url) {
+            const newUrl = data.avatar_url + '?t=' + new Date().getTime();
+            avatars.forEach(img => {
+                img.src = newUrl;
+                img.style.opacity = '1';
+            });
+            if (typeof Swal !== 'undefined') {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil!',
+                    text: data.message,
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+            } else {
+                alert(data.message);
+            }
+        } else {
+            alert('Gagal mengunggah foto profil.');
+            avatars.forEach(img => img.style.opacity = '1');
+        }
+    })
+    .catch(error => {
+        console.error('Error uploading avatar:', error);
+        alert('Terjadi kesalahan saat mengunggah foto.');
+        avatars.forEach(img => img.style.opacity = '1');
+    });
+}
+</script>
 @endsection
