@@ -45,6 +45,7 @@ class MenuSeeder extends Seeder
                 'type' => 'header',
                 'data_lang' => 'main',
                 'sort_order' => 1,
+                'roles' => [$adminRole, $userRole],
             ],
             [
                 'name' => 'Dashboards',
@@ -52,6 +53,7 @@ class MenuSeeder extends Seeder
                 'icon' => 'ti ti-dashboard',
                 'data_lang' => 'dashboards',
                 'sort_order' => 2,
+                'roles' => [$adminRole, $userRole],
                 'children' => [
                     [
                         'name' => 'Ecommerce',
@@ -86,6 +88,7 @@ class MenuSeeder extends Seeder
                 'route_params' => ['page' => 'landing'],
                 'data_lang' => 'landing',
                 'sort_order' => 3,
+                'roles' => [$adminRole, $userRole],
             ],
 
             // --- APPS HEADER ---
@@ -617,17 +620,18 @@ class MenuSeeder extends Seeder
             ],
         ];
 
-        $this->saveMenuTree($menuTree, null, [$adminRole, $userRole]);
+        $this->saveMenuTree($menuTree, null, [$adminRole]);
     }
 
     /**
      * Recursive function to save menu items and attach Spatie roles.
      */
-    private function saveMenuTree(array $items, ?int $parentId = null, array $roles = []): void
+    private function saveMenuTree(array $items, ?int $parentId = null, array $defaultRoles = []): void
     {
         foreach ($items as $itemData) {
             $children = $itemData['children'] ?? [];
-            unset($itemData['children']);
+            $rolesToAssign = $itemData['roles'] ?? $defaultRoles;
+            unset($itemData['children'], $itemData['roles']);
 
             $itemData['parent_id'] = $parentId;
             $itemData['is_active'] = $itemData['is_active'] ?? true;
@@ -636,12 +640,12 @@ class MenuSeeder extends Seeder
             $menu = Menu::create($itemData);
 
             // Attach roles to menu
-            if (!empty($roles)) {
-                $menu->roles()->sync(collect($roles)->pluck('id')->toArray());
+            if (!empty($rolesToAssign)) {
+                $menu->roles()->sync(collect($rolesToAssign)->pluck('id')->toArray());
             }
 
             if (!empty($children)) {
-                $this->saveMenuTree($children, $menu->id, $roles);
+                $this->saveMenuTree($children, $menu->id, $rolesToAssign);
             }
         }
     }

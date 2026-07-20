@@ -11,40 +11,32 @@ use Tests\TestCase;
 
 class MenuTest extends TestCase
 {
-    public function test_menu_hierarchy_and_spatie_role_visibility(): void
+    public function test_non_admin_user_sees_only_allowed_menus(): void
     {
-        $adminRole = Role::create(['name' => 'admin_test']);
-        $userRole = Role::create(['name' => 'user_test']);
-        $permission = Permission::create(['name' => 'secret-menu-permission']);
+        $adminRole = Role::firstOrCreate(['name' => 'admin']);
+        $userRole = Role::firstOrCreate(['name' => 'user']);
 
-        $adminRole->givePermissionTo($permission);
+        $adminUser = User::factory()->create();
+        $adminUser->assignRole($adminRole);
 
-        $rootMenu = Menu::create([
-            'name' => 'Root Menu',
-            'type' => 'item',
-            'sort_order' => 1,
-            'is_active' => true,
-        ]);
-        $rootMenu->roles()->attach([$adminRole->id, $userRole->id]);
+        $regularUser = User::factory()->create();
+        $regularUser->assignRole($userRole);
 
-        $adminOnlyChild = Menu::create([
-            'parent_id' => $rootMenu->id,
-            'name' => 'Admin Only Submenu',
-            'type' => 'item',
-            'permission_name' => 'secret-menu-permission',
-            'sort_order' => 1,
-            'is_active' => true,
-        ]);
+        $mainHeader = Menu::create(['name' => 'Main', 'type' => 'header', 'is_active' => true]);
+        $mainHeader->roles()->attach([$adminRole->id, $userRole->id]);
 
-        $user = User::factory()->create();
-        $admin = User::factory()->create();
-        $admin->assignRole($adminRole);
-        $user->assignRole($userRole);
+        $dashboards = Menu::create(['name' => 'Dashboards', 'type' => 'item', 'is_active' => true]);
+        $dashboards->roles()->attach([$adminRole->id, $userRole->id]);
 
-        // Admin should see secret menu
-        $this->assertTrue($adminOnlyChild->isVisibleForUser($admin));
+        $appsHeader = Menu::create(['name' => 'Apps', 'type' => 'header', 'is_active' => true]);
+        $appsHeader->roles()->attach([$adminRole->id]);
 
-        // Regular user should not see secret menu
-        $this->assertFalse($adminOnlyChild->isVisibleForUser($user));
+        $this->assertTrue($mainHeader->isVisibleForUser($regularUser));
+        $this->assertTrue($dashboards->isVisibleForUser($regularUser));
+        $this->assertFalse($appsHeader->isVisibleForUser($regularUser));
+
+        $this->assertTrue($mainHeader->isVisibleForUser($adminUser));
+        $this->assertTrue($dashboards->isVisibleForUser($adminUser));
+        $this->assertTrue($appsHeader->isVisibleForUser($adminUser));
     }
 }
