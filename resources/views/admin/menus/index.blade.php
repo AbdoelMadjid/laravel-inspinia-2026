@@ -2,6 +2,11 @@
 
 @section('title', 'Menu Management')
 
+@push('styles')
+    <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap5.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap5.min.css') }}" rel="stylesheet" type="text/css" />
+@endpush
+
 @section('content')
 <div class="container-fluid">
     <div class="page-title-head d-flex align-items-center justify-content-between my-2">
@@ -36,10 +41,10 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-hover align-middle">
+                        <table id="menuTable" class="table table-hover align-middle w-100">
                             <thead class="table-light">
                                 <tr>
-                                    <th>Icon</th>
+                                    <th style="width: 50px;">Icon</th>
                                     <th>Menu Name</th>
                                     <th>Type</th>
                                     <th>Route / URL</th>
@@ -47,7 +52,7 @@
                                     <th>Permission</th>
                                     <th>Order</th>
                                     <th>Status</th>
-                                    <th class="text-end">Actions</th>
+                                    <th class="text-end" style="min-width: 120px;">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -161,3 +166,37 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/dataTables.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/responsive.bootstrap5.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            if (!$.fn.DataTable.isDataTable('#menuTable')) {
+                $('#menuTable').DataTable({
+                    "pageLength": 25,
+                    "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Semua"]],
+                    "ordering": false,
+                    "responsive": true,
+                    "language": {
+                        "search": "Cari Menu:",
+                        "lengthMenu": "Tampilkan _MENU_ baris",
+                        "info": "Menampilkan _START_ sampai _END_ dari _TOTAL_ menu",
+                        "infoEmpty": "Menampilkan 0 sampai 0 dari 0 menu",
+                        "infoFiltered": "(disaring dari _MAX_ total menu)",
+                        "zeroRecords": "Tidak ada menu yang sesuai",
+                        "paginate": {
+                            "first": "Pertama",
+                            "last": "Terakhir",
+                            "next": "Selanjutnya",
+                            "previous": "Sebelumnya"
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+@endpush
