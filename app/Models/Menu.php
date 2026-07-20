@@ -155,7 +155,12 @@ class Menu extends Model
     public function isActiveRoute(): bool
     {
         if (!empty($this->route_name)) {
-            if (request()->routeIs($this->route_name)) {
+            $pattern = $this->route_name;
+            if (str_ends_with($pattern, '.index')) {
+                $pattern = substr($pattern, 0, -6) . '.*';
+            }
+
+            if (request()->routeIs($this->route_name) || request()->routeIs($pattern)) {
                 if (!empty($this->route_params) && is_array($this->route_params)) {
                     foreach ($this->route_params as $key => $val) {
                         if (request()->route($key) != $val && request()->query($key) != $val) {

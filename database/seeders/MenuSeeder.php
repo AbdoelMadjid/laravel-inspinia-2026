@@ -24,6 +24,9 @@ class MenuSeeder extends Seeder
         // Create core permissions
         $permissions = [
             'manage-menus',
+            'manage-users',
+            'manage-roles',
+            'manage-permissions',
             'view-dashboards',
             'view-apps',
             'view-pages',
@@ -106,6 +109,19 @@ class MenuSeeder extends Seeder
                 'permission_name' => 'manage-menus',
                 'data_lang' => 'menu-management',
                 'sort_order' => 6,
+            ],
+            [
+                'name' => 'Users Management',
+                'type' => 'item',
+                'icon' => 'ti ti-users-group',
+                'permission_name' => 'manage-users',
+                'data_lang' => 'users-management',
+                'sort_order' => 7,
+                'children' => [
+                    ['name' => 'Contacts / Users', 'type' => 'item', 'route_name' => 'admin.users.index', 'data_lang' => 'users-contacts', 'sort_order' => 1],
+                    ['name' => 'Roles', 'type' => 'item', 'route_name' => 'admin.roles.index', 'data_lang' => 'users-roles', 'sort_order' => 2],
+                    ['name' => 'Permissions', 'type' => 'item', 'route_name' => 'admin.permissions.index', 'data_lang' => 'users-permissions', 'sort_order' => 3],
+                ],
             ],
 
             // --- APPS HEADER ---
