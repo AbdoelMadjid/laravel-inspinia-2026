@@ -28,7 +28,7 @@
                 <div>
                     <a href="#!" class="link-reset">
                         <img src="{{ asset('assets/images/users/user-1.jpg') }}" alt="user-image" class="rounded-circle mb-2 avatar-md" />
-                        <span class="sidenav-user-name fw-bold">Damian D.</span>
+                        <span class="sidenav-user-name fw-bold">{{ Auth::user()->name ?? 'Damian D.' }}</span>
                         <span class="fs-12 fw-semibold" data-lang="user-role">Art Director</span>
                     </a>
                 </div>
@@ -44,7 +44,7 @@
                         </div>
 
                         <!-- My Profile -->
-                        <a href="#!" class="dropdown-item">
+                        <a href="{{ route('page', 'pages-profile') }}" class="dropdown-item">
                             <i class="ti ti-user-circle me-1 fs-lg align-middle"></i>
                             <span class="align-middle">Profile</span>
                         </a>
@@ -62,7 +62,10 @@
                         </a>
 
                         <!-- Logout -->
-                        <a href="javascript:void(0);" class="dropdown-item text-danger fw-semibold">
+                        <form method="POST" action="{{ route('logout') }}" id="sidebar-logout-form" class="d-none">
+                            @csrf
+                        </form>
+                        <a href="javascript:void(0);" onclick="event.preventDefault(); document.getElementById('sidebar-logout-form').submit();" class="dropdown-item text-danger fw-semibold">
                             <i class="ti ti-logout me-1 fs-lg align-middle"></i>
                             <span class="align-middle">Log Out</span>
                         </a>
