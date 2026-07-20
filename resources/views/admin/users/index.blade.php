@@ -82,9 +82,13 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
                             <div class="me-3 position-relative">
-                                <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-20 fw-bold d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
-                                    {{ strtoupper(substr($user->name, 0, 2)) }}
-                                </span>
+                                @if($user->avatar)
+                                    <img src="{{ $user->avatar_url }}" alt="{{ $user->name }}" class="avatar-md rounded-circle object-fit-cover" style="width: 56px; height: 56px;" />
+                                @else
+                                    <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-20 fw-bold d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
+                                        {{ strtoupper(substr($user->name, 0, 2)) }}
+                                    </span>
+                                @endif
                             </div>
                             <div class="flex-grow-1 overflow-hidden">
                                 <h5 class="mb-1 text-truncate">
@@ -142,7 +146,7 @@
             <div class="modal fade" id="editUserModal{{ $user->id }}" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <form method="POST" action="{{ route('admin.users.update', $user->id) }}">
+                        <form method="POST" action="{{ route('admin.users.update', $user->id) }}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="modal-header">
@@ -157,6 +161,14 @@
                                 <div class="mb-3">
                                     <label class="form-label">Email Address</label>
                                     <input type="email" name="email" class="form-control" value="{{ old('email', $user->email) }}" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Avatar Image</label>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <img src="{{ $user->avatar_url }}" class="rounded-circle avatar-md object-fit-cover" style="width: 48px; height: 48px;" alt="{{ $user->name }}">
+                                        <input type="file" name="avatar" class="form-control" accept="image/*" />
+                                    </div>
+                                    <small class="text-muted">Allowed: JPG, PNG, WEBP, GIF (Max 2MB)</small>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Password <small class="text-muted">(Leave blank to keep current password)</small></label>
@@ -224,7 +236,7 @@
 <div class="modal fade" id="addUserModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form method="POST" action="{{ route('admin.users.store') }}">
+            <form method="POST" action="{{ route('admin.users.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-header">
                     <h5 class="modal-title"><i class="ti ti-user-plus me-1"></i> Add New User</h5>
@@ -238,6 +250,11 @@
                     <div class="mb-3">
                         <label class="form-label">Email Address <span class="text-danger">*</span></label>
                         <input type="email" name="email" class="form-control" placeholder="Enter email address" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Avatar Image</label>
+                        <input type="file" name="avatar" class="form-control" accept="image/*" />
+                        <small class="text-muted">Allowed: JPG, PNG, WEBP, GIF (Max 2MB)</small>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Password <span class="text-danger">*</span></label>

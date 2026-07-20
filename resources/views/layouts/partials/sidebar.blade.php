@@ -27,7 +27,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <div>
                     <a href="#!" class="link-reset">
-                        <img src="{{ asset('assets/images/users/user-1.jpg') }}" alt="user-image" class="rounded-circle mb-2 avatar-md" />
+                        <img src="{{ Auth::user()?->avatar_url ?? asset('assets/images/users/user-1.jpg') }}" alt="user-image" class="rounded-circle mb-2 avatar-md object-fit-cover" />
                         <span class="sidenav-user-name fw-bold">{{ Auth::user()->name ?? 'User' }}</span>
                         <span class="fs-12 fw-semibold" data-lang="user-role">{{ Auth::user()->roles->pluck('name')->implode(', ') ?: 'User' }}</span>
                     </a>

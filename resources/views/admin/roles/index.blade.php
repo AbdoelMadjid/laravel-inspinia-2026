@@ -114,9 +114,13 @@
                                     <div class="avatar-group avatar-group-sm mb-3">
                                         @forelse($role->users->take(4) as $u)
                                             <div class="avatar">
-                                                <span class="avatar-title rounded-circle bg-primary-subtle text-primary fw-semibold fs-xs" style="width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;">
-                                                    {{ strtoupper(substr($u->name, 0, 2)) }}
-                                                </span>
+                                                @if($u->avatar)
+                                                    <img src="{{ $u->avatar_url }}" alt="{{ $u->name }}" class="rounded-circle object-fit-cover" style="width: 32px; height: 32px;" />
+                                                @else
+                                                    <span class="avatar-title rounded-circle bg-primary-subtle text-primary fw-semibold fs-xs" style="width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;">
+                                                        {{ strtoupper(substr($u->name, 0, 2)) }}
+                                                    </span>
+                                                @endif
                                             </div>
                                         @empty
                                             <span class="text-muted fs-xs">No users assigned</span>

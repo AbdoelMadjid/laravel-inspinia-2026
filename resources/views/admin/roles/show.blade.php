@@ -80,9 +80,13 @@
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center gap-2">
-                                                <span class="avatar-sm bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center fw-bold fs-xs">
-                                                    {{ strtoupper(substr($u->name, 0, 2)) }}
-                                                </span>
+                                                @if($u->avatar)
+                                                    <img src="{{ $u->avatar_url }}" alt="{{ $u->name }}" class="rounded-circle object-fit-cover" style="width: 32px; height: 32px;" />
+                                                @else
+                                                    <span class="avatar-sm bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center fw-bold fs-xs">
+                                                        {{ strtoupper(substr($u->name, 0, 2)) }}
+                                                    </span>
+                                                @endif
                                                 <span class="fw-medium text-dark">{{ $u->name }}</span>
                                             </div>
                                         </td>
