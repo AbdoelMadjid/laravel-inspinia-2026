@@ -91,6 +91,23 @@ class MenuSeeder extends Seeder
                 'roles' => [$adminRole, $userRole],
             ],
 
+            // --- SYSTEM MANAGEMENT HEADER ---
+            [
+                'name' => 'System Management',
+                'type' => 'header',
+                'data_lang' => 'system-management',
+                'sort_order' => 5,
+            ],
+            [
+                'name' => 'Menu Management',
+                'type' => 'item',
+                'icon' => 'ti ti-list-check',
+                'route_name' => 'admin.menus.index',
+                'permission_name' => 'manage-menus',
+                'data_lang' => 'menu-management',
+                'sort_order' => 6,
+            ],
+
             // --- APPS HEADER ---
             [
                 'name' => 'Apps',
@@ -229,23 +246,6 @@ class MenuSeeder extends Seeder
                 ],
             ],
             ['name' => 'Companies', 'type' => 'item', 'icon' => 'ti ti-building', 'route_name' => 'page', 'route_params' => ['page' => 'apps-companies'], 'data_lang' => 'apps-companies', 'sort_order' => 20],
-
-            // --- SYSTEM MANAGEMENT HEADER ---
-            [
-                'name' => 'System Management',
-                'type' => 'header',
-                'data_lang' => 'system-management',
-                'sort_order' => 25,
-            ],
-            [
-                'name' => 'Menu Management',
-                'type' => 'item',
-                'icon' => 'ti ti-list-check',
-                'route_name' => 'admin.menus.index',
-                'permission_name' => 'manage-menus',
-                'data_lang' => 'menu-management',
-                'sort_order' => 26,
-            ],
 
             // --- CUSTOM PAGES HEADER ---
             [
