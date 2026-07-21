@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\System\AppFeatureController;
 use App\Http\Controllers\Admin\System\AppProfileController;
 use App\Http\Controllers\Admin\System\BackupController;
+use App\Http\Controllers\Admin\System\LoginLogController;
 use App\Http\Controllers\Admin\System\MenuController;
 use App\Http\Controllers\Admin\System\PermissionController;
 use App\Http\Controllers\Admin\System\ProfileController;
@@ -47,6 +48,8 @@ Route::middleware('auth')->group(function () {
             Route::get('backups/{filename}/download', [BackupController::class, 'download'])->name('backups.download');
             Route::delete('backups/{filename}', [BackupController::class, 'destroy'])->name('backups.destroy');
             Route::resource('backups', BackupController::class)->only(['index', 'store']);
+
+            Route::resource('login-logs', LoginLogController::class)->only(['index']);
         });
 
         // Users Management Group

@@ -403,5 +403,6 @@
     "favicon-label": "Favicon Browser Tab",
     "save-profile-btn": "Save Profile & Logo Changes",
     "dashboard": "Dashboard",
-    "users-setting": "Users Setting"
+    "users-setting": "Users Setting",
+    "apps-login-logs": "Login Data"
 }

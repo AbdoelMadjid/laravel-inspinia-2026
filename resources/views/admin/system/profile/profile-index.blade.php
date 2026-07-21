@@ -43,6 +43,7 @@
                                                 <h4 class="text-nowrap fw-bold mb-1">{{ Auth::user()->name }}</h4>
                                                 <p class="text-muted mb-1">{{ Auth::user()->roles->pluck('name')->map('ucfirst')->join(', ') ?: 'User' }}</p>
                                                 <span class="badge badge-soft-primary fw-medium fs-xs ms-auto">{{ Auth::user()->email }}</span>
+                                                <span class="badge badge-soft-warning fw-medium fs-xs ms-1"><i class="ti ti-star-filled me-1"></i> {{ Auth::user()->points ?? 0 }} Poin Login</span>
                                             </div>
                                         </div>
                                         <div class="d-flex gap-2">
@@ -611,6 +612,80 @@
                                             I take a user-first approach to design—blending thoughtful UX with clean code. From wireframes to fully responsive templates, I focus on creating intuitive and aesthetic experiences. Whether you're launching a SaaS dashboard, admin
                                             panel, or marketing site, I strive to deliver pixel-perfect results that elevate your product.
                                         </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Riwayat Login Card -->
+                            <div class="card shadow-sm border-0">
+                                <div class="card-header bg-transparent border-bottom d-flex align-items-center justify-content-between py-3">
+                                    <h4 class="card-title mb-0 d-flex align-items-center gap-2">
+                                        <i class="ti ti-history text-primary fs-20"></i>
+                                        <span>Riwayat Login</span>
+                                    </h4>
+                                    <span class="badge bg-warning-subtle text-warning border border-warning-subtle px-2 py-1 fs-12 rounded-pill">
+                                        <i class="ti ti-star-filled me-1"></i> {{ Auth::user()->points ?? 0 }} Poin Terkumpul
+                                    </span>
+                                </div>
+                                <div class="card-body p-0">
+                                    @php
+                                        $myLoginLogs = Auth::user()->loginLogs()->latest('login_at')->take(10)->get();
+                                    @endphp
+                                    <div class="table-responsive">
+                                        <table class="table table-hover align-middle mb-0">
+                                            <thead class="table-light">
+                                                <tr class="text-uppercase fs-xxs">
+                                                    <th class="ps-3" style="width: 40px;">#</th>
+                                                    <th>Waktu Login</th>
+                                                    <th>IP Address</th>
+                                                    <th>Perangkat / Browser</th>
+                                                    <th class="text-center pe-3">Poin Harian</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @forelse($myLoginLogs as $index => $log)
+                                                    <tr>
+                                                        <td class="ps-3 text-muted fs-13">{{ $index + 1 }}</td>
+                                                        <td>
+                                                            <div class="fs-13 fw-semibold text-dark">
+                                                                {{ $log->login_at ? $log->login_at->translatedFormat('d M Y, H:i:s') : '-' }}
+                                                            </div>
+                                                            <small class="text-muted fs-12">
+                                                                {{ $log->login_at ? $log->login_at->diffForHumans() : '-' }}
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <span class="badge bg-light text-dark border font-monospace">
+                                                                <i class="ti ti-network me-1 text-secondary"></i> {{ $log->ip_address ?? '127.0.0.1' }}
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="text-truncate d-inline-block text-muted fs-12" style="max-width: 250px;" title="{{ $log->user_agent }}">
+                                                                {{ $log->user_agent ?? 'Unknown' }}
+                                                            </span>
+                                                        </td>
+                                                        <td class="text-center pe-3">
+                                                            @if($log->points_awarded > 0)
+                                                                <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 fs-12 rounded-pill">
+                                                                    <i class="ti ti-star-filled fs-12 me-1"></i> +{{ $log->points_awarded }} Poin
+                                                                </span>
+                                                            @else
+                                                                <span class="badge bg-secondary-subtle text-secondary px-2 py-1 fs-12 rounded-pill">
+                                                                    0 Poin
+                                                                </span>
+                                                            @endif
+                                                        </td>
+                                                    </tr>
+                                                @empty
+                                                    <tr>
+                                                        <td colspan="5" class="text-center py-4 text-muted fs-13">
+                                                            <i class="ti ti-history-off fs-24 mb-1 d-block opacity-50"></i>
+                                                            Belum ada riwayat aktivitas login.
+                                                        </td>
+                                                    </tr>
+                                                @endforelse
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>

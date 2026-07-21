@@ -13,7 +13,9 @@ use Spatie\Permission\Traits\HasRoles;
 
 use Illuminate\Support\Facades\Storage;
 
-#[Fillable(['name', 'email', 'password', 'avatar'])]
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+#[Fillable(['name', 'email', 'password', 'avatar', 'points'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -28,6 +30,14 @@ class User extends Authenticatable
     }
 
     /**
+     * Get login logs for user.
+     */
+    public function loginLogs(): HasMany
+    {
+        return $this->hasMany(LoginLog::class, 'user_id');
+    }
+
+    /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
@@ -37,6 +47,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'points' => 'integer',
         ];
     }
 
