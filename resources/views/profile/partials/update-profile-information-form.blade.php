@@ -1,11 +1,8 @@
 <section>
-    <header>
-        <h2 class="text-lg font-medium text-gray-900">
-            {{ __('Profile Information') }}
-        </h2>
-
-        <p class="mt-1 text-sm text-gray-600">
-            {{ __("Update your account's profile information and email address.") }}
+    <header class="mb-4">
+        <h6 class="fs-15 fw-semibold text-dark mb-1">Detail Informasi Pengguna</h6>
+        <p class="text-muted fs-13 mb-0">
+            Perbarui informasi profil akun dan alamat email Anda.
         </p>
     </header>
 
@@ -13,7 +10,7 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" enctype="multipart/form-data" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" enctype="multipart/form-data">
         @csrf
         @method('patch')
 
@@ -42,7 +39,7 @@
                     if (data.success && data.avatar_url) {
                         const newUrl = data.avatar_url + '?t=' + new Date().getTime();
                         document.querySelectorAll('.user-avatar-img').forEach(img => img.src = newUrl);
-                        this.successMsg = 'Foto profil berhasil langsung diperbarui!';
+                        this.successMsg = 'Foto profil berhasil diperbarui!';
                         setTimeout(() => this.successMsg = '', 4000);
                     } else {
                         alert('Gagal mengunggah foto.');
@@ -54,92 +51,90 @@
                     alert('Terjadi kesalahan saat mengunggah foto.');
                 });
             }
-        }">
-            <x-input-label for="avatar_input" :value="__('Foto Profil')" />
+        }" class="mb-4">
+            <label class="form-label fw-semibold mb-2">Foto Profil</label>
             
             <!-- Hidden File Input -->
-            <input type="file" id="avatar_input" class="hidden" x-ref="photoInput" x-on:change="uploadPhoto($event)" accept="image/*" />
+            <input type="file" id="avatar_input" class="d-none" x-ref="photoInput" x-on:change="uploadPhoto($event)" accept="image/*" />
 
-            <div class="flex items-center gap-4 mt-2">
+            <div class="d-flex align-items-center gap-3">
                 <!-- Clickable Avatar Container -->
-                <div class="relative group cursor-pointer" x-on:click="$refs.photoInput.click()" title="Klik foto untuk langsung mengganti foto profil">
-                    <img src="{{ $user->avatar_url }}" alt="{{ $user->name }}" class="user-avatar-img h-24 w-24 rounded-full object-cover border-4 border-indigo-500 shadow-md group-hover:opacity-75 transition duration-150" :class="{ 'opacity-50 animate-pulse': uploading }" />
+                <div class="position-relative cursor-pointer group rounded-circle overflow-hidden border border-2 border-primary shadow-sm" style="width: 80px; height: 80px;" x-on:click="$refs.photoInput.click()" title="Klik foto untuk langsung mengganti foto profil">
+                    <img src="{{ $user->avatar_url }}" alt="{{ $user->name }}" class="user-avatar-img img-fluid w-100 h-100 object-fit-cover transition-all" :class="{ 'opacity-50': uploading }" />
 
                     <!-- Hover Camera Overlay -->
-                    <div class="absolute inset-0 bg-black bg-opacity-50 rounded-full flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-150 text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        <span class="text-[10px] font-medium mt-0.5">Ganti Foto</span>
+                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column align-items-center justify-content-center text-white opacity-0 group-hover-opacity-100 transition-all">
+                        <i class="ti ti-camera fs-20"></i>
+                        <span class="fs-10 fw-semibold">Ganti Foto</span>
                     </div>
 
                     <!-- Uploading Spinner -->
                     <template x-if="uploading">
-                        <div class="absolute inset-0 bg-black/60 rounded-full flex items-center justify-center text-white">
-                            <svg class="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                            </svg>
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-75 d-flex align-items-center justify-content-center text-white">
+                            <div class="spinner-border spinner-border-sm text-light" role="status"></div>
                         </div>
                     </template>
                 </div>
 
                 <div>
-                    <button type="button" x-on:click="$refs.photoInput.click()" class="px-3 py-1.5 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 shadow-sm transition">
-                        Pilih Foto Baru
+                    <button type="button" x-on:click="$refs.photoInput.click()" class="btn btn-sm btn-light border shadow-sm">
+                        <i class="ti ti-upload me-1"></i> Pilih Foto Baru
                     </button>
-                    <p class="text-xs text-gray-500 mt-1">Klik gambar foto di atas untuk memilih dan langsung mengganti foto profil.</p>
+                    <p class="fs-12 text-muted mt-1 mb-0">Klik foto atau tombol di atas untuk langsung mengganti foto profil Anda.</p>
                     <template x-if="successMsg">
-                        <p class="text-xs font-semibold text-green-600 mt-1" x-text="successMsg"></p>
+                        <p class="fs-12 fw-semibold text-success mt-1 mb-0" x-text="successMsg"></p>
                     </template>
                 </div>
             </div>
-            <x-input-error class="mt-2" :messages="$errors->get('avatar')" />
+            @error('avatar')
+                <div class="text-danger fs-12 mt-1">{{ $message }}</div>
+            @enderror
         </div>
 
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('name')" />
+        <div class="mb-3">
+            <label for="name" class="form-label fw-semibold">Nama Lengkap <span class="text-danger">*</span></label>
+            <input id="name" name="name" type="text" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $user->name) }}" required autocomplete="name" placeholder="Masukkan nama lengkap" />
+            @error('name')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
 
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
-            <x-input-error class="mt-2" :messages="$errors->get('email')" />
+        <div class="mb-4">
+            <label for="email" class="form-label fw-semibold">Alamat Email <span class="text-danger">*</span></label>
+            <input id="email" name="email" type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email', $user->email) }}" required autocomplete="username" placeholder="Masukkan alamat email" />
+            @error('email')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
-                <div>
-                    <p class="text-sm mt-2 text-gray-800">
-                        {{ __('Your email address is unverified.') }}
-
-                        <button form="send-verification" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            {{ __('Click here to re-send the verification email.') }}
+                <div class="mt-2">
+                    <p class="fs-13 text-muted mb-1">
+                        {{ __('Alamat email Anda belum diverifikasi.') }}
+                        <button form="send-verification" class="btn btn-link p-0 text-primary fs-13">
+                            {{ __('Klik di sini untuk mengirim ulang email verifikasi.') }}
                         </button>
                     </p>
 
                     @if (session('status') === 'verification-link-sent')
-                        <p class="mt-2 font-medium text-sm text-green-600">
-                            {{ __('A new verification link has been sent to your email address.') }}
-                        </p>
+                        <div class="alert alert-success fs-12 py-1 px-2 mb-0 mt-1" role="alert">
+                            {{ __('Tautan verifikasi baru telah dikirim ke alamat email Anda.') }}
+                        </div>
                     @endif
                 </div>
             @endif
         </div>
 
-        <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
-
-            @if (session('status') === 'profile-updated')
-                <p
-                    x-data="{ show: true }"
-                    x-show="show"
-                    x-transition
-                    x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-gray-600"
-                >{{ __('Saved.') }}</p>
-            @endif
+        <div class="d-flex align-items-center gap-2">
+            <button type="submit" class="btn btn-primary d-inline-flex align-items-center gap-1">
+                <i class="ti ti-device-floppy fs-16"></i> Simpan Perubahan
+            </button>
         </div>
+
+        @if (session('status') === 'profile-updated')
+            <div class="alert alert-success alert-dismissible fade show mt-3 mb-0" role="alert">
+                <i class="ti ti-check me-1"></i> Informasi profil berhasil diperbarui!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
     </form>
 </section>

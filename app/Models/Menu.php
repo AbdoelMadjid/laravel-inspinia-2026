@@ -170,10 +170,22 @@ class Menu extends Model
                 }
                 return true;
             }
+
+            // Special check: keep Profile menu active on profile.* routes
+            if ($this->route_name === 'page' && isset($this->route_params['page']) && $this->route_params['page'] === 'profile-page') {
+                if (request()->routeIs('profile.*') || request()->is('profile*')) {
+                    return true;
+                }
+            }
         }
 
         if (!empty($this->url) && $this->url !== '#' && $this->url !== 'javascript:void(0);') {
-            return request()->fullUrlIs($this->url) || request()->is(ltrim($this->url, '/'));
+            if (request()->fullUrlIs($this->url) || request()->is(ltrim($this->url, '/'))) {
+                return true;
+            }
+            if (($this->url === '/page/profile-page' || $this->url === 'page/profile-page') && (request()->routeIs('profile.*') || request()->is('profile*'))) {
+                return true;
+            }
         }
 
         // Check if any children are active

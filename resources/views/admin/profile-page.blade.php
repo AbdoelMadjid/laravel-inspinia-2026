@@ -36,12 +36,16 @@
                                             <button class="btn btn-icon btn-dark" data-bs-toggle="dropdown">
                                                 <i class="ti ti-dots fs-24"></i>
                                             </button>
-                                            <ul class="dropdown-menu">
+                                            <ul class="dropdown-menu dropdown-menu-end">
                                                 <li>
-                                                    <a class="dropdown-item" href="{{ route('profile.edit') }}">Edit Profile</a>
+                                                    <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                                                        <i class="ti ti-user-edit me-1"></i> Edit Profile
+                                                    </a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item text-danger" href="#">Report</a>
+                                                    <a class="dropdown-item text-danger" href="#">
+                                                        <i class="ti ti-flag me-1"></i> Report
+                                                    </a>
                                                 </li>
                                             </ul>
                                         </div>
