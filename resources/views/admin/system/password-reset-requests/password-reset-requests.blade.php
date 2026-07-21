@@ -135,18 +135,18 @@
                                             <div class="d-flex align-items-center justify-content-end gap-1">
                                                 @if($item->status === 'pending' && $item->user)
                                                     <!-- Form Reset Password Default -->
-                                                    <form method="POST" action="{{ route('admin.password-reset-requests.reset', $item) }}" onsubmit="return confirm('Reset password akun {{ $item->user->name }} menjadi password default (password123)?');">
+                                                    <form id="reset-form-{{ $item->id }}" method="POST" action="{{ route('admin.password-reset-requests.reset', $item) }}">
                                                         @csrf
                                                         <input type="hidden" name="default_password" value="password123">
-                                                        <button type="submit" class="btn btn-sm btn-success fw-semibold" title="Reset ke Password Default (password123)">
+                                                        <button type="button" class="btn btn-sm btn-success fw-semibold" onclick="confirmResetPassword('reset-form-{{ $item->id }}', '{{ addslashes($item->user->name) }}')" title="Reset ke Password Default (password123)">
                                                             <i class="ti ti-key me-1"></i> Reset Password Default
                                                         </button>
                                                     </form>
 
                                                     <!-- Form Reject -->
-                                                    <form method="POST" action="{{ route('admin.password-reset-requests.reject', $item) }}" onsubmit="return confirm('Tolak permintaan reset password ini?');">
+                                                    <form id="reject-form-{{ $item->id }}" method="POST" action="{{ route('admin.password-reset-requests.reject', $item) }}">
                                                         @csrf
-                                                        <button type="submit" class="btn btn-sm btn-outline-warning" title="Tolak Permintaan">
+                                                        <button type="button" class="btn btn-sm btn-outline-warning" onclick="confirmReject('reject-form-{{ $item->id }}', '{{ addslashes($item->username_or_email) }}')" title="Tolak Permintaan">
                                                             <i class="ti ti-x"></i>
                                                         </button>
                                                     </form>
@@ -155,10 +155,10 @@
                                                 @endif
 
                                                 <!-- Form Delete Record -->
-                                                <form method="POST" action="{{ route('admin.password-reset-requests.destroy', $item) }}" onsubmit="return confirm('Hapus riwayat permintaan ini?');">
+                                                <form id="delete-form-{{ $item->id }}" method="POST" action="{{ route('admin.password-reset-requests.destroy', $item) }}">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-sm btn-outline-danger" title="Hapus Riwayat">
+                                                    <button type="button" class="btn btn-sm btn-outline-danger" onclick="confirmDelete('delete-form-{{ $item->id }}')" title="Hapus Riwayat">
                                                         <i class="ti ti-trash"></i>
                                                     </button>
                                                 </form>
@@ -188,3 +188,79 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    function confirmResetPassword(formId, userName) {
+        if (typeof Swal !== 'undefined') {
+            Swal.fire({
+                title: 'Reset Password Default?',
+                html: 'Apakah Anda yakin ingin mereset kata sandi akun <strong>' + userName + '</strong> menjadi password default (<code>password123</code>)?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#198754',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: '<i class="ti ti-key me-1"></i> Ya, Reset Password!',
+                cancelButtonText: 'Batal',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById(formId).submit();
+                }
+            });
+        } else {
+            if (confirm('Reset password akun ' + userName + ' menjadi password default (password123)?')) {
+                document.getElementById(formId).submit();
+            }
+        }
+    }
+
+    function confirmReject(formId, userName) {
+        if (typeof Swal !== 'undefined') {
+            Swal.fire({
+                title: 'Tolak Permintaan?',
+                text: 'Apakah Anda yakin ingin menolak permintaan reset password untuk ' + userName + '?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#ffc107',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: 'Ya, Tolak',
+                cancelButtonText: 'Batal',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById(formId).submit();
+                }
+            });
+        } else {
+            if (confirm('Tolak permintaan reset password ini?')) {
+                document.getElementById(formId).submit();
+            }
+        }
+    }
+
+    function confirmDelete(formId) {
+        if (typeof Swal !== 'undefined') {
+            Swal.fire({
+                title: 'Hapus Riwayat?',
+                text: 'Apakah Anda yakin ingin menghapus riwayat permintaan ini?',
+                icon: 'error',
+                showCancelButton: true,
+                confirmButtonColor: '#dc3545',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: 'Ya, Hapus',
+                cancelButtonText: 'Batal',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById(formId).submit();
+                }
+            });
+        } else {
+            if (confirm('Hapus riwayat permintaan ini?')) {
+                document.getElementById(formId).submit();
+            }
+        }
+    }
+</script>
+@endpush
