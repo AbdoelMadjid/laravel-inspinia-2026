@@ -28,6 +28,11 @@ Aplikasi Web Admin Dashboard & Management System berbasis **Laravel 11**, **Spat
 - **Tabel Riwayat Login**: Menampilkan 10 catatan aktivitas login terbaru milik pengguna di halaman profil.
 
 ### 4. 🌐 UI & Fitur Antarmuka Modern
+- **Auto Logout Idle (Inaktivitas Pengguna)**:
+  - Pemantauan otomatis aktivitas pengguna (*mouse movement*, *keypress*, *scroll*, *click*, *touch*).
+  - Sinkronisasi *localStorage* antar tab peramban sehingga interaksi di satu tab otomatis mereset timer di seluruh tab aktif.
+  - Penghitungan waktu *Date.now()* akurat meskipun perangkat dalam posisi *sleep/standby* atau tab berada di *background*.
+  - Mengarahkan kembali ke halaman login secara otomatis jika idle melebihi batas waktu (default 15 menit) dilengkapi pesan notifikasi *"Anda sudah logout otomatis karena tidak ada aktivitas."*
 - **Dukungan Multi-Bahasa**: Peralihan bahasa cepat antara Bahasa Inggris (EN) & Bahasa Indonesia (ID).
 - **Notifikasi SweetAlert2**: Integrasi konfirmasi aksi dan notifikasi toast modern dengan backdrop jernih.
 - **Theme Customizer**: Pengaturan tema Dark/Light mode, warna sidebar, dan komponen responsif.
