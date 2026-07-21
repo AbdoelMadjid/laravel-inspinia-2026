@@ -19,7 +19,7 @@ return new class extends Migration
             [
                 'name' => 'Reset Password',
                 'type' => 'item',
-                'icon' => 'ti ti-key',
+                'icon' => null,
                 'parent_id' => $parentId,
                 'is_active' => true,
                 'sort_order' => 4,
