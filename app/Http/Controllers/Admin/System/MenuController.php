@@ -52,6 +52,11 @@ class MenuController extends Controller
 
         $validated['is_active'] = $request->has('is_active');
 
+        if (empty($validated['sort_order']) || $validated['sort_order'] == 0) {
+            $maxOrder = Menu::where('parent_id', $validated['parent_id'] ?? null)->max('sort_order') ?? 0;
+            $validated['sort_order'] = $maxOrder + 1;
+        }
+
         $menu = Menu::create($validated);
 
         if (!empty($request->roles)) {

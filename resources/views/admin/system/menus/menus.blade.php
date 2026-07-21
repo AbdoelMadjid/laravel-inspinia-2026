@@ -30,9 +30,14 @@
             <div class="card">
                 <div class="card-header bg-light d-flex align-items-center justify-content-between py-2">
                     <h5 class="card-title mb-0"><i class="ti ti-sitemap me-2"></i>Database Menus &amp; Spatie Role Access</h5>
-                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#createMenuModal">
-                        <i class="ti ti-plus me-1"></i> Add New Menu
-                    </button>
+                    <div>
+                        <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#createGroupModal">
+                            <i class="ti ti-folder-plus me-1"></i> Tambah Group (Header)
+                        </button>
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#createMenuModal">
+                            <i class="ti ti-plus me-1"></i> Tambah Menu / Submenu
+                        </button>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -60,6 +65,56 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- Modal Create Group (Header) -->
+<div class="modal fade" id="createGroupModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <form action="{{ route('admin.menus.store') }}" method="POST" class="modal-content">
+            @csrf
+            <input type="hidden" name="type" value="header">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title text-white"><i class="ti ti-folder-plus me-1"></i> Tambah Group Menu Baru (Header)</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label class="form-label fw-bold">Nama Group / Section Header</label>
+                        <input type="text" name="name" class="form-control" required placeholder="Contoh: Academic Management">
+                        <small class="text-muted">Header akan muncul sebagai judul kelompok menu di sidebar.</small>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label fw-bold">Urutan (Sort Order)</label>
+                        <input type="number" name="sort_order" class="form-control" placeholder="Kosongkan untuk otomatis urutan terakhir">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label fw-bold">Hak Akses Role Spatie</label>
+                        <div class="d-flex flex-wrap gap-3">
+                            @foreach ($roles as $role)
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="roles[]" value="{{ $role->id }}" id="group_role_{{ $role->id }}" checked>
+                                    <label class="form-check-label" for="group_role_{{ $role->id }}">
+                                        <span class="badge bg-info text-dark">{{ $role->name }}</span>
+                                    </label>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" name="is_active" value="1" id="is_active_group" checked>
+                            <label class="form-check-label fw-bold" for="is_active_group">Aktifkan Group</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-primary">Simpan Group Menu</button>
+            </div>
+        </form>
     </div>
 </div>
 
