@@ -25,6 +25,8 @@
             <a data-bs-toggle="collapse" href="#{{ $collapseId }}" aria-expanded="{{ $isActive ? 'true' : 'false' }}" aria-controls="{{ $collapseId }}" class="side-nav-link{{ $linkClass }} {{ $isActive ? 'active' : '' }}">
                 @if(!empty($menu->icon))
                     <span class="menu-icon"><i class="{{ $menu->icon }}"></i></span>
+                @else
+                    <span class="menu-icon d-inline-flex align-items-center justify-content-center"><i class="{{ $isActive ? 'ti ti-circle-filled text-primary' : 'ti ti-circle' }}" style="font-size: 7px; vertical-align: middle;"></i></span>
                 @endif
                 <span class="menu-text" @if(!empty($menu->data_lang)) data-lang="{{ $menu->data_lang }}" @endif>{{ $menu->name }}</span>
                 @if(!empty($menu->badge_text))
@@ -45,6 +47,8 @@
             <a href="{{ $menu->resolved_url }}" target="{{ $menu->target ?? '_self' }}" class="side-nav-link{{ $linkClass }} {{ $isActive ? 'active' : '' }}">
                 @if(!empty($menu->icon))
                     <span class="menu-icon"><i class="{{ $menu->icon }}"></i></span>
+                @else
+                    <span class="menu-icon d-inline-flex align-items-center justify-content-center"><i class="{{ $isActive ? 'ti ti-circle-filled text-primary' : 'ti ti-circle' }}" style="font-size: 7px; vertical-align: middle;"></i></span>
                 @endif
                 <span class="menu-text" @if(!empty($menu->data_lang)) data-lang="{{ $menu->data_lang }}" @endif>{{ $menu->name }}</span>
                 @if(!empty($menu->badge_text))

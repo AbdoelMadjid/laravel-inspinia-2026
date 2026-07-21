@@ -1,4 +1,5 @@
 <header class="app-topbar">
+    @php $appProfile = \App\Models\Admin\System\AppProfile::get(); @endphp
     <div class="container-fluid topbar-menu">
         <div class="d-flex align-items-center gap-2">
             <!-- Topbar Brand Logo -->
@@ -6,20 +7,20 @@
                 <!-- Logo light -->
                 <a href="{{ route('dashboard') }}" class="logo-light">
                     <span class="logo-lg">
-                        <img src="{{ asset('assets/images/logo.png') }}" alt="logo" />
+                        <img src="{{ $appProfile->logo_light_url }}" alt="{{ $appProfile->app_name }}" />
                     </span>
                     <span class="logo-sm">
-                        <img src="{{ asset('assets/images/logo-sm.png') }}" alt="small logo" />
+                        <img src="{{ $appProfile->logo_sm_url }}" alt="{{ $appProfile->app_name }}" />
                     </span>
                 </a>
 
                 <!-- Logo Dark -->
                 <a href="{{ route('dashboard') }}" class="logo-dark">
                     <span class="logo-lg">
-                        <img src="{{ asset('assets/images/logo-black.png') }}" alt="dark logo" />
+                        <img src="{{ $appProfile->logo_dark_url }}" alt="{{ $appProfile->app_name }}" />
                     </span>
                     <span class="logo-sm">
-                        <img src="{{ asset('assets/images/logo-sm.png') }}" alt="small logo" />
+                        <img src="{{ $appProfile->logo_sm_url }}" alt="{{ $appProfile->app_name }}" />
                     </span>
                 </a>
             </div>

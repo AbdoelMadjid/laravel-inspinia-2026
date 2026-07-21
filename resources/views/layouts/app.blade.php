@@ -8,8 +8,9 @@
         <meta name="keywords" content="Inspinia, admin dashboard, Wrapmarket, Wrapbootstrap, HTML template, Bootstrap admin, CRM template, CMS template, responsive admin, web app UI, admin theme, best admin template" />
         <meta name="author" content="WebAppLayers" />
 
+        @php $appProfile = \App\Models\Admin\System\AppProfile::get(); @endphp
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" />
+        <link rel="shortcut icon" href="{{ $appProfile->favicon_url }}" />
         
         <!-- Theme Config Js -->
         <script src="{{ asset('assets/js/config.js') }}"></script>

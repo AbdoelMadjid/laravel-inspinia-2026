@@ -1,14 +1,15 @@
 <div class="sidenav-menu">
+    @php $appProfile = \App\Models\Admin\System\AppProfile::get(); @endphp
     <!-- Brand Logo -->
     <a href="{{ route('dashboard') }}" class="logo">
         <span class="logo logo-light">
-            <span class="logo-lg"><img src="{{ asset('assets/images/logo.png') }}" alt="logo" /></span>
-            <span class="logo-sm"><img src="{{ asset('assets/images/logo-sm.png') }}" alt="small logo" /></span>
+            <span class="logo-lg"><img src="{{ $appProfile->logo_light_url }}" alt="{{ $appProfile->app_name }}" /></span>
+            <span class="logo-sm"><img src="{{ $appProfile->logo_sm_url }}" alt="{{ $appProfile->app_name }}" /></span>
         </span>
 
         <span class="logo logo-dark">
-            <span class="logo-lg"><img src="{{ asset('assets/images/logo-black.png') }}" alt="dark logo" /></span>
-            <span class="logo-sm"><img src="{{ asset('assets/images/logo-sm.png') }}" alt="small logo" /></span>
+            <span class="logo-lg"><img src="{{ $appProfile->logo_dark_url }}" alt="{{ $appProfile->app_name }}" /></span>
+            <span class="logo-sm"><img src="{{ $appProfile->logo_sm_url }}" alt="{{ $appProfile->app_name }}" /></span>
         </span>
     </a>
 

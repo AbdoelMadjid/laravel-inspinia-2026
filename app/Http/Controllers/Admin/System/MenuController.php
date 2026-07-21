@@ -76,6 +76,10 @@ class MenuController extends Controller
             }
         }
 
+        if (!empty($validated['data_lang'])) {
+            $this->syncTranslationKey($validated['data_lang'], $validated['name'], $validated['name']);
+        }
+
         return redirect()->route('admin.menus.index')->with('success', 'Menu successfully created.');
     }
 
@@ -120,6 +124,10 @@ class MenuController extends Controller
             $menu->roles()->detach();
         }
 
+        if (!empty($validated['data_lang'])) {
+            $this->syncTranslationKey($validated['data_lang'], $validated['name'], $validated['name']);
+        }
+
         return redirect()->route('admin.menus.index')->with('success', 'Menu successfully updated.');
     }
 
@@ -160,5 +168,30 @@ class MenuController extends Controller
             'success' => true,
             'message' => 'Urutan menu berhasil diperbarui.',
         ]);
+    }
+
+    /**
+     * Automatically update or append translation keys to en.json and id.json.
+     */
+    protected function syncTranslationKey(string $key, string $textEn, string $textId): void
+    {
+        $enPath = public_path('assets/data/translations/en.json');
+        $idPath = public_path('assets/data/translations/id.json');
+
+        if (file_exists($enPath)) {
+            $enJson = json_decode(file_get_contents($enPath), true) ?: [];
+            if (!isset($enJson[$key])) {
+                $enJson[$key] = $textEn;
+                file_put_contents($enPath, json_encode($enJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+            }
+        }
+
+        if (file_exists($idPath)) {
+            $idJson = json_decode(file_get_contents($idPath), true) ?: [];
+            if (!isset($idJson[$key])) {
+                $idJson[$key] = $textId;
+                file_put_contents($idPath, json_encode($idJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+            }
+        }
     }
 }

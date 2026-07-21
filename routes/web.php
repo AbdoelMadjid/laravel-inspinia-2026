@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\System\AppFeatureController;
+use App\Http\Controllers\Admin\System\AppProfileController;
 use App\Http\Controllers\Admin\System\BackupController;
 use App\Http\Controllers\Admin\System\MenuController;
 use App\Http\Controllers\Admin\System\PermissionController;
@@ -39,6 +40,9 @@ Route::middleware('auth')->group(function () {
 
             Route::patch('app-features/{appFeature}/toggle-status', [AppFeatureController::class, 'toggleStatus'])->name('app-features.toggle-status');
             Route::resource('app-features', AppFeatureController::class);
+
+            Route::get('app-profile', [AppProfileController::class, 'index'])->name('app-profile.index');
+            Route::put('app-profile', [AppProfileController::class, 'update'])->name('app-profile.update');
 
             Route::get('backups/{filename}/download', [BackupController::class, 'download'])->name('backups.download');
             Route::delete('backups/{filename}', [BackupController::class, 'destroy'])->name('backups.destroy');

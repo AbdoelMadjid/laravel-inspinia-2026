@@ -22,14 +22,15 @@ data-bs-spy="scroll" data-bs-target="#navbar-example"
         <!-- Header START -->
         <header>
             <!-- Nav START -->
+            @php $appProfile = \App\Models\Admin\System\AppProfile::get(); @endphp
             <nav class="navbar navbar-expand-lg py-3 sticky-top" id="landing-navbar">
                 <div class="container">
                     <div class="auth-brand mb-0">
                         <a href="{{ route('dashboard') }}" class="logo-dark">
-                            <img src="{{ asset('assets/images/logo-black.png') }}" alt="dark logo" height="32" />
+                            <img src="{{ $appProfile->logo_dark_url }}" alt="{{ $appProfile->app_name }}" height="32" />
                         </a>
                         <a href="{{ route('dashboard') }}" class="logo-light">
-                            <img src="{{ asset('assets/images/logo.png') }}" alt="logo" height="32" />
+                            <img src="{{ $appProfile->logo_light_url }}" alt="{{ $appProfile->app_name }}" height="32" />
                         </a>
                     </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
