@@ -1,19 +1,21 @@
 @extends('layouts.app')
 
-@section('title', 'Pengaturan Aplikasi')
+@section('title', 'Pengaturan Sistem | INSPINIA')
+@section('title_lang', 'title-apps-settings')
 
 @section('content')
 <div class="container-fluid">
-
-    <!-- Header & Breadcrumb -->
-    <div class="row mb-3">
-        <div class="col-12">
-            <div class="d-flex align-items-center justify-content-between">
-                <div>
-                    <h4 class="fw-bold mb-1"><i class="ti ti-settings text-primary me-2"></i> Pengaturan Global Aplikasi</h4>
-                    <p class="text-muted mb-0 fs-13">Atur konfigurasi identitas aplikasi, pendaftaran pengguna, dan preferensi sistem.</p>
-                </div>
-            </div>
+    <!-- Page Header & Breadcrumb -->
+    <div class="page-title-head d-flex align-items-center">
+        <div class="flex-grow-1">
+            <h4 class="page-main-title m-0" data-lang="apps-settings">Pengaturan Sistem</h4>
+        </div>
+        <div class="text-end">
+            <ol class="breadcrumb m-0 py-0">
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="javascript: void(0);" data-lang="apps-management">Apps Management</a></li>
+                <li class="breadcrumb-item active" data-lang="apps-settings">Pengaturan Sistem</li>
+            </ol>
         </div>
     </div>
 

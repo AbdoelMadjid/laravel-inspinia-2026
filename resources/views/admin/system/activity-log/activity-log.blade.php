@@ -1,19 +1,21 @@
 @extends('layouts.app')
 
-@section('title', 'Log Aktivitas Admin & Sistem')
+@section('title', 'Log Aktivitas | INSPINIA')
+@section('title_lang', 'title-apps-activity-logs')
 
 @section('content')
 <div class="container-fluid">
-
-    <!-- Header & Breadcrumb -->
-    <div class="row mb-3">
-        <div class="col-12">
-            <div class="d-flex align-items-center justify-content-between">
-                <div>
-                    <h4 class="fw-bold mb-1"><i class="ti ti-history text-primary me-2"></i> Audit Trail & Log Aktivitas Sistem</h4>
-                    <p class="text-muted mb-0 fs-13">Memantau rekam jejak aktivitas administrasi, perubahan data, dan event penting sistem.</p>
-                </div>
-            </div>
+    <!-- Page Header & Breadcrumb -->
+    <div class="page-title-head d-flex align-items-center">
+        <div class="flex-grow-1">
+            <h4 class="page-main-title m-0" data-lang="apps-activity-logs">Log Aktivitas</h4>
+        </div>
+        <div class="text-end">
+            <ol class="breadcrumb m-0 py-0">
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="javascript: void(0);" data-lang="apps-management">Apps Management</a></li>
+                <li class="breadcrumb-item active" data-lang="apps-activity-logs">Log Aktivitas</li>
+            </ol>
         </div>
     </div>
 
