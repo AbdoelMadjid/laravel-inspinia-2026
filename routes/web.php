@@ -1,6 +1,12 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\System\AppFeatureController;
+use App\Http\Controllers\Admin\System\BackupController;
+use App\Http\Controllers\Admin\System\MenuController;
+use App\Http\Controllers\Admin\System\PermissionController;
+use App\Http\Controllers\Admin\System\ProfileController;
+use App\Http\Controllers\Admin\System\RoleController;
+use App\Http\Controllers\Admin\System\UserController;
 use Illuminate\Support\Facades\Route;
 
 // Home / Landing Page
@@ -22,23 +28,23 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::post('/profile/avatar', [ProfileController::class, 'updateAvatar'])->name('profile.avatar');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::post('/impersonate/stop', [\App\Http\Controllers\Admin\UserController::class, 'impersonateStop'])->name('admin.users.impersonate-stop');
+    Route::post('/impersonate/stop', [UserController::class, 'impersonateStop'])->name('admin.users.impersonate-stop');
 
     Route::prefix('admin')->name('admin.')->group(function () {
-        Route::patch('menus/{menu}/toggle-status', [\App\Http\Controllers\Admin\MenuController::class, 'toggleStatus'])->name('menus.toggle-status');
-        Route::resource('menus', \App\Http\Controllers\Admin\MenuController::class);
-        Route::post('users/bulk-assign-role', [\App\Http\Controllers\Admin\UserController::class, 'bulkAssignRole'])->name('users.bulk-assign-role');
-        Route::post('users/{user}/impersonate', [\App\Http\Controllers\Admin\UserController::class, 'impersonate'])->name('users.impersonate');
-        Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
-        Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
-        Route::resource('permissions', \App\Http\Controllers\Admin\PermissionController::class);
+        Route::patch('menus/{menu}/toggle-status', [MenuController::class, 'toggleStatus'])->name('menus.toggle-status');
+        Route::resource('menus', MenuController::class);
+        Route::post('users/bulk-assign-role', [UserController::class, 'bulkAssignRole'])->name('users.bulk-assign-role');
+        Route::post('users/{user}/impersonate', [UserController::class, 'impersonate'])->name('users.impersonate');
+        Route::resource('users', UserController::class);
+        Route::resource('roles', RoleController::class);
+        Route::resource('permissions', PermissionController::class);
 
-        Route::patch('app-features/{appFeature}/toggle-status', [\App\Http\Controllers\Admin\AppFeatureController::class, 'toggleStatus'])->name('app-features.toggle-status');
-        Route::resource('app-features', \App\Http\Controllers\Admin\AppFeatureController::class);
+        Route::patch('app-features/{appFeature}/toggle-status', [AppFeatureController::class, 'toggleStatus'])->name('app-features.toggle-status');
+        Route::resource('app-features', AppFeatureController::class);
 
-        Route::get('backups/{filename}/download', [\App\Http\Controllers\Admin\BackupController::class, 'download'])->name('backups.download');
-        Route::delete('backups/{filename}', [\App\Http\Controllers\Admin\BackupController::class, 'destroy'])->name('backups.destroy');
-        Route::resource('backups', \App\Http\Controllers\Admin\BackupController::class)->only(['index', 'store']);
+        Route::get('backups/{filename}/download', [BackupController::class, 'download'])->name('backups.download');
+        Route::delete('backups/{filename}', [BackupController::class, 'destroy'])->name('backups.destroy');
+        Route::resource('backups', BackupController::class)->only(['index', 'store']);
     });
 
     Route::get('/{page}', function ($page) {
@@ -47,6 +53,15 @@ Route::middleware('auth')->group(function () {
         }
         if ($page === 'index' || $page === 'dashboard-projects') {
             return view('template.index');
+        }
+        if ($page === 'profile-page') {
+            return view('admin.system.profile.index');
+        }
+        if (view()->exists('admin.system.' . $page)) {
+            return view('admin.system.' . $page);
+        }
+        if (view()->exists('admin.system.profile.' . $page)) {
+            return view('admin.system.profile.' . $page);
         }
         if (view()->exists('template.' . $page)) {
             return view('template.' . $page);

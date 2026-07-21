@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\System;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -25,7 +25,7 @@ class PermissionController extends Controller
         $permissions = $query->orderBy('name')->get();
         $roles = Role::all();
 
-        return view('admin.permissions.index', compact('permissions', 'roles'));
+        return view('admin.system.permissions.index', compact('permissions', 'roles'));
     }
 
     /**

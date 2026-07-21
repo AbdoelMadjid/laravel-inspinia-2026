@@ -76,5 +76,5 @@
 </tr>
 
 @foreach ($menu->children as $child)
-    @include('admin.menus.partials.menu-row', ['menu' => $child, 'level' => $level + 1])
+    @include('admin.system.menus.partials.menu-row', ['menu' => $child, 'level' => $level + 1])
 @endforeach

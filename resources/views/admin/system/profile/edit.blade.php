@@ -33,7 +33,7 @@
                     </a>
                 </div>
                 <div class="card-body">
-                    @include('profile.partials.update-profile-information-form')
+                    @include('admin.system.profile.partials.update-profile-information-form')
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
                     </h5>
                 </div>
                 <div class="card-body">
-                    @include('profile.partials.update-password-form')
+                    @include('admin.system.profile.partials.update-password-form')
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                     </h5>
                 </div>
                 <div class="card-body">
-                    @include('profile.partials.delete-user-form')
+                    @include('admin.system.profile.partials.delete-user-form')
                 </div>
             </div>
         </div>

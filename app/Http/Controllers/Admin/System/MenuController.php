@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\System;
 
 use App\Http\Controllers\Controller;
-use App\Models\Menu;
+use App\Models\Admin\System\Menu;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -24,7 +24,7 @@ class MenuController extends Controller
         $roles = Role::all();
         $permissions = Permission::all();
 
-        return view('admin.menus.index', compact('menus', 'allMenus', 'roles', 'permissions'));
+        return view('admin.system.menus.index', compact('menus', 'allMenus', 'roles', 'permissions'));
     }
 
     /**

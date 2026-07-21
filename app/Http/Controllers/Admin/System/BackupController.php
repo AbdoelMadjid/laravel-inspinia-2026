@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\System;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -63,7 +63,7 @@ class BackupController extends Controller
 
         $tables = $this->getDatabaseTables();
 
-        return view('admin.backups.index', compact('backups', 'stats', 'tables'));
+        return view('admin.system.backups.index', compact('backups', 'stats', 'tables'));
     }
 
     /**

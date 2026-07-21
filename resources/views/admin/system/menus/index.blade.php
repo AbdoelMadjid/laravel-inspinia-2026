@@ -52,7 +52,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($menus as $menu)
-                                    @include('admin.menus.partials.menu-row', ['menu' => $menu, 'level' => 0])
+                                    @include('admin.system.menus.partials.menu-row', ['menu' => $menu, 'level' => 0])
                                 @endforeach
                             </tbody>
                         </table>
@@ -163,7 +163,7 @@
 
 <!-- Modals for Editing Menus -->
 @foreach ($allMenus as $menuItem)
-    @include('admin.menus.partials.edit-modal', ['menu' => $menuItem])
+    @include('admin.system.menus.partials.edit-modal', ['menu' => $menuItem])
 @endforeach
 
 @endsection

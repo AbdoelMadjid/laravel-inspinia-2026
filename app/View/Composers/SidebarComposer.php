@@ -2,7 +2,8 @@
 
 namespace App\View\Composers;
 
-use App\Models\Menu;
+use App\Models\Admin\System\AppFeature;
+use App\Models\Admin\System\Menu;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
@@ -22,7 +23,7 @@ class SidebarComposer
             ->orderBy('sort_order')
             ->get();
 
-        $showTemplateMenus = \App\Models\AppFeature::isEnabled('template_menus');
+        $showTemplateMenus = AppFeature::isEnabled('template_menus');
 
         // Filter menus based on user visibility & Spatie roles/permissions & feature toggle
         $filteredMenus = $rootMenus->filter(function (Menu $menu) use ($user, $showTemplateMenus) {

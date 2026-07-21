@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\AppFeature;
+use App\Models\Admin\System\AppFeature;
 use Illuminate\Database\Seeder;
 
 class AppFeatureSeeder extends Seeder

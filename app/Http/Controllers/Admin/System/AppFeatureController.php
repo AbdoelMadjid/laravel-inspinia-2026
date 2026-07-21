@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\System;
 
 use App\Http\Controllers\Controller;
-use App\Models\AppFeature;
+use App\Models\Admin\System\AppFeature;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -15,7 +15,7 @@ class AppFeatureController extends Controller
     public function index()
     {
         $features = AppFeature::orderBy('sort_order')->orderBy('id')->get();
-        return view('admin.app-features.index', compact('features'));
+        return view('admin.system.app-features.index', compact('features'));
     }
 
     /**
