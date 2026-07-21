@@ -136,8 +136,8 @@
                     </div>
 
                     <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="me-3 position-relative">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="me-3 position-relative flex-shrink-0">
                                 <img src="{{ $user->avatar_url }}" alt="{{ $user->name }}" class="avatar-md rounded-circle object-fit-cover" style="width: 56px; height: 56px;" />
                                 @if($user->isOnline())
                                     <span class="position-absolute bottom-0 end-0 p-1 bg-success border border-white rounded-circle shadow-sm" style="width: 14px; height: 14px;" title="Online sekarang" data-bs-toggle="tooltip"></span>
@@ -145,12 +145,12 @@
                                     <span class="position-absolute bottom-0 end-0 p-1 bg-secondary border border-white rounded-circle shadow-sm" style="width: 14px; height: 14px;" title="{{ $user->last_seen_text }}" data-bs-toggle="tooltip"></span>
                                 @endif
                             </div>
-                            <div class="flex-grow-1 overflow-hidden pe-4">
+                            <div class="flex-grow-1 overflow-hidden pe-2">
                                 <h5 class="mb-1 text-truncate">
-                                    <a href="javascript: void(0);" class="link-reset">{{ $user->name }}</a>
+                                    <a href="javascript: void(0);" class="link-reset fw-semibold">{{ $user->name }}</a>
                                 </h5>
                                 <p class="text-muted fs-xs mb-1 text-truncate">{{ $user->email }}</p>
-                                <div class="d-flex flex-wrap gap-1 align-items-center">
+                                <div>
                                     @if($user->is_approved)
                                         <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 fs-11 rounded-pill" title="Akun Disetujui / Aktif">
                                             <i class="ti ti-circle-check me-1"></i> Disetujui
@@ -160,15 +160,9 @@
                                             <i class="ti ti-clock me-1"></i> Pending Approval
                                         </span>
                                     @endif
-
-                                    @forelse($user->roles as $userRole)
-                                        <span class="badge bg-primary-subtle text-primary badge-label">{{ ucfirst($userRole->name) }}</span>
-                                    @empty
-                                        <span class="badge bg-secondary-subtle text-secondary badge-label">No Role</span>
-                                    @endforelse
                                 </div>
                             </div>
-                            <div class="ms-auto">
+                            <div class="ms-auto align-self-start">
                                 <div class="dropdown">
                                     <a href="#" class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown">
                                         <i class="ti ti-dots-vertical fs-xl"></i>
@@ -227,6 +221,16 @@
                                     </ul>
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- Baris Khusus Badge Role -->
+                        <div class="d-flex align-items-center flex-wrap gap-1 mb-3 pt-2 border-top">
+                            <span class="text-muted fs-11 me-1 fw-medium"><i class="ti ti-shield me-1"></i> Role:</span>
+                            @forelse($user->roles as $userRole)
+                                <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1 fs-11 rounded-pill">{{ ucfirst($userRole->name) }}</span>
+                            @empty
+                                <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle px-2 py-1 fs-11 rounded-pill">No Role</span>
+                            @endforelse
                         </div>
 
                         @if(!$user->is_approved)
