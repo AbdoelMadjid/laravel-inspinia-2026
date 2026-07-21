@@ -40,7 +40,7 @@ class PasswordResetRequestController extends Controller
 
         $requests = $query->paginate(15)->withQueryString();
 
-        return view('admin.system.password-reset-requests.index', compact('requests', 'status', 'search'));
+        return view('admin.system.password-reset-requests.password-reset-requests', compact('requests', 'status', 'search'));
     }
 
     /**
