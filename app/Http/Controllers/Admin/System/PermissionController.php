@@ -25,7 +25,7 @@ class PermissionController extends Controller
         $permissions = $query->orderBy('name')->get();
         $roles = Role::all();
 
-        return view('admin.system.permissions.index', compact('permissions', 'roles'));
+        return view('admin.system.permissions.permissions', compact('permissions', 'roles'));
     }
 
     /**

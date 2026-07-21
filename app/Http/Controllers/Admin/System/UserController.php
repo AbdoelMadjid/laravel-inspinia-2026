@@ -40,7 +40,7 @@ class UserController extends Controller
         $users = $query->orderBy('name')->paginate(12)->withQueryString();
         $roles = Role::all();
 
-        return view('admin.system.users.index', compact('users', 'roles'));
+        return view('admin.system.users.users', compact('users', 'roles'));
     }
 
     /**

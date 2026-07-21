@@ -15,7 +15,7 @@ class AppFeatureController extends Controller
     public function index()
     {
         $features = AppFeature::orderBy('sort_order')->orderBy('id')->get();
-        return view('admin.system.app-features.index', compact('features'));
+        return view('admin.system.app-features.app-features', compact('features'));
     }
 
     /**

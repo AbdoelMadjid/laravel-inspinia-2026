@@ -24,7 +24,7 @@ class MenuController extends Controller
         $roles = Role::all();
         $permissions = Permission::all();
 
-        return view('admin.system.menus.index', compact('menus', 'allMenus', 'roles', 'permissions'));
+        return view('admin.system.menus.menus', compact('menus', 'allMenus', 'roles', 'permissions'));
     }
 
     /**

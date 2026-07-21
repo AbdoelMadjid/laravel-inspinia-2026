@@ -63,7 +63,7 @@ class BackupController extends Controller
 
         $tables = $this->getDatabaseTables();
 
-        return view('admin.system.backups.index', compact('backups', 'stats', 'tables'));
+        return view('admin.system.backups.backups', compact('backups', 'stats', 'tables'));
     }
 
     /**

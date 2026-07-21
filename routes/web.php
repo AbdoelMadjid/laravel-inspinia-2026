@@ -31,20 +31,27 @@ Route::middleware('auth')->group(function () {
     Route::post('/impersonate/stop', [UserController::class, 'impersonateStop'])->name('admin.users.impersonate-stop');
 
     Route::prefix('admin')->name('admin.')->group(function () {
-        Route::patch('menus/{menu}/toggle-status', [MenuController::class, 'toggleStatus'])->name('menus.toggle-status');
-        Route::resource('menus', MenuController::class);
-        Route::post('users/bulk-assign-role', [UserController::class, 'bulkAssignRole'])->name('users.bulk-assign-role');
-        Route::post('users/{user}/impersonate', [UserController::class, 'impersonate'])->name('users.impersonate');
-        Route::resource('users', UserController::class);
-        Route::resource('roles', RoleController::class);
-        Route::resource('permissions', PermissionController::class);
+        // Apps Management Group
+        Route::prefix('apps-management')->group(function () {
+            Route::patch('menus/{menu}/toggle-status', [MenuController::class, 'toggleStatus'])->name('menus.toggle-status');
+            Route::resource('menus', MenuController::class);
 
-        Route::patch('app-features/{appFeature}/toggle-status', [AppFeatureController::class, 'toggleStatus'])->name('app-features.toggle-status');
-        Route::resource('app-features', AppFeatureController::class);
+            Route::patch('app-features/{appFeature}/toggle-status', [AppFeatureController::class, 'toggleStatus'])->name('app-features.toggle-status');
+            Route::resource('app-features', AppFeatureController::class);
 
-        Route::get('backups/{filename}/download', [BackupController::class, 'download'])->name('backups.download');
-        Route::delete('backups/{filename}', [BackupController::class, 'destroy'])->name('backups.destroy');
-        Route::resource('backups', BackupController::class)->only(['index', 'store']);
+            Route::get('backups/{filename}/download', [BackupController::class, 'download'])->name('backups.download');
+            Route::delete('backups/{filename}', [BackupController::class, 'destroy'])->name('backups.destroy');
+            Route::resource('backups', BackupController::class)->only(['index', 'store']);
+        });
+
+        // Users Management Group
+        Route::prefix('users-management')->group(function () {
+            Route::post('users/bulk-assign-role', [UserController::class, 'bulkAssignRole'])->name('users.bulk-assign-role');
+            Route::post('users/{user}/impersonate', [UserController::class, 'impersonate'])->name('users.impersonate');
+            Route::resource('users', UserController::class);
+            Route::resource('roles', RoleController::class);
+            Route::resource('permissions', PermissionController::class);
+        });
     });
 
     Route::get('/{page}', function ($page) {
@@ -55,10 +62,13 @@ Route::middleware('auth')->group(function () {
             return view('template.index');
         }
         if ($page === 'profile-page') {
-            return view('admin.system.profile.index');
+            return view('admin.system.profile.profile-index');
         }
         if (view()->exists('admin.system.' . $page)) {
             return view('admin.system.' . $page);
+        }
+        if (view()->exists('admin.system.' . $page . '.' . $page)) {
+            return view('admin.system.' . $page . '.' . $page);
         }
         if (view()->exists('admin.system.profile.' . $page)) {
             return view('admin.system.profile.' . $page);
