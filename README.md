@@ -1,58 +1,121 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel INSPINIA Admin Management System (2026)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi Web Admin Dashboard & Management System berbasis **Laravel 11**, **Spatie Permission**, dan tema **INSPINIA Bootstrap 5**. Aplikasi ini dilengkapi dengan Manajemen Menu Dinamis, Profile Aplikasi, Backup Database, Manajemen Pengguna & Impersonasi, Sistem Poin Login Harian, serta Dukungan Multi-Bahasa.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Fitur Utamanya
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 1. 🛠️ Manajemen Aplikasi (Apps Management)
+- **Manajemen Menu Dinamis**: Pengaturan menu bertingkat (*tree menu*) lengkap dengan permission, pengurutan, icon, serta sinkronisasi otomatis terjemahan multi-bahasa (`en.json` & `id.json`).
+- **Profil Aplikasi (Apps Profile)**: Pengaturan nama aplikasi, logo, favicon, deskripsi meta, dan teks footer dengan sistem caching bawaan.
+- **Fitur Aplikasi (App Features)**: Kontrol toggle status aktif/non-aktif fitur aplikasi secara fleksibel.
+- **Backup Database**: Generator backup database SQL (Full Backup atau Pilih Tabel Tertentu) langsung dari dashboard dengan fitur unduh & hapus berkas backup.
+- **Data Login & Poin Login Harian**:
+  - Catatan otomatis aktivitas login pengguna (*IP Address*, *User Agent*, dan *Waktu Login*).
+  - Sistem **Poin Login Harian** (diberikan **+1 Poin per user per hari**, login ulang di hari yang sama mendapat 0 poin).
+  - Tampilan Audit Log *Read-Only* yang rapi, dilengkapi filter berdasarkan **Hari Ini**, **Role**, **Poin**, dan **Kata Kunci**.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 2. 👥 Pengaturan Pengguna & Akses (Users Setting)
+- **Manajemen Pengguna (Contacts / Users)**: Manajemen akun pengguna, foto avatar, penetapan role tunggal/massal (*Bulk Assign Role*).
+- **Fitur Impersonasi (User Impersonation)**: Administrator dapat *login sebagai* user lain untuk keperluan debugging atau bantuan teknis dengan bar notifikasi *Stop Impersonating*.
+- **Peran Pengguna (Roles Management)**: Pembuatan & pengaturan role (Spatie RBAC).
+- **Izin Akses (Permissions Management)**: Matriks dan manajemen daftar permission aplikasi.
 
-## Learning Laravel
+### 3. 👤 Profil Saya & Riwayat Aktivitas
+- **Foto Profil AJAX**: Unggah foto profil pengguna secara langsung tanpa *reload* halaman.
+- **Badge Total Poin Login**: Menampilkan total akumulasi poin login harian di header profil.
+- **Tabel Riwayat Login**: Menampilkan 10 catatan aktivitas login terbaru milik pengguna di halaman profil.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 4. 🌐 UI & Fitur Antarmuka Modern
+- **Dukungan Multi-Bahasa**: Peralihan bahasa cepat antara Bahasa Inggris (EN) & Bahasa Indonesia (ID).
+- **Notifikasi SweetAlert2**: Integrasi konfirmasi aksi dan notifikasi toast modern dengan backdrop jernih.
+- **Theme Customizer**: Pengaturan tema Dark/Light mode, warna sidebar, dan komponen responsif.
+- **Tombol Scroll-to-Top**: Navigasi halaman cepat kembali ke paling atas.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## 📋 Langkah Instalasi (Setelah Clone dari GitHub)
 
-## Agentic Development
+Ikuti langkah-langkah berikut setelah meng-clone repository ini ke komputer lokal Anda:
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
+### 1. Clone Repository
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/AbdoelMadjid/laravel-inspinia-2026.git
+cd laravel-inspinia-2026
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Install Dependensi PHP & Node.js
+```bash
+composer install
+npm install
+```
 
-## Contributing
+### 3. Salin Berkas Lingkungan (.env)
+```bash
+# Untuk Linux/macOS:
+cp .env.example .env
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Untuk Windows (Command Prompt / PowerShell):
+copy .env.example .env
+```
 
-## Code of Conduct
+### 4. Generate Application Key
+```bash
+php artisan key:generate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 5. Konfigurasi Database
+Buka berkas `.env` lalu sesuaikan kredensial database Anda (misal: MySQL/MariaDB Laragon):
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=inspinia_laravel_2026
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## Security Vulnerabilities
+### 6. Jalankan Migrasi & Database Seeder
+Jalankan migrasi tabel beserta seeder default (termasuk MenuSeeder & Permission):
+```bash
+php artisan migrate --seed
+php artisan db:seed MenuSeeder
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 7. Buat Symlink Storage
+Agar foto avatar dan upload aplikasi dapat diakses secara publik:
+```bash
+php artisan storage:link
+```
 
-## License
+### 8. Jalankan Aplikasi Lokal
+Jalankan development server Laravel dan pembangun aset frontend:
+```bash
+php artisan serve
+```
+Dan pada terminal terpisah:
+```bash
+npm run dev
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Buka peramban Anda di: `http://127.0.0.1:8000`
+
+---
+
+## 🔑 Kredensial Akun Default (Seeder)
+
+Setelah menjalankan `php artisan db:seed`, Anda dapat masuk menggunakan akun berikut:
+
+- **Admin Login**:
+  - **Email**: `admin@example.com`
+  - **Password**: `password`
+- **User Login**:
+  - **Email**: `user@example.com`
+  - **Password**: `password`
+
+---
+
+## 📄 Lisensi
+
+Aplikasi ini dikembangkan menggunakan framework [Laravel](https://laravel.com) yang berlisensi [MIT License](https://opensource.org/licenses/MIT).
