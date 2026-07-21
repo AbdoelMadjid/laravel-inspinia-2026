@@ -629,7 +629,7 @@
                                 </div>
                                 <div class="card-body p-0">
                                     @php
-                                        $myLoginLogs = Auth::user()->loginLogs()->latest('login_at')->take(10)->get();
+                                        $myLoginLogs = Auth::user()->loginLogs()->where('points_awarded', '>', 0)->latest('login_at')->take(10)->get();
                                     @endphp
                                     <div class="table-responsive">
                                         <table class="table table-hover align-middle mb-0">
