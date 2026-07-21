@@ -23,6 +23,7 @@ class User extends Authenticatable
     use HasFactory, Notifiable, HasRoles;
 
     protected $table = 'users';
+    protected string $guard_name = 'web';
 
     public function getMorphClass()
     {

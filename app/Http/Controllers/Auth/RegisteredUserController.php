@@ -59,8 +59,8 @@ class RegisteredUserController extends Controller
             'is_approved' => false,
         ]);
 
-        // Assign default 'user' role
-        $role = Role::firstOrCreate(['name' => 'user']);
+        // Assign default 'user' role with 'web' guard
+        $role = Role::firstOrCreate(['name' => 'user', 'guard_name' => 'web']);
         $user->assignRole($role);
 
         // Create Admin Notification for New User Registration (Pending Approval)
