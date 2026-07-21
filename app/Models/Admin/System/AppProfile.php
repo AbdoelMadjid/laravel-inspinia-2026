@@ -22,6 +22,9 @@ class AppProfile extends Model
         'logo_dark',
         'logo_sm',
         'favicon',
+        'allow_registration',
+        'auto_approve_registration',
+        'default_registration_role',
     ];
 
     /**
@@ -41,6 +44,9 @@ class AppProfile extends Model
                 'app_year' => '2026',
                 'developer_name' => 'Abdoel Madjid / RPL Team',
                 'developer_url' => 'https://github.com/AbdoelMadjid',
+                'allow_registration' => true,
+                'auto_approve_registration' => false,
+                'default_registration_role' => 'user',
             ]);
         }
 

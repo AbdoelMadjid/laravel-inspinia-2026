@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\System\AppNotification;
+use App\Models\Admin\System\AppProfile;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -21,7 +22,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): View|RedirectResponse
     {
-        if (!Setting::get('allow_registration', true)) {
+        $appProfile = AppProfile::get();
+        if (!$appProfile->allow_registration) {
             return redirect()->route('login')->with('error', 'Pendaftaran akun baru saat ini sedang ditutup oleh Administrator.');
         }
 
@@ -35,7 +37,8 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        if (!Setting::get('allow_registration', true)) {
+        $appProfile = AppProfile::get();
+        if (!$appProfile->allow_registration) {
             return redirect()->route('login')->with('error', 'Pendaftaran akun baru saat ini sedang ditutup oleh Administrator.');
         }
 
@@ -59,8 +62,8 @@ class RegisteredUserController extends Controller
             'password' => 'Kata sandi harus terdiri dari minimal 8 karakter dan mengandung setidaknya 1 huruf besar, 1 huruf kecil, dan 1 angka.',
         ]);
 
-        $autoApprove = Setting::get('auto_approve_registration', false);
-        $defaultRoleName = Setting::get('default_registration_role', 'user');
+        $autoApprove = (bool) $appProfile->auto_approve_registration;
+        $defaultRoleName = $appProfile->default_registration_role ?? 'user';
 
         $user = User::create([
             'name' => trim($request->name),

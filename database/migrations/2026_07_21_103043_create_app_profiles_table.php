@@ -22,6 +22,9 @@ return new class extends Migration
             $table->string('logo_dark')->nullable();
             $table->string('logo_sm')->nullable();
             $table->string('favicon')->nullable();
+            $table->boolean('allow_registration')->default(true);
+            $table->boolean('auto_approve_registration')->default(false);
+            $table->string('default_registration_role')->default('user');
             $table->timestamps();
         });
     }

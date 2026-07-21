@@ -8,7 +8,7 @@ Aplikasi Web Admin Dashboard & Management System berbasis **Laravel 11**, **Spat
 
 ### 1. 🛠️ Manajemen Aplikasi (Apps Management)
 - **Manajemen Menu Dinamis**: Pengaturan menu bertingkat (*tree menu*) lengkap dengan permission, pengurutan, icon, serta sinkronisasi otomatis terjemahan multi-bahasa (`en.json` & `id.json`).
-- **Profil Aplikasi (Apps Profile)**: Pengaturan nama aplikasi, logo, favicon, deskripsi meta, dan teks footer dengan sistem caching bawaan.
+- **Profil Aplikasi & Kebijakan (Apps Profile)**: Pengaturan terpusat untuk Nama Aplikasi, Deskripsi Meta, Tahun, Nama & Link Pengembang, Branding Logo (Light, Dark, Small, Favicon), serta Kebijakan Pendaftaran Akun (Toggle Buka/Tutup Registrasi Publik, Otomatis/Manual Approval, dan Role Default Pendaftar).
 - **Fitur Aplikasi (App Features)**: Kontrol toggle status aktif/non-aktif fitur aplikasi secara fleksibel.
 - **Backup Database**: Generator backup database SQL (Full Backup atau Pilih Tabel Tertentu) langsung dari dashboard dengan fitur unduh & hapus berkas backup.
 - **Data Login & Poin Login Harian**:
@@ -18,6 +18,7 @@ Aplikasi Web Admin Dashboard & Management System berbasis **Laravel 11**, **Spat
 
 ### 2. 👥 Pengaturan Pengguna & Akses (Users Setting)
 - **Manajemen Pengguna (Contacts / Users)**: Manajemen akun pengguna, foto avatar, penetapan role tunggal/massal (*Bulk Assign Role*).
+- **Permintaan Reset Password (Password Reset Requests)**: Panel kelola permintaan reset kata sandi dari pengguna yang lupa password dengan fitur approval dan reset instan oleh Admin.
 - **Export Data Pengguna (Excel & PDF)**:
   - Tombol **Export Excel** mengunduh berkas terformat `.xlsx` menggunakan PhpSpreadsheet secara otomatis sesuai filter pencarian/role/status.
   - Tombol **Cetak / Export PDF** membuka tampilan laporan rekap resmi terstruktur yang siap dicetak/disimpan sebagai PDF.
@@ -30,9 +31,7 @@ Aplikasi Web Admin Dashboard & Management System berbasis **Laravel 11**, **Spat
 - **Impor Pengguna Massal (Bulk User Import)**:
   - Mengunduh berkas template asli `.xlsx` dan mengunggah data massal per kolom secara instan.
 - **Sistem Persetujuan Pengguna Baru (User Registration Approval)**:
-  - Akun pengguna baru mendaftar berstatus `Pending Approval` (`is_approved = false`) dan belum diizinkan login sebelum disetujui Admin.
-- **Pengaturan Global Aplikasi (System Settings)**:
-  - Menu `admin/apps-management/settings` untuk mengatur Nama Aplikasi, Deskripsi, Logo, Teks Footer, Buka/Tutup Registrasi Publik, Otomatis/Manual Approval, dan Role Default.
+  - Akun pengguna baru mendaftar berstatus `Pending Approval` (`is_approved = false`) dan belum diizinkan login sebelum disetujui Admin (dapat diatur secara otomatis atau manual di menu Apps Profile).
 - **Audit Log Aktivitas Sistem & Admin (Activity Audit Trail)**:
   - Menu `admin/apps-management/activity-logs` untuk memantau rekam jejak aksi administrasi lengkap dengan filter pelaku, jenis aksi, tanggal, dan IP address.
 

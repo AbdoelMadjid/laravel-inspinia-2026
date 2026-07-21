@@ -406,5 +406,6 @@
     "users-setting": "Pengaturan User",
     "apps-login-logs": "Data Login",
     "apps-activity-logs": "Log Aktivitas",
-    "apps-settings": "Pengaturan Sistem"
+    "apps-settings": "Pengaturan Sistem",
+    "users-password-reset-requests": "Permintaan Reset Password"
 }

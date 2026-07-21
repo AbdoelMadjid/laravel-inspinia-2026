@@ -150,17 +150,6 @@ class MenuSeeder extends Seeder
                         'data_lang' => 'apps-activity-logs',
                         'sort_order' => 6,
                     ],
-                    [
-                        'name' => 'Pengaturan Sistem',
-                        'name_en' => 'System Settings',
-                        'name_id' => 'Pengaturan Sistem',
-                        'type' => 'item',
-                        'route_name' => 'admin.settings.index',
-                        'permission_name' => 'manage-app-profile',
-                        'data_lang' => 'apps-settings',
-                        'sort_order' => 7,
-                    ],
-
                 ],
             ],
             [
@@ -177,6 +166,7 @@ class MenuSeeder extends Seeder
                     ['name' => 'Contacts / Users', 'name_en' => 'Contacts / Users', 'name_id' => 'Kontak / Pengguna', 'type' => 'item', 'route_name' => 'admin.users.index', 'data_lang' => 'users-contacts', 'sort_order' => 1],
                     ['name' => 'Roles', 'name_en' => 'Roles', 'name_id' => 'Peran Pengguna', 'type' => 'item', 'route_name' => 'admin.roles.index', 'data_lang' => 'users-roles', 'sort_order' => 2],
                     ['name' => 'Permissions', 'name_en' => 'Permissions', 'name_id' => 'Izin Akses', 'type' => 'item', 'route_name' => 'admin.permissions.index', 'data_lang' => 'users-permissions', 'sort_order' => 3],
+                    ['name' => 'Reset Password', 'name_en' => 'Reset Password', 'name_id' => 'Permintaan Reset Password', 'type' => 'item', 'route_name' => 'admin.password-reset-requests.index', 'permission_name' => 'manage-users', 'data_lang' => 'users-password-reset-requests', 'sort_order' => 4],
                 ],
             ],
         ];

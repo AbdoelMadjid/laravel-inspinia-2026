@@ -11,7 +11,6 @@ use App\Http\Controllers\Admin\System\PermissionController;
 use App\Http\Controllers\Admin\System\ProfileController;
 use App\Http\Controllers\Admin\System\RoleController;
 use App\Http\Controllers\Admin\System\UserController;
-use App\Http\Controllers\Admin\System\SettingController;
 use App\Http\Controllers\Admin\System\ActivityLogController;
 use Illuminate\Support\Facades\Route;
 
@@ -58,8 +57,6 @@ Route::middleware('auth')->group(function () {
 
             Route::resource('login-logs', LoginLogController::class)->only(['index']);
             Route::get('activity-logs', [ActivityLogController::class, 'index'])->name('activity-logs.index');
-            Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
-            Route::put('settings', [SettingController::class, 'update'])->name('settings.update');
         });
 
         // Users Management Group

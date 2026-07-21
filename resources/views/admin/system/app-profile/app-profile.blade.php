@@ -176,11 +176,58 @@
             </div>
         </div>
 
+        <!-- Card Kebijakan Pendaftaran Akun -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-light py-3 border-bottom">
+                        <h5 class="card-title mb-0 fw-bold text-dark d-flex align-items-center gap-2">
+                            <i class="ti ti-user-plus fs-20 text-info"></i>
+                            <span data-lang="registration-policy-title">Kebijakan Pendaftaran Akun</span>
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-check form-switch p-3 bg-light rounded border h-100">
+                                    <input class="form-check-input ms-0 me-2" type="checkbox" role="switch" name="allow_registration" value="1" id="allow_registration" {{ old('allow_registration', $profile->allow_registration) ? 'checked' : '' }}>
+                                    <label class="form-check-label cursor-pointer fw-bold" for="allow_registration">
+                                        Izinkan Pendaftaran Akun Baru
+                                        <small class="text-muted d-block font-normal">Jika dimatikan, halaman registrasi publik `/register` akan ditutup.</small>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check form-switch p-3 bg-light rounded border h-100">
+                                    <input class="form-check-input ms-0 me-2" type="checkbox" role="switch" name="auto_approve_registration" value="1" id="auto_approve_registration" {{ old('auto_approve_registration', $profile->auto_approve_registration) ? 'checked' : '' }}>
+                                    <label class="form-check-label cursor-pointer fw-bold" for="auto_approve_registration">
+                                        Otomatis Setujui Registrasi Baru
+                                        <small class="text-muted d-block font-normal">Jika diaktifkan, pendaftar baru bisa langsung login tanpa menunggu approval admin.</small>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="default_registration_role" class="form-label fw-bold">Role Default Pendaftar Baru <span class="text-danger">*</span></label>
+                                <select name="default_registration_role" id="default_registration_role" class="form-select @error('default_registration_role') is-invalid @enderror" required>
+                                    @foreach($roles as $role)
+                                        <option value="{{ $role->name }}" {{ old('default_registration_role', $profile->default_registration_role) === $role->name ? 'selected' : '' }}>
+                                            {{ ucfirst($role->name) }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                <div class="form-text fs-xs text-muted">Role yang diberikan secara otomatis kepada akun yang baru mendaftar.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Submit Button Row -->
         <div class="row mt-4 mb-4">
             <div class="col-12 text-end">
                 <button type="submit" class="btn btn-primary btn-lg rounded-pill px-4">
-                    <i class="ti ti-device-floppy me-1"></i> <span data-lang="save-profile-btn">Simpan Perubahan Profil &amp; Logo</span>
+                    <i class="ti ti-device-floppy me-1"></i> <span data-lang="save-profile-btn">Simpan Perubahan Profil &amp; Kebijakan</span>
                 </button>
             </div>
         </div>

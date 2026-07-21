@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin\System;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\System\ActivityLog;
 use App\Models\Admin\System\AppProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Spatie\Permission\Models\Role;
 
 class AppProfileController extends Controller
 {
@@ -15,11 +17,12 @@ class AppProfileController extends Controller
     public function index()
     {
         $profile = AppProfile::get();
-        return view('admin.system.app-profile.app-profile', compact('profile'));
+        $roles = Role::all();
+        return view('admin.system.app-profile.app-profile', compact('profile', 'roles'));
     }
 
     /**
-     * Update the Apps Profile settings and brand logos.
+     * Update the Apps Profile settings, registration policy, and brand logos.
      */
     public function update(Request $request)
     {
@@ -29,6 +32,9 @@ class AppProfileController extends Controller
             'app_year' => 'required|string|max:20',
             'developer_name' => 'required|string|max:255',
             'developer_url' => 'nullable|url|max:255',
+            'allow_registration' => 'nullable|boolean',
+            'auto_approve_registration' => 'nullable|boolean',
+            'default_registration_role' => 'required|string|exists:roles,name',
             'logo_light' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:2048',
             'logo_dark' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:2048',
             'logo_sm' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,svg|max:2048',
@@ -43,6 +49,9 @@ class AppProfileController extends Controller
             'app_year' => $request->input('app_year'),
             'developer_name' => $request->input('developer_name'),
             'developer_url' => $request->input('developer_url'),
+            'allow_registration' => $request->boolean('allow_registration'),
+            'auto_approve_registration' => $request->boolean('auto_approve_registration'),
+            'default_registration_role' => $request->input('default_registration_role'),
         ];
 
         // Handle file uploads for logos & favicon
@@ -60,7 +69,9 @@ class AppProfileController extends Controller
         $profile->update($data);
         AppProfile::clearCache();
 
+        ActivityLog::log('UPDATE_APP_PROFILE', 'Mengubah Profil & Kebijakan Pendaftaran Aplikasi.');
+
         return redirect()->route('admin.app-profile.index')
-            ->with('success', 'Profil Aplikasi & Logo berhasil diperbarui!');
+            ->with('success', 'Profil Aplikasi & Kebijakan Pendaftaran berhasil diperbarui!');
     }
 }

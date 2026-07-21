@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         $parent = Menu::where('name', 'Users Setting')->first();
-        $parentId = $parent ? $parent->id : 2267;
+        $parentId = $parent?->id;
 
         $menu = Menu::updateOrCreate(
             ['route_name' => 'admin.password-reset-requests.index'],

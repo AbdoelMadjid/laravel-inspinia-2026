@@ -406,5 +406,6 @@
     "users-setting": "Users Setting",
     "apps-login-logs": "Login Data",
     "apps-activity-logs": "Activity Audit Logs",
-    "apps-settings": "System Settings"
+    "apps-settings": "System Settings",
+    "users-password-reset-requests": "Reset Password"
 }
