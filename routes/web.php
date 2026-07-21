@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\System\AppProfileController;
 use App\Http\Controllers\Admin\System\BackupController;
 use App\Http\Controllers\Admin\System\LoginLogController;
 use App\Http\Controllers\Admin\System\MenuController;
+use App\Http\Controllers\Admin\System\NotificationController;
 use App\Http\Controllers\Admin\System\PasswordResetRequestController;
 use App\Http\Controllers\Admin\System\PermissionController;
 use App\Http\Controllers\Admin\System\ProfileController;
@@ -32,6 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/avatar', [ProfileController::class, 'updateAvatar'])->name('profile.avatar');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::post('/impersonate/stop', [UserController::class, 'impersonateStop'])->name('admin.users.impersonate-stop');
+    Route::post('/notifications/{notification}/read', [NotificationController::class, 'markAsRead'])->name('admin.notifications.read');
+    Route::post('/notifications/read-all', [NotificationController::class, 'markAllAsRead'])->name('admin.notifications.read-all');
+    Route::delete('/notifications/{notification}', [NotificationController::class, 'destroy'])->name('admin.notifications.destroy');
 
     Route::prefix('admin')->name('admin.')->group(function () {
         // Apps Management Group

@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 
 use App\View\Composers\SidebarComposer;
+use App\View\Composers\TopbarComposer;
 use Illuminate\Support\Facades\View;
 
 use App\Listeners\LogSuccessfulLogin;
@@ -27,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('layouts.partials.sidebar', SidebarComposer::class);
+        View::composer('layouts.partials.topbar', TopbarComposer::class);
     }
 }
