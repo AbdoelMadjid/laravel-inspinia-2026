@@ -1321,10 +1321,8 @@
         <div class="container">
             <div class="row g-4 justify-content-between">
                 <div class="col-lg-3">
-                    <img src="{{ asset('assets/images/logo.png') }}" alt="logo" height="30" />
-                    <p class="mt-3 fs-sm">INSPINIA is the top-selling admin dashboard template on WrapBootstrap, known for
-                        its sleek design, flexibility, and powerful features. Build modern web applications with ease using
-                        the best in class!</p>
+                    <img src="{{ $appProfile->logo_light_url }}" alt="{{ $appProfile->app_name }}" height="30" />
+                    <p class="mt-3 fs-sm">{{ $appProfile->app_description }}</p>
 
                     <div class="d-flex gap-2 mt-4 mb-2">
                         <a href="#!" class="btn btn-sm btn-icon rounded-circle btn-dark" title="Facebook">
@@ -1392,8 +1390,14 @@
 
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <p class="mb-4">© 2014 - <span data-current-year></span> Inspinia By <span
-                            class="fw-semibold">WebAppLayers</span></p>
+                    <p class="mb-4">
+                        © {{ $appProfile->app_year }} <strong>{{ $appProfile->app_name }}</strong> — Developed by
+                        @if($appProfile->developer_url)
+                            <a href="{{ $appProfile->developer_url }}" target="_blank" class="fw-semibold text-primary text-decoration-none">{{ $appProfile->developer_name }}</a>
+                        @else
+                            <span class="fw-semibold">{{ $appProfile->developer_name }}</span>
+                        @endif
+                    </p>
                 </div>
             </div>
             <!-- end row-->
