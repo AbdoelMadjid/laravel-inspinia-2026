@@ -36,11 +36,17 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
+        $isIdle = $request->input('reason') === 'idle' || $request->has('idle');
+
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+
+        if ($isIdle) {
+            return redirect()->route('login')->with('warning', 'Anda sudah logout otomatis karena tidak ada aktivitas.');
+        }
 
         return redirect('/');
     }

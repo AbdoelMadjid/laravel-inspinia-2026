@@ -19,8 +19,33 @@
                 </div>
 
                 @if (session('status'))
-                    <div class="alert alert-success mb-3" role="alert">
-                        {{ session('status') }}
+                    <div class="alert alert-success alert-dismissible fade show mb-3" role="alert">
+                        <i class="ti ti-check me-1"></i> {{ session('status') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
+                @if (session('warning'))
+                    <div class="alert alert-warning alert-dismissible fade show mb-3 d-flex align-items-center" role="alert">
+                        <i class="ti ti-alert-triangle fs-18 me-2"></i>
+                        <div>{{ session('warning') }}</div>
+                        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
+                @if (session('error'))
+                    <div class="alert alert-danger alert-dismissible fade show mb-3 d-flex align-items-center" role="alert">
+                        <i class="ti ti-alert-circle fs-18 me-2"></i>
+                        <div>{{ session('error') }}</div>
+                        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
+                @if (session('info'))
+                    <div class="alert alert-info alert-dismissible fade show mb-3 d-flex align-items-center" role="alert">
+                        <i class="ti ti-info-circle fs-18 me-2"></i>
+                        <div>{{ session('info') }}</div>
+                        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
 

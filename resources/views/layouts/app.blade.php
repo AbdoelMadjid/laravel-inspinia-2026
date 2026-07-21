@@ -7,6 +7,9 @@
         <meta name="description" content="Inspinia is the #1 best-selling admin dashboard template on Wrapmarket. Perfect for building CRM, CMS, project management tools, and custom web apps with clean UI, responsive design, and powerful features." />
         <meta name="keywords" content="Inspinia, admin dashboard, Wrapmarket, Wrapbootstrap, HTML template, Bootstrap admin, CRM template, CMS template, responsive admin, web app UI, admin theme, best admin template" />
         <meta name="author" content="WebAppLayers" />
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
+        <meta name="logout-url" content="{{ route('logout') }}" />
+        <meta name="idle-timeout" content="{{ config('session.idle_timeout', 900) }}" />
 
         @php $appProfile = \App\Models\Admin\System\AppProfile::get(); @endphp
         <!-- App favicon -->
@@ -51,6 +54,9 @@
         </script>
         <!-- App js -->
         <script src="{{ asset('assets/js/app.js') }}"></script>
+
+        <!-- Auto Logout Idle Script -->
+        <script src="{{ asset('assets/js/auto-logout-idle.js') }}"></script>
 
         @include('layouts.partials.sweetalert')
 
