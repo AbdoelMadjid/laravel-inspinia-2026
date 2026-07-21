@@ -855,8 +855,8 @@
             <div id="language-selector" class="topbar-item">
                 <div class="dropdown">
                     <button class="topbar-link fw-bold" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="{{ asset('assets/images/flags/us.svg') }}" alt="user-image" class="rounded me-2" height="18" id="selected-language-image" />
-                        <span id="selected-language-code">EN</span>
+                        <img src="{{ asset('assets/images/flags/id.svg') }}" alt="user-image" class="rounded me-2" height="18" id="selected-language-image" />
+                        <span id="selected-language-code">ID</span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-end">
                         <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="en" title="English">
