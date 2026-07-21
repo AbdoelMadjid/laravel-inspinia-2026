@@ -239,14 +239,7 @@
 
         @if($logs->hasPages())
             <div class="card-footer bg-transparent border-top py-3">
-                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
-                    <div class="text-muted fs-13">
-                        Menampilkan {{ $logs->firstItem() ?? 0 }} sampai {{ $logs->lastItem() ?? 0 }} dari {{ $logs->total() }} total log
-                    </div>
-                    <div>
-                        {{ $logs->links('pagination::bootstrap-5') }}
-                    </div>
-                </div>
+                {{ $logs->links('pagination::bootstrap-5') }}
             </div>
         @endif
     </div>

@@ -332,7 +332,7 @@
     </div>
 
     <!-- Pagination Links -->
-    <div class="d-flex justify-content-end mt-3">
+    <div class="mt-3">
         {{ $users->links('pagination::bootstrap-5') }}
     </div>
 </div>
