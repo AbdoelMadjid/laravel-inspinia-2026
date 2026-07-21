@@ -260,4 +260,163 @@ class UserController extends Controller
 
         return redirect()->back()->with('success', "Status akun {$user->name} berhasil {$statusText}.");
     }
+
+    /**
+     * Download CSV/Excel import template for bulk user registration.
+     */
+    public function downloadTemplate()
+    {
+        $headers = [
+            'Content-Type' => 'text/csv; charset=UTF-8',
+            'Content-Disposition' => 'attachment; filename="template_import_user.csv"',
+            'Pragma' => 'no-cache',
+            'Cache-Control' => 'must-revalidate, post-check=0, pre-check=0',
+            'Expires' => '0',
+        ];
+
+        $callback = function () {
+            $file = fopen('php://output', 'w');
+            // Write UTF-8 BOM for Microsoft Excel auto-detecting UTF-8 encoding
+            fputs($file, "\xEF\xBB\xBF");
+
+            // Header row
+            fputcsv($file, ['Name', 'Email', 'Password', 'Role', 'Is Approved']);
+
+            // Sample rows
+            fputcsv($file, ['Budi Santoso', 'budi.santoso@example.com', 'password123', 'user', '1']);
+            fputcsv($file, ['Siti Rahma', 'siti.rahma@example.com', 'password123', 'user', '1']);
+
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
+    }
+
+    /**
+     * Import users from uploaded CSV / Excel file.
+     */
+    public function import(Request $request)
+    {
+        $request->validate([
+            'file' => ['required', 'file', 'mimes:csv,txt,xlsx,xls', 'max:5120'],
+            'default_role' => ['nullable', 'string', 'exists:roles,name'],
+            'default_approval' => ['nullable', 'boolean'],
+        ], [
+            'file.required' => 'Silakan pilih berkas CSV/Excel untuk diunggah.',
+            'file.mimes' => 'Format berkas harus berupa CSV atau TXT.',
+            'file.max' => 'Ukuran berkas maksimal 5MB.',
+        ]);
+
+        $file = $request->file('file');
+        $path = $file->getRealPath();
+
+        $defaultRoleName = $request->input('default_role', 'user');
+        $defaultApproval = $request->boolean('default_approval', true);
+
+        $handle = fopen($path, 'r');
+        if (!$handle) {
+            return redirect()->back()->with('error', 'Gagal membuka berkas yang diunggah.');
+        }
+
+        // Check UTF-8 BOM
+        $bom = fread($handle, 3);
+        if ($bom !== "\xEF\xBB\xBF") {
+            rewind($handle);
+        }
+
+        $header = fgetcsv($handle, 1000, ',');
+        // Support semicolon separator if comma fails
+        if ($header && count($header) == 1 && str_contains($header[0], ';')) {
+            rewind($handle);
+            if ($bom === "\xEF\xBB\xBF") fread($handle, 3);
+            $header = fgetcsv($handle, 1000, ';');
+            $delimiter = ';';
+        } else {
+            $delimiter = ',';
+        }
+
+        if (!$header || count($header) < 2) {
+            fclose($handle);
+            return redirect()->back()->with('error', 'Format header berkas tidak valid. Gunakan template yang disediakan.');
+        }
+
+        // Map column names (lowercase)
+        $headerMap = array_map(fn($col) => strtolower(trim(str_replace(['"', "'"], '', $col))), $header);
+
+        $nameIndex = array_search('name', $headerMap);
+        if ($nameIndex === false) $nameIndex = array_search('nama', $headerMap);
+
+        $emailIndex = array_search('email', $headerMap);
+
+        $passIndex = array_search('password', $headerMap);
+        if ($passIndex === false) $passIndex = array_search('kata sandi', $headerMap);
+
+        $roleIndex = array_search('role', $headerMap);
+        $approvalIndex = array_search('is approved', $headerMap);
+        if ($approvalIndex === false) $approvalIndex = array_search('approved', $headerMap);
+
+        if ($nameIndex === false || $emailIndex === false) {
+            fclose($handle);
+            return redirect()->back()->with('error', 'Kolom wajib "Name" dan "Email" tidak ditemukan di berkas.');
+        }
+
+        $importedCount = 0;
+        $skippedCount = 0;
+
+        while (($row = fgetcsv($handle, 1000, $delimiter)) !== false) {
+            if (empty(array_filter($row))) {
+                continue; // Skip empty lines
+            }
+
+            $name = isset($row[$nameIndex]) ? trim($row[$nameIndex]) : null;
+            $email = isset($row[$emailIndex]) ? trim(strtolower($row[$emailIndex])) : null;
+
+            if (empty($name) || empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $skippedCount++;
+                continue;
+            }
+
+            // Check duplicate email
+            if (User::where('email', $email)->exists()) {
+                $skippedCount++;
+                continue;
+            }
+
+            $rawPass = ($passIndex !== false && !empty($row[$passIndex])) ? trim($row[$passIndex]) : 'password123';
+            $roleName = ($roleIndex !== false && !empty($row[$roleIndex])) ? trim(strtolower($row[$roleIndex])) : $defaultRoleName;
+            
+            $isApproved = $defaultApproval;
+            if ($approvalIndex !== false && isset($row[$approvalIndex])) {
+                $val = trim($row[$approvalIndex]);
+                if (in_array(strtolower($val), ['1', 'true', 'yes', 'ya'])) {
+                    $isApproved = true;
+                } elseif (in_array(strtolower($val), ['0', 'false', 'no', 'tidak'])) {
+                    $isApproved = false;
+                }
+            }
+
+            $user = User::create([
+                'name' => $name,
+                'email' => $email,
+                'password' => Hash::make($rawPass),
+                'email_verified_at' => now(),
+                'is_approved' => $isApproved,
+            ]);
+
+            // Assign role
+            $roleObj = Role::firstOrCreate(['name' => $roleName, 'guard_name' => 'web']);
+            $user->assignRole($roleObj);
+
+            $importedCount++;
+        }
+
+        fclose($handle);
+
+        $msg = "Berhasil mengimpor {$importedCount} pengguna baru.";
+        if ($skippedCount > 0) {
+            $msg .= " {$skippedCount} baris dilewati (email ganda atau data tidak valid).";
+        }
+
+        return redirect()->route('admin.users.index')->with('success', $msg);
+    }
 }

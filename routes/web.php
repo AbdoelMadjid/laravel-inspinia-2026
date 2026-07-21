@@ -59,6 +59,8 @@ Route::middleware('auth')->group(function () {
 
         // Users Management Group
         Route::prefix('users-management')->group(function () {
+            Route::get('users/export-template', [UserController::class, 'downloadTemplate'])->name('users.export-template');
+            Route::post('users/import', [UserController::class, 'import'])->name('users.import');
             Route::post('users/bulk-assign-role', [UserController::class, 'bulkAssignRole'])->name('users.bulk-assign-role');
             Route::post('users/{user}/impersonate', [UserController::class, 'impersonate'])->name('users.impersonate');
             Route::patch('users/{user}/toggle-approval', [UserController::class, 'toggleApproval'])->name('users.toggle-approval');

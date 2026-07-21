@@ -18,6 +18,10 @@ Aplikasi Web Admin Dashboard & Management System berbasis **Laravel 11**, **Spat
 
 ### 2. 👥 Pengaturan Pengguna & Akses (Users Setting)
 - **Manajemen Pengguna (Contacts / Users)**: Manajemen akun pengguna, foto avatar, penetapan role tunggal/massal (*Bulk Assign Role*).
+- **Impor Pengguna Massal (Bulk User Import)**:
+  - Administrator dapat mengunduh berkas template standar `template_import_user.csv` (UTF-8 kompatibel dengan Microsoft Excel).
+  - Mengisi data massal (`Name`, `Email`, `Password`, `Role`, `Is Approved`) dan mengunggahnya pada modal **Import Massal** di route `admin/users-management/users`.
+  - Sistem otomatis memproses data, mencegah email ganda, menetapkan role default, serta status persetujuan secara otomatis.
 - **Sistem Persetujuan Pengguna Baru (User Registration Approval)**:
   - Akun pengguna baru yang mendaftar melalui form Register secara otomatis berstatus `Pending Approval` (`is_approved = false`) dan **belum diizinkan login**.
   - Administrator dapat menyetujui (`Approve`) atau menonaktifkan akun melalui tab filter **Menunggu Persetujuan** di halaman Users.

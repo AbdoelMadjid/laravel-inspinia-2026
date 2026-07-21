@@ -58,6 +58,11 @@
                             <i class="ti ti-user-shield me-1"></i> Bulk Assign Role (<span id="selectedUserCount">0</span>)
                         </button>
 
+                        <!-- Import Massal Button -->
+                        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#importUsersModal">
+                            <i class="ti ti-file-upload me-1"></i> Import Massal
+                        </button>
+
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
                             <i class="ti ti-plus me-1"></i> Add New User
                         </button>
@@ -366,6 +371,67 @@
                 </div>
             </form>
         </div>
+    </div>
+</div>
+
+<!-- Modal Import Users Massal -->
+<div class="modal fade" id="importUsersModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <form method="POST" action="{{ route('admin.users.import') }}" enctype="multipart/form-data" class="modal-content">
+            @csrf
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold"><i class="ti ti-file-upload text-success me-1"></i> Import Pengguna Massal</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Step 1: Download Template -->
+                <div class="p-3 mb-3 bg-light rounded border">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="mb-1 fw-bold text-dark"><i class="ti ti-file-spreadsheet text-primary me-1"></i> Unduh Template Format</h6>
+                            <p class="mb-0 fs-xs text-muted">Gunakan berkas CSV/Excel standar ini untuk mengisikan data pengguna.</p>
+                        </div>
+                        <a href="{{ route('admin.users.export-template') }}" class="btn btn-sm btn-outline-primary fw-semibold flex-shrink-0">
+                            <i class="ti ti-download me-1"></i> Download Template
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Step 2: Choose File -->
+                <div class="mb-3">
+                    <label for="import_file" class="form-label fw-bold">Unggah Berkas (CSV / Excel) <span class="text-danger">*</span></label>
+                    <input type="file" name="file" id="import_file" class="form-control" accept=".csv,.txt,.xlsx,.xls" required>
+                    <div class="form-text fs-xs text-muted">Format didukung: <code>.csv</code>, <code>.txt</code>. Ukuran maks 5MB.</div>
+                </div>
+
+                <!-- Step 3: Default Role & Approval -->
+                <div class="row g-2">
+                    <div class="col-md-6">
+                        <label for="default_role" class="form-label fw-bold">Role Default</label>
+                        <select name="default_role" id="default_role" class="form-select">
+                            @foreach($roles as $role)
+                                <option value="{{ $role->name }}" {{ $role->name === 'user' ? 'selected' : '' }}>
+                                    {{ ucfirst($role->name) }}
+                                </option>
+                            @endforeach
+                        </select>
+                        <div class="form-text fs-xs text-muted">Jika kolom Role di berkas kosong.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="default_approval" class="form-label fw-bold">Status Persetujuan</label>
+                        <select name="default_approval" id="default_approval" class="form-select">
+                            <option value="1" selected>Disetujui / Langsung Aktif</option>
+                            <option value="0">Menunggu Persetujuan Admin</option>
+                        </select>
+                        <div class="form-text fs-xs text-muted">Jika kolom Approved di berkas kosong.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-success fw-semibold"><i class="ti ti-cloud-upload me-1"></i> Upload & Impor Data</button>
+            </div>
+        </form>
     </div>
 </div>
 
