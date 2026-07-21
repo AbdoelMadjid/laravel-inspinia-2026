@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\System\AppProfileController;
 use App\Http\Controllers\Admin\System\BackupController;
 use App\Http\Controllers\Admin\System\LoginLogController;
 use App\Http\Controllers\Admin\System\MenuController;
+use App\Http\Controllers\Admin\System\PasswordResetRequestController;
 use App\Http\Controllers\Admin\System\PermissionController;
 use App\Http\Controllers\Admin\System\ProfileController;
 use App\Http\Controllers\Admin\System\RoleController;
@@ -59,6 +60,9 @@ Route::middleware('auth')->group(function () {
             Route::resource('users', UserController::class);
             Route::resource('roles', RoleController::class);
             Route::resource('permissions', PermissionController::class);
+            Route::post('password-reset-requests/{passwordResetRequest}/reset', [PasswordResetRequestController::class, 'resetPassword'])->name('password-reset-requests.reset');
+            Route::post('password-reset-requests/{passwordResetRequest}/reject', [PasswordResetRequestController::class, 'reject'])->name('password-reset-requests.reject');
+            Route::resource('password-reset-requests', PasswordResetRequestController::class);
         });
     });
 

@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('title', 'Forgot Password | INSPINIA')
+@section('title', 'Lupa Password | ' . (\App\Models\Admin\System\AppProfile::get()->app_name ?? 'INSPINIA'))
 
 @section('content')
 @php $appProfile = \App\Models\Admin\System\AppProfile::get(); @endphp
@@ -15,13 +15,14 @@
                     <a href="{{ route('home') }}" class="logo-light">
                         <img src="{{ $appProfile->logo_light_url }}" alt="{{ $appProfile->app_name }}" height="26" />
                     </a>
-                    <h4 class="fw-bold mt-3">Forgot Password?</h4>
-                    <p class="text-muted w-lg-75 mx-auto">Enter your email address and we'll send you a password reset link.</p>
+                    <h4 class="fw-bold mt-3">Lupa Kata Sandi?</h4>
+                    <p class="text-muted w-lg-75 mx-auto">Masukkan Email atau Username Anda. Permintaan reset password akan dikirimkan ke Administrator untuk diproses.</p>
                 </div>
 
                 @if (session('status'))
-                    <div class="alert alert-success mb-3" role="alert">
-                        {{ session('status') }}
+                    <div class="alert alert-success alert-dismissible fade show mb-3 fs-sm" role="alert">
+                        <i class="ti ti-check-circle me-1"></i> {{ session('status') }}
+                        <button type="button" class="btn-close py-2" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
 
@@ -30,21 +31,37 @@
                         @csrf
 
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email address <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required autofocus placeholder="you@example.com" />
-                            @error('email')
-                                <div class="invalid-feedback">{{ $message }}</div>
+                            <label for="username_or_email" class="form-label fw-semibold">
+                                Email atau Username <span class="text-danger">*</span>
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light text-muted">
+                                    <i class="ti ti-user-check"></i>
+                                </span>
+                                <input type="text" 
+                                       class="form-control @error('username_or_email') is-invalid @enderror" 
+                                       id="username_or_email" 
+                                       name="username_or_email" 
+                                       value="{{ old('username_or_email') }}" 
+                                       required 
+                                       autofocus 
+                                       placeholder="you@example.com atau username" />
+                            </div>
+                            @error('username_or_email')
+                                <div class="invalid-feedback d-block">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-primary fw-semibold py-2">Email Password Reset Link</button>
+                            <button type="submit" class="btn btn-primary fw-semibold py-2">
+                                <i class="ti ti-send me-1"></i> Kirim Permintaan Reset Password
+                            </button>
                         </div>
                     </form>
 
-                    <p class="text-muted text-center mt-4 mb-0">
-                        Remember your password?
-                        <a href="{{ route('login') }}" class="text-decoration-underline link-offset-3 fw-semibold">Sign In</a>
+                    <p class="text-muted text-center mt-4 mb-0 fs-sm">
+                        Ingat kata sandi Anda?
+                        <a href="{{ route('login') }}" class="text-decoration-underline link-offset-3 fw-semibold">Masuk Akun</a>
                     </p>
                 </div>
 
