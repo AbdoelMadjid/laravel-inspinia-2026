@@ -11,6 +11,7 @@
         const idleTimeoutSeconds = timeoutMeta ? parseInt(timeoutMeta.getAttribute('content'), 10) : 900;
         if (!idleTimeoutSeconds || idleTimeoutSeconds <= 0) return;
 
+        const idleTimeoutMs = idleTimeoutSeconds * 1000;
         const STORAGE_KEY = 'inspinia_last_user_activity';
         let lastActivity = Date.now();
         let logoutTriggered = false;
@@ -22,7 +23,13 @@
             if (storedTime) {
                 const parsed = parseInt(storedTime, 10);
                 if (!isNaN(parsed) && parsed <= Date.now()) {
-                    lastActivity = parsed;
+                    if (Date.now() - parsed < idleTimeoutMs) {
+                        lastActivity = parsed;
+                    } else {
+                        // Reset to current time on fresh session if stored time is already expired
+                        lastActivity = Date.now();
+                        localStorage.setItem(STORAGE_KEY, lastActivity.toString());
+                    }
                 }
             } else {
                 localStorage.setItem(STORAGE_KEY, lastActivity.toString());
@@ -31,8 +38,40 @@
             // localStorage fallback
         }
 
+        // Check if idle timeout has been reached and trigger logout
+        function checkAndLogoutIfIdle() {
+            if (logoutTriggered) return true;
+
+            // Re-check localStorage for latest activity across tabs
+            try {
+                const storedTime = localStorage.getItem(STORAGE_KEY);
+                if (storedTime) {
+                    const parsed = parseInt(storedTime, 10);
+                    if (!isNaN(parsed) && parsed > lastActivity) {
+                        lastActivity = parsed;
+                    }
+                }
+            } catch (e) {}
+
+            const elapsedMs = Date.now() - lastActivity;
+
+            if (elapsedMs >= idleTimeoutMs) {
+                logoutTriggered = true;
+                triggerIdleLogout();
+                return true;
+            }
+            return false;
+        }
+
         // Throttle reset function to avoid performance overhead on frequent events like mousemove
-        function updateActivity() {
+        function handleUserActivity() {
+            if (logoutTriggered) return;
+
+            // Check if user has already exceeded idle limit BEFORE updating activity timestamp
+            if (checkAndLogoutIfIdle()) {
+                return;
+            }
+
             const now = Date.now();
             if (now - lastUpdateTimestamp < 1000) return; // Throttle to 1 second
             
@@ -56,33 +95,27 @@
             }
         });
 
+        // Check when tab becomes visible or window regains focus
+        document.addEventListener('visibilitychange', function () {
+            if (document.visibilityState === 'visible') {
+                checkAndLogoutIfIdle();
+            }
+        });
+
+        window.addEventListener('focus', function () {
+            checkAndLogoutIfIdle();
+        });
+
         // Listen to user interaction events
         const userEvents = ['mousemove', 'mousedown', 'keydown', 'scroll', 'click', 'touchstart', 'pointermove'];
         userEvents.forEach(function (eventName) {
-            window.addEventListener(eventName, updateActivity, { passive: true });
+            window.addEventListener(eventName, handleUserActivity, { passive: true });
         });
 
         // Periodically check for idle timeout
         const checkInterval = setInterval(function () {
-            if (logoutTriggered) return;
-
-            // Re-check localStorage for latest activity across tabs
-            try {
-                const storedTime = localStorage.getItem(STORAGE_KEY);
-                if (storedTime) {
-                    const parsed = parseInt(storedTime, 10);
-                    if (!isNaN(parsed) && parsed > lastActivity) {
-                        lastActivity = parsed;
-                    }
-                }
-            } catch (e) {}
-
-            const elapsedSeconds = Math.floor((Date.now() - lastActivity) / 1000);
-
-            if (elapsedSeconds >= idleTimeoutSeconds) {
-                logoutTriggered = true;
+            if (checkAndLogoutIfIdle()) {
                 clearInterval(checkInterval);
-                triggerIdleLogout();
             }
         }, 2000);
 

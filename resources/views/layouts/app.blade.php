@@ -9,7 +9,7 @@
         <meta name="author" content="WebAppLayers" />
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <meta name="logout-url" content="{{ route('logout') }}" />
-        <meta name="idle-timeout" content="{{ config('session.idle_timeout', 900) }}" />
+        <meta name="idle-timeout" content="{{ env('SESSION_IDLE_TIMEOUT', 900) }}" />
 
         @php $appProfile = \App\Models\Admin\System\AppProfile::get(); @endphp
         <!-- App favicon -->
