@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\System\AppNotification;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -58,6 +59,18 @@ class RegisteredUserController extends Controller
         // Assign default 'user' role
         $role = Role::firstOrCreate(['name' => 'user']);
         $user->assignRole($role);
+
+        // Create Admin Notification for New User Registration
+        AppNotification::create([
+            'category' => 'system',
+            'title' => 'Pendaftaran Pengguna Baru',
+            'message' => "Pengguna baru '{$user->name}' ({$user->email}) telah mendaftar ke sistem.",
+            'url' => route('admin.users.index'),
+            'icon' => 'ti ti-user-plus',
+            'icon_bg' => 'bg-primary-subtle text-primary',
+            'target_role' => 'admin',
+            'is_read' => false,
+        ]);
 
         event(new Registered($user));
 
