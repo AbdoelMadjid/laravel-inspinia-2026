@@ -151,15 +151,9 @@
                                 </h5>
                                 <p class="text-muted fs-xs mb-1 text-truncate">{{ $user->email }}</p>
                                 <div>
-                                    @if($user->is_approved)
-                                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 fs-11 rounded-pill" title="Akun Disetujui / Aktif">
-                                            <i class="ti ti-circle-check me-1"></i> Disetujui
-                                        </span>
-                                    @else
-                                        <span class="badge bg-warning-subtle text-warning border border-warning-subtle px-2 py-1 fs-11 rounded-pill" title="Menunggu Persetujuan Admin">
-                                            <i class="ti ti-clock me-1"></i> Pending Approval
-                                        </span>
-                                    @endif
+                                    <span class="badge bg-warning-subtle text-warning border border-warning-subtle px-2 py-1 fs-11 rounded-pill" title="Total Poin Login Harian">
+                                        <i class="ti ti-star-filled me-1"></i> {{ $user->points ?? 0 }} Poin
+                                    </span>
                                 </div>
                             </div>
                             <div class="ms-auto align-self-start">
@@ -223,8 +217,8 @@
                             </div>
                         </div>
 
-                        <!-- Baris Khusus Badge Role -->
-                        <div class="d-flex align-items-center flex-wrap gap-1 mb-3 pt-2 border-top">
+                        <!-- Baris Role -->
+                        <div class="d-flex align-items-center flex-wrap gap-1 mt-2 pt-2 border-top">
                             <span class="text-muted fs-11 me-1 fw-medium"><i class="ti ti-shield me-1"></i> Role:</span>
                             @forelse($user->roles as $userRole)
                                 <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1 fs-11 rounded-pill">{{ ucfirst($userRole->name) }}</span>
@@ -234,7 +228,7 @@
                         </div>
 
                         @if(!$user->is_approved)
-                            <div class="my-2 p-2 bg-warning-subtle rounded border border-warning-subtle">
+                            <div class="mt-2 p-2 bg-warning-subtle rounded border border-warning-subtle">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <span class="fs-xs fw-semibold text-warning"><i class="ti ti-alert-triangle me-1"></i> Menunggu Persetujuan</span>
                                     <form method="POST" action="{{ route('admin.users.toggle-approval', $user->id) }}" id="approve-user-form-{{ $user->id }}">
@@ -254,18 +248,24 @@
                             </div>
                         @endif
 
-                        <ul class="list-unstyled text-muted mb-0">
-                            <li class="mb-2">
-                                <div class="d-flex align-items-center gap-2">
-                                    <div class="avatar-xs">
-                                        <span class="avatar-title bg-light text-muted fs-sm rounded-circle">
-                                            <i class="ti ti-calendar"></i>
-                                        </span>
-                                    </div>
-                                    <span class="fs-xs fw-medium">Joined: {{ $user->created_at ? $user->created_at->format('d M Y') : '-' }}</span>
-                                </div>
-                            </li>
-                        </ul>
+                        <!-- Baris Joined Date & Status Disetujui (Dengan Spacing Standar Bootstrap 5) -->
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-1 mt-2 pt-2 pb-1 border-top">
+                            <div class="d-flex align-items-center text-muted fs-xs fw-medium">
+                                <i class="ti ti-calendar me-1.5 fs-14"></i>
+                                <span>Joined: {{ $user->created_at ? $user->created_at->format('d M Y') : '-' }}</span>
+                            </div>
+                            <div>
+                                @if($user->is_approved)
+                                    <span class="text-success fs-xs fw-semibold d-inline-flex align-items-center" title="Akun Disetujui / Aktif">
+                                        <i class="ti ti-circle-check me-1 fs-14"></i> Disetujui
+                                    </span>
+                                @else
+                                    <span class="text-warning fs-xs fw-semibold d-inline-flex align-items-center" title="Menunggu Persetujuan Admin">
+                                        <i class="ti ti-clock me-1 fs-14"></i> Pending Approval
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
