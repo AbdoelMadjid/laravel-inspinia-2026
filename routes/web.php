@@ -5,10 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 // Home / Landing Page
 Route::get('/', function () {
-    if (view()->exists('template.landing')) {
-        return view('template.landing');
-    }
-    return view('admin.landing');
+    return view('welcome');
 })->name('home');
 
 // Breeze Auth Routes (login, register, forgot-password, logout, etc.)
@@ -16,10 +13,7 @@ require __DIR__.'/auth.php';
 
 // Dashboard Page (Admin Dashboard)
 Route::get('/dashboard', function () {
-    if (view()->exists('template.index')) {
-        return view('template.index');
-    }
-    return view('admin.index');
+    return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 // Protected Admin Pages
@@ -49,10 +43,10 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/{page}', function ($page) {
         if ($page === 'landing') {
-            return redirect()->route('home');
+            return view('template.landing');
         }
         if ($page === 'index' || $page === 'dashboard-projects') {
-            return view(view()->exists('template.index') ? 'template.index' : 'admin.index');
+            return view('template.index');
         }
         if (view()->exists('template.' . $page)) {
             return view('template.' . $page);
@@ -69,5 +63,5 @@ Route::fallback(function () {
     if (view()->exists('template.error-404')) {
         return response()->view('template.error-404', [], 404);
     }
-    return response()->view('admin.error-404', [], 404);
+    abort(404);
 });

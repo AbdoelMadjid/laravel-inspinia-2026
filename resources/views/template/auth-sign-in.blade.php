@@ -19,14 +19,15 @@
                         </div>
 
                         <div class="card p-4">
-                            <form action="index.html">
+                            <form method="POST" action="{{ route('login') }}">
+                                @csrf
                                 <div class="mb-3">
                                     <label for="userEmail" class="form-label">
                                         Email address
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="input-group">
-                                        <input type="email" class="form-control" id="userEmail" placeholder="you@example.com" required />
+                                        <input type="email" class="form-control" id="userEmail" name="email" placeholder="you@example.com" required autofocus />
                                     </div>
                                 </div>
 
@@ -36,16 +37,16 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="input-group">
-                                        <input type="password" class="form-control" id="userPassword" placeholder="••••••••" required />
+                                        <input type="password" class="form-control" id="userPassword" name="password" placeholder="••••••••" required />
                                     </div>
                                 </div>
 
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <div class="form-check">
-                                        <input class="form-check-input form-check-input-light fs-14" type="checkbox" id="rememberMe" />
+                                        <input class="form-check-input form-check-input-light fs-14" type="checkbox" id="rememberMe" name="remember" />
                                         <label class="form-check-label" for="rememberMe">Keep me signed in</label>
                                     </div>
-                                    <a href="{{ route('page', 'auth-reset-pass') }}" class="text-decoration-underline link-offset-3 text-muted">Forgot Password?</a>
+                                    <a href="{{ route('password.request') }}" class="text-decoration-underline link-offset-3 text-muted">Forgot Password?</a>
                                 </div>
 
                                 <div class="d-grid">
