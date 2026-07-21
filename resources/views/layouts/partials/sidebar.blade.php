@@ -29,7 +29,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <div>
                     <div class="position-relative d-inline-block text-center cursor-pointer mb-2" onclick="triggerQuickAvatarUpload()" title="Klik untuk ganti foto profil">
-                        <img src="{{ Auth::user()?->avatar_url ?? asset('assets/images/users/user-1.jpg') }}" alt="user-image" class="rounded-circle avatar-md object-fit-cover user-avatar-img" />
+                        <img src="{{ Auth::user()?->avatar_url ?? asset('assets/images/users/avatar-neutral.svg') }}" alt="user-image" class="rounded-circle avatar-md object-fit-cover user-avatar-img" />
                     </div>
                     <div>
                         <span class="sidenav-user-name fw-bold d-block">{{ Auth::user()->name ?? 'User' }}</span>

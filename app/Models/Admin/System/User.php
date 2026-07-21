@@ -70,6 +70,6 @@ class User extends Authenticatable
             }
         }
 
-        return asset('assets/images/users/user-1.jpg');
+        return asset('assets/images/users/avatar-neutral.svg');
     }
 }
