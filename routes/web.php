@@ -11,6 +11,8 @@ use App\Http\Controllers\Admin\System\PermissionController;
 use App\Http\Controllers\Admin\System\ProfileController;
 use App\Http\Controllers\Admin\System\RoleController;
 use App\Http\Controllers\Admin\System\UserController;
+use App\Http\Controllers\Admin\System\SettingController;
+use App\Http\Controllers\Admin\System\ActivityLogController;
 use Illuminate\Support\Facades\Route;
 
 // Home / Landing Page
@@ -55,13 +57,20 @@ Route::middleware('auth')->group(function () {
             Route::resource('backups', BackupController::class)->only(['index', 'store']);
 
             Route::resource('login-logs', LoginLogController::class)->only(['index']);
+            Route::get('activity-logs', [ActivityLogController::class, 'index'])->name('activity-logs.index');
+            Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
+            Route::put('settings', [SettingController::class, 'update'])->name('settings.update');
         });
 
         // Users Management Group
         Route::prefix('users-management')->group(function () {
             Route::get('users/export-template', [UserController::class, 'downloadTemplate'])->name('users.export-template');
+            Route::get('users/export-excel', [UserController::class, 'exportExcel'])->name('users.export-excel');
+            Route::get('users/export-pdf', [UserController::class, 'exportPdf'])->name('users.export-pdf');
             Route::post('users/import', [UserController::class, 'import'])->name('users.import');
             Route::post('users/bulk-assign-role', [UserController::class, 'bulkAssignRole'])->name('users.bulk-assign-role');
+            Route::post('users/bulk-approve', [UserController::class, 'bulkApprove'])->name('users.bulk-approve');
+            Route::post('users/bulk-delete', [UserController::class, 'bulkDelete'])->name('users.bulk-delete');
             Route::post('users/{user}/impersonate', [UserController::class, 'impersonate'])->name('users.impersonate');
             Route::patch('users/{user}/toggle-approval', [UserController::class, 'toggleApproval'])->name('users.toggle-approval');
             Route::resource('users', UserController::class);

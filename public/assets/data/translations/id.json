@@ -402,7 +402,9 @@
     "logo-sm-label": "Logo Small (Icon)",
     "favicon-label": "Favicon Tab Browser",
     "save-profile-btn": "Simpan Perubahan Profil & Logo",
-    "dashboard": "Dashboard",
+    "dashboard": "Dasbor",
     "users-setting": "Pengaturan User",
-    "apps-login-logs": "Data Login"
+    "apps-login-logs": "Data Login",
+    "apps-activity-logs": "Log Aktivitas",
+    "apps-settings": "Pengaturan Sistem"
 }

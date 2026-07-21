@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\System;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\System\User;
+use App\Models\Admin\System\ActivityLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -443,6 +444,167 @@ class UserController extends Controller
             $msg .= " {$skippedCount} baris dilewati (email ganda atau data tidak valid).";
         }
 
+        ActivityLog::log('IMPORT_USERS', "Mengimpor {$importedCount} pengguna baru via berkas Excel.");
+
         return redirect()->route('admin.users.index')->with('success', $msg);
+    }
+
+    /**
+     * Export filtered users to styled Excel (.xlsx) file.
+     */
+    public function exportExcel(Request $request)
+    {
+        $query = User::with('roles')->latest();
+
+        if ($request->filled('search')) {
+            $search = trim($request->search);
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('email', 'like', "%{$search}%");
+            });
+        }
+
+        if ($request->filled('role')) {
+            $query->role($request->role);
+        }
+
+        if ($request->filled('status')) {
+            if ($request->status === 'approved') {
+                $query->where('is_approved', true);
+            } elseif ($request->status === 'pending') {
+                $query->where('is_approved', false);
+            }
+        }
+
+        $users = $query->get();
+
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setTitle('Laporan Data Pengguna');
+
+        $headerStyle = [
+            'font' => ['bold' => true, 'color' => ['rgb' => 'FFFFFF'], 'size' => 11],
+            'fill' => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => '10B981']], // Success Green
+            'alignment' => ['horizontal' => Alignment::HORIZONTAL_CENTER, 'vertical' => Alignment::VERTICAL_CENTER],
+        ];
+
+        $sheet->setCellValue('A1', 'ID');
+        $sheet->setCellValue('B1', 'Nama Pengguna');
+        $sheet->setCellValue('C1', 'Email');
+        $sheet->setCellValue('D1', 'Role / Peran');
+        $sheet->setCellValue('E1', 'Status Persetujuan');
+        $sheet->setCellValue('F1', 'Poin');
+        $sheet->setCellValue('G1', 'Terakhir Aktif');
+        $sheet->setCellValue('H1', 'Tanggal Bergabung');
+
+        $sheet->getStyle('A1:H1')->applyFromArray($headerStyle);
+        $sheet->getRowDimension(1)->setRowHeight(26);
+
+        $rowNum = 2;
+        foreach ($users as $u) {
+            $sheet->setCellValue('A' . $rowNum, $u->id);
+            $sheet->setCellValue('B' . $rowNum, $u->name);
+            $sheet->setCellValue('C' . $rowNum, $u->email);
+            $sheet->setCellValue('D' . $rowNum, $u->roles->pluck('name')->map('ucfirst')->join(', ') ?: 'User');
+            $sheet->setCellValue('E' . $rowNum, $u->is_approved ? 'Disetujui' : 'Pending');
+            $sheet->setCellValue('F' . $rowNum, $u->points ?? 0);
+            $sheet->setCellValue('G' . $rowNum, $u->last_seen_text);
+            $sheet->setCellValue('H' . $rowNum, $u->created_at ? $u->created_at->format('d M Y H:i') : '-');
+            $rowNum++;
+        }
+
+        foreach (range('A', 'H') as $col) {
+            $sheet->getColumnDimension($col)->setAutoSize(true);
+        }
+
+        ActivityLog::log('EXPORT_USERS_EXCEL', "Mengunduh rekap Excel data pengguna ({$users->count()} baris).");
+
+        $writer = new Xlsx($spreadsheet);
+        $filename = 'export_users_' . date('Ymd_His') . '.xlsx';
+
+        return response()->streamDownload(function () use ($writer) {
+            $writer->save('php://output');
+        }, $filename, [
+            'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        ]);
+    }
+
+    /**
+     * Export filtered users to printable view.
+     */
+    public function exportPdf(Request $request)
+    {
+        $query = User::with('roles')->latest();
+
+        if ($request->filled('search')) {
+            $search = trim($request->search);
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('email', 'like', "%{$search}%");
+            });
+        }
+
+        if ($request->filled('role')) {
+            $query->role($request->role);
+        }
+
+        if ($request->filled('status')) {
+            if ($request->status === 'approved') {
+                $query->where('is_approved', true);
+            } elseif ($request->status === 'pending') {
+                $query->where('is_approved', false);
+            }
+        }
+
+        $users = $query->get();
+
+        ActivityLog::log('EXPORT_USERS_PDF', "Mencetak laporan PDF data pengguna ({$users->count()} baris).");
+
+        return view('admin.system.users.export-pdf', compact('users'));
+    }
+
+    /**
+     * Bulk approve selected users.
+     */
+    public function bulkApprove(Request $request)
+    {
+        $request->validate([
+            'user_ids' => ['required', 'array'],
+            'user_ids.*' => ['exists:users,id'],
+        ]);
+
+        $count = User::whereIn('id', $request->user_ids)
+            ->where('is_approved', false)
+            ->update(['is_approved' => true]);
+
+        ActivityLog::log('BULK_APPROVE', "Menyetujui {$count} akun pengguna secara massal.");
+
+        return redirect()->back()->with('success', "Berhasil menyetujui {$count} akun pengguna secara massal.");
+    }
+
+    /**
+     * Bulk delete selected users (except self).
+     */
+    public function bulkDelete(Request $request)
+    {
+        $request->validate([
+            'user_ids' => ['required', 'array'],
+            'user_ids.*' => ['exists:users,id'],
+        ]);
+
+        // Prevent self-deletion
+        $userIds = array_diff($request->user_ids, [auth()->id()]);
+
+        $users = User::whereIn('id', $userIds)->get();
+        $names = $users->pluck('name')->join(', ');
+        $count = $users->count();
+
+        foreach ($users as $user) {
+            $user->delete();
+        }
+
+        ActivityLog::log('BULK_DELETE', "Menghapus {$count} pengguna secara massal: {$names}.");
+
+        return redirect()->back()->with('success', "Berhasil menghapus {$count} pengguna secara massal.");
     }
 }

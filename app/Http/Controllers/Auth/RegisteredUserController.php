@@ -19,8 +19,12 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(): View
+    public function create(): View|RedirectResponse
     {
+        if (!Setting::get('allow_registration', true)) {
+            return redirect()->route('login')->with('error', 'Pendaftaran akun baru saat ini sedang ditutup oleh Administrator.');
+        }
+
         return view('auth.register');
     }
 
@@ -31,6 +35,10 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        if (!Setting::get('allow_registration', true)) {
+            return redirect()->route('login')->with('error', 'Pendaftaran akun baru saat ini sedang ditutup oleh Administrator.');
+        }
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
@@ -51,17 +59,27 @@ class RegisteredUserController extends Controller
             'password' => 'Kata sandi harus terdiri dari minimal 8 karakter dan mengandung setidaknya 1 huruf besar, 1 huruf kecil, dan 1 angka.',
         ]);
 
+        $autoApprove = Setting::get('auto_approve_registration', false);
+        $defaultRoleName = Setting::get('default_registration_role', 'user');
+
         $user = User::create([
             'name' => trim($request->name),
             'email' => trim(strtolower($request->email)),
             'password' => Hash::make($request->password),
             'email_verified_at' => now(),
-            'is_approved' => false,
+            'is_approved' => $autoApprove,
         ]);
 
-        // Assign default 'user' role with 'web' guard
-        $role = Role::firstOrCreate(['name' => 'user', 'guard_name' => 'web']);
+        // Assign default role with 'web' guard
+        $role = Role::firstOrCreate(['name' => $defaultRoleName, 'guard_name' => 'web']);
         $user->assignRole($role);
+
+        if ($autoApprove) {
+            Auth::login($user);
+
+            return redirect()->route('dashboard')
+                ->with('success', 'Pendaftaran akun berhasil! Selamat datang di aplikasi.');
+        }
 
         // Create Admin Notification for New User Registration (Pending Approval)
         AppNotification::create([
@@ -77,6 +95,7 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        return redirect()->route('login')->with('info', 'Pendaftaran akun Anda berhasil! Akun Anda saat ini sedang menunggu persetujuan dari Administrator sebelum dapat digunakan untuk masuk.');
+        return redirect()->route('login')
+            ->with('status', 'Pendaftaran akun Anda berhasil! Akun Anda saat ini sedang menunggu persetujuan dari Administrator sebelum dapat digunakan untuk masuk.');
     }
 }

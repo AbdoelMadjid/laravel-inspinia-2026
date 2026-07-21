@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable(['name', 'email', 'password', 'avatar', 'points', 'is_approved'])]
+#[Fillable(['name', 'email', 'password', 'avatar', 'points', 'is_approved', 'last_seen_at'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -28,6 +28,28 @@ class User extends Authenticatable
     public function getMorphClass()
     {
         return 'App\Models\User';
+    }
+
+    /**
+     * Check if user is currently online (active within last 5 minutes).
+     */
+    public function isOnline(): bool
+    {
+        return $this->last_seen_at && $this->last_seen_at->gt(now()->subMinutes(5));
+    }
+
+    /**
+     * Humanized text for last seen status.
+     */
+    public function getLastSeenTextAttribute(): string
+    {
+        if ($this->isOnline()) {
+            return 'Online sekarang';
+        }
+        if ($this->last_seen_at) {
+            return 'Aktif ' . $this->last_seen_at->diffForHumans();
+        }
+        return 'Belum pernah aktif';
     }
 
     /**
@@ -50,6 +72,7 @@ class User extends Authenticatable
             'password' => 'hashed',
             'points' => 'integer',
             'is_approved' => 'boolean',
+            'last_seen_at' => 'datetime',
         ];
     }
 

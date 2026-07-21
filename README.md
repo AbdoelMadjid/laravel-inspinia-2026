@@ -18,21 +18,23 @@ Aplikasi Web Admin Dashboard & Management System berbasis **Laravel 11**, **Spat
 
 ### 2. 👥 Pengaturan Pengguna & Akses (Users Setting)
 - **Manajemen Pengguna (Contacts / Users)**: Manajemen akun pengguna, foto avatar, penetapan role tunggal/massal (*Bulk Assign Role*).
+- **Export Data Pengguna (Excel & PDF)**:
+  - Tombol **Export Excel** mengunduh berkas terformat `.xlsx` menggunakan PhpSpreadsheet secara otomatis sesuai filter pencarian/role/status.
+  - Tombol **Cetak / Export PDF** membuka tampilan laporan rekap resmi terstruktur yang siap dicetak/disimpan sebagai PDF.
+- **Aksi Massal Lengkap (Bulk Actions)**:
+  - **Setujui Massal (Bulk Approve)**: Menyetujui persetujuan banyak pengguna baru sekaligus dalam satu klik.
+  - **Hapus Massal (Bulk Delete)**: Menghapus banyak akun pengguna secara massal dengan dialog konfirmasi SweetAlert2.
+- **Indikator Status Online / Offline Real-Time**:
+  - Middleware `UpdateUserLastSeen` mencatat waktu aktif pengguna secara otomatis (`last_seen_at`).
+  - Tampilan avatar pengguna dilengkapi bulatan status **Online** (hijau) atau **Offline** (abu-abu) beserta tooltip interaktif (contoh: *"Online sekarang"*, *"Aktif 5 menit yang lalu"*).
 - **Impor Pengguna Massal (Bulk User Import)**:
-  - Administrator dapat mengunduh berkas template standar `template_import_user.csv` (UTF-8 kompatibel dengan Microsoft Excel).
-  - Mengisi data massal (`Name`, `Email`, `Password`, `Role`, `Is Approved`) dan mengunggahnya pada modal **Import Massal** di route `admin/users-management/users`.
-  - Sistem otomatis memproses data, mencegah email ganda, menetapkan role default, serta status persetujuan secara otomatis.
+  - Mengunduh berkas template asli `.xlsx` dan mengunggah data massal per kolom secara instan.
 - **Sistem Persetujuan Pengguna Baru (User Registration Approval)**:
-  - Akun pengguna baru yang mendaftar melalui form Register secara otomatis berstatus `Pending Approval` (`is_approved = false`) dan **belum diizinkan login**.
-  - Administrator dapat menyetujui (`Approve`) atau menonaktifkan akun melalui tab filter **Menunggu Persetujuan** di halaman Users.
-  - Percobaan login pengguna yang belum disetujui ditolak secara presisi dengan pesan: *"Akun Anda masih menunggu persetujuan dari Administrator. Silakan hubungi Admin untuk mengaktifkan akun Anda."*
-- **Fitur Impersonasi (User Impersonation)**: Administrator dapat *login sebagai* user lain untuk keperluan debugging atau bantuan teknis dengan bar notifikasi *Stop Impersonating*.
-- **Permintaan Reset Password (Reset Password Requests)**:
-  - Permintaan reset password oleh pengguna di halaman `/forgot-password` ditangkap otomatis di menu **Users Setting -> Reset Password**.
-  - Administrator dapat mereset akun ke password default (`password123`) atau menolak permintaan.
-  - Dialog konfirmasi aksi menggunakan **SweetAlert2 Modal Tengah** (`Swal.fire`).
-- **Peran Pengguna (Roles Management)**: Pembuatan & pengaturan role (Spatie RBAC).
-- **Izin Akses (Permissions Management)**: Matriks dan manajemen daftar permission aplikasi.
+  - Akun pengguna baru mendaftar berstatus `Pending Approval` (`is_approved = false`) dan belum diizinkan login sebelum disetujui Admin.
+- **Pengaturan Global Aplikasi (System Settings)**:
+  - Menu `admin/apps-management/settings` untuk mengatur Nama Aplikasi, Deskripsi, Logo, Teks Footer, Buka/Tutup Registrasi Publik, Otomatis/Manual Approval, dan Role Default.
+- **Audit Log Aktivitas Sistem & Admin (Activity Audit Trail)**:
+  - Menu `admin/apps-management/activity-logs` untuk memantau rekam jejak aksi administrasi lengkap dengan filter pelaku, jenis aksi, tanggal, dan IP address.
 
 ### 3. 🔔 Notifikasi Topbar Dinamis & Role Scoping (Group Notifications)
 - **Notifikasi Lonceng Topbar Real-Time**: Ikon lonceng topbar dilengkapi dengan *unread badge count* dinamis.

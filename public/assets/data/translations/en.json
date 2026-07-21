@@ -404,5 +404,7 @@
     "save-profile-btn": "Save Profile & Logo Changes",
     "dashboard": "Dashboard",
     "users-setting": "Users Setting",
-    "apps-login-logs": "Login Data"
+    "apps-login-logs": "Login Data",
+    "apps-activity-logs": "Activity Audit Logs",
+    "apps-settings": "System Settings"
 }

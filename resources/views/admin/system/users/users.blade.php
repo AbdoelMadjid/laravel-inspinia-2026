@@ -53,15 +53,42 @@
                         @endif
                     </div>
                     <div class="col text-end d-flex align-items-center justify-content-end gap-2">
-                        <!-- Bulk Assign Role Button -->
+                        <!-- Bulk Action Buttons -->
                         <button type="button" class="btn btn-outline-primary d-none" id="bulkAssignRoleBtn" data-bs-toggle="modal" data-bs-target="#bulkAssignRoleModal">
-                            <i class="ti ti-user-shield me-1"></i> Bulk Assign Role (<span id="selectedUserCount">0</span>)
+                            <i class="ti ti-user-shield me-1"></i> Role (<span class="selectedUserCount">0</span>)
+                        </button>
+
+                        <button type="button" class="btn btn-outline-success d-none" id="bulkApproveBtn" onclick="submitBulkApprove()">
+                            <i class="ti ti-check me-1"></i> Setujui (<span class="selectedUserCount">0</span>)
+                        </button>
+
+                        <button type="button" class="btn btn-outline-danger d-none" id="bulkDeleteBtn" onclick="submitBulkDelete()">
+                            <i class="ti ti-trash me-1"></i> Hapus (<span class="selectedUserCount">0</span>)
                         </button>
 
                         <!-- Import Massal Button -->
                         <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#importUsersModal">
                             <i class="ti ti-file-upload me-1"></i> Import Massal
                         </button>
+
+                        <!-- Export Dropdown -->
+                        <div class="dropdown">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="ti ti-download me-1"></i> Export Data
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end shadow">
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('admin.users.export-excel', request()->query()) }}">
+                                        <i class="ti ti-file-spreadsheet text-success me-2 fs-16"></i> Export Excel (.xlsx)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('admin.users.export-pdf', request()->query()) }}" target="_blank">
+                                        <i class="ti ti-printer text-danger me-2 fs-16"></i> Cetak / Export PDF
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
 
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
                             <i class="ti ti-plus me-1"></i> Add New User
@@ -111,12 +138,11 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
                             <div class="me-3 position-relative">
-                                @if($user->avatar)
-                                    <img src="{{ $user->avatar_url }}" alt="{{ $user->name }}" class="avatar-md rounded-circle object-fit-cover" style="width: 56px; height: 56px;" />
+                                <img src="{{ $user->avatar_url }}" alt="{{ $user->name }}" class="avatar-md rounded-circle object-fit-cover" style="width: 56px; height: 56px;" />
+                                @if($user->isOnline())
+                                    <span class="position-absolute bottom-0 end-0 p-1 bg-success border border-white rounded-circle shadow-sm" style="width: 14px; height: 14px;" title="Online sekarang" data-bs-toggle="tooltip"></span>
                                 @else
-                                    <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-20 fw-bold d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
-                                        {{ strtoupper(substr($user->name, 0, 2)) }}
-                                    </span>
+                                    <span class="position-absolute bottom-0 end-0 p-1 bg-secondary border border-white rounded-circle shadow-sm" style="width: 14px; height: 14px;" title="{{ $user->last_seen_text }}" data-bs-toggle="tooltip"></span>
                                 @endif
                             </div>
                             <div class="flex-grow-1 overflow-hidden pe-4">
@@ -488,29 +514,104 @@
     </div>
 </div>
 
+<!-- Hidden Forms for Bulk Actions -->
+<form id="bulkApproveForm" action="{{ route('admin.users.bulk-approve') }}" method="POST" class="d-none">
+    @csrf
+    <div id="bulkApproveInputsContainer"></div>
+</form>
+
+<form id="bulkDeleteForm" action="{{ route('admin.users.bulk-delete') }}" method="POST" class="d-none">
+    @csrf
+    <div id="bulkDeleteInputsContainer"></div>
+</form>
+
 @push('scripts')
 <script>
+    function submitBulkApprove() {
+        const checkedBoxes = document.querySelectorAll('.user-checkbox:checked');
+        if (checkedBoxes.length === 0) return;
+
+        Swal.fire({
+            title: 'Setujui Pengguna Massal?',
+            text: `Apakah Anda yakin ingin menyetujui ${checkedBoxes.length} akun pengguna yang dipilih?`,
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#10b981',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Ya, Setujui Semua',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const container = document.getElementById('bulkApproveInputsContainer');
+                container.innerHTML = '';
+                checkedBoxes.forEach(box => {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'user_ids[]';
+                    input.value = box.value;
+                    container.appendChild(input);
+                });
+                document.getElementById('bulkApproveForm').submit();
+            }
+        });
+    }
+
+    function submitBulkDelete() {
+        const checkedBoxes = document.querySelectorAll('.user-checkbox:checked');
+        if (checkedBoxes.length === 0) return;
+
+        Swal.fire({
+            title: 'Hapus Pengguna Massal?',
+            text: `Tindakan ini akan menghapus ${checkedBoxes.length} pengguna yang dipilih secara permanen!`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#ef4444',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Ya, Hapus Sekarang',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const container = document.getElementById('bulkDeleteInputsContainer');
+                container.innerHTML = '';
+                checkedBoxes.forEach(box => {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'user_ids[]';
+                    input.value = box.value;
+                    container.appendChild(input);
+                });
+                document.getElementById('bulkDeleteForm').submit();
+            }
+        });
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         const selectAllCheckbox = document.getElementById('selectAllUsers');
         const userCheckboxes = document.querySelectorAll('.user-checkbox');
-        const selectedUserCountSpan = document.getElementById('selectedUserCount');
+        const selectedUserCountSpans = document.querySelectorAll('.selectedUserCount');
         const selectedUserBadge = document.getElementById('selectedUserBadge');
         const modalSelectedCount = document.getElementById('modalSelectedCount');
         const bulkAssignRoleBtn = document.getElementById('bulkAssignRoleBtn');
+        const bulkApproveBtn = document.getElementById('bulkApproveBtn');
+        const bulkDeleteBtn = document.getElementById('bulkDeleteBtn');
         const bulkUserInputsContainer = document.getElementById('bulkUserInputsContainer');
 
         function updateSelectionState() {
             const checkedBoxes = document.querySelectorAll('.user-checkbox:checked');
             const count = checkedBoxes.length;
 
-            if (selectedUserCountSpan) selectedUserCountSpan.textContent = count;
+            selectedUserCountSpans.forEach(span => span.textContent = count);
             if (selectedUserBadge) selectedUserBadge.textContent = count + ' users selected';
             if (modalSelectedCount) modalSelectedCount.textContent = count;
 
             if (count > 0) {
                 if (bulkAssignRoleBtn) bulkAssignRoleBtn.classList.remove('d-none');
+                if (bulkApproveBtn) bulkApproveBtn.classList.remove('d-none');
+                if (bulkDeleteBtn) bulkDeleteBtn.classList.remove('d-none');
             } else {
                 if (bulkAssignRoleBtn) bulkAssignRoleBtn.classList.add('d-none');
+                if (bulkApproveBtn) bulkApproveBtn.classList.add('d-none');
+                if (bulkDeleteBtn) bulkDeleteBtn.classList.add('d-none');
             }
 
             if (selectAllCheckbox && userCheckboxes.length > 0) {
