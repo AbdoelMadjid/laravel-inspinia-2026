@@ -9,7 +9,7 @@ Aplikasi Web Admin Dashboard & Management System berbasis **Laravel 11**, **Spat
 ### 1. 🛠️ Manajemen Aplikasi (Apps Management)
 - **Manajemen Menu Dinamis**: Pengaturan menu bertingkat (*tree menu*) lengkap dengan permission, pengurutan, icon, serta sinkronisasi otomatis terjemahan multi-bahasa (`en.json` & `id.json`).
 - **Profil Aplikasi & Kebijakan (Apps Profile)**: Pengaturan terpusat untuk Nama Aplikasi, Deskripsi Meta, Tahun, Nama & Link Pengembang, Branding Logo (Light, Dark, Small, Favicon), serta Kebijakan Pendaftaran Akun (Toggle Buka/Tutup Registrasi Publik, Otomatis/Manual Approval, dan Role Default Pendaftar).
-- **Fitur Aplikasi (App Features)**: Kontrol toggle status aktif/non-aktif fitur aplikasi secara fleksibel.
+- **Fitur Aplikasi & Modus Pemeliharaan (App Features)**: Kontrol toggle status aktif/non-aktif komponen aplikasi, serta fitur **Modus Pemeliharaan (Maintenance Mode)** di mana sistem dialihkan ke tampilan perbaikan untuk pengguna biasa/tamu, tetapi role **Admin** tetap diizinkan login dan mengakses seluruh aplikasi.
 - **Backup Database**: Generator backup database SQL (Full Backup atau Pilih Tabel Tertentu) langsung dari dashboard dengan fitur unduh & hapus berkas backup.
 - **Data Login & Poin Login Harian**:
   - Catatan otomatis aktivitas login pengguna (*IP Address*, *User Agent*, dan *Waktu Login*).

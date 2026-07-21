@@ -117,6 +117,14 @@ class AppFeatureSeeder extends Seeder
                 'is_active' => true,
                 'sort_order' => 13,
             ],
+            [
+                'name' => 'Modus Pemeliharaan (Maintenance Mode)',
+                'key' => 'maintenance_mode',
+                'category' => 'system',
+                'description' => 'Mengaktifkan mode perbaikan sistem. Pengguna biasa tidak dapat mengakses sistem, tetapi Administrator tetap dapat login & mengakses aplikasi.',
+                'is_active' => false,
+                'sort_order' => 14,
+            ],
         ];
 
         foreach ($features as $feat) {
