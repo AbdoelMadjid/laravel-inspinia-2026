@@ -1,10 +1,13 @@
-<tr>
-    <td class="text-center" style="width: 50px;">
-        @if ($menu->icon)
-            <i class="{{ $menu->icon }} fs-18"></i>
-        @else
-            <span class="text-muted">-</span>
-        @endif
+<tr data-id="{{ $menu->id }}" data-parent-id="{{ $menu->parent_id ?? '' }}" data-level="{{ $level }}">
+    <td class="text-center align-middle" style="width: 75px;">
+        <span class="d-inline-flex align-items-center justify-content-center gap-1">
+            <i class="ti ti-grip-vertical drag-handle text-secondary fs-16" style="cursor: grab;" title="Geser untuk mengurutkan"></i>
+            @if ($menu->icon)
+                <i class="{{ $menu->icon }} fs-18"></i>
+            @else
+                <span class="text-muted">-</span>
+            @endif
+        </span>
     </td>
     <td>
         <div style="padding-left: {{ $level * 25 }}px;">
@@ -29,7 +32,14 @@
         @endif
     </td>
     <td>
-        <code class="fs-12">{{ $menu->route_name ?: ($menu->url ?: '#') }}</code>
+        @if ($menu->route_name)
+            <div class="fw-semibold text-dark fs-12 mb-1">{{ parse_url($menu->url_link, PHP_URL_PATH) ?: $menu->url_link }}</div>
+            <span class="badge bg-light text-secondary border font-monospace fs-11" title="Nama Rute Laravel"><i class="ti ti-route me-1"></i>{{ $menu->route_name }}</span>
+        @elseif($menu->url)
+            <code class="fs-12">{{ $menu->url }}</code>
+        @else
+            <span class="text-muted fs-12">#</span>
+        @endif
     </td>
     <td>
         @forelse($menu->roles as $role)

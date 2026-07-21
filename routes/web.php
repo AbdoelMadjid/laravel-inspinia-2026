@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
         // Apps Management Group
         Route::prefix('apps-management')->group(function () {
+            Route::post('menus/reorder', [MenuController::class, 'reorder'])->name('menus.reorder');
             Route::patch('menus/{menu}/toggle-status', [MenuController::class, 'toggleStatus'])->name('menus.toggle-status');
             Route::resource('menus', MenuController::class);
 

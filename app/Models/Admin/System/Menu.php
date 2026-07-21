@@ -199,4 +199,19 @@ class Menu extends Model
 
         return false;
     }
+
+    /**
+     * Get the resolved URL for navigation/display.
+     */
+    public function getUrlLinkAttribute(): string
+    {
+        if ($this->route_name && Route::has($this->route_name)) {
+            try {
+                return route($this->route_name, $this->route_params ?? []);
+            } catch (\Throwable $e) {
+                // fallback
+            }
+        }
+        return $this->url ?: '#';
+    }
 }

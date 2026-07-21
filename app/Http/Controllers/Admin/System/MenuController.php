@@ -59,8 +59,21 @@ class MenuController extends Controller
 
         $menu = Menu::create($validated);
 
+        if (!empty($validated['permission_name'])) {
+            $perm = Permission::firstOrCreate(['name' => $validated['permission_name']]);
+            $adminRole = Role::where('name', 'admin')->first();
+            if ($adminRole && !$adminRole->hasPermissionTo($perm)) {
+                $adminRole->givePermissionTo($perm);
+            }
+        }
+
         if (!empty($request->roles)) {
             $menu->roles()->sync($request->roles);
+        } else {
+            $adminRole = Role::where('name', 'admin')->first();
+            if ($adminRole) {
+                $menu->roles()->sync([$adminRole->id]);
+            }
         }
 
         return redirect()->route('admin.menus.index')->with('success', 'Menu successfully created.');
@@ -93,6 +106,14 @@ class MenuController extends Controller
 
         $menu->update($validated);
 
+        if (!empty($validated['permission_name'])) {
+            $perm = Permission::firstOrCreate(['name' => $validated['permission_name']]);
+            $adminRole = Role::where('name', 'admin')->first();
+            if ($adminRole && !$adminRole->hasPermissionTo($perm)) {
+                $adminRole->givePermissionTo($perm);
+            }
+        }
+
         if ($request->has('roles')) {
             $menu->roles()->sync($request->roles);
         } else {
@@ -118,5 +139,26 @@ class MenuController extends Controller
     {
         $menu->update(['is_active' => !$menu->is_active]);
         return redirect()->route('admin.menus.index')->with('success', 'Menu status updated.');
+    }
+
+    /**
+     * Reorder menu items via drag-and-drop.
+     */
+    public function reorder(Request $request)
+    {
+        $request->validate([
+            'orders' => 'required|array',
+            'orders.*.id' => 'required|exists:menus,id',
+            'orders.*.sort_order' => 'required|integer',
+        ]);
+
+        foreach ($request->orders as $item) {
+            Menu::where('id', $item['id'])->update(['sort_order' => $item['sort_order']]);
+        }
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Urutan menu berhasil diperbarui.',
+        ]);
     }
 }

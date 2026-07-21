@@ -31,6 +31,9 @@
                 <div class="card-header bg-light d-flex align-items-center justify-content-between py-2">
                     <h5 class="card-title mb-0"><i class="ti ti-sitemap me-2"></i>Database Menus &amp; Spatie Role Access</h5>
                     <div>
+                        <button class="btn btn-soft-info btn-sm me-2" data-bs-toggle="modal" data-bs-target="#menuGuideModal">
+                            <i class="ti ti-help-circle fs-16 me-1"></i> Petunjuk Pembuatan Menu
+                        </button>
                         <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#createGroupModal">
                             <i class="ti ti-folder-plus me-1"></i> Tambah Group (Header)
                         </button>
@@ -63,6 +66,78 @@
                         </table>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Petunjuk Pembuatan Menu -->
+<div class="modal fade" id="menuGuideModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header bg-info text-white">
+                <h5 class="modal-title text-white"><i class="ti ti-help-circle me-1"></i> Petunjuk Pembuatan &amp; Pengaturan Menu Sidebar</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <div class="row g-4">
+                    <!-- Step 1 -->
+                    <div class="col-md-6">
+                        <div class="card h-100 border bg-light-subtle">
+                            <div class="card-body">
+                                <h6 class="fw-bold text-primary mb-2"><i class="ti ti-folders me-1"></i> 1. Jenis &amp; Level Menu</h6>
+                                <ul class="mb-0 ps-3 fs-13 text-muted">
+                                    <li class="mb-2"><strong>Group (Header):</strong> Digunakan sebagai judul kelompok menu di sidebar (misal: <em>System Management</em>, <em>Users Management</em>).</li>
+                                    <li class="mb-2"><strong>Menu Utama (Root):</strong> Menu tingkat atas tanpa parent. Bisa berupa link langsung atau kontainer dropdown.</li>
+                                    <li><strong>Submenu (Child):</strong> Menu turunan di dalam Parent Menu (pilih <em>Parent Menu</em> saat menambahkan).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="col-md-6">
+                        <div class="card h-100 border bg-light-subtle">
+                            <div class="card-body">
+                                <h6 class="fw-bold text-warning mb-2"><i class="ti ti-shield-lock me-1"></i> 2. Hak Akses (Role &amp; Permission)</h6>
+                                <ul class="mb-0 ps-3 fs-13 text-muted">
+                                    <li class="mb-2"><strong>Role Spatie (Wajib):</strong> Centang role (misal <code>admin</code>) agar user dengan role tersebut bisa melihat menu di sidebar.</li>
+                                    <li><strong>Permission Requirement:</strong> Jika diisi (contoh: <code>manage-users</code>), sistem akan otomatis membuat permission tersebut dan memberikannya ke role <code>admin</code> agar menu langsung tampil.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="col-md-6">
+                        <div class="card h-100 border bg-light-subtle">
+                            <div class="card-body">
+                                <h6 class="fw-bold text-success mb-2"><i class="ti ti-sort-ascending-numbers me-1"></i> 3. Urutan Tampilan (Sort Order)</h6>
+                                <p class="fs-13 text-muted mb-0">
+                                    Setiap menu diurutkan berdasarkan angka <code>sort_order</code>. Jika kolom urutan dikosongkan atau diisi <code>0</code>, sistem akan otomatis menentukan urutan terakhir (<em>auto-increment</em>).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="col-md-6">
+                        <div class="card h-100 border bg-light-subtle">
+                            <div class="card-body">
+                                <h6 class="fw-bold text-danger mb-2"><i class="ti ti-alert-circle me-1"></i> 4. Troubleshooting Menu Tidak Tampil</h6>
+                                <p class="fs-13 text-muted mb-0">
+                                    Jika menu baru tidak muncul di sidebar:
+                                    <br>1. Pastikan status menu <strong>Active</strong>.
+                                    <br>2. Pastikan role akun Anda (misal <code>admin</code>) di-centang pada menu tersebut.
+                                    <br>3. Jika menggunakan Permission, pastikan Permission di-assign ke Role Anda di menu <em>Users Management &rarr; Permissions</em>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer bg-light py-2">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Tutup Petunjuk</button>
             </div>
         </div>
     </div>
@@ -229,11 +304,12 @@
     <script src="{{ asset('assets/plugins/datatables/dataTables.bootstrap5.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables/responsive.bootstrap5.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
     <script>
         $(document).ready(function() {
             if (!$.fn.DataTable.isDataTable('#menuTable')) {
                 $('#menuTable').DataTable({
-                    "pageLength": 25,
+                    "pageLength": 100,
                     "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Semua"]],
                     "ordering": false,
                     "responsive": true,
@@ -252,6 +328,76 @@
                             "last": '<i class="ti ti-chevrons-right"></i>',
                             "next": '<i class="ti ti-chevron-right"></i>',
                             "previous": '<i class="ti ti-chevron-left"></i>'
+                        }
+                    }
+                });
+            }
+
+            // Drag and Drop Sortable Rows
+            var tbody = document.querySelector('#menuTable tbody');
+            if (tbody) {
+                new Sortable(tbody, {
+                    handle: '.drag-handle',
+                    animation: 150,
+                    ghostClass: 'table-active',
+                    onEnd: function(evt) {
+                        var orders = [];
+                        var parentCounters = {};
+
+                        $('#menuTable tbody tr[data-id]').each(function() {
+                            var id = $(this).data('id');
+                            var parentId = $(this).attr('data-parent-id') || 'root';
+
+                            if (!parentCounters[parentId]) {
+                                parentCounters[parentId] = 1;
+                            } else {
+                                parentCounters[parentId]++;
+                            }
+
+                            if (id) {
+                                orders.push({
+                                    id: id,
+                                    sort_order: parentCounters[parentId]
+                                });
+                            }
+                        });
+
+                        if (orders.length > 0) {
+                            $.ajax({
+                                url: "{{ route('admin.menus.reorder') }}",
+                                method: 'POST',
+                                data: {
+                                    _token: "{{ csrf_token() }}",
+                                    orders: orders
+                                },
+                                success: function(response) {
+                                    if (typeof Swal !== 'undefined') {
+                                        const Toast = Swal.mixin({
+                                            toast: true,
+                                            position: 'top-end',
+                                            showConfirmButton: false,
+                                            timer: 1500,
+                                            timerProgressBar: true
+                                        });
+                                        Toast.fire({
+                                            icon: 'success',
+                                            title: response.message || 'Urutan menu berhasil diperbarui!'
+                                        });
+                                    }
+                                    setTimeout(function() {
+                                        window.location.reload();
+                                    }, 800);
+                                },
+                                error: function(xhr) {
+                                    if (typeof Swal !== 'undefined') {
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Gagal Menyimpan Urutan',
+                                            text: 'Terjadi kesalahan saat memperbarui urutan menu.'
+                                        });
+                                    }
+                                }
+                            });
                         }
                     }
                 });
