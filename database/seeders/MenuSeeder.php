@@ -166,7 +166,7 @@ class MenuSeeder extends Seeder
                     ['name' => 'Contacts / Users', 'name_en' => 'Contacts / Users', 'name_id' => 'Kontak / Pengguna', 'type' => 'item', 'route_name' => 'admin.users.index', 'data_lang' => 'users-contacts', 'sort_order' => 1],
                     ['name' => 'Roles', 'name_en' => 'Roles', 'name_id' => 'Peran Pengguna', 'type' => 'item', 'route_name' => 'admin.roles.index', 'data_lang' => 'users-roles', 'sort_order' => 2],
                     ['name' => 'Permissions', 'name_en' => 'Permissions', 'name_id' => 'Izin Akses', 'type' => 'item', 'route_name' => 'admin.permissions.index', 'data_lang' => 'users-permissions', 'sort_order' => 3],
-                    ['name' => 'Reset Password', 'name_en' => 'Reset Password', 'name_id' => 'Permintaan Reset Password', 'type' => 'item', 'route_name' => 'admin.password-reset-requests.index', 'permission_name' => 'manage-users', 'data_lang' => 'users-password-reset-requests', 'sort_order' => 4],
+                    ['name' => 'Reset Password', 'name_en' => 'Reset Password', 'name_id' => 'Reset Password', 'type' => 'item', 'route_name' => 'admin.password-reset-requests.index', 'permission_name' => 'manage-users', 'data_lang' => 'users-password-reset-requests', 'sort_order' => 4],
                 ],
             ],
         ];
@@ -202,7 +202,7 @@ class MenuSeeder extends Seeder
             );
 
             // Auto-sync translation key to en.json and id.json if data_lang is set
-            if (!empty($itemData['data_lang'])) {
+            if (! empty($itemData['data_lang'])) {
                 $textEn = $itemData['name_en'] ?? $itemData['name'];
                 $textId = $itemData['name_id'] ?? $itemData['name'];
                 $this->syncTranslationKey($itemData['data_lang'], $textEn, $textId);
@@ -215,7 +215,7 @@ class MenuSeeder extends Seeder
             }
 
             // Seed children recursively
-            if (!empty($itemData['children'])) {
+            if (! empty($itemData['children'])) {
                 $this->seedMenuTree($itemData['children'], $menu->id);
             }
         }
@@ -231,7 +231,7 @@ class MenuSeeder extends Seeder
 
         if (file_exists($enPath)) {
             $enJson = json_decode(file_get_contents($enPath), true) ?: [];
-            if (!isset($enJson[$key]) || $enJson[$key] !== $textEn) {
+            if (! isset($enJson[$key]) || $enJson[$key] !== $textEn) {
                 $enJson[$key] = $textEn;
                 file_put_contents($enPath, json_encode($enJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
             }
@@ -239,7 +239,7 @@ class MenuSeeder extends Seeder
 
         if (file_exists($idPath)) {
             $idJson = json_decode(file_get_contents($idPath), true) ?: [];
-            if (!isset($idJson[$key]) || $idJson[$key] !== $textId) {
+            if (! isset($idJson[$key]) || $idJson[$key] !== $textId) {
                 $idJson[$key] = $textId;
                 file_put_contents($idPath, json_encode($idJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
             }
