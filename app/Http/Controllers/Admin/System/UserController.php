@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Spatie\Permission\Models\Role;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Style\Alignment;
+use PhpOffice\PhpSpreadsheet\Style\Fill;
 
 class UserController extends Controller
 {
@@ -262,114 +267,137 @@ class UserController extends Controller
     }
 
     /**
-     * Download CSV/Excel import template for bulk user registration.
+     * Download native Excel (.xlsx) import template for bulk user registration.
      */
     public function downloadTemplate()
     {
-        $headers = [
-            'Content-Type' => 'text/csv; charset=UTF-8',
-            'Content-Disposition' => 'attachment; filename="template_import_user.csv"',
-            'Pragma' => 'no-cache',
-            'Cache-Control' => 'must-revalidate, post-check=0, pre-check=0',
-            'Expires' => '0',
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setTitle('Template Import User');
+
+        // Header Styling
+        $headerStyle = [
+            'font' => [
+                'bold' => true,
+                'color' => ['rgb' => 'FFFFFF'],
+                'size' => 11,
+            ],
+            'fill' => [
+                'fillType' => Fill::FILL_SOLID,
+                'startColor' => ['rgb' => '4F46E5'], // Primary Theme Color
+            ],
+            'alignment' => [
+                'horizontal' => Alignment::HORIZONTAL_CENTER,
+                'vertical' => Alignment::VERTICAL_CENTER,
+            ],
         ];
 
-        $callback = function () {
-            $file = fopen('php://output', 'w');
-            // Write UTF-8 BOM for Microsoft Excel auto-detecting UTF-8 encoding
-            fputs($file, "\xEF\xBB\xBF");
+        // Column Headers
+        $headers = ['Name', 'Email', 'Password', 'Role', 'Is Approved'];
+        $columnLetter = 'A';
+        foreach ($headers as $headerText) {
+            $sheet->setCellValue($columnLetter . '1', $headerText);
+            $columnLetter++;
+        }
+        $sheet->getStyle('A1:E1')->applyFromArray($headerStyle);
+        $sheet->getRowDimension(1)->setRowHeight(26);
 
-            // Header row
-            fputcsv($file, ['Name', 'Email', 'Password', 'Role', 'Is Approved']);
+        // Sample Data Rows
+        $sampleData = [
+            ['Budi Santoso', 'budi.santoso@example.com', 'password123', 'user', '1'],
+            ['Siti Rahma', 'siti.rahma@example.com', 'password123', 'user', '1'],
+        ];
 
-            // Sample rows
-            fputcsv($file, ['Budi Santoso', 'budi.santoso@example.com', 'password123', 'user', '1']);
-            fputcsv($file, ['Siti Rahma', 'siti.rahma@example.com', 'password123', 'user', '1']);
+        $rowNum = 2;
+        foreach ($sampleData as $dataRow) {
+            $colLetter = 'A';
+            foreach ($dataRow as $value) {
+                $sheet->setCellValue($colLetter . $rowNum, $value);
+                $colLetter++;
+            }
+            $rowNum++;
+        }
 
-            fclose($file);
-        };
+        // Auto-fit Column Widths
+        foreach (range('A', 'E') as $col) {
+            $sheet->getColumnDimension($col)->setAutoSize(true);
+        }
 
-        return response()->stream($callback, 200, $headers);
+        $writer = new Xlsx($spreadsheet);
+
+        return response()->streamDownload(function () use ($writer) {
+            $writer->save('php://output');
+        }, 'template_import_user.xlsx', [
+            'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        ]);
     }
 
     /**
-     * Import users from uploaded CSV / Excel file.
+     * Import users from uploaded Excel (.xlsx, .xls) or CSV file.
      */
     public function import(Request $request)
     {
         $request->validate([
-            'file' => ['required', 'file', 'mimes:csv,txt,xlsx,xls', 'max:5120'],
+            'file' => ['required', 'file', 'mimes:xlsx,xls,csv,txt', 'max:5120'],
             'default_role' => ['nullable', 'string', 'exists:roles,name'],
             'default_approval' => ['nullable', 'boolean'],
         ], [
-            'file.required' => 'Silakan pilih berkas CSV/Excel untuk diunggah.',
-            'file.mimes' => 'Format berkas harus berupa CSV atau TXT.',
+            'file.required' => 'Silakan pilih berkas Excel (.xlsx / .xls) untuk diunggah.',
+            'file.mimes' => 'Format berkas harus berupa Excel (.xlsx / .xls) atau CSV.',
             'file.max' => 'Ukuran berkas maksimal 5MB.',
         ]);
 
         $file = $request->file('file');
-        $path = $file->getRealPath();
+        $filePath = $file->getRealPath();
 
         $defaultRoleName = $request->input('default_role', 'user');
         $defaultApproval = $request->boolean('default_approval', true);
 
-        $handle = fopen($path, 'r');
-        if (!$handle) {
-            return redirect()->back()->with('error', 'Gagal membuka berkas yang diunggah.');
+        try {
+            $spreadsheet = IOFactory::load($filePath);
+            $sheet = $spreadsheet->getActiveSheet();
+            $rows = $sheet->toArray(null, true, true, true);
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Gagal membaca berkas Excel: ' . $e->getMessage());
         }
 
-        // Check UTF-8 BOM
-        $bom = fread($handle, 3);
-        if ($bom !== "\xEF\xBB\xBF") {
-            rewind($handle);
+        if (empty($rows) || count($rows) < 2) {
+            return redirect()->back()->with('error', 'Berkas Excel kosong atau tidak memiliki data.');
         }
 
-        $header = fgetcsv($handle, 1000, ',');
-        // Support semicolon separator if comma fails
-        if ($header && count($header) == 1 && str_contains($header[0], ';')) {
-            rewind($handle);
-            if ($bom === "\xEF\xBB\xBF") fread($handle, 3);
-            $header = fgetcsv($handle, 1000, ';');
-            $delimiter = ';';
-        } else {
-            $delimiter = ',';
+        // Extract Header row (row 1)
+        $headerRow = array_shift($rows);
+        $headerMap = [];
+        foreach ($headerRow as $colKey => $colName) {
+            if ($colName) {
+                $headerMap[$colKey] = strtolower(trim(str_replace(['"', "'"], '', (string)$colName)));
+            }
         }
 
-        if (!$header || count($header) < 2) {
-            fclose($handle);
-            return redirect()->back()->with('error', 'Format header berkas tidak valid. Gunakan template yang disediakan.');
-        }
+        // Find column keys
+        $nameKey = array_search('name', $headerMap);
+        if ($nameKey === false) $nameKey = array_search('nama', $headerMap);
 
-        // Map column names (lowercase)
-        $headerMap = array_map(fn($col) => strtolower(trim(str_replace(['"', "'"], '', $col))), $header);
+        $emailKey = array_search('email', $headerMap);
 
-        $nameIndex = array_search('name', $headerMap);
-        if ($nameIndex === false) $nameIndex = array_search('nama', $headerMap);
+        $passKey = array_search('password', $headerMap);
+        if ($passKey === false) $passKey = array_search('kata sandi', $headerMap);
 
-        $emailIndex = array_search('email', $headerMap);
+        $roleKey = array_search('role', $headerMap);
 
-        $passIndex = array_search('password', $headerMap);
-        if ($passIndex === false) $passIndex = array_search('kata sandi', $headerMap);
+        $approvalKey = array_search('is approved', $headerMap);
+        if ($approvalKey === false) $approvalKey = array_search('approved', $headerMap);
 
-        $roleIndex = array_search('role', $headerMap);
-        $approvalIndex = array_search('is approved', $headerMap);
-        if ($approvalIndex === false) $approvalIndex = array_search('approved', $headerMap);
-
-        if ($nameIndex === false || $emailIndex === false) {
-            fclose($handle);
-            return redirect()->back()->with('error', 'Kolom wajib "Name" dan "Email" tidak ditemukan di berkas.');
+        if ($nameKey === false || $emailKey === false) {
+            return redirect()->back()->with('error', 'Kolom wajib "Name" dan "Email" tidak ditemukan di berkas Excel.');
         }
 
         $importedCount = 0;
         $skippedCount = 0;
 
-        while (($row = fgetcsv($handle, 1000, $delimiter)) !== false) {
-            if (empty(array_filter($row))) {
-                continue; // Skip empty lines
-            }
-
-            $name = isset($row[$nameIndex]) ? trim($row[$nameIndex]) : null;
-            $email = isset($row[$emailIndex]) ? trim(strtolower($row[$emailIndex])) : null;
+        foreach ($rows as $row) {
+            $name = isset($row[$nameKey]) ? trim((string)$row[$nameKey]) : null;
+            $email = isset($row[$emailKey]) ? trim(strtolower((string)$row[$emailKey])) : null;
 
             if (empty($name) || empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $skippedCount++;
@@ -382,12 +410,12 @@ class UserController extends Controller
                 continue;
             }
 
-            $rawPass = ($passIndex !== false && !empty($row[$passIndex])) ? trim($row[$passIndex]) : 'password123';
-            $roleName = ($roleIndex !== false && !empty($row[$roleIndex])) ? trim(strtolower($row[$roleIndex])) : $defaultRoleName;
-            
+            $rawPass = ($passKey !== false && !empty($row[$passKey])) ? trim((string)$row[$passKey]) : 'password123';
+            $roleName = ($roleKey !== false && !empty($row[$roleKey])) ? trim(strtolower((string)$row[$roleKey])) : $defaultRoleName;
+
             $isApproved = $defaultApproval;
-            if ($approvalIndex !== false && isset($row[$approvalIndex])) {
-                $val = trim($row[$approvalIndex]);
+            if ($approvalKey !== false && isset($row[$approvalKey])) {
+                $val = trim((string)$row[$approvalIndex ?? $approvalKey]);
                 if (in_array(strtolower($val), ['1', 'true', 'yes', 'ya'])) {
                     $isApproved = true;
                 } elseif (in_array(strtolower($val), ['0', 'false', 'no', 'tidak'])) {
@@ -410,9 +438,7 @@ class UserController extends Controller
             $importedCount++;
         }
 
-        fclose($handle);
-
-        $msg = "Berhasil mengimpor {$importedCount} pengguna baru.";
+        $msg = "Berhasil mengimpor {$importedCount} pengguna baru dari Excel.";
         if ($skippedCount > 0) {
             $msg .= " {$skippedCount} baris dilewati (email ganda atau data tidak valid).";
         }

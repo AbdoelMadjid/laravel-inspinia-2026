@@ -388,20 +388,20 @@
                 <div class="p-3 mb-3 bg-light rounded border">
                     <div class="d-flex align-items-center justify-content-between">
                         <div>
-                            <h6 class="mb-1 fw-bold text-dark"><i class="ti ti-file-spreadsheet text-primary me-1"></i> Unduh Template Format</h6>
-                            <p class="mb-0 fs-xs text-muted">Gunakan berkas CSV/Excel standar ini untuk mengisikan data pengguna.</p>
+                            <h6 class="mb-1 fw-bold text-dark"><i class="ti ti-file-spreadsheet text-success me-1"></i> Unduh Template Excel (.xlsx)</h6>
+                            <p class="mb-0 fs-xs text-muted">Gunakan berkas Excel standar per kolom ini untuk mengisi data pengguna dengan mudah.</p>
                         </div>
-                        <a href="{{ route('admin.users.export-template') }}" class="btn btn-sm btn-outline-primary fw-semibold flex-shrink-0">
-                            <i class="ti ti-download me-1"></i> Download Template
+                        <a href="{{ route('admin.users.export-template') }}" class="btn btn-sm btn-success fw-semibold flex-shrink-0">
+                            <i class="ti ti-download me-1"></i> Download Excel (.xlsx)
                         </a>
                     </div>
                 </div>
 
                 <!-- Step 2: Choose File -->
                 <div class="mb-3">
-                    <label for="import_file" class="form-label fw-bold">Unggah Berkas (CSV / Excel) <span class="text-danger">*</span></label>
-                    <input type="file" name="file" id="import_file" class="form-control" accept=".csv,.txt,.xlsx,.xls" required>
-                    <div class="form-text fs-xs text-muted">Format didukung: <code>.csv</code>, <code>.txt</code>. Ukuran maks 5MB.</div>
+                    <label for="import_file" class="form-label fw-bold">Unggah Berkas Excel (.xlsx / .xls) <span class="text-danger">*</span></label>
+                    <input type="file" name="file" id="import_file" class="form-control" accept=".xlsx,.xls,.csv" required>
+                    <div class="form-text fs-xs text-muted">Format didukung: <code>.xlsx</code>, <code>.xls</code>, <code>.csv</code>. Ukuran maks 5MB.</div>
                 </div>
 
                 <!-- Step 3: Default Role & Approval -->
