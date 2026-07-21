@@ -116,7 +116,7 @@
     @if($users->count() > 0)
     <div class="d-flex align-items-center justify-content-between mb-3 bg-light p-2 rounded border">
         <div class="form-check m-0 ms-2">
-            <input class="form-check-input" type="checkbox" id="selectAllUsers">
+            <input class="form-check-input border-secondary" type="checkbox" id="selectAllUsers" style="border-color: #495057; border-width: 1.5px;">
             <label class="form-check-label fw-semibold text-dark user-select-none cursor-pointer" for="selectAllUsers">
                 Select / Deselect All Users on Page
             </label>
@@ -132,7 +132,7 @@
                 <div class="card card-h-100 mb-0 position-relative border {{ !$user->is_approved ? 'border-warning shadow-sm' : '' }}">
                     <!-- Checkbox Selection -->
                     <div class="position-absolute top-0 end-0 p-2 z-1">
-                        <input class="form-check-input user-checkbox" type="checkbox" value="{{ $user->id }}" data-user-name="{{ $user->name }}">
+                        <input class="form-check-input user-checkbox border-secondary" type="checkbox" value="{{ $user->id }}" data-user-name="{{ $user->name }}" style="border-color: #495057; border-width: 1.5px;">
                     </div>
 
                     <div class="card-body">
