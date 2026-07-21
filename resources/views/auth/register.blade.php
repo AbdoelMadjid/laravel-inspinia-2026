@@ -84,9 +84,6 @@
                                     <i class="ti ti-eye" id="togglePasswordIcon"></i>
                                 </button>
                             </div>
-                            <div class="form-text text-muted fs-xs mt-1">
-                                <i class="ti ti-info-circle me-1"></i> Minimal 8 karakter, kombinasi huruf besar (A-Z), huruf kecil (a-z), dan angka (0-9).
-                            </div>
                             @error('password')
                                 <div class="invalid-feedback d-block">{{ $message }}</div>
                             @enderror
@@ -113,6 +110,30 @@
                             @error('password_confirmation')
                                 <div class="invalid-feedback d-block">{{ $message }}</div>
                             @enderror
+                        </div>
+
+                        <!-- Real-time Password Requirements Checklist -->
+                        <div class="card bg-light border-0 p-3 mb-3 rounded-3 fs-xs">
+                            <div class="fw-semibold text-dark mb-2 d-flex align-items-center">
+                                <i class="ti ti-shield-check text-primary me-1 fs-16"></i> Syarat Keamanan Kata Sandi:
+                            </div>
+                            <div class="row g-2">
+                                <div class="col-6 text-muted" id="rule-length">
+                                    <i class="ti ti-circle-x me-1 fs-14" id="icon-length"></i> Minimal 8 Karakter
+                                </div>
+                                <div class="col-6 text-muted" id="rule-uppercase">
+                                    <i class="ti ti-circle-x me-1 fs-14" id="icon-uppercase"></i> Huruf Besar (A-Z)
+                                </div>
+                                <div class="col-6 text-muted" id="rule-lowercase">
+                                    <i class="ti ti-circle-x me-1 fs-14" id="icon-lowercase"></i> Huruf Kecil (a-z)
+                                </div>
+                                <div class="col-6 text-muted" id="rule-number">
+                                    <i class="ti ti-circle-x me-1 fs-14" id="icon-number"></i> Angka (0-9)
+                                </div>
+                                <div class="col-12 text-muted" id="rule-match">
+                                    <i class="ti ti-circle-x me-1 fs-14" id="icon-match"></i> Konfirmasi Kata Sandi Cocok
+                                </div>
+                            </div>
                         </div>
 
                         <div class="d-grid">
@@ -155,5 +176,54 @@
             icon.classList.add('ti-eye');
         }
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const passwordInput = document.getElementById('password');
+        const confirmInput = document.getElementById('password_confirmation');
+
+        function checkPasswordRequirements() {
+            const pass = passwordInput.value;
+            const confirmPass = confirmInput.value;
+
+            // 1. Length >= 8
+            updateRuleStatus('length', pass.length >= 8);
+
+            // 2. Uppercase
+            updateRuleStatus('uppercase', /[A-Z]/.test(pass));
+
+            // 3. Lowercase
+            updateRuleStatus('lowercase', /[a-z]/.test(pass));
+
+            // 4. Number
+            updateRuleStatus('number', /[0-9]/.test(pass));
+
+            // 5. Match
+            updateRuleStatus('match', pass.length > 0 && pass === confirmPass);
+        }
+
+        function updateRuleStatus(ruleId, isMet) {
+            const icon = document.getElementById('icon-' + ruleId);
+            const container = document.getElementById('rule-' + ruleId);
+
+            if (!icon || !container) return;
+
+            if (isMet) {
+                icon.className = 'ti ti-circle-check text-success me-1 fs-14';
+                container.className = container.className.replace('text-muted', '').trim() + ' text-success fw-semibold';
+            } else {
+                icon.className = 'ti ti-circle-x text-muted me-1 fs-14';
+                container.classList.remove('text-success', 'fw-semibold');
+                if (!container.classList.contains('text-muted')) {
+                    container.classList.add('text-muted');
+                }
+            }
+        }
+
+        if (passwordInput && confirmInput) {
+            passwordInput.addEventListener('input', checkPasswordRequirements);
+            confirmInput.addEventListener('input', checkPasswordRequirements);
+            checkPasswordRequirements();
+        }
+    });
 </script>
 @endsection
