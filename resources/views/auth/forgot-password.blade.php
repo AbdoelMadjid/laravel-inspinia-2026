@@ -3,16 +3,17 @@
 @section('title', 'Forgot Password | INSPINIA')
 
 @section('content')
+@php $appProfile = \App\Models\Admin\System\AppProfile::get(); @endphp
 <div class="auth-box overflow-hidden align-items-center d-flex min-vh-100 py-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xxl-4 col-md-6 col-sm-8">
                 <div class="auth-brand text-center mb-4">
                     <a href="{{ route('home') }}" class="logo-dark">
-                        <img src="{{ asset('assets/images/logo-black.png') }}" alt="dark logo" />
+                        <img src="{{ $appProfile->logo_dark_url }}" alt="{{ $appProfile->app_name }}" height="26" />
                     </a>
                     <a href="{{ route('home') }}" class="logo-light">
-                        <img src="{{ asset('assets/images/logo.png') }}" alt="logo" />
+                        <img src="{{ $appProfile->logo_light_url }}" alt="{{ $appProfile->app_name }}" height="26" />
                     </a>
                     <h4 class="fw-bold mt-3">Forgot Password?</h4>
                     <p class="text-muted w-lg-75 mx-auto">Enter your email address and we'll send you a password reset link.</p>
@@ -48,7 +49,12 @@
                 </div>
 
                 <p class="text-center text-muted mt-4 mb-0">
-                    © {{ date('Y') }} Inspinia — by <span class="fw-bold">WebAppLayers</span>
+                    © {{ $appProfile->app_year }} <span class="fw-bold">{{ $appProfile->app_name }}</span> — by
+                    @if($appProfile->developer_url)
+                        <a href="{{ $appProfile->developer_url }}" target="_blank" class="fw-bold text-decoration-none text-muted">{{ $appProfile->developer_name }}</a>
+                    @else
+                        <span class="fw-bold">{{ $appProfile->developer_name }}</span>
+                    @endif
                 </p>
             </div>
         </div>
