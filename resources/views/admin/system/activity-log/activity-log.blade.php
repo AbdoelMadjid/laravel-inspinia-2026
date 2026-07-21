@@ -133,7 +133,7 @@
             </div>
         </div>
         <div class="card-footer bg-transparent border-0 py-3">
-            {{ $logs->links() }}
+            {{ $logs->links('pagination::bootstrap-5') }}
         </div>
     </div>
 

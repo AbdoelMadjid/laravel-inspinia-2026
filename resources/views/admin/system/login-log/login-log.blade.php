@@ -244,7 +244,7 @@
                         Menampilkan {{ $logs->firstItem() ?? 0 }} sampai {{ $logs->lastItem() ?? 0 }} dari {{ $logs->total() }} total log
                     </div>
                     <div>
-                        {{ $logs->links() }}
+                        {{ $logs->links('pagination::bootstrap-5') }}
                     </div>
                 </div>
             </div>

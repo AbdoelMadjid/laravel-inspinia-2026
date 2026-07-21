@@ -24,6 +24,19 @@
         <!-- App css -->
         <link id="app-style" href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
 
+        <style>
+            /* Fix pagination SVG icon sizes */
+            .pagination .page-link svg,
+            nav[aria-label="Pagination Navigation"] svg,
+            nav svg {
+                width: 1em !important;
+                height: 1em !important;
+                max-width: 1.25rem !important;
+                max-height: 1.25rem !important;
+                vertical-align: middle;
+            }
+        </style>
+
         @stack('styles')
     </head>
 

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\View;
 
 use App\Listeners\LogSuccessfulLogin;
 use Illuminate\Auth\Events\Login;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Event;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Paginator::useBootstrapFive();
         View::composer('layouts.partials.sidebar', SidebarComposer::class);
         View::composer('layouts.partials.topbar', TopbarComposer::class);
     }
