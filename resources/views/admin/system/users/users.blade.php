@@ -332,7 +332,7 @@
     </div>
 
     <!-- Pagination Links -->
-    <div class="mt-3">
+    <div class="mt-3 mb-4 pb-2">
         {{ $users->links('pagination::bootstrap-5') }}
     </div>
 </div>
