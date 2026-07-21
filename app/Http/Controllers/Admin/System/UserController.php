@@ -24,37 +24,219 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $query = User::with('roles');
+        if ($request->ajax() || $request->wantsJson() || $request->has('draw') || $request->has('start') || $request->query('draw')) {
+            $query = User::with('roles');
 
-        // Search by name or email
-        if ($request->filled('search')) {
-            $search = $request->search;
-            $query->where(function ($q) use ($search) {
-                $q->where('name', 'like', "%{$search}%")
-                  ->orWhere('email', 'like', "%{$search}%");
+            $totalRecords = User::count();
+
+            // Search by name or email
+            $searchValue = $request->input('search_text') ?? $request->input('search.value') ?? $request->input('search');
+            if (!empty($searchValue)) {
+                $query->where(function ($q) use ($searchValue) {
+                    $q->where('name', 'like', "%{$searchValue}%")
+                      ->orWhere('email', 'like', "%{$searchValue}%");
+                });
+            }
+
+            // Filter by role
+            if ($request->filled('role')) {
+                $roleName = $request->role;
+                $query->whereHas('roles', function ($q) use ($roleName) {
+                    $q->where('name', $roleName);
+                });
+            }
+
+            // Filter by approval status
+            $status = $request->get('status');
+            if ($status === 'pending') {
+                $query->where('is_approved', false);
+            } elseif ($status === 'approved') {
+                $query->where('is_approved', true);
+            }
+
+            $filteredRecords = (clone $query)->count();
+
+            // Sorting by Tanggal Bergabung (created_at) from oldest to newest (asc)
+            $orderColumnIndex = $request->input('order_col') ?? $request->input('order.0.column', 6);
+            $orderDir = $request->input('order_dir') ?? $request->input('order.0.dir', 'asc');
+
+            $columnsMap = [
+                0 => 'created_at',
+                1 => 'created_at',
+                2 => 'name',
+                3 => 'email',
+                4 => 'points',
+                5 => 'is_approved',
+                6 => 'created_at',
+                7 => 'created_at',
+            ];
+
+            $sortColumn = $columnsMap[$orderColumnIndex] ?? 'created_at';
+            $query->orderBy($sortColumn, strtolower($orderDir) === 'asc' ? 'asc' : 'desc');
+
+            // Pagination offset & limit
+            $start = (int) $request->input('start', 0);
+            $length = (int) $request->input('length', 10);
+            if ($length > 0) {
+                $query->skip($start)->take($length);
+            }
+
+            $users = $query->get();
+            $authUserId = Auth::id();
+
+            $data = $users->map(function ($user) use ($authUserId) {
+                // Checkbox
+                $checkbox = '<div class="form-check text-center m-0">
+                    <input class="form-check-input user-checkbox border-secondary" type="checkbox" value="' . $user->id . '" data-user-name="' . e($user->name) . '" style="border-color: #495057; border-width: 1.5px;">
+                </div>';
+
+                // Online indicator & Avatar HTML
+                $onlineIndicator = $user->isOnline() 
+                    ? '<span class="position-absolute bottom-0 end-0 p-1 bg-success border border-white rounded-circle shadow-sm" style="width: 12px; height: 12px;" title="Online sekarang" data-bs-toggle="tooltip"></span>' 
+                    : '<span class="position-absolute bottom-0 end-0 p-1 bg-secondary border border-white rounded-circle shadow-sm" style="width: 12px; height: 12px;" title="' . e($user->last_seen_text) . '" data-bs-toggle="tooltip"></span>';
+
+                $avatarHtml = '<div class="position-relative d-inline-block">
+                    <img src="' . e($user->avatar_url) . '" class="rounded-circle avatar-sm object-fit-cover" style="width: 40px; height: 40px;" alt="' . e($user->name) . '">
+                    ' . $onlineIndicator . '
+                </div>';
+
+                // User Name & Email HTML
+                $userHtml = '<div class="overflow-hidden">
+                    <div class="fw-semibold text-dark text-truncate">' . e($user->name) . '</div>
+                    <div class="text-muted fs-xs text-truncate">' . e($user->email) . '</div>
+                </div>';
+
+                // Roles HTML
+                $rolesHtml = '<div class="d-flex align-items-center flex-wrap gap-1">';
+                if ($user->roles->isNotEmpty()) {
+                    foreach ($user->roles as $role) {
+                        $rolesHtml .= '<span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1 fs-11 rounded-pill">' . e(ucfirst($role->name)) . '</span>';
+                    }
+                } else {
+                    $rolesHtml .= '<span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle px-2 py-1 fs-11 rounded-pill">No Role</span>';
+                }
+                $rolesHtml .= '</div>';
+
+                // Points HTML
+                $pointsHtml = '<span class="badge bg-warning-subtle text-warning border border-warning-subtle px-2 py-1 fs-11 rounded-pill" title="Total Poin Login Harian">
+                    <i class="ti ti-star-filled me-1"></i> ' . ($user->points ?? 0) . ' Poin
+                </span>';
+
+                // Status HTML
+                if ($user->is_approved) {
+                    $statusHtml = '<span class="text-success fs-xs fw-semibold d-inline-flex align-items-center" title="Akun Disetujui / Aktif"><i class="ti ti-circle-check me-1 fs-14"></i> Disetujui</span>';
+                } else {
+                    $statusHtml = '<div class="d-flex align-items-center gap-2">
+                        <span class="text-warning fs-xs fw-semibold d-inline-flex align-items-center"><i class="ti ti-clock me-1 fs-14"></i> Pending</span>
+                        <form method="POST" action="' . route('admin.users.toggle-approval', $user->id) . '" id="approve-user-form-' . $user->id . '">
+                            ' . csrf_field() . method_field('PATCH') . '
+                            <button type="button" class="btn btn-sm btn-success fw-semibold py-0 px-2 fs-11"
+                                data-swal-confirm="true"
+                                data-swal-title="Setujui Akun Pengguna?"
+                                data-swal-text="Akun ' . e($user->name) . ' akan disetujui dan diizinkan untuk login."
+                                data-swal-icon="info"
+                                data-swal-confirm-text="Ya, Setujui Akun!"
+                                data-form-id="approve-user-form-' . $user->id . '">
+                                Setujui
+                            </button>
+                        </form>
+                    </div>';
+                }
+
+                // Joined Date HTML
+                $joinedDateHtml = $user->created_at ? $user->created_at->format('d M Y, H:i') : '-';
+
+                // Actions Dropdown HTML
+                $userRolesJson = e(json_encode($user->roles->pluck('name')->toArray()));
+                $actionsHtml = '<div class="dropdown text-center">
+                    <a href="#" class="btn btn-icon btn-ghost-light text-muted btn-sm" data-bs-toggle="dropdown">
+                        <i class="ti ti-dots-vertical fs-lg"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm">';
+
+                if ($user->id !== $authUserId) {
+                    $actionsHtml .= '<li>
+                        <form method="POST" action="' . route('admin.users.impersonate', $user->id) . '">
+                            ' . csrf_field() . '
+                            <button type="submit" class="dropdown-item text-primary fw-semibold fs-13">
+                                <i class="ti ti-arrows-exchange me-2"></i> Switch Akun
+                            </button>
+                        </form>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>';
+                }
+
+                $actionsHtml .= '<li>
+                    <a class="dropdown-item edit-user-btn fs-13" href="javascript:void(0);"
+                        data-user-id="' . $user->id . '"
+                        data-user-name="' . e($user->name) . '"
+                        data-user-email="' . e($user->email) . '"
+                        data-user-avatar="' . e($user->avatar_url) . '"
+                        data-user-roles=\'' . $userRolesJson . '\'
+                        data-update-url="' . route('admin.users.update', $user->id) . '">
+                        <i class="ti ti-edit me-2"></i> Edit
+                    </a>
+                </li>';
+
+                if ($user->id !== $authUserId) {
+                    if ($user->is_approved) {
+                        $actionsHtml .= '<li>
+                            <form method="POST" action="' . route('admin.users.toggle-approval', $user->id) . '" id="deactivate-user-form-' . $user->id . '">
+                                ' . csrf_field() . method_field('PATCH') . '
+                                <button type="button" class="dropdown-item text-warning fs-13"
+                                    data-swal-confirm="true"
+                                    data-swal-title="Nonaktifkan Akun?"
+                                    data-swal-text="Akun ' . e($user->name) . ' tidak akan bisa login sampai disetujui kembali."
+                                    data-swal-icon="warning"
+                                    data-swal-confirm-text="Ya, Nonaktifkan!"
+                                    data-form-id="deactivate-user-form-' . $user->id . '">
+                                    <i class="ti ti-ban me-2"></i> Nonaktifkan
+                                </button>
+                            </form>
+                        </li>';
+                    }
+
+                    $actionsHtml .= '<li>
+                        <form method="POST" action="' . route('admin.users.destroy', $user->id) . '" id="delete-user-form-' . $user->id . '">
+                            ' . csrf_field() . method_field('DELETE') . '
+                            <button type="button" class="dropdown-item text-danger fs-13"
+                                data-swal-confirm="true"
+                                data-swal-title="Hapus User?"
+                                data-swal-text="Apakah Anda yakin ingin menghapus user \'' . e($user->name) . '\'?"
+                                data-swal-confirm-text="Ya, Hapus!"
+                                data-form-id="delete-user-form-' . $user->id . '">
+                                <i class="ti ti-trash me-2"></i> Delete
+                            </button>
+                        </form>
+                    </li>';
+                }
+
+                $actionsHtml .= '</ul></div>';
+
+                return [
+                    'checkbox' => $checkbox,
+                    'avatar' => $avatarHtml,
+                    'user' => $userHtml,
+                    'roles' => $rolesHtml,
+                    'points' => $pointsHtml,
+                    'status' => $statusHtml,
+                    'created_at' => $joinedDateHtml,
+                    'actions' => $actionsHtml,
+                ];
             });
+
+            return response()->json([
+                'draw' => (int) $request->input('draw', 1),
+                'recordsTotal' => $totalRecords,
+                'recordsFiltered' => $filteredRecords,
+                'data' => $data,
+            ]);
         }
 
-        // Filter by role
-        if ($request->filled('role')) {
-            $roleName = $request->role;
-            $query->whereHas('roles', function ($q) use ($roleName) {
-                $q->where('name', $roleName);
-            });
-        }
-
-        // Filter by approval status
-        $status = $request->get('status');
-        if ($status === 'pending') {
-            $query->where('is_approved', false);
-        } elseif ($status === 'approved') {
-            $query->where('is_approved', true);
-        }
-
-        $users = $query->orderBy('is_approved', 'asc')->orderBy('name', 'asc')->paginate(12)->withQueryString();
         $roles = Role::all();
+        $status = $request->get('status');
 
-        return view('admin.system.users.users', compact('users', 'roles', 'status'));
+        return view('admin.system.users.users', compact('roles', 'status'));
     }
 
     /**

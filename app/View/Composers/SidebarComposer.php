@@ -42,12 +42,15 @@ class SidebarComposer
     }
 
     /**
-     * Convert hardcoded array array to Menu model instance in memory.
+     * Convert hardcoded array to Menu model instance in memory.
      */
-    protected function arrayToMenuModel(array $item): Menu
+    protected function arrayToMenuModel(array $item, string $parentSlug = 'menu'): Menu
     {
+        $nameSlug = \Illuminate\Support\Str::slug($item['name'] ?? 'item');
+        $currentSlug = $parentSlug . '-' . $nameSlug;
+
         $menu = new Menu();
-        $menu->id = null;
+        $menu->custom_collapse_id = $item['custom_collapse_id'] ?? $currentSlug;
         $menu->name = $item['name'] ?? '';
         $menu->type = $item['type'] ?? 'item';
         $menu->icon = $item['icon'] ?? null;
@@ -63,7 +66,7 @@ class SidebarComposer
         $children = collect();
         if (!empty($item['children'])) {
             foreach ($item['children'] as $childArray) {
-                $children->push($this->arrayToMenuModel($childArray));
+                $children->push($this->arrayToMenuModel($childArray, $currentSlug));
             }
         }
         $menu->setRelation('activeChildren', $children);

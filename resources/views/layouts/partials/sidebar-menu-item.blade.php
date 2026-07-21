@@ -16,13 +16,14 @@
         $visibleChildren = $menu->activeChildren->filter(fn($child) => $child->isVisibleForUser($user));
         $hasChildren = $visibleChildren->isNotEmpty();
         $isActive = $menu->isActiveRoute();
-        $collapseId = 'menu-collapse-' . $menu->id;
+        $collapseId = $menu->custom_collapse_id ?? ($menu->id ? 'menu-collapse-' . $menu->id : 'menu-collapse-' . \Illuminate\Support\Str::slug($menu->name));
+        $parentContainerId = $parentId ?? 'sidenav-menu';
         $linkClass = $menu->link_class ? ' ' . $menu->link_class : '';
     @endphp
 
     @if ($hasChildren)
         <li class="side-nav-item {{ $isActive ? 'active' : '' }}">
-            <a data-bs-toggle="collapse" href="#{{ $collapseId }}" aria-expanded="{{ $isActive ? 'true' : 'false' }}" aria-controls="{{ $collapseId }}" class="side-nav-link{{ $linkClass }} {{ $isActive ? 'active' : '' }}">
+            <a data-bs-toggle="collapse" data-bs-target="#{{ $collapseId }}" href="#{{ $collapseId }}" aria-expanded="{{ $isActive ? 'true' : 'false' }}" aria-controls="{{ $collapseId }}" class="side-nav-link{{ $linkClass }} {{ $isActive ? 'active' : '' }}">
                 @if(!empty($menu->icon))
                     <span class="menu-icon"><i class="{{ $menu->icon }}"></i></span>
                 @else
@@ -34,10 +35,10 @@
                 @endif
                 <span class="menu-arrow"></span>
             </a>
-            <div class="collapse {{ $isActive ? 'show' : '' }}" id="{{ $collapseId }}">
+            <div class="collapse {{ $isActive ? 'show' : '' }}" id="{{ $collapseId }}" data-bs-parent="#{{ $parentContainerId }}">
                 <ul class="sub-menu">
                     @foreach($visibleChildren as $child)
-                        @include('layouts.partials.sidebar-menu-item', ['menu' => $child])
+                        @include('layouts.partials.sidebar-menu-item', ['menu' => $child, 'parentId' => $collapseId])
                     @endforeach
                 </ul>
             </div>
