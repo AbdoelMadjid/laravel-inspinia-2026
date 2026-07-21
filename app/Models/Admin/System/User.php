@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable(['name', 'email', 'password', 'avatar', 'points'])]
+#[Fillable(['name', 'email', 'password', 'avatar', 'points', 'is_approved'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -48,6 +48,7 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'points' => 'integer',
+            'is_approved' => 'boolean',
         ];
     }
 

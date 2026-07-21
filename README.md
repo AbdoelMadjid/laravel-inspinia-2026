@@ -18,6 +18,10 @@ Aplikasi Web Admin Dashboard & Management System berbasis **Laravel 11**, **Spat
 
 ### 2. 👥 Pengaturan Pengguna & Akses (Users Setting)
 - **Manajemen Pengguna (Contacts / Users)**: Manajemen akun pengguna, foto avatar, penetapan role tunggal/massal (*Bulk Assign Role*).
+- **Sistem Persetujuan Pengguna Baru (User Registration Approval)**:
+  - Akun pengguna baru yang mendaftar melalui form Register secara otomatis berstatus `Pending Approval` (`is_approved = false`) dan **belum diizinkan login**.
+  - Administrator dapat menyetujui (`Approve`) atau menonaktifkan akun melalui tab filter **Menunggu Persetujuan** di halaman Users.
+  - Percobaan login pengguna yang belum disetujui ditolak secara presisi dengan pesan: *"Akun Anda masih menunggu persetujuan dari Administrator. Silakan hubungi Admin untuk mengaktifkan akun Anda."*
 - **Fitur Impersonasi (User Impersonation)**: Administrator dapat *login sebagai* user lain untuk keperluan debugging atau bantuan teknis dengan bar notifikasi *Stop Impersonating*.
 - **Permintaan Reset Password (Reset Password Requests)**:
   - Permintaan reset password oleh pengguna di halaman `/forgot-password` ditangkap otomatis di menu **Users Setting -> Reset Password**.

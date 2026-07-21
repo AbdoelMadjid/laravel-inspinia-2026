@@ -26,6 +26,8 @@ class RegisteredUserController extends Controller
 
     /**
      * Handle an incoming registration request.
+     *
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request): RedirectResponse
     {
@@ -54,28 +56,27 @@ class RegisteredUserController extends Controller
             'email' => trim(strtolower($request->email)),
             'password' => Hash::make($request->password),
             'email_verified_at' => now(),
+            'is_approved' => false,
         ]);
 
         // Assign default 'user' role
         $role = Role::firstOrCreate(['name' => 'user']);
         $user->assignRole($role);
 
-        // Create Admin Notification for New User Registration
+        // Create Admin Notification for New User Registration (Pending Approval)
         AppNotification::create([
             'category' => 'system',
             'title' => 'Pendaftaran Pengguna Baru',
-            'message' => "Pengguna baru '{$user->name}' ({$user->email}) telah mendaftar ke sistem.",
-            'url' => route('admin.users.index'),
+            'message' => "Pengguna baru '{$user->name}' ({$user->email}) telah mendaftar dan menunggu persetujuan Admin.",
+            'url' => route('admin.users.index', ['status' => 'pending']),
             'icon' => 'ti ti-user-plus',
-            'icon_bg' => 'bg-primary-subtle text-primary',
+            'icon_bg' => 'bg-warning-subtle text-warning',
             'target_role' => 'admin',
             'is_read' => false,
         ]);
 
         event(new Registered($user));
 
-        Auth::login($user);
-
-        return redirect(route('dashboard', absolute: false));
+        return redirect()->route('login')->with('info', 'Pendaftaran akun Anda berhasil! Akun Anda saat ini sedang menunggu persetujuan dari Administrator sebelum dapat digunakan untuk masuk.');
     }
 }

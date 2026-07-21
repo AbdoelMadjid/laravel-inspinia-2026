@@ -37,10 +37,18 @@ class UserController extends Controller
             });
         }
 
-        $users = $query->orderBy('name')->paginate(12)->withQueryString();
+        // Filter by approval status
+        $status = $request->get('status');
+        if ($status === 'pending') {
+            $query->where('is_approved', false);
+        } elseif ($status === 'approved') {
+            $query->where('is_approved', true);
+        }
+
+        $users = $query->orderBy('is_approved', 'asc')->orderBy('name', 'asc')->paginate(12)->withQueryString();
         $roles = Role::all();
 
-        return view('admin.system.users.users', compact('users', 'roles'));
+        return view('admin.system.users.users', compact('users', 'roles', 'status'));
     }
 
     /**
@@ -233,5 +241,23 @@ class UserController extends Controller
 
         return redirect()->route('admin.users.index')
             ->with('success', "Kembali ke akun asli ({$originalUser->name}).");
+    }
+
+    /**
+     * Toggle approval status for the specified user account.
+     */
+    public function toggleApproval(User $user)
+    {
+        if ($user->id === auth()->id()) {
+            return redirect()->back()->with('error', 'Anda tidak dapat mengubah status persetujuan akun Anda sendiri.');
+        }
+
+        $user->update([
+            'is_approved' => !$user->is_approved,
+        ]);
+
+        $statusText = $user->is_approved ? 'disetujui dan diaktifkan' : 'dinonaktifkan / ditolak';
+
+        return redirect()->back()->with('success', "Status akun {$user->name} berhasil {$statusText}.");
     }
 }

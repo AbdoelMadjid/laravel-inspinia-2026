@@ -24,6 +24,7 @@
         <div class="col-lg-12">
             <div class="bg-light-subtle rounded border p-3">
                 <form method="GET" action="{{ route('admin.users.index') }}" class="row g-2 align-items-center">
+                    @if($status)<input type="hidden" name="status" value="{{ $status }}">@endif
                     <div class="col-lg-3">
                         <div class="app-search">
                             <input type="text" name="search" class="form-control" placeholder="Search user name or email..." value="{{ request('search') }}" />
@@ -47,7 +48,7 @@
                         <button type="submit" class="btn btn-secondary">
                             <i class="ti ti-filter me-1"></i> Filter
                         </button>
-                        @if(request('search') || request('role'))
+                        @if(request('search') || request('role') || request('status'))
                             <a href="{{ route('admin.users.index') }}" class="btn btn-soft-secondary">Reset</a>
                         @endif
                     </div>
@@ -64,6 +65,19 @@
                 </form>
             </div>
         </div>
+    </div>
+
+    <!-- Status Tabs Filter -->
+    <div class="d-flex align-items-center gap-1 mb-3">
+        <a href="{{ route('admin.users.index', array_merge(request()->except('status'), [])) }}" class="btn btn-sm {{ empty($status) ? 'btn-primary' : 'btn-outline-secondary' }}">
+            <i class="ti ti-users me-1"></i> Semua Pengguna
+        </a>
+        <a href="{{ route('admin.users.index', array_merge(request()->except('status'), ['status' => 'approved'])) }}" class="btn btn-sm {{ $status === 'approved' ? 'btn-success' : 'btn-outline-success' }}">
+            <i class="ti ti-circle-check me-1"></i> Disetujui / Aktif
+        </a>
+        <a href="{{ route('admin.users.index', array_merge(request()->except('status'), ['status' => 'pending'])) }}" class="btn btn-sm {{ $status === 'pending' ? 'btn-warning' : 'btn-outline-warning' }}">
+            <i class="ti ti-clock me-1"></i> Menunggu Persetujuan
+        </a>
     </div>
 
     <!-- Select All Bar -->
@@ -83,7 +97,7 @@
     <div class="row">
         @forelse($users as $user)
             <div class="col-md-6 col-xxl-3 mb-3">
-                <div class="card card-h-100 mb-0 position-relative">
+                <div class="card card-h-100 mb-0 position-relative border {{ !$user->is_approved ? 'border-warning shadow-sm' : '' }}">
                     <!-- Checkbox Selection -->
                     <div class="position-absolute top-0 end-0 p-2 z-1">
                         <input class="form-check-input user-checkbox" type="checkbox" value="{{ $user->id }}" data-user-name="{{ $user->name }}">
@@ -105,9 +119,19 @@
                                     <a href="javascript: void(0);" class="link-reset">{{ $user->name }}</a>
                                 </h5>
                                 <p class="text-muted fs-xs mb-1 text-truncate">{{ $user->email }}</p>
-                                <div>
+                                <div class="d-flex flex-wrap gap-1 align-items-center">
+                                    @if($user->is_approved)
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 fs-11 rounded-pill" title="Akun Disetujui / Aktif">
+                                            <i class="ti ti-circle-check me-1"></i> Disetujui
+                                        </span>
+                                    @else
+                                        <span class="badge bg-warning-subtle text-warning border border-warning-subtle px-2 py-1 fs-11 rounded-pill" title="Menunggu Persetujuan Admin">
+                                            <i class="ti ti-clock me-1"></i> Pending Approval
+                                        </span>
+                                    @endif
+
                                     @forelse($user->roles as $userRole)
-                                        <span class="badge bg-primary-subtle text-primary badge-label me-1">{{ ucfirst($userRole->name) }}</span>
+                                        <span class="badge bg-primary-subtle text-primary badge-label">{{ ucfirst($userRole->name) }}</span>
                                     @empty
                                         <span class="badge bg-secondary-subtle text-secondary badge-label">No Role</span>
                                     @endforelse
@@ -135,26 +159,65 @@
                                                 <i class="ti ti-edit me-2"></i> Edit
                                             </a>
                                         </li>
+
                                         @if($user->id !== auth()->id())
-                                        <li>
-                                            <form method="POST" action="{{ route('admin.users.destroy', $user->id) }}" id="delete-user-form-{{ $user->id }}">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="button" class="dropdown-item text-danger"
-                                                    data-swal-confirm="true"
-                                                    data-swal-title="Hapus User?"
-                                                    data-swal-text="Apakah Anda yakin ingin menghapus user '{{ $user->name }}'?"
-                                                    data-swal-confirm-text="Ya, Hapus!"
-                                                    data-form-id="delete-user-form-{{ $user->id }}">
-                                                    <i class="ti ti-trash me-2"></i> Delete
-                                                </button>
-                                            </form>
-                                        </li>
+                                            @if($user->is_approved)
+                                                <li>
+                                                    <form method="POST" action="{{ route('admin.users.toggle-approval', $user->id) }}" id="deactivate-user-form-{{ $user->id }}">
+                                                        @csrf
+                                                        @method('PATCH')
+                                                        <button type="button" class="dropdown-item text-warning"
+                                                            data-swal-confirm="true"
+                                                            data-swal-title="Nonaktifkan Akun?"
+                                                            data-swal-text="Akun {{ $user->name }} tidak akan bisa login sampai disetujui kembali oleh Admin."
+                                                            data-swal-icon="warning"
+                                                            data-swal-confirm-text="Ya, Nonaktifkan!"
+                                                            data-form-id="deactivate-user-form-{{ $user->id }}">
+                                                            <i class="ti ti-ban me-2"></i> Nonaktifkan Akun
+                                                        </button>
+                                                    </form>
+                                                </li>
+                                            @endif
+                                            <li>
+                                                <form method="POST" action="{{ route('admin.users.destroy', $user->id) }}" id="delete-user-form-{{ $user->id }}">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="button" class="dropdown-item text-danger"
+                                                        data-swal-confirm="true"
+                                                        data-swal-title="Hapus User?"
+                                                        data-swal-text="Apakah Anda yakin ingin menghapus user '{{ $user->name }}'?"
+                                                        data-swal-confirm-text="Ya, Hapus!"
+                                                        data-form-id="delete-user-form-{{ $user->id }}">
+                                                        <i class="ti ti-trash me-2"></i> Delete
+                                                    </button>
+                                                </form>
+                                            </li>
                                         @endif
                                     </ul>
                                 </div>
                             </div>
                         </div>
+
+                        @if(!$user->is_approved)
+                            <div class="my-2 p-2 bg-warning-subtle rounded border border-warning-subtle">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span class="fs-xs fw-semibold text-warning"><i class="ti ti-alert-triangle me-1"></i> Menunggu Persetujuan</span>
+                                    <form method="POST" action="{{ route('admin.users.toggle-approval', $user->id) }}" id="approve-user-form-{{ $user->id }}">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button type="button" class="btn btn-sm btn-success fw-semibold py-1 px-2 fs-12"
+                                            data-swal-confirm="true"
+                                            data-swal-title="Setujui Akun Pengguna?"
+                                            data-swal-text="Akun {{ $user->name }} akan disetujui dan diizinkan untuk login ke sistem."
+                                            data-swal-icon="info"
+                                            data-swal-confirm-text="Ya, Setujui Akun!"
+                                            data-form-id="approve-user-form-{{ $user->id }}">
+                                            <i class="ti ti-check me-1"></i> Setujui
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        @endif
 
                         <ul class="list-unstyled text-muted mb-0">
                             <li class="mb-2">

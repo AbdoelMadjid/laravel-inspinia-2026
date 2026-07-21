@@ -83,7 +83,16 @@ class LoginRequest extends FormRequest
             ]);
         }
 
-        // 2. Check if password matches
+        // 2. Check if user account is approved by Admin
+        if (isset($user->is_approved) && !$user->is_approved) {
+            RateLimiter::hit($this->throttleKey());
+
+            throw ValidationException::withMessages([
+                'login' => 'Akun Anda masih menunggu persetujuan dari Administrator. Silakan hubungi Admin untuk mengaktifkan akun Anda.',
+            ]);
+        }
+
+        // 3. Check if password matches
         $credentials = filter_var($loginInput, FILTER_VALIDATE_EMAIL)
             ? ['email' => $loginInput, 'password' => $this->input('password')]
             : ['name' => $user->name, 'password' => $this->input('password')];

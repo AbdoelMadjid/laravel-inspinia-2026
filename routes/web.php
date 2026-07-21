@@ -61,6 +61,7 @@ Route::middleware('auth')->group(function () {
         Route::prefix('users-management')->group(function () {
             Route::post('users/bulk-assign-role', [UserController::class, 'bulkAssignRole'])->name('users.bulk-assign-role');
             Route::post('users/{user}/impersonate', [UserController::class, 'impersonate'])->name('users.impersonate');
+            Route::patch('users/{user}/toggle-approval', [UserController::class, 'toggleApproval'])->name('users.toggle-approval');
             Route::resource('users', UserController::class);
             Route::resource('roles', RoleController::class);
             Route::resource('permissions', PermissionController::class);
