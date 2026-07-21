@@ -943,7 +943,7 @@
                         <div class="dropdown-divider"></div>
 
                         <!-- Lock -->
-                        <a href="{{ route('page', 'auth-lock-screen') }}" class="dropdown-item">
+                        <a href="{{ route('lock-screen.lock') }}" class="dropdown-item">
                             <i class="ti ti-lock me-1 fs-lg align-middle"></i>
                             <span class="align-middle" data-lang="lock-screen">Lock Screen</span>
                         </a>
