@@ -12,7 +12,7 @@
 
         <div class="text-end">
             <ol class="breadcrumb m-0 py-0">
-                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Inspinia</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="javascript: void(0);" data-lang="users-management">Users Management</a></li>
                 <li class="breadcrumb-item active" data-lang="users-roles">Roles</li>
             </ol>

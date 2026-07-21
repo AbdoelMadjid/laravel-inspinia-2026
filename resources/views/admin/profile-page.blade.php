@@ -4,9 +4,24 @@
 
 @section('content')
 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <article class="card card-out-of-container border-top-0">
+    <!-- Page Title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between py-2">
+                <h4 class="mb-sm-0 fw-bold">Profile</h4>
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0 py-0">
+                        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Profile</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <article class="card card-out-of-container border-top-0">
                                 <div class="position-relative card-side-img overflow-hidden" style="height: 250px; background-image: url({{ asset('assets/images/profile-bg.jpg') }})">
                                     <div class="p-4 card-img-overlay rounded-start-0 auth-overlay d-flex align-items-center justify-content-center">
                                         <h3 class="text-white mb-0 fst-italic">"Designing the future, one template at a time"</h3>
