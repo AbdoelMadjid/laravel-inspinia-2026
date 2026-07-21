@@ -37,6 +37,22 @@
     }
 
 
+    /* Fix for SweetAlert2 Toast backdrop and container blur artifacts */
+    body.swal2-toast-shown .swal2-container,
+    .swal2-container.swal2-top-end,
+    .swal2-container.swal2-top-right {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        height: auto !important;
+        max-height: 100vh !important;
+        pointer-events: none !important;
+    }
+
+    .swal2-popup.swal2-toast {
+        pointer-events: auto !important;
+    }
+
     /* Centered Modals Font Styling */
     .swal2-popup .swal2-title {
         font-size: 1.1rem !important;
@@ -61,13 +77,14 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Configure Swal Toast Mixin with compact design
+        // Configure Swal Toast Mixin with compact design and no backdrop
         const SwalToast = Swal.mixin({
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
             timer: 3500,
             timerProgressBar: true,
+            backdrop: false,
             customClass: {
                 popup: 'swal2-toast-small',
                 title: 'swal2-toast-title-small'
@@ -86,14 +103,9 @@
         @endif
 
         @if(session('error'))
-            Swal.fire({
+            SwalToast.fire({
                 icon: 'error',
-                title: 'Error!',
-                text: @json(session('error')),
-                confirmButtonText: 'Tutup',
-                customClass: {
-                    confirmButton: 'btn btn-primary btn-sm'
-                }
+                title: @json(session('error'))
             });
         @endif
 

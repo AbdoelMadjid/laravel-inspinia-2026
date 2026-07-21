@@ -1021,11 +1021,13 @@ function uploadProfilePageAvatar(input) {
             });
             if (typeof Swal !== 'undefined') {
                 Swal.fire({
+                    toast: true,
+                    position: 'top-end',
                     icon: 'success',
-                    title: 'Berhasil!',
-                    text: data.message,
-                    timer: 2000,
-                    showConfirmButton: false
+                    title: data.message || 'Foto profil berhasil diperbarui!',
+                    timer: 2500,
+                    showConfirmButton: false,
+                    backdrop: false
                 });
             } else {
                 alert(data.message);
