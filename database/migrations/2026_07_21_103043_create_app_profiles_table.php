@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('app_name')->default('INSPINIA Laravel 2026');
             $table->text('app_description')->nullable();
             $table->string('app_year')->default('2026');
-            $table->string('developer_name')->default('Abdoel Madjid / RPL Team');
+            $table->string('developer_name')->default('Repalogic');
             $table->string('developer_url')->nullable();
             $table->string('logo_light')->nullable();
             $table->string('logo_dark')->nullable();
