@@ -33,10 +33,12 @@ Aplikasi Web Admin Dashboard & Management System berbasis **Laravel 11**, **Spat
 - **Sistem Persetujuan Pengguna Baru (User Registration Approval)**:
   - Akun pengguna baru mendaftar berstatus `Pending Approval` (`is_approved = false`) dan belum diizinkan login sebelum disetujui Admin (dapat diatur secara otomatis atau manual di menu Apps Profile).
 - **Sistem Persetujuan Penghapusan Akun (Account Deletion Approval Flow)**:
-  - Ketika pengguna biasa menekan *Hapus Akun Saya* di menu profil, akun **tidak langsung terhapus secara otomatis**, melainkan mengalihkan status menjadi permohonan hapus (`deletion_requested_at`).
-  - Sistem mengirimkan notifikasi lonceng otomatis kepada **Admin** (*"Pengguna X mengajukan permohonan penghapusan akun"*).
-  - Admin dapat meninjau, menyetujui penghapusan secara permanen (*Setujui & Hapus Permanen*), atau menolak permohonan (*Tolak Permohonan Hapus*) langsung di menu `admin/users-management/users` melalui filter tab **Permohonan Hapus Akun**.
-  - Pengguna juga diberi opsi untuk membatalkan permohonan penghapusan kapan saja sebelum diproses Admin.
+  - **Pengajuan oleh Pengguna**: Ketika pengguna menekan *Ajukan Penghapusan Akun* di halaman `/profile`, modal konfirmasi akan meminta verifikasi kata sandi dan alasan pengajuan (opsional). Akun **tidak langsung terhapus secara otomatis**, melainkan menandai status `deletion_requested_at` dan menyimpan alasan pengajuan.
+  - **Notifikasi Lonceng Topbar**: Sistem secara otomatis membuat dan mengirimkan notifikasi lonceng topbar ber-role scoping khusus **Admin** (*"Pengguna [Nama] ([Email]) mengajukan permohonan penghapusan akun"*).
+  - **Manajemen & Persetujuan Admin**: Mengklik notifikasi akan mengarahkan Admin ke halaman `admin/users-management/users?status=deletion_requested`. Admin dapat meninjau permohonan di bawah tab **Permohonan Hapus Akun** (dilengkapi *badge count* indikator pengajuan) dan memilih aksi:
+    - **Setujui & Hapus Permanen**: Mengonfirmasi dan menghapus akun pengguna secara permanen dari sistem.
+    - **Tolak Permohonan Hapus**: Membatalkan permohonan pengajuan dan mengembalikan akun ke status aktif normal.
+  - **Opsi Pembatalan Pengguna**: Selama permohonan belum diproses oleh Admin, pengguna melihat status info permohonan aktif di halaman profil mereka dan dapat menekan tombol **Batalkan Permohonan Penghapusan Akun** kapan saja.
 - **Audit Log Aktivitas Sistem & Admin (Activity Audit Trail)**:
   - Menu `admin/apps-management/activity-logs` untuk memantau rekam jejak aksi administrasi lengkap dengan filter pelaku, jenis aksi, tanggal, dan IP address.
 
@@ -75,6 +77,7 @@ Aplikasi Web Admin Dashboard & Management System berbasis **Laravel 11**, **Spat
   - Halaman `/profile` disusun menjadi 3 baris grid simetris (2 kolom berdampingan `col-lg-6` & `col-lg-6`) yang ergonomis.
   - Validasi form dikonfigurasi secara independen (`sometimes`) sehingga pengisian data di satu kartu tidak akan memicu kesalahan validasi pada kartu lain.
   - Notifikasi sukses menggunakan **SweetAlert2 Toast** berwarna hijau yang melayang interaktif di pojok kanan atas (`top-end`).
+- **Danger Zone & Permohonan Penghapusan Akun**: Tombol *Ajukan Penghapusan Akun* yang aman dengan konfirmasi kata sandi & alasan pengajuan, status info permohonan aktif, serta tombol pembatalan permohonan secara instan.
 - **Foto Profil AJAX & Header Profil**: Unggah foto avatar pengguna secara langsung, indikator status online/offline, badge akumulasi poin login harian, serta tabel 10 catatan aktivitas login terbaru milik pengguna.
 
 ### 6. 🌐 UI & Fitur Antarmuka Modern
