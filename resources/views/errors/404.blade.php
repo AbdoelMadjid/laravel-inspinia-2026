@@ -1,4 +1,4 @@
-@if(view()->exists('template.error-404'))
+@if (view()->exists('template.error-404'))
     @include('template.error-404')
 @else
     <div style="text-align: center; padding: 50px;">
