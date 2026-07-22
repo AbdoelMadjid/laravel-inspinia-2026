@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\System\ProfileController;
 use App\Http\Controllers\Admin\System\RoleController;
 use App\Http\Controllers\Admin\System\UserController;
 use App\Http\Controllers\Admin\System\ActivityLogController;
+use App\Http\Controllers\Admin\System\AboutController;
 use Illuminate\Support\Facades\Route;
 
 // Home / Landing Page
@@ -77,6 +78,9 @@ Route::middleware('auth')->group(function () {
             Route::post('password-reset-requests/{passwordResetRequest}/reject', [PasswordResetRequestController::class, 'reject'])->name('password-reset-requests.reject');
             Route::resource('password-reset-requests', PasswordResetRequestController::class);
         });
+
+        // About & Project Documentation Page
+        Route::get('about', [AboutController::class, 'index'])->name('about.index');
     });
 
     Route::get('/{page}', function ($page) {

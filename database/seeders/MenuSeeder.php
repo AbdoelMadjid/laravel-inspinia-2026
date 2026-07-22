@@ -169,6 +169,18 @@ class MenuSeeder extends Seeder
                     ['name' => 'Reset Password', 'name_en' => 'Reset Password', 'name_id' => 'Reset Password', 'type' => 'item', 'route_name' => 'admin.password-reset-requests.index', 'permission_name' => 'manage-users', 'data_lang' => 'users-password-reset-requests', 'sort_order' => 4],
                 ],
             ],
+            // --- ABOUT / INFORMATION ITEM (At the bottom of all menus) ---
+            [
+                'name' => 'About',
+                'name_en' => 'About System',
+                'name_id' => 'Tentang Aplikasi',
+                'type' => 'item',
+                'icon' => 'ti ti-info-circle',
+                'route_name' => 'admin.about.index',
+                'data_lang' => 'about-app',
+                'sort_order' => 99,
+                'roles' => [$adminRole, $userRole],
+            ],
         ];
 
         // Seed or update menus idempotently

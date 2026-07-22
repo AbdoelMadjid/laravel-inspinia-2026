@@ -407,5 +407,8 @@
     "apps-login-logs": "Data Login",
     "apps-activity-logs": "Log Aktivitas",
     "apps-settings": "Pengaturan Sistem",
-    "users-password-reset-requests": "Reset Password"
+    "users-password-reset-requests": "Reset Password",
+    "about-app": "Tentang Aplikasi",
+    "about-title": "Dokumentasi & Arsitektur Sistem",
+    "about-desc": "Penjelasan lengkap mengenai arsitektur, struktur direktori, skema database, dan modul fitur aplikasi."
 }

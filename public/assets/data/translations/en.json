@@ -407,5 +407,8 @@
     "apps-login-logs": "Login Data",
     "apps-activity-logs": "Activity Audit Logs",
     "apps-settings": "System Settings",
-    "users-password-reset-requests": "Reset Password"
+    "users-password-reset-requests": "Reset Password",
+    "about-app": "About System",
+    "about-title": "About & System Architecture Documentation",
+    "about-desc": "Overview of technology stack, directory structure, database schema, and core modules."
 }
