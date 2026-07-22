@@ -26,6 +26,11 @@ class User extends Authenticatable
     protected $table = 'users';
     protected string $guard_name = 'web';
 
+    protected static function newFactory()
+    {
+        return \Database\Factories\UserFactory::new();
+    }
+
     public function getMorphClass()
     {
         return 'App\Models\User';

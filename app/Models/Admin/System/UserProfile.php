@@ -13,6 +13,11 @@ class UserProfile extends Model
 
     protected $table = 'user_profiles';
 
+    protected static function newFactory()
+    {
+        return \Database\Factories\UserProfileFactory::new();
+    }
+
     protected $fillable = [
         'user_id',
         'nik',
