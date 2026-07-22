@@ -471,22 +471,22 @@
                         <div class="col-lg-7">
                             <h5 class="fw-bold text-dark mb-3"><i class="ti ti-layers-intersect text-primary me-2"></i>Ringkasan Arsitektur &amp; Teknologi Utama</h5>
                             <p class="text-muted fs-14">
-                                Aplikasi <span class="fw-bold text-primary">INSPINIA Laravel 2026</span> dibangun di atas fondasi ekosistem modern <span class="fw-bold text-danger">Laravel 11</span> dengan arsitektur modular yang mengutamakan performa, fleksibilitas RBAC (Role-Based Access Control), dan antarmuka pengguna yang terstruktur rapi.
+                                Aplikasi <span class="fw-bold text-primary">INSPINIA Laravel 2026</span> dibangun di atas fondasi ekosistem modern <span class="fw-bold text-danger">Laravel {{ $systemInfo['laravel_version'] }}</span> dengan arsitektur modular yang mengutamakan performa, fleksibilitas RBAC (Role-Based Access Control), dan antarmuka pengguna yang terstruktur rapi.
                             </p>
 
                             <div class="table-responsive mt-3">
                                 <table class="table table-bordered align-middle">
                                     <thead class="table-light">
                                         <tr>
-                                            <th>Komponen</th>
-                                            <th>Teknologi / Library</th>
+                                            <th style="width: 30%; min-width: 220px;">Komponen</th>
+                                            <th style="width: 32%;">Teknologi / Library</th>
                                             <th>Keterangan / Fungsi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td class="fw-bold text-dark"><i class="ti ti-brand-laravel text-danger me-2"></i>Backend Framework</td>
-                                            <td><span class="badge bg-danger-subtle text-danger fw-bold">Laravel 11.x</span></td>
+                                            <td><span class="badge bg-danger-subtle text-danger fw-bold">Laravel {{ $systemInfo['laravel_version'] }}</span></td>
                                             <td>PHP Framework terpopuler dengan ORM Eloquent, Blade Engine, &amp; Service Container.</td>
                                         </tr>
                                         <tr>
@@ -557,7 +557,7 @@
                 <div class="tab-pane fade" id="tab-structure" role="tabpanel">
                     <h5 class="fw-bold text-dark mb-3"><i class="ti ti-folder-check text-warning me-2"></i>Struktur Organisasi Kode &amp; Direktori Utama</h5>
                     <p class="text-muted fs-14 mb-4">
-                        Proyek ini mengikuti standar struktur direktori <span class="fw-bold text-danger">Laravel 11</span>, dengan pemisahan kontroler &amp; model sistem administrasi di dalam namespace <code>App\Http\Controllers\Admin\System</code> dan <code>App\Models\Admin\System</code>.
+                        Proyek ini mengikuti standar struktur direktori <span class="fw-bold text-danger">Laravel {{ $systemInfo['laravel_version'] }}</span>, dengan pemisahan kontroler &amp; model sistem administrasi di dalam namespace <code>App\Http\Controllers\Admin\System</code> dan <code>App\Models\Admin\System</code>.
                     </p>
 
                     <div class="row g-3">

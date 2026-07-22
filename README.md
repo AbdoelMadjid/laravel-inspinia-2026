@@ -1,6 +1,6 @@
 # Laravel INSPINIA Admin Management System (2026)
 
-Aplikasi Web Admin Dashboard & Management System berbasis **Laravel 11**, **Spatie Permission**, dan tema **INSPINIA Bootstrap 5**. Aplikasi ini dilengkapi dengan Manajemen Menu Dinamis, Profile Aplikasi, Backup Database, Manajemen Pengguna & Impersonasi, Fitur Reset Password Admin, Notifikasi Topbar Dinamis & Role Scoping, Sistem Poin Login Harian, Penanganan Human Error Autentikasi, serta Dukungan Multi-Bahasa.
+Aplikasi Web Admin Dashboard & Management System berbasis **Laravel 13**, **Spatie Permission**, dan tema **INSPINIA Bootstrap 5**. Aplikasi ini dilengkapi dengan Manajemen Menu Dinamis, Profile Aplikasi, Backup Database, Manajemen Pengguna & Impersonasi, Fitur Reset Password Admin, Notifikasi Topbar Dinamis & Role Scoping, Sistem Poin Login Harian, Penanganan Human Error Autentikasi, serta Dukungan Multi-Bahasa.
 
 ---
 
