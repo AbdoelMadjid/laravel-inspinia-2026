@@ -39,12 +39,5 @@
                 <i class="ti ti-key fs-16"></i> Perbarui Password
             </button>
         </div>
-
-        @if (session('status') === 'password-updated')
-            <div class="alert alert-success alert-dismissible fade show mt-3 mb-0" role="alert">
-                <i class="ti ti-check me-1"></i> Password Anda berhasil diperbarui!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
     </form>
 </section>

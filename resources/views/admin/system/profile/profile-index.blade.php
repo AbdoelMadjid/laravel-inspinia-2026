@@ -19,12 +19,17 @@
         </div>
     </div>
 
+@php
+    $userProfile = Auth::user()->getOrCreateProfile();
+    $socials = $userProfile->social_links ?? [];
+@endphp
+
     <div class="row">
         <div class="col-12">
             <article class="card card-out-of-container border-top-0">
-                                <div class="position-relative card-side-img overflow-hidden" style="height: 250px; background-image: url({{ asset('assets/images/profile-bg.jpg') }})">
+                                <div class="position-relative card-side-img overflow-hidden" style="height: 250px; background-image: url('{{ $userProfile->cover_image_url }}'); background-size: cover; background-position: center;">
                                     <div class="p-4 card-img-overlay rounded-start-0 auth-overlay d-flex align-items-center justify-content-center">
-                                        <h3 class="text-white mb-0 fst-italic">"Designing the future, one template at a time"</h3>
+                                        <h3 class="text-white mb-0 fst-italic">"{{ $userProfile->motto ?: 'Designing the future, one template at a time' }}"</h3>
                                     </div>
                                 </div>
 
@@ -85,7 +90,7 @@
                                             <div class="avatar-sm bg-light d-flex align-items-center justify-content-center rounded">
                                                 <i class="ti ti-briefcase fs-xl text-secondary"></i>
                                             </div>
-                                            <p class="mb-0 fs-sm">UI/UX Designer & Full-Stack Developer</p>
+                                            <p class="mb-0 fs-sm">{{ $userProfile->job_title ?: 'UI/UX Designer & Full-Stack Developer' }}</p>
                                         </div>
                                         <div class="d-flex align-items-center gap-2 mb-2">
                                             <div class="avatar-sm bg-light d-flex align-items-center justify-content-center rounded">
@@ -93,7 +98,7 @@
                                             </div>
                                             <p class="mb-0 fs-sm">
                                                 Studied at
-                                                <span class="text-dark fw-semibold">Stanford University</span>
+                                                <span class="text-dark fw-semibold">{{ $userProfile->education ?: 'Stanford University' }}</span>
                                             </p>
                                         </div>
                                         <div class="d-flex align-items-center gap-2 mb-2">
@@ -102,7 +107,7 @@
                                             </div>
                                             <p class="mb-0 fs-sm">
                                                 Lives in
-                                                <span class="text-dark fw-semibold">San Francisco, CA</span>
+                                                <span class="text-dark fw-semibold">{{ $userProfile->full_address ?: ($userProfile->location ?: 'San Francisco, CA') }}</span>
                                             </p>
                                         </div>
                                         <div class="d-flex align-items-center gap-2 mb-2">
@@ -129,7 +134,7 @@
                                             </div>
                                             <p class="mb-0 fs-sm">
                                                 Website
-                                                <a href="https://www.example.dev" class="text-primary fw-semibold">www.example.dev</a>
+                                                <a href="{{ $userProfile->website ? (str_starts_with($userProfile->website, 'http') ? $userProfile->website : 'https://' . $userProfile->website) : '#' }}" class="text-primary fw-semibold" target="_blank">{{ $userProfile->website ?: 'www.example.dev' }}</a>
                                             </p>
                                         </div>
                                         <div class="d-flex align-items-center gap-2">
@@ -138,12 +143,12 @@
                                             </div>
                                             <p class="mb-0 fs-sm">
                                                 Languages
-                                                <span class="text-dark fw-semibold">English, Hindi, Japanese</span>
+                                                <span class="text-dark fw-semibold">{{ !empty($userProfile->languages_list) ? implode(', ', $userProfile->languages_list) : 'English, Hindi, Japanese' }}</span>
                                             </p>
                                         </div>
 
                                         <div class="d-flex justify-content-center gap-2 mt-4 mb-2">
-                                            <a href="#!" class="btn btn-icon rounded-circle btn-primary" title="Facebook">
+                                            <a href="{{ $socials['facebook'] ?? '#!' }}" class="btn btn-icon rounded-circle btn-primary" title="Facebook" target="_blank">
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     width="18"
@@ -160,7 +165,7 @@
                                                     <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
                                                 </svg>
                                             </a>
-                                            <a href="#!" class="btn btn-icon rounded-circle btn-info" title="Twitter-x">
+                                            <a href="{{ $socials['twitter'] ?? '#!' }}" class="btn btn-icon rounded-circle btn-info" title="Twitter-x" target="_blank">
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     width="18"
@@ -178,7 +183,7 @@
                                                     <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
                                                 </svg>
                                             </a>
-                                            <a href="#!" class="btn btn-icon rounded-circle btn-danger" title="Instagram">
+                                            <a href="{{ $socials['instagram'] ?? '#!' }}" class="btn btn-icon rounded-circle btn-danger" title="Instagram" target="_blank">
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     width="18"
@@ -197,7 +202,7 @@
                                                     <path d="M16.5 7.5v.01" />
                                                 </svg>
                                             </a>
-                                            <a href="#!" class="btn btn-icon rounded-circle btn-success" title="Dribbble">
+                                            <a href="{{ $socials['dribbble'] ?? '#!' }}" class="btn btn-icon rounded-circle btn-success" title="Dribbble" target="_blank">
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     width="18"
@@ -217,7 +222,7 @@
                                                     <path d="M3.1 10.75c5 0 9.814 -.38 15.314 -5" />
                                                 </svg>
                                             </a>
-                                            <a href="#!" class="btn btn-icon rounded-circle btn-secondary" title="LinkedIn">
+                                            <a href="{{ $socials['linkedin'] ?? '#!' }}" class="btn btn-icon rounded-circle btn-secondary" title="LinkedIn" target="_blank">
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     width="18"
@@ -238,7 +243,7 @@
                                                     <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
                                                 </svg>
                                             </a>
-                                            <a href="#!" class="btn btn-icon rounded-circle btn-danger" title="YouTube">
+                                            <a href="{{ $socials['youtube'] ?? '#!' }}" class="btn btn-icon rounded-circle btn-danger" title="YouTube" target="_blank">
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     width="18"
@@ -271,18 +276,11 @@
 
                                 <div class="card-body">
                                     <div class="d-flex flex-wrap gap-1">
-                                        <a class="btn btn-light btn-sm" href="#">Product Design</a>
-                                        <a class="btn btn-light btn-sm" href="#">UI/UX</a>
-                                        <a class="btn btn-light btn-sm" href="#">Tailwind CSS</a>
-                                        <a class="btn btn-light btn-sm" href="#">Bootstrap</a>
-                                        <a class="btn btn-light btn-sm" href="#">React.js</a>
-                                        <a class="btn btn-light btn-sm" href="#">Next.js</a>
-                                        <a class="btn btn-light btn-sm" href="#">Vue.js</a>
-                                        <a class="btn btn-light btn-sm" href="#">Figma</a>
-                                        <a class="btn btn-light btn-sm" href="#">Design Systems</a>
-                                        <a class="btn btn-light btn-sm" href="#">Template Authoring</a>
-                                        <a class="btn btn-light btn-sm" href="#">Responsive Design</a>
-                                        <a class="btn btn-light btn-sm" href="#">Component Libraries</a>
+                                        @forelse($userProfile->skills_list as $skill)
+                                            <span class="btn btn-light btn-sm text-dark">{{ $skill }}</span>
+                                        @empty
+                                            <span class="text-muted fs-sm">Belum ada skill</span>
+                                        @endforelse
                                     </div>
                                 </div>
                                 <!-- end card-body-->

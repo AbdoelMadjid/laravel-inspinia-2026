@@ -14,6 +14,7 @@ use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 #[Fillable(['name', 'email', 'password', 'avatar', 'points', 'is_approved', 'last_seen_at'])]
 #[Hidden(['password', 'remember_token'])]
@@ -28,6 +29,42 @@ class User extends Authenticatable
     public function getMorphClass()
     {
         return 'App\Models\User';
+    }
+
+    /**
+     * Get user profile identity data.
+     */
+    public function profile(): HasOne
+    {
+        return $this->hasOne(UserProfile::class, 'user_id');
+    }
+
+    /**
+     * Get user profile or create an empty instance with default values if none exists yet.
+     */
+    public function getOrCreateProfile(): UserProfile
+    {
+        if (!$this->profile) {
+            return $this->profile()->create([
+                'motto' => 'Designing the future, one template at a time',
+                'job_title' => 'UI/UX Designer & Full-Stack Developer',
+                'education' => 'Stanford University',
+                'location' => 'San Francisco, CA',
+                'website' => 'www.example.dev',
+                'languages' => ['English', 'Hindi', 'Japanese'],
+                'skills' => ['Product Design', 'UI/UX', 'Tailwind CSS', 'Bootstrap', 'React.js', 'Next.js', 'Vue.js', 'Figma', 'Design Systems', 'Template Authoring', 'Responsive Design', 'Component Libraries'],
+                'social_links' => [
+                    'facebook' => 'https://facebook.com',
+                    'twitter' => 'https://x.com',
+                    'instagram' => 'https://instagram.com',
+                    'dribbble' => 'https://dribbble.com',
+                    'linkedin' => 'https://linkedin.com',
+                    'youtube' => 'https://youtube.com',
+                ],
+            ]);
+        }
+
+        return $this->profile;
     }
 
     /**

@@ -59,10 +59,18 @@ Aplikasi Web Admin Dashboard & Management System berbasis **Laravel 11**, **Spat
     - Konfirmasi Kata Sandi Cocok
   - Tombol **Lihat Kata Sandi** & Konfirmasi Kata Sandi.
 
-### 5. 👤 Profil Saya & Riwayat Aktivitas
-- **Foto Profil AJAX**: Unggah foto profil pengguna secara langsung tanpa *reload* halaman.
-- **Badge Total Poin Login**: Menampilkan total akumulasi poin login harian di header profil.
-- **Tabel Riwayat Login**: Menampilkan 10 catatan aktivitas login terbaru milik pengguna di halaman profil.
+### 5. 👤 Profil Saya & Kelengkapan Identitas Pengguna (User Identity & Profile)
+- **Tabel Relasi Identity Pengguna (`user_profiles`)**: Relasi 1-to-1 dengan tabel `users` untuk menyimpan kelengkapan data pribadi, KTP, dan profil publik tanpa mengubah struktur tabel utama `users`.
+- **Data KTP & Alamat Terperinci (Indonesian Identity Data)**:
+  - Data KTP: `NIK` (16 digit), `Tempat Lahir`, `Tanggal Lahir`, `Jenis Kelamin`, `Agama`, dan `Status Perkawinan`.
+  - Alamat Terperinci: `Alamat Jalan/Blok`, `RT`, `RW`, `Kelurahan/Desa`, `Kecamatan`, `Kota/Kabupaten`, `Provinsi`, dan `Kode Pos`.
+- **Profil Profesional & Sosial Media**: Profesi/Pekerjaan, Pendidikan/Institusi, Domisili Publik, Nomor Telepon/WA, Website, Bahasa Dikuasai, Skill/Keahlian, Deskripsi *About Me*, serta Tautan Sosial Media (Facebook, Twitter/X, Instagram, LinkedIn, Dribbble, YouTube).
+- **Pengaturan Tampilan Header & Banner**: Pengaturan *Motto / Banner Quote* dan *Gambar Sampul Header (Cover Image)* untuk mempercantik halaman profil pengguna.
+- **Tata Letak Grid Responsif & Form Independen**:
+  - Halaman `/profile` disusun menjadi 3 baris grid simetris (2 kolom berdampingan `col-lg-6` & `col-lg-6`) yang ergonomis.
+  - Validasi form dikonfigurasi secara independen (`sometimes`) sehingga pengisian data di satu kartu tidak akan memicu kesalahan validasi pada kartu lain.
+  - Notifikasi sukses menggunakan **SweetAlert2 Toast** berwarna hijau yang melayang interaktif di pojok kanan atas (`top-end`).
+- **Foto Profil AJAX & Header Profil**: Unggah foto avatar pengguna secara langsung, indikator status online/offline, badge akumulasi poin login harian, serta tabel 10 catatan aktivitas login terbaru milik pengguna.
 
 ### 6. 🌐 UI & Fitur Antarmuka Modern
 - **Auto Logout Idle (Inaktivitas Pengguna)**:

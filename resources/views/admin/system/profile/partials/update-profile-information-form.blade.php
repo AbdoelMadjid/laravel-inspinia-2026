@@ -1,8 +1,8 @@
 <section>
     <header class="mb-4">
-        <h6 class="fs-15 fw-semibold text-dark mb-1">Detail Informasi Pengguna</h6>
+        <h6 class="fs-15 fw-semibold text-dark mb-1">Detail Informasi Akun</h6>
         <p class="text-muted fs-13 mb-0">
-            Perbarui informasi profil akun dan alamat email Anda.
+            Perbarui foto profil, nama akun, dan alamat email Anda.
         </p>
     </header>
 
@@ -124,17 +124,12 @@
             @endif
         </div>
 
+        <input type="hidden" name="form_section" value="account" />
+
         <div class="d-flex align-items-center gap-2">
             <button type="submit" class="btn btn-primary d-inline-flex align-items-center gap-1">
-                <i class="ti ti-device-floppy fs-16"></i> Simpan Perubahan
+                <i class="ti ti-device-floppy fs-16"></i> Simpan Informasi Akun
             </button>
         </div>
-
-        @if (session('status') === 'profile-updated')
-            <div class="alert alert-success alert-dismissible fade show mt-3 mb-0" role="alert">
-                <i class="ti ti-check me-1"></i> Informasi profil berhasil diperbarui!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
     </form>
 </section>
