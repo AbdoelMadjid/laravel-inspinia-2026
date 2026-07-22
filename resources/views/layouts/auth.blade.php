@@ -20,6 +20,17 @@
         <!-- App css -->
         <link id="app-style" href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
 
+        <style>
+            /* Center all table headers globally across all routes */
+            table th,
+            .table th,
+            table thead th,
+            .table thead th {
+                text-align: center !important;
+                vertical-align: middle !important;
+            }
+        </style>
+
         @stack('styles')
     </head>
 

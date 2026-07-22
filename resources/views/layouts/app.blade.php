@@ -35,6 +35,15 @@
                 max-height: 1.25rem !important;
                 vertical-align: middle;
             }
+
+            /* Center all table headers globally across all routes */
+            table th,
+            .table th,
+            table thead th,
+            .table thead th {
+                text-align: center !important;
+                vertical-align: middle !important;
+            }
         </style>
 
         @stack('styles')
