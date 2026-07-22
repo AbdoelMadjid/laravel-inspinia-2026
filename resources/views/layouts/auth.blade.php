@@ -29,6 +29,20 @@
                 text-align: center !important;
                 vertical-align: middle !important;
             }
+
+            /* Add vertical borders (garis tegak) to all tables globally */
+            table th,
+            table td,
+            .table th,
+            .table td,
+            .table > :not(caption) > * > * {
+                border-left-width: 1px !important;
+                border-right-width: 1px !important;
+                border-left-style: solid !important;
+                border-right-style: solid !important;
+                border-left-color: var(--bs-border-color, #e9ecef) !important;
+                border-right-color: var(--bs-border-color, #e9ecef) !important;
+            }
         </style>
 
         @stack('styles')
