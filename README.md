@@ -32,6 +32,11 @@ Aplikasi Web Admin Dashboard & Management System berbasis **Laravel 11**, **Spat
   - Mengunduh berkas template asli `.xlsx` dan mengunggah data massal per kolom secara instan.
 - **Sistem Persetujuan Pengguna Baru (User Registration Approval)**:
   - Akun pengguna baru mendaftar berstatus `Pending Approval` (`is_approved = false`) dan belum diizinkan login sebelum disetujui Admin (dapat diatur secara otomatis atau manual di menu Apps Profile).
+- **Sistem Persetujuan Penghapusan Akun (Account Deletion Approval Flow)**:
+  - Ketika pengguna biasa menekan *Hapus Akun Saya* di menu profil, akun **tidak langsung terhapus secara otomatis**, melainkan mengalihkan status menjadi permohonan hapus (`deletion_requested_at`).
+  - Sistem mengirimkan notifikasi lonceng otomatis kepada **Admin** (*"Pengguna X mengajukan permohonan penghapusan akun"*).
+  - Admin dapat meninjau, menyetujui penghapusan secara permanen (*Setujui & Hapus Permanen*), atau menolak permohonan (*Tolak Permohonan Hapus*) langsung di menu `admin/users-management/users` melalui filter tab **Permohonan Hapus Akun**.
+  - Pengguna juga diberi opsi untuk membatalkan permohonan penghapusan kapan saja sebelum diproses Admin.
 - **Audit Log Aktivitas Sistem & Admin (Activity Audit Trail)**:
   - Menu `admin/apps-management/activity-logs` untuk memantau rekam jejak aksi administrasi lengkap dengan filter pelaku, jenis aksi, tanggal, dan IP address.
 

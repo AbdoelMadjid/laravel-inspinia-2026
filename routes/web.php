@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/avatar', [ProfileController::class, 'updateAvatar'])->name('profile.avatar');
     Route::post('/profile/cover', [ProfileController::class, 'updateCover'])->name('profile.cover');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('/profile/cancel-deletion', [ProfileController::class, 'cancelDeletion'])->name('profile.cancel-deletion');
     Route::post('/impersonate/stop', [UserController::class, 'impersonateStop'])->name('admin.users.impersonate-stop');
     Route::post('/notifications/{notification}/read', [NotificationController::class, 'markAsRead'])->name('admin.notifications.read');
     Route::post('/notifications/read-all', [NotificationController::class, 'markAllAsRead'])->name('admin.notifications.read-all');
@@ -72,6 +73,7 @@ Route::middleware('auth')->group(function () {
             Route::post('users/bulk-delete', [UserController::class, 'bulkDelete'])->name('users.bulk-delete');
             Route::post('users/{user}/impersonate', [UserController::class, 'impersonate'])->name('users.impersonate');
             Route::patch('users/{user}/toggle-approval', [UserController::class, 'toggleApproval'])->name('users.toggle-approval');
+            Route::patch('users/{user}/cancel-deletion-request', [UserController::class, 'cancelDeletionRequest'])->name('users.cancel-deletion-request');
             Route::resource('users', UserController::class);
             Route::resource('roles', RoleController::class);
             Route::resource('permissions', PermissionController::class);

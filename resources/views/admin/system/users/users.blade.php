@@ -156,7 +156,7 @@
         </div>
 
         <!-- Status Tabs Filter -->
-        <div class="d-flex align-items-center gap-1 mb-3">
+        <div class="d-flex align-items-center flex-wrap gap-1 mb-3">
             <a href="{{ route('admin.users.index') }}"
                 class="btn btn-sm {{ empty($status) ? 'btn-primary' : 'btn-outline-secondary' }}">
                 <i class="ti ti-users me-1"></i> Semua Pengguna
@@ -168,6 +168,16 @@
             <a href="{{ route('admin.users.index', ['status' => 'pending']) }}"
                 class="btn btn-sm {{ $status === 'pending' ? 'btn-warning' : 'btn-outline-warning' }}">
                 <i class="ti ti-clock me-1"></i> Menunggu Persetujuan
+            </a>
+            <a href="{{ route('admin.users.index', ['status' => 'deletion_requested']) }}"
+                class="btn btn-sm {{ $status === 'deletion_requested' ? 'btn-danger' : 'btn-outline-danger' }}">
+                <i class="ti ti-user-x me-1"></i> Permohonan Hapus Akun
+                @php
+                    $deletionReqCount = \App\Models\Admin\System\User::whereNotNull('deletion_requested_at')->count();
+                @endphp
+                @if($deletionReqCount > 0)
+                    <span class="badge bg-danger text-white rounded-pill ms-1">{{ $deletionReqCount }}</span>
+                @endif
             </a>
         </div>
 

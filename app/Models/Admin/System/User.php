@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-#[Fillable(['name', 'email', 'password', 'avatar', 'points', 'is_approved', 'last_seen_at'])]
+#[Fillable(['name', 'email', 'password', 'avatar', 'points', 'is_approved', 'last_seen_at', 'deletion_requested_at', 'deletion_reason'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -29,6 +29,14 @@ class User extends Authenticatable
     public function getMorphClass()
     {
         return 'App\Models\User';
+    }
+
+    /**
+     * Check if user has requested account deletion.
+     */
+    public function hasRequestedDeletion(): bool
+    {
+        return $this->deletion_requested_at !== null;
     }
 
     /**
@@ -110,6 +118,7 @@ class User extends Authenticatable
             'points' => 'integer',
             'is_approved' => 'boolean',
             'last_seen_at' => 'datetime',
+            'deletion_requested_at' => 'datetime',
         ];
     }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\System;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Admin\System\AppNotification;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -147,23 +148,50 @@ class ProfileController extends Controller
     }
 
     /**
-     * Delete the user's account.
+     * Request deletion of the user's account (pending Admin approval).
      */
     public function destroy(Request $request): RedirectResponse
     {
         $request->validateWithBag('userDeletion', [
             'password' => ['required', 'current_password'],
+            'reason' => ['nullable', 'string', 'max:500'],
         ]);
 
         $user = $request->user();
 
-        Auth::logout();
+        // Mark account with deletion request timestamp and reason
+        $user->update([
+            'deletion_requested_at' => now(),
+            'deletion_reason' => $request->input('reason'),
+        ]);
 
-        $user->delete();
+        // Create Admin Notification for Account Deletion Request
+        AppNotification::create([
+            'category' => 'system',
+            'title' => 'Permohonan Penghapusan Akun',
+            'message' => "Pengguna '{$user->name}' ({$user->email}) mengajukan permohonan penghapusan akun.",
+            'url' => route('admin.users.index', ['status' => 'deletion_requested']),
+            'icon' => 'ti ti-user-x',
+            'icon_bg' => 'bg-danger-subtle text-danger',
+            'target_role' => 'admin',
+            'is_read' => false,
+        ]);
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        return back()->with('success', 'Permohonan penghapusan akun Anda telah berhasil dikirim ke Administrator untuk diproses.');
+    }
 
-        return Redirect::to('/');
+    /**
+     * Cancel the user's pending account deletion request.
+     */
+    public function cancelDeletion(Request $request): RedirectResponse
+    {
+        $user = $request->user();
+
+        $user->update([
+            'deletion_requested_at' => null,
+            'deletion_reason' => null,
+        ]);
+
+        return back()->with('success', 'Permohonan penghapusan akun Anda telah berhasil dibatalkan.');
     }
 }

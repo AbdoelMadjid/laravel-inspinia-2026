@@ -46,12 +46,14 @@ class UserController extends Controller
                 });
             }
 
-            // Filter by approval status
+            // Filter by approval & deletion status
             $status = $request->get('status');
             if ($status === 'pending') {
                 $query->where('is_approved', false);
             } elseif ($status === 'approved') {
                 $query->where('is_approved', true);
+            } elseif ($status === 'deletion_requested') {
+                $query->whereNotNull('deletion_requested_at');
             }
 
             $filteredRecords = (clone $query)->count();
@@ -123,7 +125,12 @@ class UserController extends Controller
                 </span>';
 
                 // Status HTML
-                if ($user->is_approved) {
+                if ($user->hasRequestedDeletion()) {
+                    $statusHtml = '<div class="d-flex flex-column gap-1">
+                        <span class="badge bg-danger-subtle text-danger border border-danger-subtle px-2 py-1 fs-11 rounded-pill" title="Mengajukan Hapus Akun"><i class="ti ti-alert-triangle me-1"></i> Minta Hapus</span>
+                        <small class="text-muted fs-11">' . $user->deletion_requested_at->format('d/m/Y H:i') . '</small>
+                    </div>';
+                } elseif ($user->is_approved) {
                     $statusHtml = '<span class="text-success fs-xs fw-semibold d-inline-flex align-items-center" title="Akun Disetujui / Aktif"><i class="ti ti-circle-check me-1 fs-14"></i> Disetujui</span>';
                 } else {
                     $statusHtml = '<div class="d-flex align-items-center gap-2">
@@ -179,7 +186,24 @@ class UserController extends Controller
                 </li>';
 
                 if ($user->id !== $authUserId) {
-                    if ($user->is_approved) {
+                    if ($user->hasRequestedDeletion()) {
+                        $actionsHtml .= '<li>
+                            <form method="POST" action="' . route('admin.users.cancel-deletion-request', $user->id) . '" id="cancel-delete-req-form-' . $user->id . '">
+                                ' . csrf_field() . method_field('PATCH') . '
+                                <button type="button" class="dropdown-item text-secondary fs-13"
+                                    data-swal-confirm="true"
+                                    data-swal-title="Tolak Permohonan Hapus?"
+                                    data-swal-text="Permohonan penghapusan akun ' . e($user->name) . ' akan dibatalkan."
+                                    data-swal-icon="info"
+                                    data-swal-confirm-text="Ya, Batalkan Permohonan!"
+                                    data-form-id="cancel-delete-req-form-' . $user->id . '">
+                                    <i class="ti ti-rotate-clockwise me-2"></i> Tolak Permohonan Hapus
+                                </button>
+                            </form>
+                        </li>';
+                    }
+
+                    if ($user->is_approved && !$user->hasRequestedDeletion()) {
                         $actionsHtml .= '<li>
                             <form method="POST" action="' . route('admin.users.toggle-approval', $user->id) . '" id="deactivate-user-form-' . $user->id . '">
                                 ' . csrf_field() . method_field('PATCH') . '
@@ -196,16 +220,22 @@ class UserController extends Controller
                         </li>';
                     }
 
+                    $deleteTitle = $user->hasRequestedDeletion() ? 'Setujui & Hapus Akun Permanen?' : 'Hapus User?';
+                    $deleteText = $user->hasRequestedDeletion() 
+                        ? 'Pengguna \'' . e($user->name) . '\' mengajukan permohonan hapus. Apakah Anda yakin ingin menyetujui dan menghapus akun ini secara permanen?' 
+                        : 'Apakah Anda yakin ingin menghapus user \'' . e($user->name) . '\'?';
+                    $deleteBtnLabel = $user->hasRequestedDeletion() ? 'Setujui & Hapus Permanen' : 'Delete';
+
                     $actionsHtml .= '<li>
                         <form method="POST" action="' . route('admin.users.destroy', $user->id) . '" id="delete-user-form-' . $user->id . '">
                             ' . csrf_field() . method_field('DELETE') . '
-                            <button type="button" class="dropdown-item text-danger fs-13"
+                            <button type="button" class="dropdown-item text-danger fs-13 fw-semibold"
                                 data-swal-confirm="true"
-                                data-swal-title="Hapus User?"
-                                data-swal-text="Apakah Anda yakin ingin menghapus user \'' . e($user->name) . '\'?"
+                                data-swal-title="' . $deleteTitle . '"
+                                data-swal-text="' . $deleteText . '"
                                 data-swal-confirm-text="Ya, Hapus!"
                                 data-form-id="delete-user-form-' . $user->id . '">
-                                <i class="ti ti-trash me-2"></i> Delete
+                                <i class="ti ti-trash me-2"></i> ' . $deleteBtnLabel . '
                             </button>
                         </form>
                     </li>';
@@ -792,5 +822,20 @@ class UserController extends Controller
         ActivityLog::log('BULK_DELETE', "Menghapus {$count} pengguna secara massal: {$names}.");
 
         return redirect()->back()->with('success', "Berhasil menghapus {$count} pengguna secara massal.");
+    }
+
+    /**
+     * Cancel a pending account deletion request for a user.
+     */
+    public function cancelDeletionRequest(User $user)
+    {
+        $user->update([
+            'deletion_requested_at' => null,
+            'deletion_reason' => null,
+        ]);
+
+        ActivityLog::log('CANCEL_DELETION_REQUEST', "Membatalkan permohonan penghapusan akun pengguna '{$user->name}'.");
+
+        return redirect()->back()->with('success', "Permohonan penghapusan akun pengguna '{$user->name}' berhasil dibatalkan.");
     }
 }
