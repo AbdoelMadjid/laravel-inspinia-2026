@@ -49,7 +49,7 @@ class MenuSeeder extends Seeder
             [
                 'name' => 'Dashboard',
                 'name_en' => 'Dashboard',
-                'name_id' => 'Dasbor',
+                'name_id' => 'Dashboard',
                 'type' => 'item',
                 'icon' => 'ti ti-dashboard',
                 'route_name' => 'dashboard',

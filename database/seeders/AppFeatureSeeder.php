@@ -18,7 +18,7 @@ class AppFeatureSeeder extends Seeder
                 'key' => 'topbar_search',
                 'category' => 'topbar',
                 'description' => 'Menampilkan kotak pencarian di topbar sebelah kiri',
-                'is_active' => true,
+                'is_active' => false,
                 'sort_order' => 1,
             ],
             [
@@ -26,7 +26,7 @@ class AppFeatureSeeder extends Seeder
                 'key' => 'topbar_mega_menu',
                 'category' => 'topbar',
                 'description' => 'Menampilkan dropdown Mega Menu di topbar sebelah kiri',
-                'is_active' => true,
+                'is_active' => false,
                 'sort_order' => 2,
             ],
             [
@@ -34,7 +34,7 @@ class AppFeatureSeeder extends Seeder
                 'key' => 'topbar_apps_menu',
                 'category' => 'topbar',
                 'description' => 'Menampilkan dropdown Apps di topbar sebelah kiri',
-                'is_active' => true,
+                'is_active' => false,
                 'sort_order' => 3,
             ],
             [
@@ -42,7 +42,7 @@ class AppFeatureSeeder extends Seeder
                 'key' => 'sidebar_user_profile',
                 'category' => 'sidebar',
                 'description' => 'Menampilkan kotak profil & foto user di bagian atas sidebar',
-                'is_active' => true,
+                'is_active' => false,
                 'sort_order' => 4,
             ],
             [
@@ -50,7 +50,7 @@ class AppFeatureSeeder extends Seeder
                 'key' => 'template_menus',
                 'category' => 'sidebar',
                 'description' => 'Menampilkan kelompok menu template & demo di sidebar',
-                'is_active' => true,
+                'is_active' => false,
                 'sort_order' => 5,
             ],
             [
@@ -66,7 +66,7 @@ class AppFeatureSeeder extends Seeder
                 'key' => 'topbar_apps_grid',
                 'category' => 'topbar',
                 'description' => 'Menampilkan ikon grid aplikasi (Google, Figma, Slack, Dropbox, dll) di topbar kanan',
-                'is_active' => true,
+                'is_active' => false,
                 'sort_order' => 7,
             ],
             [
@@ -98,7 +98,7 @@ class AppFeatureSeeder extends Seeder
                 'key' => 'topbar_monochrome',
                 'category' => 'topbar',
                 'description' => 'Menampilkan ikon mode monokrom (Palette) di topbar kanan',
-                'is_active' => true,
+                'is_active' => false,
                 'sort_order' => 11,
             ],
             [
@@ -106,7 +106,7 @@ class AppFeatureSeeder extends Seeder
                 'key' => 'topbar_customizer',
                 'category' => 'topbar',
                 'description' => 'Menampilkan ikon roda gigi pengaturan tema (Customizer) di topbar kanan',
-                'is_active' => true,
+                'is_active' => false,
                 'sort_order' => 12,
             ],
             [
