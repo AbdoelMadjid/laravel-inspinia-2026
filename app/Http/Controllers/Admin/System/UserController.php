@@ -97,14 +97,14 @@ class UserController extends Controller
                     ? '<span class="position-absolute bottom-0 end-0 p-1 bg-success border border-white rounded-circle shadow-sm" style="width: 12px; height: 12px;" title="Online sekarang" data-bs-toggle="tooltip"></span>' 
                     : '<span class="position-absolute bottom-0 end-0 p-1 bg-secondary border border-white rounded-circle shadow-sm" style="width: 12px; height: 12px;" title="' . e($user->last_seen_text) . '" data-bs-toggle="tooltip"></span>';
 
-                $avatarHtml = '<div class="position-relative d-inline-block">
+                $avatarHtml = '<a href="' . route('admin.users.show', $user->id) . '" class="position-relative d-inline-block" title="Lihat profil lengkap ' . e($user->name) . '" data-bs-toggle="tooltip">
                     <img src="' . e($user->avatar_url) . '" class="rounded-circle avatar-sm object-fit-cover" style="width: 40px; height: 40px;" alt="' . e($user->name) . '">
                     ' . $onlineIndicator . '
-                </div>';
+                </a>';
 
                 // User Name & Email HTML
                 $userHtml = '<div class="overflow-hidden">
-                    <div class="fw-semibold text-dark text-truncate">' . e($user->name) . '</div>
+                    <a href="' . route('admin.users.show', $user->id) . '" class="fw-semibold text-dark text-truncate d-block text-decoration-none" title="Lihat profil lengkap ' . e($user->name) . '">' . e($user->name) . '</a>
                     <div class="text-muted fs-xs text-truncate">' . e($user->email) . '</div>
                 </div>';
 
@@ -159,7 +159,13 @@ class UserController extends Controller
                     <a href="#" class="btn btn-icon btn-ghost-light text-muted btn-sm" data-bs-toggle="dropdown">
                         <i class="ti ti-dots-vertical fs-lg"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end shadow-sm">';
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                        <li>
+                            <a class="dropdown-item text-info fw-semibold fs-13" href="' . route('admin.users.show', $user->id) . '">
+                                <i class="ti ti-id me-2"></i> Lihat Profil Lengkap
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>';
 
                 if ($user->id !== $authUserId) {
                     $actionsHtml .= '<li>
@@ -267,6 +273,18 @@ class UserController extends Controller
         $status = $request->get('status');
 
         return view('admin.system.users.users', compact('roles', 'status'));
+    }
+
+    /**
+     * Display the specified user's complete profile.
+     */
+    public function show(User $user)
+    {
+        $user->load(['roles', 'permissions']);
+        $profile = $user->getOrCreateProfile();
+        $roles = Role::all();
+
+        return view('admin.system.users.show', compact('user', 'profile', 'roles'));
     }
 
     /**
