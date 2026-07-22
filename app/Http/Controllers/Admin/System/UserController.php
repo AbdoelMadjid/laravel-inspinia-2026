@@ -401,7 +401,9 @@ class UserController extends Controller
             session(['impersonator_id' => $currentUser->id]);
         }
 
+        session(['is_switching_account' => true]);
         Auth::login($user);
+        session()->forget('is_switching_account');
 
         return redirect()->route('dashboard')
             ->with('success', "Berhasil beralih ke akun {$user->name}.");
@@ -425,7 +427,9 @@ class UserController extends Controller
                 ->with('error', 'Akun asli tidak ditemukan.');
         }
 
+        session(['is_switching_account' => true]);
         Auth::login($originalUser);
+        session()->forget('is_switching_account');
 
         return redirect()->route('admin.users.index')
             ->with('success', "Kembali ke akun asli ({$originalUser->name}).");

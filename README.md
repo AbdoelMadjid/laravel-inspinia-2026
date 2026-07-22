@@ -13,11 +13,11 @@ Aplikasi Web Admin Dashboard & Management System berbasis **Laravel 11**, **Spat
 - **Backup Database**: Generator backup database SQL (Full Backup atau Pilih Tabel Tertentu) langsung dari dashboard dengan fitur unduh & hapus berkas backup.
 - **Data Login & Poin Login Harian**:
   - Catatan otomatis aktivitas login pengguna (*IP Address*, *User Agent*, dan *Waktu Login*).
-  - Sistem **Poin Login Harian** (diberikan **+1 Poin per user per hari**, login ulang di hari yang sama mendapat 0 poin).
+  - Sistem **Poin Login Harian** (diberikan **+1 Poin per user per hari** saat login langsung oleh pengguna; login ulang di hari yang sama atau beralih akun (*switch account / impersonasi*) tidak menambah poin).
   - Tampilan Audit Log *Read-Only* yang rapi, dilengkapi filter berdasarkan **Hari Ini**, **Role**, **Poin**, dan **Kata Kunci**.
 
 ### 2. 👥 Pengaturan Pengguna & Akses (Users Setting)
-- **Manajemen Pengguna (Contacts / Users)**: Manajemen akun pengguna, foto avatar, penetapan role tunggal/massal (*Bulk Assign Role*).
+- **Manajemen Pengguna & Impersonasi (Contacts / Users)**: Manajemen akun pengguna, foto avatar, penetapan role tunggal/massal (*Bulk Assign Role*), serta fitur **Switch Akun (Impersonasi)** untuk beralih ke akun pengguna lain secara aman tanpa menambah poin login harian target.
 - **Permintaan Reset Password (Password Reset Requests)**: Panel kelola permintaan reset kata sandi dari pengguna yang lupa password dengan fitur approval dan reset instan oleh Admin.
 - **Export Data Pengguna (Excel & PDF)**:
   - Tombol **Export Excel** mengunduh berkas terformat `.xlsx` menggunakan PhpSpreadsheet secara otomatis sesuai filter pencarian/role/status.
